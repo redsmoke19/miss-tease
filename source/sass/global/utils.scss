@@ -71,3 +71,12 @@
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }
+
+.link {
+  transition: color $trans-default;
+  color: rgba($color-default-white, 40%);
+
+  @include hover-focus {
+    color: $color-default-white;
+  }
+}
