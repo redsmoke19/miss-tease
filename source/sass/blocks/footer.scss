@@ -1,5 +1,349 @@
-.footer {
-  padding: 40px 0;
+.social-list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  gap: 14px;
 
-  background-color: $color-neon-blue;
+  @include vp-767 {
+    gap: 10px;
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    margin-right: 14px;
+
+    @include vp-767 {
+      width: 23px;
+      height: 23px;
+      margin-right: 10px;
+    }
+
+    svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: opacity $trans-default;
+
+      &:last-child {
+        z-index: 1;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    transition: color $trans-default;
+    color: rgba($color-default-white, 40%);
+
+    @include vp-767 {
+      font-size: 13px;
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+
+      svg {
+        &:last-child {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 80px 0 24px;
+  background-color: $color-nero;
+
+  @include vp-767 {
+    padding: 33px 0 27px;
+  }
+
+  &__container {
+    max-width: 1566px;
+
+    @include vp-1023 {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    @include vp-767 {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 293px 293px 1fr 430px;
+    grid-gap: 20px;
+
+    @include vp-1023 {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 40px;
+    }
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include vp-767 {
+      align-items: stretch;
+    }
+
+    &.is-active {
+      .footer__title svg {
+        @include vp-767 {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &--form {
+      @include vp-767 {
+        order: -1;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $ff-cormorant;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 100%;
+    margin-top: 0;
+    margin-bottom: 37px;
+    color: $color-default-white;
+
+    @include vp-767 {
+      font-size: 21px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      padding: 11px 32px 11px 0;
+    }
+
+    svg {
+      display: none;
+
+      @include vp-767 {
+        position: absolute;
+        right: 0;
+        display: block;
+        transition: transform $trans-default;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+    gap: 10px;
+
+    @include vp-767 {
+      padding-top: 10px;
+      padding-bottom: 16px;
+      gap: 4px;
+    }
+  }
+
+  &__item {
+    font-size: 16px;
+    font-weight: 300;
+
+    @include vp-767 {
+      font-size: 13px;
+    }
+  }
+
+  &__subscribe {
+    width: 100%;
+
+    @include vp-767 {
+      padding-top: 14px;
+      padding-bottom: 36px;
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    padding-top: 86px;
+    grid-template-columns: 293px 1fr 430px;
+    grid-gap: 20px;
+
+    @include vp-1023 {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 30px;
+    }
+
+    @include vp-767 {
+      padding-top: 27px;
+      grid-row-gap: 19px;
+    }
+  }
+
+  &__copyright {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0;
+
+    @include vp-767 {
+      font-size: 11px;
+    }
+  }
+
+  &__bottom-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+    column-gap: 80px;
+
+    @include vp-1023 {
+      justify-content: space-between;
+      order: -1;
+      grid-column: 1/-1;
+      column-gap: 20px;
+    }
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      padding: 19px 0 18px;
+      border-top: 1px solid rgba(255, 255, 255, 4%);
+      border-bottom: 1px solid rgba(255, 255, 255, 4%);
+      gap: 6px;
+    }
+  }
+
+  &__bottom-item {
+    font-size: 13px;
+    font-weight: 300;
+
+    @include vp-767 {
+      font-size: 11px;
+    }
+  }
+
+  &__prompt {
+    font-size: 13px;
+    font-weight: 300;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    column-gap: 10px;
+
+    @include vp-767 {
+      font-size: 11px;
+      column-gap: 8px;
+    }
+  }
+
+  &__social {
+    @include vp-767 {
+      padding-top: 10px;
+      padding-bottom: 16px;
+    }
+  }
+}
+
+.subscribe-form {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    margin-bottom: 23px;
+
+    @include vp-767 {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__input {
+    flex-grow: 1;
+  }
+
+  &__button {
+    font-size: 16px;
+    font-weight: 300;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    min-height: 56px;
+    padding: 18px 0;
+    cursor: pointer;
+    transition: color $trans-default;
+    color: rgba($color-default-white, 40%);
+    border: none;
+    outline: none;
+    background: none;
+
+    @include vp-767 {
+      font-size: 14px;
+      min-height: 46px;
+      padding: 14px 0;
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+    }
+  }
+
+  &__prompt {
+    font-size: 13px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: normal;
+    max-width: 350px;
+    margin: 0;
+    color: rgba($color-default-white, 30%);
+
+    @include vp-767 {
+      font-size: 10px;
+    }
+
+    a {
+      transition: color $trans-default;
+      color: rgba($color-default-white, 70%);
+
+      @include hover-focus {
+        color: $color-default-white;
+      }
+    }
+  }
 }
