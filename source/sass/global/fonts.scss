@@ -1,18 +1,44 @@
-// @font-face {
-//   font-style: normal;
-//   font-weight: 400;
-//   font-family: "Rouble";
+@font-face {
+  font-style: italic;
+  font-weight: 400;
+  font-family: "Cormorant";
 
-//   font-display: swap;
-//   src:
-//     url("../fonts/rouble.woff2") format("woff2");
-// }
+  font-display: swap;
+  src: url("../fonts/cormorant-italic.woff2") format("woff2");
+}
 
 @font-face {
   font-style: normal;
   font-weight: 400;
-  font-family: "";
+  font-family: "Cormorant";
 
   font-display: swap;
-  src: url("../fonts/.woff2") format("woff2");
+  src: url("../fonts/cormorant-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Geologica";
+
+  font-display: swap;
+  src: url("../fonts/geologica-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  font-family: "Geologica";
+
+  font-display: swap;
+  src: url("../fonts/geologica-light.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Geologica";
+
+  font-display: swap;
+  src: url("../fonts/geologica-regular.woff2") format("woff2");
 }
