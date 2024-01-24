@@ -6,9 +6,12 @@
   margin-bottom: 0;
   padding: 0;
   list-style: none;
-  gap: 14px;
 
-  @include vp-767 {
+  @include tablet-desktop {
+    gap: 14px;
+  }
+
+  @include mobile {
     gap: 10px;
   }
 
@@ -18,11 +21,14 @@
     align-items: center;
     flex-shrink: 0;
     justify-content: center;
-    width: 26px;
-    height: 26px;
-    margin-right: 14px;
 
-    @include vp-767 {
+    @include tablet-desktop {
+      width: 26px;
+      height: 26px;
+      margin-right: 14px;
+    }
+
+    @include mobile {
       width: 23px;
       height: 23px;
       margin-right: 10px;
@@ -42,14 +48,17 @@
   }
 
   &__link {
-    font-size: 16px;
     font-weight: 300;
     display: flex;
     align-items: center;
     transition: color $trans-default;
     color: rgba($color-default-white, 40%);
 
-    @include vp-767 {
+    @include tablet-desktop {
+      font-size: 16px;
+    }
+
+    @include mobile {
       font-size: 13px;
     }
 
@@ -66,38 +75,42 @@
 }
 
 .footer {
-  padding: 80px 0 24px;
   background-color: $color-nero;
 
-  @include vp-767 {
+  @include tablet-desktop {
+    padding: 80px 0 24px;
+  }
+
+  @include mobile {
     padding: 33px 0 27px;
   }
 
   &__container {
     max-width: 1566px;
 
-    @include vp-1023 {
-      padding-right: 20px;
-      padding-left: 20px;
-    }
-
-    @include vp-767 {
+    @include mobile-tablet {
       padding-right: 20px;
       padding-left: 20px;
     }
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: 293px 293px 1fr 430px;
-    grid-gap: 20px;
+    @include tablet-desktop {
+      display: grid;
+    }
 
-    @include vp-1023 {
+    @include desktop {
+      grid-template-columns: 293px 293px 1fr 430px;
+      grid-gap: 20px;
+    }
+
+    @include tablet {
       grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 20px;
       grid-row-gap: 40px;
     }
 
-    @include vp-767 {
+    @include mobile {
       display: flex;
       flex-direction: column;
       gap: 7px;
@@ -106,23 +119,26 @@
 
   &__block {
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
 
-    @include vp-767 {
+    @include tablet-desktop {
+      align-items: flex-start;
+    }
+
+    @include mobile {
       align-items: stretch;
     }
 
     &.is-active {
       .footer__title svg {
-        @include vp-767 {
+        @include mobile {
           transform: rotate(45deg);
         }
       }
     }
 
     &--form {
-      @include vp-767 {
+      @include mobile {
         order: -1;
       }
     }
@@ -130,14 +146,17 @@
 
   &__title {
     font-family: $ff-cormorant;
-    font-size: 28px;
     font-weight: 500;
     line-height: 100%;
     margin-top: 0;
-    margin-bottom: 37px;
     color: $color-default-white;
 
-    @include vp-767 {
+    @include tablet-desktop {
+      font-size: 28px;
+      margin-bottom: 37px;
+    }
+
+    @include mobile {
       font-size: 21px;
       position: relative;
       display: flex;
@@ -147,9 +166,11 @@
     }
 
     svg {
-      display: none;
+      @include tablet-desktop {
+        display: none;
+      }
 
-      @include vp-767 {
+      @include mobile {
         position: absolute;
         right: 0;
         display: block;
@@ -164,22 +185,27 @@
     flex-direction: column;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 0;
     list-style: none;
-    gap: 10px;
 
-    @include vp-767 {
-      padding-top: 10px;
-      padding-bottom: 16px;
+    @include tablet-desktop {
+      padding: 0;
+      gap: 10px;
+    }
+
+    @include mobile {
+      padding: 10px 0 16px;
       gap: 4px;
     }
   }
 
   &__item {
-    font-size: 16px;
     font-weight: 300;
 
-    @include vp-767 {
+    @include tablet-desktop {
+      font-size: 16px;
+    }
+
+    @include mobile {
       font-size: 13px;
     }
   }
@@ -187,7 +213,7 @@
   &__subscribe {
     width: 100%;
 
-    @include vp-767 {
+    @include mobile {
       padding-top: 14px;
       padding-bottom: 36px;
     }
@@ -195,27 +221,37 @@
 
   &__bottom {
     display: grid;
-    padding-top: 86px;
-    grid-template-columns: 293px 1fr 430px;
-    grid-gap: 20px;
+
+    @include tablet-desktop {
+      padding-top: 86px;
+    }
+
+    @include desktop {
+      grid-template-columns: 293px 1fr 430px;
+      grid-gap: 20px;
+    }
 
     @include vp-1023 {
       grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 20px;
       grid-row-gap: 30px;
     }
 
-    @include vp-767 {
+    @include mobile {
       padding-top: 27px;
       grid-row-gap: 19px;
     }
   }
 
   &__copyright {
-    font-size: 13px;
     font-weight: 300;
     margin: 0;
 
-    @include vp-767 {
+    @include tablet-desktop {
+      font-size: 13px;
+    }
+
+    @include mobile {
       font-size: 11px;
     }
   }
@@ -225,19 +261,27 @@
     flex-wrap: wrap;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 0;
     list-style: none;
-    column-gap: 80px;
 
-    @include vp-1023 {
-      justify-content: space-between;
-      order: -1;
-      grid-column: 1/-1;
+    @include tablet-desktop {
+      padding: 0;
+    }
+
+    @include desktop {
+      column-gap: 80px;
+    }
+
+    @include tablet {
       column-gap: 20px;
     }
 
-    @include vp-767 {
-      display: flex;
+    @include mobile-tablet {
+      order: -1;
+      grid-column: 1/-1;
+      justify-content: space-between;
+    }
+
+    @include mobile {
       flex-direction: column;
       padding: 19px 0 18px;
       border-top: 1px solid rgba(255, 255, 255, 4%);
@@ -247,30 +291,36 @@
   }
 
   &__bottom-item {
-    font-size: 13px;
     font-weight: 300;
 
-    @include vp-767 {
+    @include tablet-desktop {
+      font-size: 13px;
+    }
+
+    @include mobile {
       font-size: 11px;
     }
   }
 
   &__prompt {
-    font-size: 13px;
     font-weight: 300;
     display: flex;
     justify-content: flex-end;
     margin: 0;
-    column-gap: 10px;
 
-    @include vp-767 {
+    @include tablet-desktop {
+      font-size: 13px;
+      column-gap: 10px;
+    }
+
+    @include mobile {
       font-size: 11px;
       column-gap: 8px;
     }
   }
 
   &__social {
-    @include vp-767 {
+    @include mobile {
       padding-top: 10px;
       padding-bottom: 16px;
     }
@@ -281,9 +331,12 @@
   &__wrapper {
     position: relative;
     display: flex;
-    margin-bottom: 23px;
 
-    @include vp-767 {
+    @include tablet-desktop {
+      margin-bottom: 23px;
+    }
+
+    @include mobile {
       margin-bottom: 15px;
     }
   }
@@ -293,7 +346,6 @@
   }
 
   &__button {
-    font-size: 16px;
     font-weight: 300;
     position: absolute;
     z-index: 1;
@@ -304,8 +356,6 @@
     align-items: center;
     flex-shrink: 0;
     justify-content: center;
-    min-height: 56px;
-    padding: 18px 0;
     cursor: pointer;
     transition: color $trans-default;
     color: rgba($color-default-white, 40%);
@@ -313,7 +363,13 @@
     outline: none;
     background: none;
 
-    @include vp-767 {
+    @include tablet-desktop {
+      font-size: 16px;
+      min-height: 56px;
+      padding: 18px 0;
+    }
+
+    @include mobile {
       font-size: 14px;
       min-height: 46px;
       padding: 14px 0;
@@ -325,7 +381,6 @@
   }
 
   &__prompt {
-    font-size: 13px;
     font-weight: 300;
     font-style: normal;
     line-height: normal;
@@ -333,7 +388,11 @@
     margin: 0;
     color: rgba($color-default-white, 30%);
 
-    @include vp-767 {
+    @include tablet-desktop {
+      font-size: 13px;
+    }
+
+    @include mobile {
       font-size: 10px;
     }
 
