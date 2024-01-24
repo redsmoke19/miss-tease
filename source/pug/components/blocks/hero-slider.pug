@@ -1,0 +1,32 @@
+mixin hero-slider()
+  section.hero-slider.swiper(data-hero-slider="parent")
+    button.hero-slider__button.hero-slider__button--prev(type="button", data-hero-slider="prev")
+      +icon("icon-slider-arrow", 40, 40)
+    button.hero-slider__button.hero-slider__button--next(type="button", data-hero-slider="next")
+      +icon("icon-slider-arrow", 40, 40)
+    .swiper-pagination(data-hero-slider="pagination")
+    .hero-slider__wrapper.swiper-wrapper
+      .hero-slider__slide.hero-slide.swiper-slide
+        .hero-slide__img
+          +picture-mob("hero", "hero-slide-1", "jpg", 3840, 1880, "")
+        .hero-slide__content.container
+          h2.hero-slide__title Дерзкий силуэт
+
+          p.hero-slide__text Коллекция Harley
+          a.hero-slide__link.link-bordered(href="#") Купить сейчас
+      .hero-slider__slide.hero-slide.swiper-slide
+        .hero-slide__img
+          +picture-mob("hero", "hero-slide-1", "jpg", 3840, 1880, "")
+        .hero-slide__content.container
+          h2.hero-slide__title Дерзкий силуэт
+
+          p.hero-slide__text Коллекция Harley
+          a.hero-slide__link.link-bordered(href="#") Купить сейчас
+      .hero-slider__slide.hero-slide.swiper-slide
+        .hero-slide__img
+          +picture-mob("hero", "hero-slide-1", "jpg", 3840, 1880, "")
+        .hero-slide__content.container
+          h2.hero-slide__title Дерзкий силуэт
+
+          p.hero-slide__text Коллекция Harley
+          a.hero-slide__link.link-bordered(href="#") Купить сейчас
