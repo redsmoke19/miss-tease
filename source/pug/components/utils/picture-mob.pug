@@ -1,0 +1,4 @@
+mixin picture-mob(path, image, format, width, height, altText)
+  picture(class!=attributes.class)
+    source(media="(max-width: 767px)", srcset= "img/" + path + "/" + image + "-sm." + format)
+    img(src="img/" + path + "/" + image + "." + format, width= width, height= height, alt= altText)

@@ -74,43 +74,35 @@
   }
 }
 
-// Mobile first
+@mixin mobile {
+  @media screen and (max-width: ($vp-768 - 1px)) {
+    @content;
+  }
+}
 
-// @mixin vp-375 {
-//   @media (min-width: $vp-375) {
-//     @content;
-//   }
-// }
+@mixin mobile-tablet {
+  @media screen and (max-width: ($vp-1024 - 1px)) {
+    @content;
+  }
+}
 
-// @mixin vp-768 {
-//   @media (min-width: $vp-768) {
-//     @content;
-//   }
-// }
+@mixin tablet {
+  @media screen and (min-width: $vp-768) and (max-width: ($vp-1024 - 1px)) {
+    @content;
+  }
+}
 
-// @mixin vp-1024 {
-//   @media (min-width: $vp-1024) {
-//     @content;
-//   }
-// }
+@mixin tablet-desktop {
+  @media screen and (min-width: $vp-768) {
+    @content;
+  }
+}
 
-// @mixin vp-1280 {
-//   @media (min-width: $vp-1280) {
-//     @content;
-//   }
-// }
-
-// @mixin vp-1440 {
-//   @media (min-width: $vp-1440) {
-//     @content;
-//   }
-// }
-
-// @mixin vp-1920 {
-//   @media (min-width: $vp-1920) {
-//     @content;
-//   }
-// }
+@mixin desktop {
+  @media screen and (min-width: $vp-1024) {
+    @content;
+  }
+}
 
 // ---------------------------------
 

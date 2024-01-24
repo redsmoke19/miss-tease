@@ -4,6 +4,7 @@ import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initAccordions} from './modules/accordions/init-accordion.js';
+import {initHeroSlider} from './modules/sliders/init-hero-slider.js';
 
 // ---------------------------------
 
@@ -29,6 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window.form = form;
     form.init();
     initAccordions();
+    initHeroSlider();
   });
 });
 
