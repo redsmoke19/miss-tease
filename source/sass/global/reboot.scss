@@ -30,8 +30,31 @@ html {
 body {
   width: 100%;
   height: 100%;
-
   background-color: $color-black;
+  scrollbar-width: thin;
+  scrollbar-color: $color-peru $color-black;
+
+  &::-webkit-scrollbar {
+    @include tablet-desktop {
+      width: 4px;
+    }
+
+    @include mobile {
+      width: 3px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-peru;
+
+    @include tablet-desktop {
+      border-radius: 40px;
+    }
+
+    @include mobile {
+      border-radius: 30px;
+    }
+  }
 }
 
 a {

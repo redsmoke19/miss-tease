@@ -62,15 +62,15 @@ mixin footer(footerMods)
                     +icon("icon-mail", 26, 26)
                     +icon("icon-mail-filled", 26, 26)
                   | miss@misstease.ru
-        .footer__block.footer__block--form
+        .footer__block.footer__block--form(data-form-validate, data-callback="base")
           h2.footer__title Будь в курсе всех событий
-          form.footer__subscribe.subscribe-form
+          form.footer__subscribe.subscribe-form(action="#", novalidate)
             .subscribe-form__wrapper
               +custom-input({
                 inputType: "email",
                 inputLabel: "Ваш e-mail",
-                inputName: "user-mail",
-              }).subscribe-form__input
+                inputName: "user-mail"
+              }).subscribe-form__input(data-validate-type="email", data-required, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля")
               button.subscribe-form__button(type="submit") Подписаться
             p.subscribe-form__prompt Нажимая кнопку "Подписаться", вы соглашаетесь с&nbsp;<a href="#">Политикой обработки персональных данных</a>
       .footer__bottom

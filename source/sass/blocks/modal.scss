@@ -1,27 +1,25 @@
 .modal {
   position: fixed;
+  z-index: 1000;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1000;
-
   display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-
-  background-color: rgba($color-default-black, 0.8);
-  transform: scale(1.2);
   visibility: hidden;
-  opacity: 0;
-
-  transition: opacity $trans-modal, transform $trans-modal, visibility $trans-modal;
-
+  overflow-y: auto;
+  flex-direction: column;
   pointer-events: none;
-
+  opacity: 0;
+  background-color: rgba($color-default-black, 0.8);
+  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  &:not(.modal--cart) {
+    transition: opacity $trans-modal, transform $trans-modal, visibility $trans-modal;
+    transform: scale(1.2);
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -29,38 +27,28 @@
 
   &__wrapper {
     position: relative;
-
     display: flex;
+    align-items: center;
     flex-shrink: 0;
     justify-content: center;
-    align-items: center;
     width: 100%;
     min-height: 100%;
-    padding: 60px 40px;
-
-    @include vp-767 {
-      padding: 60px 16px;
-    }
   }
 
   &__overlay {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     cursor: pointer;
   }
 
   &__content {
     position: relative;
-
     width: 600px;
-    padding: 40px;
-
-    background-color: $color-default-white;
+    padding: 50px;
+    background-color: $color-nero;
 
     @include vp-767 {
       width: 100%;
@@ -70,22 +58,25 @@
 
   &__close-btn {
     position: absolute;
-    top: 22px;
-    right: 22px;
     z-index: 1;
-
-    width: 40px;
-    height: 40px;
+    top: 20px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
     padding: 0;
-
-    background: $color-transparent;
-    border: none;
     cursor: pointer;
+    transition: color $trans-default;
+    color: rgba($color-default-white, 30%);
+    border: none;
+    background: $color-transparent;
 
-    transition: opacity $trans-default;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
 
     @include hover-focus {
-      opacity: 0.5;
+      color: $color-default-white;
     }
   }
 
@@ -113,11 +104,41 @@
     transition: none;
   }
 
+  &--cart {
+    overflow: hidden;
+    transition: opacity $trans-600 0.3s, visibility $trans-600 0.3s;
+
+    .modal__wrapper {
+      justify-content: flex-end;
+      height: 100%;
+      min-height: auto;
+      max-height: 100%;
+    }
+
+    .modal__content {
+      width: auto;
+      height: 100%;
+      padding: 0;
+      transition: transform $trans-modal;
+      transform: translateX(100%);
+    }
+
+    &.is-active {
+      transition: opacity $trans-600, visibility $trans-600;
+
+      .modal__content {
+        transform: translateX(0);
+      }
+    }
+  }
+
   &.is-active {
-    transform: scale(1);
     visibility: visible;
+    pointer-events: auto;
     opacity: 1;
 
-    pointer-events: auto;
+    &:not(.modal--cart) {
+      transform: scale(1);
+    }
   }
 }

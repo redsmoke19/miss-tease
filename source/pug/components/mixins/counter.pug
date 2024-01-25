@@ -1,0 +1,7 @@
+mixin counter()
+  .counter(data-counter="element")
+    button.counter__button(type="button", aria-label="Уменьшить", disabled, data-counter="decrease")
+      +icon("icon-minus", 12, 12)
+    span.counter__num(data-counter="value") 1
+    button.counter__button(type="button", aria-label="Увеличить", data-counter="increase")
+      +icon("icon-plus", 12, 12)

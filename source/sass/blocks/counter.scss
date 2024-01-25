@@ -1,0 +1,45 @@
+.counter {
+  display: flex;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    transition: color $trans-default;
+    color: rgba($color-default-white, 70%);
+    border: none;
+    outline: none;
+    background: none;
+
+    &:disabled {
+      pointer-events: none;
+      color: rgba($color-default-white, 10%);
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &__num {
+    font-size: 14px;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 46px;
+    padding: 10px;
+    user-select: none;
+    text-align: center;
+    color: rgba($color-default-white, 70%);
+  }
+}
