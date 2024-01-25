@@ -174,7 +174,10 @@
         position: absolute;
         right: 0;
         display: block;
+        width: 12px;
+        height: 12px;
         transition: transform $trans-default;
+        color: rgba($color-default-white, 56%);
       }
     }
   }
@@ -276,9 +279,9 @@
     }
 
     @include mobile-tablet {
+      justify-content: space-between;
       order: -1;
       grid-column: 1/-1;
-      justify-content: space-between;
     }
 
     @include mobile {
@@ -343,6 +346,10 @@
 
   &__input {
     flex-grow: 1;
+
+    &.custom-input svg {
+      right: 115px;
+    }
   }
 
   &__button {
@@ -351,11 +358,11 @@
     z-index: 1;
     top: 0;
     right: 0;
-    bottom: 0;
     display: flex;
     align-items: center;
     flex-shrink: 0;
     justify-content: center;
+    height: 56px;
     cursor: pointer;
     transition: color $trans-default;
     color: rgba($color-default-white, 40%);

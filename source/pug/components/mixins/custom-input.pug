@@ -11,6 +11,7 @@ mixin custom-input(options = {})
 
   .custom-input&attributes(attributes)
     label
+      +icon('icon-check', 16, 16)
       if inputLabel
         span.custom-input__label!= inputLabel
       input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept)

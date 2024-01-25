@@ -19,21 +19,21 @@ const initHeroSlider = () => {
       el: paginationEl,
       clickable: false,
     },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    //   pauseOnMouseEnter: true,
+    // },
     navigation: {
       prevEl: prevButton,
       nextEl: nextButton,
     },
     rewind: true,
-    on: {
-      autoplayTimeLeft(s, time, progress) {
-        parent.style.setProperty('--progress', `${progress * 100}%`);
-      },
-    },
+    // on: {
+    //   autoplayTimeLeft(s, time, progress) {
+    //     parent.style.setProperty('--progress', `${progress * 100}%`);
+    //   },
+    // },
     breakpoints: {
       1023: {
         allowTouchMove: false,
