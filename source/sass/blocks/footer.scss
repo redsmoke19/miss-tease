@@ -8,11 +8,11 @@
   list-style: none;
 
   @include tablet-desktop {
-    gap: 14px;
+    gap: size(14px);
   }
 
   @include mobile {
-    gap: 10px;
+    gap: size(10px);
   }
 
   &__icon {
@@ -23,15 +23,15 @@
     justify-content: center;
 
     @include tablet-desktop {
-      width: 26px;
-      height: 26px;
-      margin-right: 14px;
+      width: size(26px);
+      height: size(26px);
+      margin-right: size(14px);
     }
 
     @include mobile {
-      width: 23px;
-      height: 23px;
-      margin-right: 10px;
+      width: size(23px);
+      height: size(23px);
+      margin-right: size(10px);
     }
 
     svg {
@@ -55,11 +55,11 @@
     color: rgba($color-default-white, 40%);
 
     @include tablet-desktop {
-      font-size: 16px;
+      font-size: size(16px);
     }
 
     @include mobile {
-      font-size: 13px;
+      font-size: size(13px);
     }
 
     @include hover-focus {
@@ -78,19 +78,19 @@
   background-color: $color-nero;
 
   @include tablet-desktop {
-    padding: 80px 0 24px;
+    padding: size(80px) 0 size(24px);
   }
 
   @include mobile {
-    padding: 33px 0 27px;
+    padding: size(33px) 0 size(27px);
   }
 
   &__container {
-    max-width: 1566px;
+    max-width: size(1566px);
 
     @include mobile-tablet {
-      padding-right: 20px;
-      padding-left: 20px;
+      padding-right: size(20px);
+      padding-left: size(20px);
     }
   }
 
@@ -100,20 +100,20 @@
     }
 
     @include desktop {
-      grid-template-columns: 293px 293px 1fr 430px;
-      grid-gap: 20px;
+      grid-template-columns: size(293px) size(293px) 1fr size(430px);
+      grid-gap: size(20px);
     }
 
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 40px;
+      grid-column-gap: size(20px);
+      grid-row-gap: size(40px);
     }
 
     @include mobile {
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: size(7px);
     }
   }
 
@@ -152,17 +152,17 @@
     color: $color-default-white;
 
     @include tablet-desktop {
-      font-size: 28px;
-      margin-bottom: 37px;
+      font-size: size(28px);
+      margin-bottom: size(37px);
     }
 
     @include mobile {
-      font-size: 21px;
+      font-size: size(21px);
       position: relative;
       display: flex;
       align-items: center;
       margin-bottom: 0;
-      padding: 11px 32px 11px 0;
+      padding: size(11px) size(32px) size(11px) 0;
     }
 
     svg {
@@ -174,8 +174,8 @@
         position: absolute;
         right: 0;
         display: block;
-        width: 12px;
-        height: 12px;
+        width: size(12px);
+        height: size(12px);
         transition: transform $trans-default;
         color: rgba($color-default-white, 56%);
       }
@@ -192,12 +192,12 @@
 
     @include tablet-desktop {
       padding: 0;
-      gap: 10px;
+      gap: size(10px);
     }
 
     @include mobile {
-      padding: 10px 0 16px;
-      gap: 4px;
+      padding: size(10px) 0 size(16px);
+      gap: size(4px);
     }
   }
 
@@ -205,11 +205,11 @@
     font-weight: 300;
 
     @include tablet-desktop {
-      font-size: 16px;
+      font-size: size(16px);
     }
 
     @include mobile {
-      font-size: 13px;
+      font-size: size(13px);
     }
   }
 
@@ -217,8 +217,8 @@
     width: 100%;
 
     @include mobile {
-      padding-top: 14px;
-      padding-bottom: 36px;
+      padding-top: size(14px);
+      padding-bottom: size(36px);
     }
   }
 
@@ -226,23 +226,23 @@
     display: grid;
 
     @include tablet-desktop {
-      padding-top: 86px;
+      padding-top: size(86px);
     }
 
     @include desktop {
-      grid-template-columns: 293px 1fr 430px;
-      grid-gap: 20px;
+      grid-template-columns: size(293px) 1fr size(430px);
+      grid-gap: size(20px);
     }
 
     @include vp-1023 {
       grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 30px;
+      grid-column-gap: size(20px);
+      grid-row-gap: size(30px);
     }
 
     @include mobile {
-      padding-top: 27px;
-      grid-row-gap: 19px;
+      padding-top: size(27px);
+      grid-row-gap: size(19px);
     }
   }
 
@@ -251,11 +251,11 @@
     margin: 0;
 
     @include tablet-desktop {
-      font-size: 13px;
+      font-size: size(13px);
     }
 
     @include mobile {
-      font-size: 11px;
+      font-size: size(11px);
     }
   }
 
@@ -271,11 +271,11 @@
     }
 
     @include desktop {
-      column-gap: 80px;
+      column-gap: size(80px);
     }
 
     @include tablet {
-      column-gap: 20px;
+      column-gap: size(20px);
     }
 
     @include mobile-tablet {
@@ -286,10 +286,10 @@
 
     @include mobile {
       flex-direction: column;
-      padding: 19px 0 18px;
-      border-top: 1px solid rgba(255, 255, 255, 4%);
-      border-bottom: 1px solid rgba(255, 255, 255, 4%);
-      gap: 6px;
+      padding: size(19px) 0 size(18px);
+      border-top: size(1px) solid rgba(255, 255, 255, 4%);
+      border-bottom: size(1px) solid rgba(255, 255, 255, 4%);
+      gap: size(6px);
     }
   }
 
@@ -297,11 +297,11 @@
     font-weight: 300;
 
     @include tablet-desktop {
-      font-size: 13px;
+      font-size: size(13px);
     }
 
     @include mobile {
-      font-size: 11px;
+      font-size: size(11px);
     }
   }
 
@@ -312,20 +312,20 @@
     margin: 0;
 
     @include tablet-desktop {
-      font-size: 13px;
-      column-gap: 10px;
+      font-size: size(13px);
+      column-gap: size(10px);
     }
 
     @include mobile {
-      font-size: 11px;
-      column-gap: 8px;
+      font-size: size(11px);
+      column-gap: size(8px);
     }
   }
 
   &__social {
     @include mobile {
-      padding-top: 10px;
-      padding-bottom: 16px;
+      padding-top: size(10px);
+      padding-bottom: size(16px);
     }
   }
 }
@@ -336,11 +336,11 @@
     display: flex;
 
     @include tablet-desktop {
-      margin-bottom: 23px;
+      margin-bottom: size(23px);
     }
 
     @include mobile {
-      margin-bottom: 15px;
+      margin-bottom: size(15px);
     }
   }
 
@@ -348,7 +348,7 @@
     flex-grow: 1;
 
     &.custom-input svg {
-      right: 115px;
+      right: size(115px);
     }
   }
 
@@ -362,7 +362,7 @@
     align-items: center;
     flex-shrink: 0;
     justify-content: center;
-    height: 56px;
+    height: size(56px);
     cursor: pointer;
     transition: color $trans-default;
     color: rgba($color-default-white, 40%);
@@ -371,15 +371,15 @@
     background: none;
 
     @include tablet-desktop {
-      font-size: 16px;
-      min-height: 56px;
-      padding: 18px 0;
+      font-size: size(16px);
+      min-height: size(56px);
+      padding: size(18px) 0;
     }
 
     @include mobile {
-      font-size: 14px;
-      min-height: 46px;
-      padding: 14px 0;
+      font-size: size(14px);
+      min-height: size(46px);
+      padding: size(14px) 0;
     }
 
     @include hover-focus {
@@ -391,16 +391,16 @@
     font-weight: 300;
     font-style: normal;
     line-height: normal;
-    max-width: 350px;
+    max-width: size(350px);
     margin: 0;
     color: rgba($color-default-white, 30%);
 
     @include tablet-desktop {
-      font-size: 13px;
+      font-size: size(13px);
     }
 
     @include mobile {
-      font-size: 10px;
+      font-size: size(10px);
     }
 
     a {

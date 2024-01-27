@@ -15,16 +15,16 @@
     transition: border-color $trans-default, color $trans-default;
     text-align: center;
     color: $white-70;
-    border: 1px solid $white-10;
+    border: size(1px) solid $white-10;
 
     @include tablet-desktop {
-      font-size: 13px;
-      padding: 7px 11px;
+      font-size: size(13px);
+      padding: size(7px) size(11px);
     }
 
     @include mobile {
-      font-size: 11px;
-      padding: 4px 9px;
+      font-size: size(11px);
+      padding: size(4px) size(9px);
     }
 
     @include hover-focus {

@@ -1,54 +1,60 @@
 .set-card {
   @include tablet-desktop {
-    padding-top: 24px;
-    padding-bottom: 50px;
+    padding-top: size(24px);
+    padding-bottom: size(50px);
   }
 
   @include mobile {
-    padding-top: 13px;
-    padding-bottom: 30px;
+    padding-top: size(13px);
+    padding-bottom: size(30px);
   }
 
   &__container {
     position: relative;
     display: flex;
-    max-width: 1566px;
+    max-width: size(1566px);
 
     @include tablet-desktop {
       align-items: flex-start;
     }
 
     @include desktop {
-      gap: 110px;
+      gap: size(110px);
     }
 
     @include tablet {
-      gap: 55px;
+      gap: size(55px);
     }
 
     @include mobile {
       flex-direction: column;
-      row-gap: 27px;
+      row-gap: size(27px);
     }
   }
 
   &__content {
     @include tablet-desktop {
       position: sticky;
-      top: 20px;
+      top: size(20px);
       flex-shrink: 0;
     }
 
     @include desktop {
       display: flex;
-      width: calc(100% - 540px);
-      height: 1027px;
-      gap: 13px;
+      width: calc(100% - #{size(540px)});
+      height: size(1027px);
+      gap: size(13px);
     }
 
     @include tablet {
-      width: calc(100% - 425px);
-      height: 836px;
+      width: calc(100% - #{size(425px)});
+      height: size(454px);
+    }
+
+    @include mobile {
+      width: calc(100% + #{size($containerSideOffsetMobile)} * 2);
+      height: size(480px);
+      margin-left: size(-$containerSideOffsetMobile);
     }
 
     .gallery-slider__slide {
