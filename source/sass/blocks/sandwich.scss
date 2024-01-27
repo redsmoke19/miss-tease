@@ -1,0 +1,93 @@
+.sandwich {
+  display: none;
+
+  @include mobile-tablet {
+    align-items: center;
+    background-color: $color-transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    height: size(28px);
+    padding: 0;
+    position: relative;
+    transition: all $trans-default;
+    user-select: none;
+    width: size(28px);
+    z-index: 25;
+  }
+
+  &.is-active {
+    @include mobile-tablet {
+      transform: translate3d(0, 0, 0);
+      user-select: none;
+    }
+
+    .sandwich__menu {
+      @include mobile-tablet {
+        background-color: rgba($color-default-black, 0);
+        transition: all 0s 0.1s;
+      }
+    }
+
+    .sandwich__menu::after {
+      @include mobile-tablet {
+        left: 50%;
+        top: 0;
+        transform: translate3d(-50%, 0, 0) rotate(45deg);
+
+        transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), left 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+    }
+
+    .sandwich__menu::before {
+      @include mobile-tablet {
+        bottom: 0;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0) rotate(-45deg);
+        transition: bottom 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), left 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+    }
+  }
+
+  &__menu {
+    @include mobile-tablet {
+      background-color: $color-barley-corn;
+      height: 1px;
+      left: 50%;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      transition: all 0s 0.1s;
+      width: size(21px);
+    }
+
+    &::before {
+      @include mobile-tablet {
+        background-color: $color-barley-corn;
+        bottom: size(4px);
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        transform: translate3d(0, 0, 0);
+        transition: bottom 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), left 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        width: size(21px);
+      }
+    }
+
+    &::after {
+      @include vp-1023 {
+        background-color: $color-barley-corn;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: size(4px);
+        transform: translate3d(0, 0, 0);
+        transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), left 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        width: size(21px);
+      }
+    }
+  }
+}

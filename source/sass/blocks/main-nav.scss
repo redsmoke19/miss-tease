@@ -1,23 +1,60 @@
 .main-nav {
-  &__list {
+  @include mobile-tablet {
+    bottom: 0;
+    left: 0;
+    min-height: 100vh;
+    /* stylelint-disable-next-line */
+    min-height: calc((100 * var(--vh, 1vh)) - var(--header-height, 1vh));
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
     display: flex;
-    margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
-    padding: 0;
 
-    list-style: none;
+    &.is-active {
+      pointer-events: all;
+
+      .main-nav__wrapper {
+        opacity: 1;
+      }
+    }
   }
 
-  &__item {
-    margin-right: 20px;
+  &__wrapper {
+    @include mobile-tablet {
+      background-color: $color-black;
+      opacity: 0;
+      width: size(280px);
+    }
+  }
+
+  &__list {
+    align-items: center;
+    display: flex;
+    gap: size(44px);
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include mobile-tablet {
+      flex-direction: column;
+    }
   }
 
   &__link {
-    color: $color-default-white;
+    color: $white-70;
+    cursor: pointer;
+    display: flex;
+    font-size: size(14px);
+    letter-spacing: 0.06em;
+    line-height: size(14px);
+    padding: size(13px) 0;
+    text-transform: uppercase;
+    transition: color $trans-default;
 
-    &.is-active {
-      opacity: 0.6;
+    @include hover-focus {
+      color: $color-default-white;
     }
   }
 

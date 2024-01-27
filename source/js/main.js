@@ -8,6 +8,8 @@ import {initHeroSlider} from './modules/sliders/init-hero-slider.js';
 import {initCounters} from './modules/init-counters.js';
 import {initCustomInputs} from './modules/init-custom-inputs.js';
 import {initGallerySlider} from './modules/sliders/init-gallery-slider.js';
+import {initDynamicAdaptive} from './modules/init-dynamic-adaptive.js';
+import headerInit from './modules/header/index.js';
 
 // ---------------------------------
 
@@ -25,6 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
+    initDynamicAdaptive();
     uploadFile();
     uploadImageDrop();
     const select = new CustomSelect();
@@ -32,6 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+    headerInit.initPageMenu();
     initAccordions();
     initHeroSlider();
     initCounters();

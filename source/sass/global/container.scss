@@ -2,9 +2,9 @@
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 $containerSideOffsetDesktop;
+  padding: 0 size($containerSideOffsetDesktop);
 
   @include vp-767 {
-    padding: 0 $containerSideOffsetMobile;
+    padding: 0 size($containerSideOffsetMobile);
   }
 }
