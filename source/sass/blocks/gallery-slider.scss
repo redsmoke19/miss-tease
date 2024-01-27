@@ -1,8 +1,4 @@
 .gallery-slider {
-  position: sticky;
-  top: 20px;
-  flex-shrink: 0;
-
   @include desktop {
     display: flex;
     width: calc(100% - 540px);

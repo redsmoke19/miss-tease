@@ -1,0 +1,21 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Карточка комплекта"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "set-card.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    +back-link("Назад к бюстгальтерам")
+    +product-card()
+
+block modals
+  +modal("modal--cart")(data-modal="cart")
+    +modal-cart()
+  +modal("modal--gallery")(data-modal="gallery")
+    +modal-gallery()
