@@ -7,33 +7,33 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: 20px 9px 0 30px;
+    padding: size(20px) size(9px) 0 size(30px);
   }
 
   &__title {
     font-family: $ff-cormorant;
-    font-size: 44px;
+    font-size: size(44px);
     font-weight: 400;
     line-height: 100%;
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: size(40px);
     color: $color-default-white;
   }
 
   &__scroll-wrapper {
     overflow-y: auto;
     flex-grow: 1;
-    height: 100px;
+    height: size(100px);
     scrollbar-width: thin;
     scrollbar-color: $color-peru $color-nero;
 
     &::-webkit-scrollbar {
       @include tablet-desktop {
-        width: 3px;
+        width: size(3px);
       }
 
       @include mobile {
-        width: 2px;
+        width: size(2px);
       }
     }
 
@@ -41,11 +41,11 @@
       background: $color-peru;
 
       @include tablet-desktop {
-        border-radius: 30px;
+        border-radius: size(30px);
       }
 
       @include mobile {
-        border-radius: 20px;
+        border-radius: size(20px);
       }
     }
   }
@@ -55,39 +55,39 @@
     flex-direction: column;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 0 28px 0 0;
+    padding: 0 size(28px) 0 0;
     list-style: none;
-    gap: 20px;
+    gap: size(20px);
   }
 
   &__item {
-    width: 420px;
-    padding-bottom: 19px;
+    width: size(420px);
+    padding-bottom: size(19px);
 
     &:not(:last-child) {
-      border-bottom: 1px solid rgba($color-default-white, 4%);
+      border-bottom: size(1px) solid rgba($color-default-white, 4%);
     }
   }
 
   &__footer {
     width: 100%;
-    padding: 37px 40px 32px 30px;
+    padding: size(37px) size(40px) size(32px) size(30px);
   }
 
   &__total {
-    font-size: 22px;
+    font-size: size(22px);
     font-weight: 300;
     display: flex;
     justify-content: space-between;
     margin-top: 0;
-    margin-bottom: 30px;
-    padding-right: 10px;
+    margin-bottom: size(30px);
+    padding-right: size(10px);
     color: $color-barley-corn;
   }
 
   &__buttons {
     display: flex;
-    gap: 20px;
+    gap: size(20px);
   }
 
   &__button {
@@ -102,10 +102,10 @@
   &__delete {
     position: absolute;
     z-index: 1;
-    top: 10px;
+    top: size(10px);
     right: 0;
-    width: 18px;
-    height: 18px;
+    width: size(18px);
+    height: size(18px);
     padding: 0;
     cursor: pointer;
     transition: color $trans-default;
@@ -125,33 +125,33 @@
 
   &__img {
     flex-shrink: 0;
-    width: 96px;
-    height: 142px;
-    margin-right: 20px;
+    width: size(96px);
+    height: size(142px);
+    margin-right: size(20px);
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: size(10px);
+    padding-bottom: size(10px);
   }
 
   &__name {
-    font-size: 16px;
+    font-size: size(16px);
     font-weight: 400;
     line-height: normal;
     margin-top: 0;
-    margin-bottom: 7px;
+    margin-bottom: size(7px);
     color: rgba($color-default-white, 70%);
   }
 
   &__size {
-    font-size: 13px;
+    font-size: size(13px);
     font-weight: 300;
     margin-top: 0;
-    margin-bottom: 7px;
+    margin-bottom: size(7px);
     color: rgba($color-default-white, 40%);
 
     span {
@@ -164,11 +164,11 @@
     align-items: center;
     justify-content: space-between;
     margin-top: auto;
-    gap: 20px;
+    gap: size(20px);
   }
 
   &__price {
-    font-size: 14px;
+    font-size: size(14px);
     font-weight: 500;
     margin: 0;
     text-align: right;

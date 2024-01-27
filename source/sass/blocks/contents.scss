@@ -1,14 +1,14 @@
 .contents {
   &__name {
-    font-size: 20px;
+    font-size: size(20px);
     font-weight: 300;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: size(10px);
     color: $color-default-white;
 
     @include mobile {
-      font-size: 14px;
-      margin-bottom: 1px;
+      font-size: size(14px);
+      margin-bottom: size(1px);
     }
   }
 
@@ -21,42 +21,42 @@
 
     &:not(.contents__title--sm) {
       @include tablet-desktop {
-        font-size: 50px;
-        margin-bottom: 44px;
+        font-size: size(50px);
+        margin-bottom: size(44px);
       }
 
       @include mobile {
-        margin-bottom: 18px;
+        margin-bottom: size(18px);
       }
     }
 
     &--sm {
       @include tablet-desktop {
-        font-size: 44px;
-        margin-bottom: 35px;
+        font-size: size(44px);
+        margin-bottom: size(35px);
       }
 
       @include mobile {
-        margin-bottom: 15px;
+        margin-bottom: size(15px);
       }
     }
 
     @include mobile {
-      font-size: 36px;
+      font-size: size(36px);
     }
   }
 
   &__list-wrapper {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid $white-10;
+    border-bottom: size(1px) solid $white-10;
 
     @include tablet-desktop {
-      padding-bottom: 40px;
+      padding-bottom: size(40px);
     }
 
     @include mobile {
-      padding-bottom: 25px;
+      padding-bottom: size(25px);
     }
   }
 
@@ -69,20 +69,20 @@
     list-style: none;
 
     @include tablet-desktop {
-      row-gap: 40px;
+      row-gap: size(40px);
     }
 
     @include mobile {
-      row-gap: 30px;
+      row-gap: size(30px);
     }
 
     &:not(:last-child) {
       @include tablet-desktop {
-        margin-bottom: 30px;
+        margin-bottom: size(30px);
       }
 
       @include mobile {
-        margin-bottom: 15px;
+        margin-bottom: size(15px);
       }
     }
   }
@@ -93,13 +93,13 @@
     color: $white-70;
 
     @include tablet-desktop {
-      font-size: 22px;
-      margin-bottom: 30px;
+      font-size: size(22px);
+      margin-bottom: size(30px);
     }
 
     @include mobile {
-      font-size: 16px;
-      margin-bottom: 18px;
+      font-size: size(16px);
+      margin-bottom: size(18px);
     }
   }
 
@@ -107,25 +107,25 @@
     display: inline-flex;
     align-items: center;
     color: $white-56;
-    gap: 10px;
+    gap: size(10px);
 
     @include tablet-desktop {
-      font-size: 14px;
+      font-size: size(14px);
     }
 
     @include mobile {
-      font-size: 12px;
+      font-size: size(12px);
     }
 
     svg {
       @include tablet-desktop {
-        width: 20px;
-        height: 20px;
+        width: size(20px);
+        height: size(20px);
       }
 
       @include mobile {
-        width: 16px;
-        height: 16px;
+        width: size(16px);
+        height: size(16px);
       }
     }
   }
@@ -133,16 +133,16 @@
   &__look {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid $white-10;
+    border-bottom: size(1px) solid $white-10;
 
     @include tablet-desktop {
-      padding-top: 41px;
-      padding-bottom: 40px;
+      padding-top: size(41px);
+      padding-bottom: size(40px);
     }
 
     @include mobile {
-      padding-top: 31px;
-      padding-bottom: 29px;
+      padding-top: size(31px);
+      padding-bottom: size(29px);
     }
   }
 
@@ -152,13 +152,13 @@
     color: $color-default-white;
 
     @include tablet-desktop {
-      font-size: 26px;
-      margin-bottom: 34px;
+      font-size: size(26px);
+      margin-bottom: size(34px);
     }
 
     @include mobile {
-      font-size: 20px;
-      margin-bottom: 20px;
+      font-size: size(20px);
+      margin-bottom: size(20px);
     }
   }
 
@@ -168,23 +168,23 @@
     color: $color-default-white;
 
     @include tablet-desktop {
-      font-size: 26px;
-      margin-bottom: 42px;
+      font-size: size(26px);
+      margin-bottom: size(42px);
     }
 
     @include mobile {
-      font-size: 20px;
-      margin-bottom: 27px;
+      font-size: size(20px);
+      margin-bottom: size(27px);
     }
   }
 
   &__sizes {
     @include tablet-desktop {
-      margin-bottom: 20px;
+      margin-bottom: size(20px);
     }
 
     @include mobile {
-      margin-bottom: 3px;
+      margin-bottom: size(3px);
     }
   }
 }
@@ -194,22 +194,22 @@
   align-items: flex-start;
 
   @include tablet-desktop {
-    column-gap: 30px;
+    column-gap: size(30px);
   }
 
   @include mobile {
-    column-gap: 16px;
+    column-gap: size(16px);
   }
 
   &__img {
     @include tablet-desktop {
-      width: 98px;
-      height: 148px;
+      width: size(98px);
+      height: size(148px);
     }
 
     @include mobile {
-      width: 74px;
-      height: 112px;
+      width: size(74px);
+      height: size(112px);
     }
 
     img {
@@ -226,7 +226,7 @@
   }
 
   &__header {
-    font-size: 16px;
+    font-size: size(16px);
     font-weight: 400;
     font-style: normal;
     line-height: normal;
@@ -234,24 +234,24 @@
     align-items: baseline;
     justify-content: space-between;
     color: $white-70;
-    gap: 20px;
+    gap: size(20px);
 
     @include tablet-desktop {
-      font-size: 16px;
-      margin-bottom: 20px;
+      font-size: size(16px);
+      margin-bottom: size(20px);
     }
 
     @include mobile {
-      font-size: 13px;
-      margin-bottom: 19px;
+      font-size: size(13px);
+      margin-bottom: size(19px);
     }
   }
 
   &__select {
-    margin-bottom: 20px;
+    margin-bottom: size(20px);
 
     @include mobile {
-      margin-bottom: 19px;
+      margin-bottom: size(19px);
     }
   }
 }
@@ -261,11 +261,11 @@
   flex-direction: column;
 
   @include tablet-desktop {
-    padding-top: 34px;
+    padding-top: size(34px);
   }
 
   @include mobile {
-    padding-top: 31px;
+    padding-top: size(31px);
   }
 
   &__total {
@@ -275,25 +275,25 @@
     justify-content: space-between;
     margin-top: 0;
     color: $color-barley-corn;
-    gap: 20px;
+    gap: size(20px);
 
     @include tablet-desktop {
-      font-size: 26px;
-      margin-bottom: 34px;
+      font-size: size(26px);
+      margin-bottom: size(34px);
     }
 
     @include mobile {
-      font-size: 20px;
-      margin-bottom: 20px;
+      font-size: size(20px);
+      margin-bottom: size(20px);
     }
   }
 
   &__button {
     &:not(:last-child) {
-      margin-bottom: 80px;
+      margin-bottom: size(80px);
 
       @include mobile {
-        margin-bottom: 60px;
+        margin-bottom: size(60px);
       }
     }
   }
@@ -303,32 +303,32 @@
     align-items: center;
 
     @include tablet-desktop {
-      column-gap: 40px;
+      column-gap: size(40px);
     }
 
     @include mobile {
-      column-gap: 20px;
+      column-gap: size(20px);
     }
 
     &:not(:last-child) {
       @include tablet-desktop {
-        margin-bottom: 40px;
+        margin-bottom: size(40px);
       }
 
       @include mobile {
-        margin-bottom: 60px;
+        margin-bottom: size(60px);
       }
     }
 
     .counter {
       @include desktop {
-        flex: 1 0 142px;
-        max-width: 142px;
+        flex: 1 0 size(142px);
+        max-width: size(142px);
       }
 
       @include mobile {
-        flex: 1 0 117px;
-        max-width: 117px;
+        flex: 1 0 size(117px);
+        max-width: size(117px);
       }
     }
 
@@ -345,13 +345,13 @@
     color: $white-56;
 
     @include tablet-desktop {
-      font-size: 16px;
-      margin-bottom: 14px;
+      font-size: size(16px);
+      margin-bottom: size(14px);
     }
 
     @include mobile {
-      font-size: 13px;
-      margin-bottom: 5px;
+      font-size: size(13px);
+      margin-bottom: size(5px);
     }
   }
 
@@ -360,20 +360,20 @@
     flex-wrap: wrap;
 
     @include tablet-desktop {
-      gap: 6px;
+      gap: size(6px);
     }
 
     @include mobile {
-      gap: 8px;
+      gap: size(8px);
     }
 
     &:not(:last-child) {
       @include tablet-desktop {
-        margin-bottom: 18px;
+        margin-bottom: size(18px);
       }
 
       @include mobile {
-        margin-bottom: 16px;
+        margin-bottom: size(16px);
       }
     }
   }

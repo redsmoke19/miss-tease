@@ -1,10 +1,10 @@
 .info {
   @include tablet-desktop {
-    padding-bottom: 30px;
+    padding-bottom: size(30px);
   }
 
   @include mobile {
-    padding-bottom: 24px;
+    padding-bottom: size(24px);
   }
 
 
@@ -14,11 +14,11 @@
     color: $white-70;
 
     @include tablet-desktop {
-      font-size: 18px;
+      font-size: size(18px);
     }
 
     @include mobile {
-      font-size: 14px;
+      font-size: size(14px);
     }
 
     &:last-child {
@@ -27,11 +27,11 @@
 
     &:not(:last-child) {
       @include tablet-desktop {
-        margin-bottom: 10px;
+        margin-bottom: size(10px);
       }
 
       @include mobile {
-        margin-bottom: 8px;
+        margin-bottom: size(8px);
       }
     }
   }
@@ -43,11 +43,11 @@
     color: $white-56;
 
     @include tablet-desktop {
-      font-size: 16px;
+      font-size: size(16px);
     }
 
     @include mobile {
-      font-size: 13px;
+      font-size: size(13px);
     }
 
     &:last-child {
@@ -56,11 +56,11 @@
 
     &:not(:last-child) {
       @include tablet-desktop {
-        margin-bottom: 13px;
+        margin-bottom: size(13px);
       }
 
       @include mobile {
-        margin-bottom: 10px;
+        margin-bottom: size(10px);
       }
     }
   }
@@ -74,11 +74,11 @@
     list-style: none;
 
     @include tablet-desktop {
-      gap: 14px;
+      gap: size(14px);
     }
 
     @include mobile {
-      gap: 11px;
+      gap: size(11px);
     }
 
     &:last-child {
@@ -87,11 +87,11 @@
 
     &:not(:last-child) {
       @include tablet-desktop {
-        margin-bottom: 12px;
+        margin-bottom: size(12px);
       }
 
       @include mobile {
-        margin-bottom: 10px;
+        margin-bottom: size(10px);
       }
     }
   }
@@ -103,13 +103,13 @@
     color: $white-56;
 
     @include tablet-desktop {
-      font-size: 16px;
-      padding-left: 24px;
+      font-size: size(16px);
+      padding-left: size(24px);
     }
 
     @include mobile {
-      font-size: 13px;
-      padding-left: 19px;
+      font-size: size(13px);
+      padding-left: size(19px);
     }
 
     &::before {
@@ -120,32 +120,32 @@
       background-color: $color-barley-corn;
 
       @include tablet-desktop {
-        top: 11px;
-        width: 6px;
-        height: 6px;
+        top: size(11px);
+        width: size(6px);
+        height: size(6px);
       }
 
       @include mobile {
-        top: 6px;
-        width: 5px;
-        height: 5px;
+        top: size(6px);
+        width: size(5px);
+        height: size(5px);
       }
     }
   }
 
   a {
-    font-size: 14px;
+    font-size: size(14px);
     font-weight: 400;
     display: inline-block;
     transition: opacity $trans-default;
     color: $color-barley-corn;
 
     @include tablet-desktop {
-      font-size: 14px;
+      font-size: size(14px);
     }
 
     @include mobile {
-      font-size: 11px;
+      font-size: size(11px);
     }
 
     @include hover-focus {
@@ -154,11 +154,11 @@
 
     &:not(:last-child) {
       @include tablet-desktop {
-        margin-bottom: 27px;
+        margin-bottom: size(27px);
       }
 
       @include mobile {
-        margin-bottom: 22px;
+        margin-bottom: size(22px);
       }
     }
   }

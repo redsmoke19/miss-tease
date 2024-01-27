@@ -9,21 +9,17 @@
     left: 0;
     transition: transform $trans-default, opacity $trans-default;
     transform: translateY(-50%);
-    letter-spacing: 0.72px;
+    letter-spacing: size(0.72px);
     text-transform: uppercase;
     pointer-events: none;
     color: $white-40;
 
     @include tablet-desktop {
-      font-size: 12px;
+      font-size: size(12px);
     }
 
     @include mobile {
-      font-size: 10px;
-    }
-
-    @media screen and (max-width: 767px) {
-      transform: translateY(calc(-50% - 5px));
+      font-size: size(10px);
     }
   }
 
@@ -35,17 +31,17 @@
     left: 0;
     transition: transform $trans-default, opacity $trans-default;
     transform: translateY(-50%);
-    letter-spacing: 0.72px;
+    letter-spacing: size(0.72px);
     text-transform: uppercase;
     pointer-events: none;
     color: $white-40;
 
     @include tablet-desktop {
-      font-size: 12px;
+      font-size: size(12px);
     }
 
     @include mobile {
-      font-size: 10px;
+      font-size: size(10px);
     }
   }
 
@@ -66,20 +62,20 @@
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10px 0;
+    padding: size(10px) 0;
     cursor: pointer;
     transition: border $trans-default;
     border: none;
-    border-bottom: 1px solid $white-10;
+    border-bottom: size(1px) solid $white-10;
     outline: none;
     background-color: $color-transparent;
 
     @include tablet-desktop {
-      height: 44px;
+      height: size(44px);
     }
 
     @include mobile {
-      padding: 13px 0;
+      padding: size(13px) 0;
     }
 
     @include hover-focus {
@@ -99,25 +95,25 @@
     visibility: hidden;
     overflow-y: auto;
     width: 100%;
-    max-height: 272px;
+    max-height: size(272px);
     margin: 0;
-    padding: 6px 0;
+    padding: size(6px) 0;
     list-style: none;
     transition: visibility $trans-default, opacity $trans-default;
     transform: translateY(100%);
     opacity: 0;
     background-color: $color-nero-2;
-    box-shadow: 0 4px 30px 0 rgba($color-default-black, 25%);
+    box-shadow: 0 size(4px) size(30px) 0 rgba($color-default-black, 25%);
     scrollbar-width: thin;
     scrollbar-color: $color-peru $color-black;
 
     &::-webkit-scrollbar {
       @include tablet-desktop {
-        width: 3px;
+        width: size(3px);
       }
 
       @include mobile {
-        width: 2px;
+        width: size(2px);
       }
     }
 
@@ -125,11 +121,11 @@
       background: $color-peru;
 
       @include tablet-desktop {
-        border-radius: 30px;
+        border-radius: size(30px);
       }
 
       @include mobile {
-        border-radius: 20px;
+        border-radius: size(20px);
       }
     }
   }
@@ -140,21 +136,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 16px;
+    padding: size(5px) size(16px);
     cursor: pointer;
     transition: background-color $trans-default, color $trans-default;
-    letter-spacing: 0.72px;
+    letter-spacing: size(0.72px);
     text-transform: uppercase;
     color: $white-70;
     outline: none;
-    gap: 10px;
+    gap: size(10px);
 
     @include tablet-desktop {
-      font-size: 12px;
+      font-size: size(12px);
     }
 
     @include mobile {
-      font-size: 10px;
+      font-size: size(10px);
     }
 
     svg {
@@ -182,7 +178,7 @@
 
   &__error {
     position: absolute;
-    bottom: -15px;
+    bottom: size(-15px);
     left: 0;
 
     transition: opacity 0.1s ease;
@@ -201,18 +197,18 @@
     transition: opacity $trans-default 0.1s;
     text-align: left;
     white-space: nowrap;
-    letter-spacing: 0.72px;
+    letter-spacing: size(0.72px);
     text-transform: uppercase;
     text-overflow: ellipsis;
     opacity: 0;
     color: $color-barley-corn;
 
     @include tablet-desktop {
-      font-size: 12px;
+      font-size: size(12px);
     }
 
     @include mobile {
-      font-size: 10px;
+      font-size: size(10px);
     }
 
     br {
@@ -230,13 +226,13 @@
     color: $white-70;
 
     @include tablet-desktop {
-      width: 14px;
-      height: 14px;
+      width: size(14px);
+      height: size(14px);
     }
 
     @include mobile {
-      width: 12px;
-      height: 12px;
+      width: size(12px);
+      height: size(12px);
     }
 
     svg {
@@ -257,7 +253,7 @@
     .custom-select__list {
       top: 0;
       bottom: auto;
-      transform: translateY(calc(-100% + 10px));
+      transform: translateY(-100%);
     }
   }
 
@@ -301,11 +297,11 @@
     }
 
     .custom-select__button {
-      border: 2px solid #ff1553;
+      border: size(2px) solid #ff1553;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#ff1553, 0.5);
+        border: size(2px) solid rgba(#ff1553, 0.5);
       }
     }
   }
@@ -323,7 +319,7 @@
 
   &--placeholder {
     .custom-select__label {
-      transform: translateY(calc(-50% - 40px));
+      transform: translateY(calc(-50% - #{size(40px)}));
       opacity: 1;
     }
 
@@ -339,7 +335,7 @@
   &.slide-up.not-empty,
   &.slide-up.is-open {
     .custom-select__label {
-      transform: translateY(calc(-50% - 40px));
+      transform: translateY(calc(-50% - #{size(40px)}));
       opacity: 1;
     }
 
@@ -351,7 +347,7 @@
   .input-message {
     position: absolute;
     right: 0;
-    bottom: -5px;
+    bottom: size(-5px);
 
     &.is-invalid {
       color: #ff0000;

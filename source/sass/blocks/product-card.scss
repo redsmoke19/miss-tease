@@ -1,12 +1,12 @@
 .product-card {
   @include tablet-desktop {
-    padding-top: 24px;
-    padding-bottom: 50px;
+    padding-top: size(24px);
+    padding-bottom: size(50px);
   }
 
   @include mobile {
-    padding-top: 13px;
-    padding-bottom: 30px;
+    padding-top: size(13px);
+    padding-bottom: size(30px);
   }
 
   &__container {
@@ -18,16 +18,16 @@
     }
 
     @include desktop {
-      gap: 80px;
+      gap: size(80px);
     }
 
     @include tablet {
-      gap: 55px;
+      gap: size(55px);
     }
 
     @include mobile {
       flex-direction: column;
-      row-gap: 30px;
+      row-gap: size(30px);
     }
   }
 
@@ -35,29 +35,33 @@
     flex-shrink: 0;
 
     @include desktop {
-      width: calc(100% - 628px);
+      width: calc(100% - #{size(628px)});
       margin: 0;
     }
 
     @include tablet {
-      width: calc(100% - 425px);
-      height: 833px;
+      width: calc(100% - #{size(425px)});
+      height: size(454px);
     }
 
     @include mobile {
-      width: calc(100% + $containerSideOffsetMobile * 2);
-      height: 480px;
-      margin-left: -$containerSideOffsetMobile;
+      width: calc(100% + #{size($containerSideOffsetMobile)} * 2);
+      height: size(480px);
+      margin-left: size(-$containerSideOffsetMobile);
     }
   }
 
   &__aside {
     @include tablet-desktop {
       position: sticky;
-      top: 20px;
+      top: size(20px);
       flex-grow: 1;
       flex-shrink: 0;
-      max-width: 430px;
+      max-width: size(430px);
+    }
+
+    @include tablet {
+      width: size(370px);
     }
 
     @include mobile {
@@ -75,11 +79,11 @@
     }
 
     @include tablet {
-      bottom: 30px;
+      bottom: size(30px);
     }
 
     @include mobile {
-      bottom: 10px;
+      bottom: size(10px);
     }
   }
 
@@ -92,13 +96,13 @@
       padding: 0;
       list-style: none;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 12px;
+      grid-gap: size(12px);
     }
   }
 
   &__gallery-item {
     @include desktop {
-      min-height: 932px;
+      min-height: size(932px);
     }
 
     video,
