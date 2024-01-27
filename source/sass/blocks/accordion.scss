@@ -1,0 +1,43 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba($color-default-white, 10%);
+
+  &:last-child {
+    border-bottom: 1px solid rgba($color-default-white, 10%);
+  }
+
+  &.is-active {
+    .accordion__button svg {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.accordion__button {
+  font-size: 15px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: $color-default-white;
+  border: none;
+  outline: none;
+  background: none;
+  column-gap: 20px;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    transition: transform $trans-default;
+    color: rgba($color-default-white, 56%);
+  }
+}
+
+.accordion__content {
+
+}

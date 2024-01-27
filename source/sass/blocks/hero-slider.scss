@@ -1,46 +1,6 @@
 .hero-slider {
   .swiper-pagination {
-    position: absolute;
-    z-index: 2;
-    right: 0;
-    bottom: 40px;
-    left: 0;
-    display: flex;
-    width: calc(100% - 40px);
-    max-width: 1497px;
-    margin-right: auto;
-    margin-left: auto;
-    column-gap: 10px;
 
-    @include tablet-desktop {
-      bottom: 40px;
-    }
-
-    @include mobile {
-      bottom: 20px;
-      justify-content: center;
-    }
-  }
-
-  .swiper-pagination-bullet {
-    z-index: 10;
-    display: block;
-    width: 60px;
-    height: 2px;
-    opacity: 1;
-    background-color: rgba($color-default-white, 30%);
-    background-image: linear-gradient(90deg, $color-peru 50%, rgba($color-default-white, 30%) 0 100%);
-    background-repeat: no-repeat;
-    background-position: 0 100%;
-    background-size: 200% 100%;
-  }
-
-  .swiper-pagination-bullet-active {
-    background-position: var(--progress) 100%;
-
-    ~ .swiper-pagination-bullet {
-      background-position: 100% 100%;
-    }
   }
 }
 

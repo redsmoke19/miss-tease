@@ -1,0 +1,8 @@
+mixin accordion(text)
+  .accordion(data-accordion="element")&attributes(attributes)
+    button.accordion__button(type="button", data-accordion="button")
+      span!= text
+      +icon("icon-plus", 12, 12)
+    .accordion__content(data-accordion="content")
+      if block
+        block

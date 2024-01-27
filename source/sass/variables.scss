@@ -5,11 +5,17 @@
 
 $color-default-black:               #000000;
 $color-default-white:               #ffffff;
+$white-10:                          rgba($color-default-white, 10%);
+$white-30:                          rgba($color-default-white, 30%);
+$white-40:                          rgba($color-default-white, 40%);
+$white-56:                          rgba($color-default-white, 56%);
+$white-70:                          rgba($color-default-white, 70%);
 $color-transparent:                 rgba(255, 255, 255, 0);
 $color-accent-main: #2c39f2;
 $color-accent-second: #212121;
 $color-black: #0d0d0d;
 $color-nero: #141414;
+$color-nero-2: #171717;
 $color-peru: #c68449;
 $color-barley-corn: #b88f64;
 $color-sunset-orange: #ef4747;
@@ -65,3 +71,10 @@ $vp-1920:                           1920px;
 
 $retina-dpi:                        144dpi;
 $retina-dppx:                       1.5dppx;
+
+// Container
+// ---------------------------------
+
+
+$containerSideOffsetDesktop:        20px;
+$containerSideOffsetMobile:         10px;
