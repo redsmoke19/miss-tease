@@ -1,0 +1,5 @@
+mixin back-link(text)
+  .container
+    a.link-back(href="#")&attributes(attributes)
+      +icon("icon-arrow-back", 28, 28)
+      span!= text

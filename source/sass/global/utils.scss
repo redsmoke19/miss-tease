@@ -110,3 +110,41 @@
     background-position-x: 0;
   }
 }
+
+.link-back {
+  font-weight: 400;
+  line-height: 100%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: color $trans-default;
+  color: $white-56;
+
+  @include tablet-desktop {
+    font-size: 14px;
+    column-gap: 10px;
+  }
+
+  @include mobile {
+    font-size: 12px;
+    column-gap: 6px;
+  }
+
+  @include hover-focus {
+    color: $color-default-white;
+  }
+
+  svg {
+    flex-shrink: 0;
+
+    @include tablet-desktop {
+      width: 28px;
+      height: 28px;
+    }
+
+    @include mobile {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}

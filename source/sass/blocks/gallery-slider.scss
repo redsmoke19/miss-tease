@@ -1,0 +1,117 @@
+.gallery-slider {
+  position: sticky;
+  top: 20px;
+  flex-shrink: 0;
+
+  @include desktop {
+    display: flex;
+    width: calc(100% - 540px);
+    gap: 13px;
+  }
+
+  @include tablet {
+    width: calc(100% - 425px);
+  }
+
+  &__pagination {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__slider {
+    @include mobile {
+      width: calc(100% + $containerSideOffsetMobile * 2);
+      margin-left: -$containerSideOffsetMobile;
+    }
+  }
+
+  &__thumbs-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__thumb {
+    width: 116px;
+    height: 174px;
+    cursor: pointer;
+    transition: opacity $trans-default;
+    opacity: 0.6;
+
+    &.swiper-slide-thumb-active {
+      opacity: 1;
+    }
+  }
+
+  &__thumbs {
+    @include desktop {
+      flex-shrink: 0;
+      height: 100%;
+    }
+
+    @include mobile-tablet {
+      display: none;
+    }
+  }
+
+  &__slide {
+    video,
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__button {
+    @include tablet-desktop {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 77px;
+      padding: 0;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    svg {
+      width: 35px;
+      height: 35px;
+      transition: transform $trans-default;
+    }
+
+    &--next {
+      right: 0;
+
+      @include hover-focus {
+        svg {
+          transform: scale(1.1, 1.1) translateX(10%);
+        }
+      }
+    }
+
+    &--prev {
+      left: 0;
+
+      svg {
+        transform: scale(-1, 1);
+      }
+
+      @include hover-focus {
+        svg {
+          transform: scale(-1.1, 1.1) translateX(10%);
+        }
+      }
+    }
+  }
+}

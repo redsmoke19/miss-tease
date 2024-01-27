@@ -1,164 +1,70 @@
 .set-card {
-  padding-top: 30px;
-  padding-bottom: 50px;
-}
-
-.set-card__container {
-  display: flex;
-  max-width: 1566px;
-
   @include tablet-desktop {
-    align-items: flex-start;
-  }
-
-  @include desktop {
-    gap: 110px;
-  }
-
-  @include tablet {
-    gap: 55px;
+    padding-top: 24px;
+    padding-bottom: 50px;
   }
 
   @include mobile {
-    flex-direction: column;
-    row-gap: 30px;
+    padding-top: 13px;
+    padding-bottom: 30px;
   }
-}
 
-.set-card__content {
-  flex-shrink: 0;
-
-  @include desktop {
+  &__container {
+    position: relative;
     display: flex;
-    width: calc(100% - 540px);
-    gap: 13px;
-  }
+    max-width: 1566px;
 
-  @include tablet {
-    width: calc(100% - 425px);
-  }
-}
+    @include tablet-desktop {
+      align-items: flex-start;
+    }
 
-.set-card__slider {
+    @include desktop {
+      gap: 110px;
+    }
 
-}
+    @include tablet {
+      gap: 55px;
+    }
 
-.set-card__aside {
-  @include tablet-desktop {
-    flex-grow: 1;
-  }
-
-  @include mobile {
-    width: 100%;
-  }
-}
-
-.set-card__contents {
-  width: 100%;
-}
-
-.set-card__slider {
-  @include mobile {
-    width: calc(100% + $containerSideOffsetMobile * 2);
-    margin-left: -$containerSideOffsetMobile;
-  }
-}
-
-.set-card__button {
-  @include tablet-desktop {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 77px;
-    padding: 0;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-  }
-
-  @include mobile {
-    display: none;
-  }
-
-  svg {
-    width: 35px;
-    height: 35px;
-    transition: transform $trans-default;
-  }
-
-  &--next {
-    right: 0;
-
-    @include hover-focus {
-      svg {
-        transform: scale(1.1, 1.1) translateX(10%);
-      }
+    @include mobile {
+      flex-direction: column;
+      row-gap: 27px;
     }
   }
 
-  &--prev {
-    left: 0;
-
-    svg {
-      transform: scale(-1, 1);
-    }
-
-    @include hover-focus {
-      svg {
-        transform: scale(-1.1, 1.1) translateX(10%);
-      }
-    }
-  }
-}
-
-.set-card__thumbs-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.set-card__thumb {
-  width: 116px;
-  height: 174px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  transition: opacity $trans-default;
-  opacity: 0.6;
-
-  &.swiper-slide-thumb-active {
-    opacity: 1;
-  }
-}
-
-.set-card__thumbs {
-  @include desktop {
+  &__content {
+    position: sticky;
+    top: 20px;
     flex-shrink: 0;
-    height: 1027px;
+
+    @include desktop {
+      display: flex;
+      width: calc(100% - 540px);
+      height: 1027px;
+      gap: 13px;
+    }
+
+    @include tablet {
+      width: calc(100% - 425px);
+      height: 836px;
+    }
+
+    .gallery-slider__slide {
+      cursor: pointer;
+    }
   }
 
-  @include mobile-tablet {
-    display: none;
-  }
-}
+  &__aside {
+    @include tablet-desktop {
+      flex-grow: 1;
+    }
 
-.set-card__slide {
-  width: 100%;
-
-  @include desktop {
-    height: 1027px;
+    @include mobile {
+      width: 100%;
+    }
   }
 
-  @include tablet {
-    height: 836px;
-  }
-
-  img {
+  &__contents {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 }

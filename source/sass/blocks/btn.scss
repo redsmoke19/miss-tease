@@ -1,5 +1,4 @@
 .btn {
-  font-size: 14px;
   font-weight: 400;
   line-height: 100%;
   display: inline-flex;
@@ -14,12 +13,24 @@
   border: none;
   background-color: $color-barley-corn;
 
+  @include tablet-desktop {
+    font-size: 14px;
+  }
+
+  @include mobile {
+    font-size: 12px;
+  }
+
   &:not(.btn--big) {
     padding: 15px 40px;
   }
 
   &--big {
     padding: 21px 40px;
+
+    @include mobile {
+      padding: 17px 40px;
+    }
   }
 
   @include hover-focus {
@@ -54,9 +65,18 @@
   }
 
   &--small {
-    font-size: 16px;
     font-weight: 300;
-    padding: 13px 39px;
+
+    @include tablet-desktop {
+      font-size: 16px;
+      padding: 13px 39px;
+    }
+
+    @include mobile {
+      font-size: 13px;
+      min-height: 38px;
+      padding: 10px 24px;
+    }
   }
 
   @include hover-focus {

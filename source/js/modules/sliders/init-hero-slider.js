@@ -30,6 +30,22 @@ const initHeroSlider = () => {
     },
     rewind: true,
     on: {
+      init(s) {
+        s.emit('slideChange', s);
+      },
+      slideChange({slides, activeIndex}) {
+        Array.prototype.forEach.call(slides, (slide, idx) => {
+          const video = slide.querySelector('video');
+          if (!video) {
+            return;
+          }
+          if (idx === activeIndex) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      },
       autoplayTimeLeft(s, time, progress) {
         parent.style.setProperty('--progress', `${progress * 100}%`);
       },

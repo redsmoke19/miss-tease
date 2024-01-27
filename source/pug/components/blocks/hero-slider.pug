@@ -16,7 +16,8 @@ mixin hero-slider()
           a.hero-slide__link.link-bordered(href="#") Купить сейчас
       .hero-slider__slide.hero-slide.swiper-slide
         .hero-slide__img
-          +picture-mob("hero", "hero-slide-1", "jpg", 3840, 1880, "")
+          video(muted, loop, playsinline)
+            source(src="video/glitter-dancing-in-the-air.mp4")
         .hero-slide__content.container
           h2.hero-slide__title Дерзкий силуэт
 
