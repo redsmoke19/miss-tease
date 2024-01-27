@@ -165,17 +165,39 @@ block main
             p.uikit__text Базовый селект c placeholder
             p.uikit__text.uikit__text--class +custom-select \ default
             +custom-select({
-              placeholder: "Выберите одну из опций",
-              error: "Выберите тему обращения",
-              optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
+              placeholder: "Выбрать размер",
+              error: "Выберите размер",
+              optionsList: [
+                {text: '70B', value: '70B'},
+                {text: '70C', value: '70C'},
+                {text: '70D', value: '70D'},
+                {text: '75B', value: '75B'},
+                {text: '75C', value: '75C'},
+                {text: '75D', value: '75D'},
+                {text: '80B', value: '80B'},
+                {text: '80C', value: '80C'},
+                {text: '80D', value: '80D'},
+                {text: '75A', value: '75A'},
+              ]
             })(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1")
             pre
               |
               code(class="language-pug").
                 +custom-select({
-                  placeholder: "Выберите одну из опций",
-                  error: "Выберите тему обращения",
-                  optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
+                  placeholder: "Выбрать размер",
+                  error: "Выберите размер",
+                  optionsList: [
+                    {text: '70B', value: '70B'},
+                    {text: '70C', value: '70C'},
+                    {text: '70D', value: '70D'},
+                    {text: '75B', value: '75B'},
+                    {text: '75C', value: '75C'},
+                    {text: '75D', value: '75D'},
+                    {text: '80B', value: '80B'},
+                    {text: '80C', value: '80C'},
+                    {text: '80D', value: '80D'},
+                    {text: '75A', value: '75A'},
+                  ]
                 })(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1")
 
 
