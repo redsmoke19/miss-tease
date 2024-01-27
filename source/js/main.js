@@ -7,7 +7,7 @@ import {initAccordions} from './modules/accordions/init-accordion.js';
 import {initHeroSlider} from './modules/sliders/init-hero-slider.js';
 import {initCounters} from './modules/init-counters.js';
 import {initCustomInputs} from './modules/init-custom-inputs.js';
-import {initSetSlider} from './modules/sliders/init-set-slider.js';
+import {initGallerySlider} from './modules/sliders/init-gallery-slider.js';
 
 // ---------------------------------
 
@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initHeroSlider();
     initCounters();
     initCustomInputs();
-    initSetSlider();
+    initGallerySlider();
   });
 });
 

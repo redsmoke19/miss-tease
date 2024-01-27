@@ -1,0 +1,21 @@
+mixin gallery-slider(mod)
+  .gallery-slider(data-gallery-slider=mod ? mod : "parent")&attributes(attributes)
+    .gallery-slider__thumbs.swiper(data-gallery-slider="thumbs", class=mod && `gallery-slider__thumbs--${mod}`)
+      .gallery-slider__thumbs-wrapper.swiper-wrapper
+        - for (let i = 1; i < 13; i++)
+          .gallery-slider__thumb.swiper-slide
+            +img("set-card", `photo-${i}`, "jpg", 1370, 2054, `photo-${i}`)
+    .gallery-slider__slider.swiper(data-gallery-slider="slider")
+      .gallery-slider__pagination.swiper-pagination(data-gallery-slider="pagination")
+      button.gallery-slider__button.gallery-slider__button--prev(type="button", data-gallery-slider="prev")
+        +icon("icon-slider-arrow", 40, 40)
+      button.gallery-slider__button.gallery-slider__button--next(type="button", data-gallery-slider="next")
+        +icon("icon-slider-arrow", 40, 40)
+      .swiper-wrapper
+        - for (let i = 1; i < 13; i++)
+          .gallery-slider__slide.swiper-slide
+            if i === 12
+              video(muted, loop, playsinline, poster=`img/set-card/photo-${i}.jpg`)
+                source(src="video/collection-1.mp4")
+            else
+              +img("set-card", `photo-${i}`, "jpg", 1370, 2054, `photo-${i}`)

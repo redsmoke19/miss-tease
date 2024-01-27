@@ -7,12 +7,15 @@ block variables
   - const headerMods = ""
   - const hasFooter = true
   - const footerMods = ""
-  - const currentUrl = "card.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const currentUrl = "set-card.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
   main
+    +back-link("Назад к коллекциям")
     +set-card()
 
 block modals
   +modal("modal--cart")(data-modal="cart")
     +modal-cart()
+  +modal("modal--gallery")(data-modal="gallery")
+    +modal-gallery()
