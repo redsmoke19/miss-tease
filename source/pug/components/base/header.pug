@@ -2,23 +2,43 @@ mixin header(headerMods, currentUrl)
   -
     const headerLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "№",
+        text: "Коллекции"
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Бюстгальтеры"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Трусики"
+      },
+      {
+        href: "#",
+        text: "Аксессуары"
+      },
+      {
+        href: "#",
+        text: "Пояса для чулок"
       },
     ]
 
   header.header(class=headerMods)
     .container
+      .header__wrapper
+        .header__top
+          .header__delivery.header-delivery
+            a.header-delivery__link
+              +icon("icon-globus", "18", "18")
+              span Россия ₽
+            .header-delivery__inner
+              p.header-delivery__text Мы осуществляем доставку по всему миру
+              ul.header-delivery__list
+                li.header-delivery__item
+                  a.header-delivery__country
+
+        .header__bottom
       if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
         span.header__logo Логотип
       else
         a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
