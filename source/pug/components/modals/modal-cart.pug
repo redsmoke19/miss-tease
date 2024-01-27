@@ -61,5 +61,5 @@ mixin modal-cart()
         span Итого
         span 17 500 ₽
       .modal-cart__buttons
-        a.btn.modal-cart__button(href="#") Оформить заказ
-        a.btn-stroke.modal-cart__button(href="#") В корзину
+        +btn({text: "Оформить заказ", href: "#"}).modal-cart__button
+        +btn({text: "В корзину", stroke: true}).modal-cart__button

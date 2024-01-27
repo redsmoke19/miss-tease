@@ -2,8 +2,16 @@ mixin btn(options = {})
   - const tag = options.href ? "a" : "button";
   - const href = options.href || false;
   - const text = options.text || "";
+  - const stroke = !!options.stroke
+  - const size = options.size ?? ""
+  - const icon = options.icon
   - const type = options.type || tag === "button" ? options.type || "button" : false;
   - const target = options.isExternal ? "_blank" : false;
   - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+  - const btnClass = stroke ? 'btn-stroke' : 'btn'
+  - const btnMod = size ? `${btnClass}--${size}` : false
 
-  #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)!= text
+  #{tag}(href=href, target=target, rel=rel, type=type, class=[btnClass, btnMod])&attributes(attributes)
+    if icon
+      +icon(icon, 20, 20)
+    span!= text

@@ -15,21 +15,35 @@
 
   @include tablet-desktop {
     font-size: 14px;
+    gap: 20px;
   }
 
   @include mobile {
     font-size: 12px;
+    gap: 10px;
   }
 
-  &:not(.btn--big) {
+  &:not(.btn--big):not(.btn--big-icon) {
     padding: 15px 40px;
   }
 
   &--big {
-    padding: 21px 40px;
+    @include tablet-desktop {
+      padding: 21px 40px;
+    }
 
     @include mobile {
       padding: 17px 40px;
+    }
+  }
+
+  &--big-icon {
+    @include tablet-desktop {
+      padding: 16px 40px;
+    }
+
+    @include mobile {
+      padding: 12px 29px;
     }
   }
 
@@ -40,6 +54,18 @@
   &:disabled {
     pointer-events: none;
     opacity: 0.5;
+  }
+
+  svg {
+    @include tablet-desktop {
+      width: 20px;
+      height: 20px;
+    }
+
+    @include mobile {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 

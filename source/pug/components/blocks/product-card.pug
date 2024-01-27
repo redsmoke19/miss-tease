@@ -1,0 +1,69 @@
+-
+  const sizes = ["70B", "70C", "70D", "75A", "75B", "75C", "75D", "80A", "80B", "80C", "80D"]
+
+mixin product-card()
+  .product-card
+    .product-card__container.container
+      .product-card__content.swiper(data-product-slider="parent")
+        .product-card__pagination.swiper-pagination(data-product-slider="pagination")
+          button.gallery-slider__button.gallery-slider__button--prev(type="button", data-product-slider="prev")
+            +icon("icon-slider-arrow", 40, 40)
+          button.gallery-slider__button.gallery-slider__button--next(type="button", data-product-slider="next")
+            +icon("icon-slider-arrow", 40, 40)
+        .product-card__gallery-list.swiper-wrapper
+          - for (let i = 1; i < 8; i++)
+            .product-card__gallery-item.swiper-slide
+              +img("product-card", `photo-${i}`, "jpg", 1240, 1864, `photo-${i}`)
+              if i === 7
+                video(muted, loop, playsinline, poster=`img/set-card/photo-${i}.jpg`)
+                  source(src="video/collection-1.mp4")
+      .product-card__aside
+        .contents.product-card__contents
+          h2.contents__title.contents__title--sm Бюстгальтер Gigi
+          p.contents__price 4 900 ₽
+          .contents__sizes.contents-sizes
+            p.contents-sizes__label Выберите размер:
+            .contents-sizes__list
+              each item, idx in sizes
+                +custom-radio({
+                  name: "size",
+                  type: "radio",
+                  label: item,
+                  value: item,
+                  checked: false,
+                  disabled: idx === 3
+                }).custom-toggle--radio
+
+            a.contents__link(href="#")
+              +icon("icon-size", 20, 20)
+              span.link Размерный гид
+
+          .contents__footer.contents-footer
+            .contents-footer__actions
+              +counter()
+              +btn({size: "big-icon", text: "В корзину", icon: "icon-cart"}).contents-footer__cart-button
+            .contents-footer__description(data-accordion="parent")
+              +accordion("Описание").contents-footer__accordion
+                .info
+                  p Коллекция Burlesque&nbsp;&mdash; воплощение безупречности и&nbsp;сексуальности. Бюстгальтер Burlesque выполнен из&nbsp;прозрачного тюля в&nbsp;сочетании шёлком. Мягкие чашечки с&nbsp;поддержкой на&nbsp;косточках продолжены бретелями, которые образуют плавный вырез. На&nbsp;спину переходят тройные резиночки, регулируемые металлической фурнитурой. Накладки на&nbsp;грудь продаются отдельно. Сочетайте трусиками и&nbsp;поясом Burlesque, а&nbsp;также дополнительными аксессуарами для создания рокового образа.
+                  h3 Состав и&nbsp;уход:
+                  p Сетка: полиэстер 100%. Атласный шелк: 92% полиэстер, 8%&nbsp;эластан. Бельевой поролон: 90% полиэстер, 10% хлопок. Рекомендована ручная стирка.
+              +accordion("Доставка и оплата").contents-footer__accordion
+                .info
+                  h3 Доставка
+                  p Доставка заказов осуществляется транспортной компанией СДЭК.
+                  p Сроки доставки зависят от&nbsp;города и&nbsp;способа доставки и&nbsp;составляют в&nbsp;среднем 3-6 рабочих дней.
+                  a(href="#") Подробнее о доставке
+                  h3 Варианты оплаты:
+                  ul
+                    li При получении
+                    li Банковской картой на&nbsp;сайте
+                  a(href="#") Подробнее об&nbsp;оплате
+              +accordion("Возврат").contents-footer__accordion
+                .info
+                  p MissTease предлагает 10-ти дневную политику возврата и&nbsp;обмена. Мы&nbsp;с&nbsp;радостью поможем Вам с&nbsp;осуществлением возврата или обмена товаров MissTease, если они будут соответствовать нашим требованиям:
+                  ul
+                    li Мы&nbsp;принимаем неношеные и&nbsp;нестираные товары в&nbsp;оригинальной упаковке с&nbsp;сохранением оригинальных бирок.
+                    li Если вы&nbsp;возвращаете товар, к&nbsp;которому прилагался бесплатный подарок, его также необходимо вернуть.
+                  p Возврат товара осуществляется за&nbsp;счет покупателя.
+                  a(href="#") Подробнее о&nbsp;возврате

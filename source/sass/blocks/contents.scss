@@ -19,14 +19,30 @@
     margin-top: 0;
     color: $color-default-white;
 
-    @include tablet-desktop {
-      font-size: 50px;
-      margin-bottom: 44px;
+    &:not(.contents__title--sm) {
+      @include tablet-desktop {
+        font-size: 50px;
+        margin-bottom: 44px;
+      }
+
+      @include mobile {
+        margin-bottom: 18px;
+      }
+    }
+
+    &--sm {
+      @include tablet-desktop {
+        font-size: 44px;
+        margin-bottom: 35px;
+      }
+
+      @include mobile {
+        margin-bottom: 15px;
+      }
     }
 
     @include mobile {
       font-size: 36px;
-      margin-bottom: 18px;
     }
   }
 
@@ -145,6 +161,32 @@
       margin-bottom: 20px;
     }
   }
+
+  &__price {
+    font-weight: 300;
+    margin-top: 0;
+    color: $color-default-white;
+
+    @include tablet-desktop {
+      font-size: 26px;
+      margin-bottom: 42px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__sizes {
+    @include tablet-desktop {
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      margin-bottom: 3px;
+    }
+  }
 }
 
 .contents-card {
@@ -252,6 +294,86 @@
 
       @include mobile {
         margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+
+    @include tablet-desktop {
+      column-gap: 40px;
+    }
+
+    @include mobile {
+      column-gap: 20px;
+    }
+
+    &:not(:last-child) {
+      @include tablet-desktop {
+        margin-bottom: 40px;
+      }
+
+      @include mobile {
+        margin-bottom: 60px;
+      }
+    }
+
+    .counter {
+      @include desktop {
+        flex: 1 0 142px;
+        max-width: 142px;
+      }
+
+      @include mobile {
+        flex: 1 0 117px;
+        max-width: 117px;
+      }
+    }
+
+    .btn {
+      flex-grow: 1;
+    }
+  }
+}
+
+.contents-sizes {
+  &__label {
+    font-weight: 300;
+    margin-top: 0;
+    color: $white-56;
+
+    @include tablet-desktop {
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    @include mobile {
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablet-desktop {
+      gap: 6px;
+    }
+
+    @include mobile {
+      gap: 8px;
+    }
+
+    &:not(:last-child) {
+      @include tablet-desktop {
+        margin-bottom: 18px;
+      }
+
+      @include mobile {
+        margin-bottom: 16px;
       }
     }
   }

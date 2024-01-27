@@ -8,6 +8,7 @@ import {initHeroSlider} from './modules/sliders/init-hero-slider.js';
 import {initCounters} from './modules/init-counters.js';
 import {initCustomInputs} from './modules/init-custom-inputs.js';
 import {initGallerySlider} from './modules/sliders/init-gallery-slider.js';
+import {initProductSlider} from './modules/sliders/init-product-slider.js';
 
 // ---------------------------------
 
@@ -37,6 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initCounters();
     initCustomInputs();
     initGallerySlider();
+    initProductSlider();
   });
 });
 
