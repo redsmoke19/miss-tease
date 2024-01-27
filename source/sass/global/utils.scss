@@ -92,18 +92,18 @@
   background-image: linear-gradient(90deg, currentColor calc(100% / 3), transparent 0 calc(200% / 3), currentColor 0);
   background-repeat: no-repeat;
   background-position: 100% 100%;
-  background-size: 300% 1px;
+  background-size: 300% size(1px);
 
   @include tablet-desktop {
-    font-size: 14px;
-    padding-bottom: 9px;
-    letter-spacing: 0.84px;
+    font-size: size(14px);
+    padding-bottom: size(9px);
+    letter-spacing: size(0.84px);
   }
 
   @include mobile {
-    font-size: 11px;
-    padding-bottom: 7px;
-    letter-spacing: 0.66px;
+    font-size: size(11px);
+    padding-bottom: size(7px);
+    letter-spacing: size(0.66px);
   }
 
   @include hover-focus {
@@ -121,13 +121,13 @@
   color: $white-56;
 
   @include tablet-desktop {
-    font-size: 14px;
-    column-gap: 10px;
+    font-size: size(14px);
+    column-gap: size(10px);
   }
 
   @include mobile {
-    font-size: 12px;
-    column-gap: 6px;
+    font-size: size(12px);
+    column-gap: size(6px);
   }
 
   @include hover-focus {
@@ -138,13 +138,13 @@
     flex-shrink: 0;
 
     @include tablet-desktop {
-      width: 28px;
-      height: 28px;
+      width: size(28px);
+      height: size(28px);
     }
 
     @include mobile {
-      width: 22px;
-      height: 22px;
+      width: size(22px);
+      height: size(22px);
     }
   }
 }

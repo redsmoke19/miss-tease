@@ -5,8 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 40px;
+    width: size(32px);
+    height: size(40px);
     padding: 0;
     cursor: pointer;
     transition: color $trans-default;
@@ -25,19 +25,20 @@
     }
 
     svg {
-      width: 12px;
-      height: 12px;
+      width: size(12px);
+      height: size(12px);
     }
   }
 
   &__num {
-    font-size: 14px;
+    font-size: size(14px);
     line-height: normal;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 46px;
-    padding: 10px;
+    min-width: size(46px);
+    flex-grow: 1;
+    padding: size(10px);
     user-select: none;
     text-align: center;
     color: rgba($color-default-white, 70%);

@@ -1,10 +1,10 @@
 .accordion {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgba($color-default-white, 10%);
+  border-top: size(1px) solid rgba($color-default-white, 10%);
 
   &:last-child {
-    border-bottom: 1px solid rgba($color-default-white, 10%);
+    border-bottom: size(1px) solid rgba($color-default-white, 10%);
   }
 
   &.is-active {
@@ -19,22 +19,22 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    letter-spacing: 1.2px;
+    letter-spacing: size(1.2px);
     text-transform: uppercase;
     color: $color-default-white;
     border: none;
     outline: none;
     background: none;
-    column-gap: 20px;
+    column-gap: size(20px);
 
     @include tablet-desktop {
-      font-size: 15px;
-      padding: 22px 0;
+      font-size: size(15px);
+      padding: size(22px) 0;
     }
 
     @include mobile {
-      font-size: 13px;
-      padding: 17px 0;
+      font-size: size(13px);
+      padding: size(17px) 0;
     }
 
     svg {
@@ -42,13 +42,13 @@
       color: rgba($color-default-white, 56%);
 
       @include tablet-desktop {
-        width: 15px;
-        height: 15px;
+        width: size(15px);
+        height: size(15px);
       }
 
       @include mobile {
-        width: 12px;
-        height: 12px;
+        width: size(12px);
+        height: size(12px);
       }
     }
   }

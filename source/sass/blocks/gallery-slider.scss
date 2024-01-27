@@ -1,28 +1,17 @@
 .gallery-slider {
-  position: sticky;
-  top: 20px;
-  flex-shrink: 0;
-
   @include desktop {
     display: flex;
-    width: calc(100% - 540px);
-    gap: 13px;
+    width: calc(100% - #{size(540px)});
+    gap: size(13px);
   }
 
   @include tablet {
-    width: calc(100% - 425px);
+    width: calc(100% - #{size(425px)});
   }
 
   &__pagination {
     @include desktop {
       display: none;
-    }
-  }
-
-  &__slider {
-    @include mobile {
-      width: calc(100% + $containerSideOffsetMobile * 2);
-      margin-left: -$containerSideOffsetMobile;
     }
   }
 
@@ -32,8 +21,8 @@
   }
 
   &__thumb {
-    width: 116px;
-    height: 174px;
+    width: size(116px);
+    height: size(174px);
     cursor: pointer;
     transition: opacity $trans-default;
     opacity: 0.6;
@@ -72,7 +61,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 77px;
+      width: size(77px);
       padding: 0;
       cursor: pointer;
       border: none;
@@ -85,8 +74,8 @@
     }
 
     svg {
-      width: 35px;
-      height: 35px;
+      width: size(35px);
+      height: size(35px);
       transition: transform $trans-default;
     }
 

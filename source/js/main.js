@@ -10,6 +10,7 @@ import {initCustomInputs} from './modules/init-custom-inputs.js';
 import {initGallerySlider} from './modules/sliders/init-gallery-slider.js';
 import {initDynamicAdaptive} from './modules/init-dynamic-adaptive.js';
 import headerInit from './modules/header/index.js';
+import {initProductSlider} from './modules/sliders/init-product-slider.js';
 
 // ---------------------------------
 
@@ -41,6 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initCounters();
     initCustomInputs();
     initGallerySlider();
+    initProductSlider();
   });
 });
 

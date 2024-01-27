@@ -7,29 +7,43 @@
   cursor: pointer;
   transition: background-color $trans-default;
   text-align: center;
-  letter-spacing: 0.84px;
+  letter-spacing: size(0.84px);
   text-transform: uppercase;
   color: $color-default-white;
   border: none;
   background-color: $color-barley-corn;
 
   @include tablet-desktop {
-    font-size: 14px;
+    font-size: size(14px);
+    gap: size(20px);
   }
 
   @include mobile {
-    font-size: 12px;
+    font-size: size(12px);
+    gap: size(10px);
   }
 
-  &:not(.btn--big) {
-    padding: 15px 40px;
+  &:not(.btn--big):not(.btn--big-icon) {
+    padding: size(15px) size(40px);
   }
 
   &--big {
-    padding: 21px 40px;
+    @include tablet-desktop {
+      padding: size(21px) size(40px);
+    }
 
     @include mobile {
-      padding: 17px 40px;
+      padding: size(17px) size(40px);
+    }
+  }
+
+  &--big-icon {
+    @include tablet-desktop {
+      padding: size(16px) size(40px);
+    }
+
+    @include mobile {
+      padding: size(12px) size(29px);
     }
   }
 
@@ -41,6 +55,18 @@
     pointer-events: none;
     opacity: 0.5;
   }
+
+  svg {
+    @include tablet-desktop {
+      width: size(20px);
+      height: size(20px);
+    }
+
+    @include mobile {
+      width: size(18px);
+      height: size(18px);
+    }
+  }
 }
 
 .btn-stroke {
@@ -48,19 +74,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 39px;
+  padding: size(15px) size(39px);
   cursor: pointer;
   transition: border-color $trans-default, color $trans-default;
   text-align: center;
   color: rgba($color-default-white, 70%);
-  border: 1px solid rgba($color-default-white, 30%);
+  border: size(1px) solid rgba($color-default-white, 30%);
   background-color: $color-transparent;
 
   &:not(.btn-stroke--small) {
-    font-size: 14px;
+    font-size: size(14px);
     font-weight: 400;
-    padding: 15px 39px;
-    letter-spacing: 0.84px;
+    padding: size(15px) size(39px);
+    letter-spacing: size(0.84px);
     text-transform: uppercase;
   }
 
@@ -68,14 +94,14 @@
     font-weight: 300;
 
     @include tablet-desktop {
-      font-size: 16px;
-      padding: 13px 39px;
+      font-size: size(16px);
+      padding: size(13px) size(39px);
     }
 
     @include mobile {
-      font-size: 13px;
-      min-height: 38px;
-      padding: 10px 24px;
+      font-size: size(13px);
+      min-height: size(38px);
+      padding: size(10px) size(24px);
     }
   }
 

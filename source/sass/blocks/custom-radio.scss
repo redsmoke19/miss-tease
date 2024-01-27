@@ -1,0 +1,45 @@
+.custom-radio {
+  position: relative;
+  flex-shrink: 0;
+
+  label {
+    display: block;
+  }
+
+  &__label {
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color $trans-default, color $trans-default;
+    text-align: center;
+    color: $white-70;
+    border: size(1px) solid $white-10;
+
+    @include tablet-desktop {
+      font-size: size(13px);
+      padding: size(7px) size(11px);
+    }
+
+    @include mobile {
+      font-size: size(11px);
+      padding: size(4px) size(9px);
+    }
+
+    @include hover-focus {
+      border-color: $color-barley-corn;
+    }
+  }
+
+  input:checked + .custom-radio__label {
+    color: $color-barley-corn;
+    border-color: $color-barley-corn;
+  }
+
+  input:disabled + .custom-radio__label {
+    pointer-events: none;
+    color: $white-30;
+    border-color: $white-4;
+  }
+}

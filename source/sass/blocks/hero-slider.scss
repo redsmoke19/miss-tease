@@ -8,7 +8,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 77px;
+      width: size(77px);
       padding: 0;
       cursor: pointer;
       border: none;
@@ -21,8 +21,8 @@
     }
 
     svg {
-      width: 35px;
-      height: 35px;
+      width: size(35px);
+      height: size(35px);
       transition: transform $trans-default;
     }
 
@@ -59,11 +59,11 @@
   isolation: isolate;
 
   @include tablet-desktop {
-    min-height: 940px;
+    min-height: size(940px);
   }
 
   @include mobile {
-    min-height: 530px;
+    min-height: size(530px);
   }
 
   &__img {
@@ -87,11 +87,11 @@
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-end;
-    max-width: 1566px;
-    padding-bottom: 160px;
+    max-width: size(1566px);
+    padding-bottom: size(160px);
 
     @include mobile {
-      padding: 0 20px 76px;
+      padding: 0 size(20px) size(76px);
     }
   }
 
@@ -104,13 +104,13 @@
     color: $color-default-white;
 
     @include tablet-desktop {
-      font-size: 70px;
-      margin-bottom: 22px;
+      font-size: size(70px);
+      margin-bottom: size(22px);
     }
 
     @include mobile {
-      font-size: 36px;
-      margin-bottom: 6px;
+      font-size: size(36px);
+      margin-bottom: size(6px);
     }
   }
 
@@ -120,19 +120,19 @@
     color: $color-default-white;
 
     @include tablet-desktop {
-      font-size: 32px;
-      margin-bottom: 70px;
+      font-size: size(32px);
+      margin-bottom: size(70px);
     }
 
     @include mobile {
-      font-size: 18px;
-      margin-bottom: 30px;
+      font-size: size(18px);
+      margin-bottom: size(30px);
     }
   }
 
   &__link {
     @include tablet-desktop {
-      margin: 0 6px;
+      margin: 0 size(6px);
     }
   }
 }
