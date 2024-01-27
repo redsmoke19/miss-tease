@@ -1,0 +1,132 @@
+-
+  const setItems = [
+    {
+      name: 'Стикини',
+      price: '1 500 ₽',
+      size: false,
+      img: 'cart-img-1'
+    },
+    {
+      name: 'Гартеры Burlesque',
+      price: '3 300 ₽',
+      size: false,
+      img: 'cart-img-3'
+    },
+    {
+      name: 'Пояс Burlesque',
+      price: '3 800 ₽',
+      size: true,
+      img: 'cart-img-2'
+    },
+    {
+      name: 'Трусики Burlesque',
+      price: '4 300 ₽',
+      size: true,
+      img: 'cart-img-5'
+    },
+    {
+      name: 'Бюстгальтер Burlesque',
+      price: '4 300 ₽',
+      size: true,
+      img: 'cart-img-4'
+    },
+  ]
+
+  const lookItems = [
+    {
+      name: 'Кожаная маска',
+      price: '1 300 ₽',
+      img: 'cart-img-6'
+    },
+    {
+      name: 'Золотые наручники',
+      price: '2 100 ₽',
+      img: 'cart-img-7'
+    },
+    {
+      name: 'Кошачья кнутка',
+      price: '1 800 ₽',
+      img: 'cart-img-8'
+    },
+  ]
+
+  const selectList = [
+    {text: '70B', value: '70B'},
+    {text: '70C', value: '70C'},
+    {text: '70D', value: '70D'},
+    {text: '75B', value: '75B'},
+    {text: '75C', value: '75C'},
+    {text: '75D', value: '75D'},
+    {text: '80B', value: '80B'},
+    {text: '80C', value: '80C'},
+    {text: '80D', value: '80D'},
+    {text: '75A', value: '75A'},
+  ]
+
+.contents.set-card__contents
+  p.contents__name Коллекция
+  h2.contents__title Burlesque
+  .contents__list-wrapper
+    p.contents__list-title Состав комплекта
+    ul.contents__list
+      each item in setItems
+        - const {name, price, size, img} = item
+        li.contents-card
+          a.contents-card__img(href="#")
+            +img("cart", img, "jpg", 192, 284, name)
+          .contents-card__content
+            .contents-card__header
+              a.contents-card__name.link(href="#")!= name
+              span.contents-card__price!= price
+            if size
+              +custom-select({
+                placeholder: "Выбрать размер",
+                optionsList: selectList
+              }).contents-card__select(data-select, data-name="size")
+            button.btn-stroke.btn-stroke--small.contents-card__button(type="button") Добавить в корзину
+    a.contents__link(href="#")
+      +icon("icon-size", 20, 20)
+      span.link Размерный гид
+  .contents__look
+    p.contents__look-title Идеально к образу
+    ul.contents__list
+      each item in lookItems
+        - const {name, price, img} = item
+        .contents-card
+          a.contents-card__img(href="#")
+            +img("cart", img, "jpg", 192, 284, name)
+          .contents-card__content
+            .contents-card__header
+              a.contents-card__name.link(href="#")!= name
+              span.contents-card__price!= price
+            button.btn-stroke.btn-stroke--small.contents-card__button(type="button") Добавить в корзину
+  .contents__footer.contents-footer
+    p.contents-footer__total
+      span Итого
+      span 17 500 ₽
+    button.btn.btn--big.contents-footer__button(type="button") Перейти в корзину
+    .contents-footer__description(data-accordion="parent")
+      +accordion("Описание").contents-footer__accordion
+        .info
+          p Коллекция Burlesque - воплощение безупречности и сексуальности. Бюстгальтер Burlesque выполнен из прозрачного тюля в сочетании шёлком. Мягкие чашечки с поддержкой на косточках продолжены бретелями, которые образуют плавный вырез. На спину переходят тройные резиночки, регулируемые металлической фурнитурой. Накладки на грудь продаются отдельно. Сочетайте трусиками и поясом Burlesque, а также дополнительными аксессуарами для создания рокового образа.
+          h3 Состав и уход:
+          p Сетка: полиэстер 100%. Атласный шелк: 92% полиэстер, 8% эластан. Бельевой поролон: 90% полиэстер, 10% хлопок. Рекомендована ручная стирка.
+      +accordion("Доставка и оплата").contents-footer__accordion
+        .info
+          h3 Доставка
+          p Доставка заказов осуществляется транспортной компанией СДЭК.
+          p Сроки доставки зависят от города и способа доставки и составляют в среднем 3-6 рабочих дней.
+          a(href="") Подробнее о доставке
+          h3 Варианты оплаты:
+          ul
+            li При получении
+            li Банковской картой на сайте
+          a(href="") Подробнее об оплате
+      +accordion("Возврат").contents-footer__accordion
+        .info
+          p MissTease предлагает 10-ти дневную политику возврата и обмена. Мы с радостью поможем Вам с осуществлением возврата или обмена товаров MissTease, если они будут соответствовать нашим требованиям:
+          ul
+            li Мы принимаем неношеные и нестираные товары в оригинальной упаковке с сохранением оригинальных бирок.
+            li Если вы возвращаете товар, к которому прилагался бесплатный подарок, его также необходимо вернуть.
+          p Возврат товара осуществляется за счет покупателя.
+          a(href="") Подробнее о возврате

@@ -1,0 +1,21 @@
+mixin set-card()
+  .set-card
+    .set-card__container.container
+      .set-card__content(data-product-slider="parent")
+        .set-card__thumbs.swiper.mySwiper(thumbsslider='', data-product-slider="thumbs")
+          .set-card__thumbs-wrapper.swiper-wrapper
+            - for (let i = 1; i < 13; i++)
+              .set-card__thumb.swiper-slide
+                +img("set-card", `photo-${i}`, "jpg", 1370, 2054, `photo-${i}`)
+        .set-card__slider.swiper.mySwiper2(style='--swiper-navigation-color: #fff; --swiper-pagination-color: #fff', data-product-slider="slider")
+          .swiper-pagination(data-product-slider="pagination")
+          button.set-card__button.set-card__button--prev(type="button", data-product-slider="prev")
+            +icon("icon-slider-arrow", 40, 40)
+          button.set-card__button.set-card__button--next(type="button", data-product-slider="next")
+            +icon("icon-slider-arrow", 40, 40)
+          .swiper-wrapper
+            - for (let i = 1; i < 13; i++)
+              .set-card__slide.swiper-slide
+                +img("set-card", `photo-${i}`, "jpg", 1370, 2054, `photo-${i}`)
+      .set-card__aside
+        include ../blocks/contents

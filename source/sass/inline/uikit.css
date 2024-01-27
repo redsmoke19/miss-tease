@@ -187,3 +187,9 @@
 .uikit__sections a.focus-visible:focus::before {
   opacity: 0.8;
 }
+.uikit__component .custom-select {
+  width: 222px;
+}
+.uikit__component .custom-input {
+  width: 280px;
+}
