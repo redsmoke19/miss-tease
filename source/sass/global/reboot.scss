@@ -14,10 +14,9 @@ body {
 html {
   font-style: normal;
   font-weight: 400;
-  font-size: $fz-default;
   line-height: 24px;
   font-family: $ff-geologica;
-  color: rgba($color-default-white, 40%);
+  color: rgba($color-default-white, 0.4);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,6 +24,18 @@ html {
   text-rendering: optimizeLegibility;
   // если по прежнему есть проблемы с выравниванием
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
+
+  @include desktop {
+    font-size: size-desktop($fz-default);
+  }
+
+  @include tablet {
+    font-size: size-tablet($fz-default);
+  }
+
+  @include mobile {
+    font-size: size-mobile($fz-default);
+  }
 }
 
 body {

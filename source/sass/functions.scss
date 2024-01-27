@@ -25,22 +25,30 @@
 // 2) ремы в плюс от эталона и в минус, на планшете обычная верстка
 
 // functions.scss
-// @function size($size-in-px) {
-//   @return calc($size-in-px / $fz-default * 1rem;
-// }
+ @function size($size-in-px) {
+   @return calc($size-in-px / $fz-default) * 1rem;
+ }
 
-// @function size-desktop($size-in-px) {
-//   @return calc($size-in-px / $vp-1920 * 100vw;
-// }
+ @function size-desktop($size-in-px) {
+   @return calc($size-in-px / $vp-1920) * 100vw;
+ }
 
-// reboot.scss
-// html {
-//   font-size: size-desktop($fz-default);
+@function size-tablet($size-in-px) {
+  @return calc($size-in-px / $vp-768) * 100vw;
+}
 
-//   @include vp-1023 {
-//     font-size: $fz-default;
-//   }
-// }
+@function size-mobile($size-in-px) {
+  @return calc($size-in-px / $vp-320) * 100vw;
+}
+
+ //reboot.scss
+ //html {
+ //  font-size: size-desktop($fz-default);
+ //
+ //  @include vp-1023 {
+ //    font-size: $fz-default;
+ //  }
+ //}
 
 // ---------------------------------
 // 3) ремы в плюс от эталона и в минус (с другим коэффициентом), на планшете обычная верстка
