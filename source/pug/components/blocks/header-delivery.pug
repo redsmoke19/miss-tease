@@ -1,0 +1,29 @@
+mixin header-delivery()
+
+  .header-delivery
+    a.header-delivery__link
+      +icon("icon-globus", "18", "18")
+      span Россия ₽
+    .header-delivery__inner
+      p.header-delivery__text Мы осуществляем доставку по всему миру
+      ul.header-delivery__list
+        li.header-delivery__item
+          a.header-delivery__country
+            +img("content", "flag-ru", "png", "26", "26", "Изображение флага")
+            span.header-delivery__name Россия
+            span.header-delivery__value ₽  РУБ
+        li.header-delivery__item
+          a.header-delivery__country
+            +img("content", "flag-kz", "png", "26", "26", "Изображение флага")
+            span.header-delivery__name Казахстан
+            span.header-delivery__value ₸  ТНГ
+        li.header-delivery__item
+          a.header-delivery__country
+            +img("content", "flag-eu", "png", "26", "26", "Изображение флага")
+            span.header-delivery__name Евросоюз
+            span.header-delivery__value €  EUR
+        li.header-delivery__item
+          a.header-delivery__country
+            +img("content", "flag-all", "png", "26", "26", "Изображение флага")
+            span.header-delivery__name Другие страны
+            span.header-delivery__value $  USD

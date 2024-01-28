@@ -2,7 +2,7 @@ mixin header(headerMods, currentUrl)
   -
     const headerLinks = [
       {
-        href: "№",
+        href: "#",
         text: "Коллекции"
       },
       {
@@ -21,36 +21,33 @@ mixin header(headerMods, currentUrl)
         href: "#",
         text: "Пояса для чулок"
       },
+      {
+        text: "Базовое белье",
+        subMenu: true,
+      }
     ]
 
-  header.header(class=headerMods)
+  header.header(class=headerMods, data-header)
     .container
       .header__wrapper
         .header__top
-          .header__delivery.header-delivery
-            a.header-delivery__link
-              +icon("icon-globus", "18", "18")
-              span Россия ₽
-            .header-delivery__inner
-              p.header-delivery__text Мы осуществляем доставку по всему миру
-              ul.header-delivery__list
-                li.header-delivery__item
-                  a.header-delivery__country
+          button.header__sandwich.sandwich(type="button" aria-label="Переключатель отображения меню" aria-pressed="false", data-sandwich)
+            span.sandwich__menu
+          .header__delivery(data-da=".main-nav__wrapper, 1023, last")
+            +header-delivery()
+          a.header__logo(href="index.html", aria-label="Переход на главную")
+            +img("content", "header-logo", "png", "190", "50", "Логотип компании")
+          button.header__basket(data-open-modal="cart")
+            +icon("icon-basket", "24", "24")
+            span.header__basket-count 6
+        nav.main-nav(data-nav-menu)
+          .main-nav__wrapper
+            ul.main-nav__list
+              each link in headerLinks
+                - const activeState = currentUrl === link.href
+                li.main-nav__item
+                  if(activeState)
+                    a.main-nav__link.is-active(href=link.href)= link.text
+                  else
+                    a.main-nav__link(href=link.href, data-sub-menu=link.subMenu ? "" : null)= link.text
 
-        .header__bottom
-      if(currentUrl === "index.html")
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active= link.text
-                else
-                  a.main-nav__link(href=link.href)= link.text
