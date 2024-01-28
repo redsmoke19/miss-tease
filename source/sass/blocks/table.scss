@@ -1,0 +1,44 @@
+.table {
+  &__title {
+    color: $white-70;
+    font-size: size(26px);
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: size(24px);
+  }
+
+  table {
+    width: 100%;
+    height: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: size(1px) solid $white-10;
+  }
+
+  td,
+  th {
+    width: calc(100% / 7);
+    font-size: size(14px);
+    text-align: center;
+    line-height: normal;
+    padding: size(10.5px);
+    border: size(1px) solid $white-10;
+  }
+
+  th {
+    font-weight: 500;
+    color: $white-40;
+  }
+
+  td {
+    &:not(.bold) {
+      color: $white-70;
+      font-weight: 400;
+    }
+
+    &.bold {
+      font-weight: 500;
+      color: $white-40;
+    }
+  }
+}

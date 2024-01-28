@@ -85,7 +85,7 @@ mixin contents()
                   optionsList: selectList
                 }).contents-card__select(data-select, data-name="size")
               +btn({text: "Добавить в&nbsp;корзину", stroke: true, size: "small"}).contents-card__button
-      a.contents__link(href="#")
+      a.contents__link(href="#", data-open-modal="sizes")
         +icon("icon-size", 20, 20)
         span.link Размерный гид
     .contents__look

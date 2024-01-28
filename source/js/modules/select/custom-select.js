@@ -153,7 +153,7 @@ export class CustomSelect {
   }
 
   _onDocumentClick({target}) {
-    if (!target.closest('.custom-select')) {
+    if (!target.closest('.custom-select') || target.closest('[data-select-close]')) {
       this._closeSelect();
     }
   }
