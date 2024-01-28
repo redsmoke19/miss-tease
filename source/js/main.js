@@ -11,6 +11,7 @@ import {initGallerySlider} from './modules/sliders/init-gallery-slider.js';
 import {initDynamicAdaptive} from './modules/init-dynamic-adaptive.js';
 import headerInit from './modules/header/index.js';
 import {initProductSlider} from './modules/sliders/init-product-slider.js';
+import {initTabs} from './modules/tabs/init-tabs.js';
 
 // ---------------------------------
 
@@ -38,6 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     headerInit.initPageMenu();
     initAccordions();
+    initTabs();
     initHeroSlider();
     initCounters();
     initCustomInputs();

@@ -1,0 +1,15 @@
+include ../../data/sizes
+
+mixin modal-sizes()
+  .modal-sizes(data-tabs="parent")
+    h2.modal-sizes__title Размерный гид
+    .modal-sizes__nav(data-tabs="controls")
+      button.modal-sizes__nav-item(type="button", data-tabs="control") Таблица размеров
+      button.modal-sizes__nav-item(type="button", data-tabs="control") Международный конвертер размеров
+    .modal-sizes__tabs(data-tabs="content")
+      .modal-sizes__tab(data-tabs="element")
+        +table(brasSizes).modal-sizes__table
+        +table(beltsSizes).modal-sizes__table
+      .modal-sizes__tab(data-tabs="element")
+        +table(brasInternationalSizes).modal-sizes__table
+    p.modal-sizes__prompt С полным руководством Вы можете ознакомиться на странице <a href="#">таблица размеров</a>

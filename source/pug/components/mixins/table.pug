@@ -1,0 +1,18 @@
+mixin table(data = {})
+  - const {head, body, title} = data
+  .table&attributes(attributes)
+    if title
+      h3.table__title !{title}
+    table
+      thead
+        each row in head
+          tr
+            each cell in row
+              - const {text, cellAttributes} = cell
+              th&attributes(cellAttributes) !{text}
+      tbody
+        each row in body
+          tr
+            each cell in row
+              - const {text, cellAttributes} = cell
+              td&attributes(cellAttributes) !{text}

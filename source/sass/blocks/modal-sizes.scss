@@ -1,0 +1,86 @@
+.modal-sizes {
+  padding: size(40px) size(50px);
+  background-color: $color-nero;
+
+  &__title {
+    font-family: $ff-cormorant;
+    font-size: size(50px);
+    font-weight: 400;
+    line-height: 100%;
+    margin-top: 0;
+    margin-bottom: size(42px);
+    color: $color-default-white;
+  }
+
+  &__nav {
+    display: flex;
+    margin-bottom: size(45px);
+    column-gap: size(60px);
+  }
+
+  &__nav-item {
+    font-size: size(20px);
+    font-weight: 300;
+    display: inline-flex;
+    padding: 0 0 size(8px);
+    cursor: pointer;
+    transition: color $trans-default, border-color $trans-default;
+    border: none;
+    border-bottom-width: size(2px);
+    border-bottom-style: solid;
+    outline: none;
+    background: none;
+
+    @include hover-focus {
+      color: $color-barley-corn;
+    }
+
+    &:not(.is-active) {
+      color: $white-56;
+      border-color: $color-transparent;
+    }
+
+    &.is-active {
+      color: $color-barley-corn;
+      border-color: $color-barley-corn;
+    }
+  }
+
+  &__tabs {
+    transition: height $trans-default;
+
+    &:not(:last-child) {
+      margin-bottom: size(40px);
+    }
+  }
+
+  &__tab {
+    width: 100%;
+  }
+
+  &__table {
+    &:not(:last-child) {
+      margin-bottom: size(64px);
+    }
+  }
+
+  &__prompt {
+    font-size: size(16px);
+    font-weight: 300;
+    line-height: 140%;
+    color: $white-56;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      transition: opacity $trans-default;
+      color: $color-barley-corn;
+
+      @include hover-focus {
+        opacity: 0.5;
+      }
+    }
+  }
+}
