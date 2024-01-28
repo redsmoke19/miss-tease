@@ -9,6 +9,7 @@ import {initCounters} from './modules/init-counters.js';
 import {initCustomInputs} from './modules/init-custom-inputs.js';
 import {initGallerySlider} from './modules/sliders/init-gallery-slider.js';
 import {initProductSlider} from './modules/sliders/init-product-slider.js';
+import {initTabs} from './modules/tabs/init-tabs.js';
 
 // ---------------------------------
 
@@ -34,6 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window.form = form;
     form.init();
     initAccordions();
+    initTabs();
     initHeroSlider();
     initCounters();
     initCustomInputs();
