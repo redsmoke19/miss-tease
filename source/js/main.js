@@ -1,7 +1,6 @@
 import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
-import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initAccordions} from './modules/accordions/init-accordion.js';
 import {initHeroSlider} from './modules/sliders/init-hero-slider.js';
@@ -12,6 +11,8 @@ import {initDynamicAdaptive} from './modules/init-dynamic-adaptive.js';
 import headerInit from './modules/header/index.js';
 import {initProductSlider} from './modules/sliders/init-product-slider.js';
 import {initTabs} from './modules/tabs/init-tabs.js';
+import {initSelects} from './modules/select/init-selects.js';
+import {initDrag} from './modules/init-drag.js';
 
 // ---------------------------------
 
@@ -32,8 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initDynamicAdaptive();
     uploadFile();
     uploadImageDrop();
-    const select = new CustomSelect();
-    select.init();
+    initSelects();
     const form = new Form();
     window.form = form;
     form.init();
@@ -45,6 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initCustomInputs();
     initGallerySlider();
     initProductSlider();
+    initDrag();
   });
 });
 
