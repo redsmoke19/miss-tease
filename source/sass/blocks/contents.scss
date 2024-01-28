@@ -254,6 +254,11 @@
       margin-bottom: size(19px);
     }
   }
+
+  &__price {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
 }
 
 .contents-footer {

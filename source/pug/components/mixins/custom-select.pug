@@ -4,6 +4,7 @@ mixin custom-select(options = {})
   - const buttonAriaLabel = options.buttonAriaLabel ? options.buttonAriaLabel : "Выберите одну из опций"
 
   .custom-select&attributes(attributes)
+    .custom-select__overlay(data-select-close)
     if selectLabel
       span.custom-select__label= selectLabel
     if selectPlaceholder
@@ -12,9 +13,14 @@ mixin custom-select(options = {})
       span.custom-select__text
       span.custom-select__icon
         +icon("icon-arrow-down", 14, 14)
-    ul.custom-select__list(role="listbox")
-      each item in options.optionsList
-        - const ariaSelected = item.isActive ? "true" : "false"
-        li.custom-select__item(class=itemClass, tabindex="0", data-select-value=item.value, aria-selected=ariaSelected, role="option")
-          span= item.text
-          +icon("icon-check", 16, 16)
+    .custom-select__list(role="listbox")
+      .custom-select__handle
+      p.custom-select__list-title= selectPlaceholder
+      button.custom-select__close(type="button", aria-label="Закрыть", data-select-close)
+        +icon("icon-close", 12, 12)
+      ul.custom-select__list-wrapper
+        each item in options.optionsList
+          - const ariaSelected = item.isActive ? "true" : "false"
+          li.custom-select__item(class=itemClass, tabindex="0", data-select-value=item.value, aria-selected=ariaSelected, role="option")
+            span= item.text
+            +icon("icon-check", 16, 16)
