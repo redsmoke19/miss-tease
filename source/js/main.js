@@ -1,15 +1,17 @@
 import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {initModals} from './modules/modals/init-modals';
+import headerInit from './modules/header/index.js';
+import cardProduct from './modules/card-product/init-product-card.js';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initAccordions} from './modules/accordions/init-accordion.js';
 import {initHeroSlider} from './modules/sliders/init-hero-slider.js';
+import {initMainCollectionSlider} from './modules/sliders/init-main-collection.js';
 import {initCounters} from './modules/init-counters.js';
 import {initCustomInputs} from './modules/init-custom-inputs.js';
 import {initGallerySlider} from './modules/sliders/init-gallery-slider.js';
 import {initDynamicAdaptive} from './modules/init-dynamic-adaptive.js';
-import headerInit from './modules/header/index.js';
 import {initProductSlider} from './modules/sliders/init-product-slider.js';
 
 // ---------------------------------
@@ -37,8 +39,11 @@ window.addEventListener('DOMContentLoaded', () => {
     window.form = form;
     form.init();
     headerInit.initPageMenu();
+    headerInit.initHeaderHeight();
+    cardProduct.getPlayVideo();
     initAccordions();
     initHeroSlider();
+    initMainCollectionSlider();
     initCounters();
     initCustomInputs();
     initGallerySlider();

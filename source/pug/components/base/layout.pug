@@ -4,6 +4,8 @@ include ../components
 
 block variables
 
+block data
+
 html(lang="ru")
   head
     title= title
@@ -39,7 +41,7 @@ html(lang="ru")
       block main
 
       if (hasFooter)
-        //+footer(footerMods)
+        +footer(footerMods)
 
     block modals
 

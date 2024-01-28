@@ -24,10 +24,11 @@ mixin header(headerMods, currentUrl)
       {
         text: "Базовое белье",
         subMenu: true,
+        icon: "icon-arrow-down"
       }
     ]
 
-  header.header(class=headerMods, data-header)
+  header.header(class=headerMods, data-header, data-scroll-lock-fill-gap)
     .container
       .header__wrapper
         .header__top
@@ -40,8 +41,8 @@ mixin header(headerMods, currentUrl)
           button.header__basket(data-open-modal="cart")
             +icon("icon-basket", "24", "24")
             span.header__basket-count 6
-        nav.main-nav(data-nav-menu)
-          .main-nav__wrapper
+        nav.main-nav(data-nav="menu")
+          .main-nav__wrapper(data-nav="wrapper")
             ul.main-nav__list
               each link in headerLinks
                 - const activeState = currentUrl === link.href
@@ -50,4 +51,6 @@ mixin header(headerMods, currentUrl)
                     a.main-nav__link.is-active(href=link.href)= link.text
                   else
                     a.main-nav__link(href=link.href, data-sub-menu=link.subMenu ? "" : null)= link.text
+                      if(link.icon)
+                        +icon(link.icon, "12", "12").main-nav__link-arrow
 

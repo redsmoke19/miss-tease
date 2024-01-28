@@ -1,6 +1,11 @@
 .header {
+  left: 0;
   padding: 26px 20px 8px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: $color-black;
 
   @include mobile-tablet {
     padding: size(14px) 0;
@@ -21,6 +26,10 @@
 
   &__delivery {
     justify-self: start;
+
+    @include mobile-tablet {
+      padding: size(15px) size(20px);
+    }
   }
 
   &__logo {
