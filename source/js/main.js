@@ -12,7 +12,6 @@ import headerInit from './modules/header/index.js';
 import {initProductSlider} from './modules/sliders/init-product-slider.js';
 import {initTabs} from './modules/tabs/init-tabs.js';
 import {initSelects} from './modules/select/init-selects.js';
-import {initDrag} from './modules/init-drag.js';
 
 // ---------------------------------
 
@@ -45,7 +44,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initCustomInputs();
     initGallerySlider();
     initProductSlider();
-    initDrag();
   });
 });
 

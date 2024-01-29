@@ -1,12 +1,17 @@
-
 import {createElement, renderElement} from '../../utils/render';
 import {createNativeSelectMarkup} from './create-select-markup';
+import {Draggable} from 'gsap/Draggable';
+import {gsap} from 'gsap';
+import scrollLock from '../../vendor/scroll-lock.min';
+gsap.registerPlugin(Draggable);
 
 export class CustomSelect {
   constructor() {
     this._selects = null;
     this._selectElement = null;
     this._activeIndex = null;
+    this._scrollLock = scrollLock;
+    this._breakpoint = window.matchMedia('(min-width: 768px)');
 
     this._onDocumentClick = this._onDocumentClick.bind(this);
     this._onEscapePress = this._onEscapePress.bind(this);
@@ -17,6 +22,47 @@ export class CustomSelect {
     this._onSelectKeydown = this._onSelectKeydown.bind(this);
 
     window.selectInit = this.init.bind(this);
+  }
+
+  _onSelectOpen(select) {
+    const list = select.querySelector('.custom-select__list');
+    const handle = select.querySelector('.custom-select__handle');
+    const threshold = list.offsetHeight - 200;
+    let close = false;
+    this._scrollLock.disablePageScroll(select);
+    const that = this;
+
+    select.draggableInst = Draggable.create(list, {
+      type: 'y',
+      trigger: handle,
+      edgeResistance: 1,
+      bounds: {minY: 0, maxY: list.offsetHeight},
+      inertia: true,
+      onDragEnd() {
+        if (close) {
+          that._closeSelect();
+          close = false;
+        } else {
+          gsap.to(list, {y: 0, duration: 0.1, ease: 'none'});
+        }
+      },
+      onMove() {
+        if (this.y > this.minY + threshold) {
+          close = true;
+          this.endDrag();
+        }
+      },
+    });
+  }
+
+  _onSelectClose(select) {
+    select.draggableInst?.forEach((item) => {
+      item.kill();
+    });
+    select.draggableInst = null;
+    setTimeout(() => {
+      this._scrollLock.enablePageScroll(select);
+    }, 300);
   }
 
   _createMultiString(arr) {
@@ -72,6 +118,11 @@ export class CustomSelect {
     document.removeEventListener('keydown', this._onEscapePress);
     if (activeSelect) {
       activeSelect.classList.remove('is-open');
+      if (this._breakpoint.matches) {
+        return;
+      }
+      const list = activeSelect.querySelector('.custom-select__list');
+      gsap.to(list, {y: list.offsetHeight, duration: 0.1, onComplete: this._onSelectClose.bind(this, activeSelect), ease: 'none'});
     }
   }
 
@@ -186,6 +237,7 @@ export class CustomSelect {
   _onSelectClick(evt) {
     const parent = evt.target.closest('[data-select]');
     const activeSelect = document.querySelector('[data-select].is-open');
+    const list = parent.querySelector('.custom-select__list');
 
     parent.classList.remove('is-invalid');
 
@@ -205,6 +257,11 @@ export class CustomSelect {
       parent.classList.remove('is-open');
     } else {
       parent.classList.add('is-open');
+      if (this._breakpoint.matches) {
+        return;
+      }
+      gsap.set(list, {opacity: '1', visibility: 'visible', y: list.offsetHeight});
+      gsap.to(list, {y: 0, duration: 0.2, onComplete: this._onSelectOpen.bind(this, parent)});
     }
   }
 
