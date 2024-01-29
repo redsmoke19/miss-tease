@@ -1,6 +1,10 @@
 .hero-slider {
   margin: 0 0 size(80px) 0;
 
+  @include mobile-tablet {
+    margin: 0 0 size(30px) 0;
+  }
+
   &__button {
     @include tablet-desktop {
       position: absolute;
