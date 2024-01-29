@@ -5,15 +5,12 @@ import cardProduct from './modules/card-product/init-product-card.js';
 import {Form} from './modules/form-validate/form';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initAccordions} from './modules/accordions/init-accordion.js';
-import {initHeroSlider} from './modules/sliders/init-hero-slider.js';
-import {initMainCollectionSlider} from './modules/sliders/init-main-collection.js';
 import {initCounters} from './modules/init-counters.js';
 import {initCustomInputs} from './modules/init-custom-inputs.js';
-import {initGallerySlider} from './modules/sliders/init-gallery-slider.js';
 import {initDynamicAdaptive} from './modules/init-dynamic-adaptive.js';
-import {initProductSlider} from './modules/sliders/init-product-slider.js';
 import {initTabs} from './modules/tabs/init-tabs.js';
 import {initSelects} from './modules/select/init-selects.js';
+import initSliders from './modules/sliders/index.js';
 
 // ---------------------------------
 
@@ -43,12 +40,9 @@ window.addEventListener('DOMContentLoaded', () => {
     cardProduct.getPlayVideo();
     initAccordions();
     initTabs();
-    initHeroSlider();
-    initMainCollectionSlider();
     initCounters();
     initCustomInputs();
-    initGallerySlider();
-    initProductSlider();
+    initSliders();
   });
 });
 

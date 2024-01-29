@@ -13,6 +13,14 @@
     @include desktop {
       display: none;
     }
+
+    @include tablet {
+      bottom: size(20px);
+    }
+
+    @include mobile {
+      bottom: size(10px);
+    }
   }
 
   &__thumbs-wrapper {
