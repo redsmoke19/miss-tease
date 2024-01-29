@@ -99,7 +99,7 @@
     }
 
     @include mobile {
-      max-height: calc(100vh - 200px);
+      max-height: calc(100vh - #{size(200px)});
       overflow-y: auto;
       padding: 0;
     }
@@ -143,7 +143,7 @@
       z-index: 1;
       overflow-y: auto;
       width: 100%;
-      max-height: size(272px);
+      max-height: size(300px);
       transition: visibility $trans-default, opacity $trans-default;
       transform: translateY(100%);
     }
@@ -153,10 +153,10 @@
       z-index: 10;
       right: 0;
       left: 0;
-      padding: 0 0 12px;
-      border-top-left-radius: 16px;
-      border-top-right-radius: 16px;
-      box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.25);
+      padding: 0 0 size(12px);
+      border-top-left-radius: size(16px);
+      border-top-right-radius: size(16px);
+      box-shadow: 0 size(4px) size(30px) 0 rgba(0, 0, 0, 0.25);
     }
 
     &::-webkit-scrollbar {
@@ -188,13 +188,13 @@
     }
 
     @include mobile {
-      font-size: 12px;
+      font-size: size(12px);
       font-weight: 400;
       line-height: 100%;
       margin-top: 0;
-      margin-bottom: 16px;
-      padding: 0 20px;
-      letter-spacing: 0.72px;
+      margin-bottom: size(16px);
+      padding: 0 size(20px);
+      letter-spacing: size(0.72px);
       text-transform: uppercase;
       color: $white-40;
     }
@@ -211,16 +211,16 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 32px;
+      height: size(32px);
     }
 
     &::before {
       @include mobile {
         position: absolute;
-        width: 40px;
-        height: 3px;
+        width: size(40px);
+        height: size(3px);
         content: "";
-        border-radius: 30px;
+        border-radius: size(30px);
         background-color: $white-10;
       }
     }
@@ -234,8 +234,8 @@
     @include mobile {
       position: absolute;
       z-index: 1;
-      top: 8px;
-      right: 13px;
+      top: size(8px);
+      right: size(13px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -247,8 +247,8 @@
       background: none;
 
       svg {
-        width: 18px;
-        height: 18px;
+        width: size(18px);
+        height: size(18px);
       }
     }
   }
@@ -292,8 +292,8 @@
     }
 
     @include mobile {
-      font-size: 12px;
-      padding: 9px 20px;
+      font-size: size(12px);
+      padding: size(9px) size(20px);
     }
 
     svg {
