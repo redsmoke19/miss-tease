@@ -47,7 +47,7 @@ const initHeroSlider = () => {
         });
       },
       autoplayTimeLeft(s, time, progress) {
-        parent.style.setProperty('--progress', `${progress * 100}%`);
+        parent.style.setProperty('--progress', `${(progress * 100).toFixed(2)}%`);
       },
     },
     breakpoints: {

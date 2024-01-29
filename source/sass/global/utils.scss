@@ -98,13 +98,12 @@
   @include tablet-desktop {
     font-size: size(14px);
     padding-bottom: size(9px);
-    letter-spacing: size(0.84px);
+    letter-spacing: 0.06em;
   }
 
   @include mobile {
     font-size: size(11px);
     padding-bottom: size(7px);
-    letter-spacing: size(0.66px);
   }
 
   @include hover-focus {
