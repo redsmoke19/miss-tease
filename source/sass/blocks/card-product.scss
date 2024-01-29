@@ -1,0 +1,164 @@
+.card-product {
+  //width: size(430px);
+  position: relative;
+
+  @include hover-focus {
+    .card-product__main-img {
+      opacity: 0;
+    }
+
+    .card-product__second-img {
+      opacity: 1;
+    }
+  }
+
+  &__inner {
+    display: grid;
+    margin: 0 0 size(20px) 0;
+    position: relative;
+
+    @include mobile-tablet {
+      margin: 0 0 size(12px) 0;
+    }
+  }
+
+  &__main-img,
+  &__second-img,
+  &__video {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: size(644px);
+    object-fit: cover;
+    transition: opacity $trans-500;
+    width: size(430px);
+
+    @include mobile-tablet {
+      height: size(360px);
+      width: size(240px);
+    }
+  }
+
+  &__second-img {
+    opacity: 0;
+  }
+
+  &__sale {
+    background-color: $color-barley-corn;
+    color: $color-default-white;
+    display: flex;
+    font-size: size(14px);
+    font-weight: 500;
+    left: size(20px);
+    line-height: size(17px);
+    padding: size(4px) size(10px);
+    position: absolute;
+    top: size(20px);
+
+    @include mobile-tablet {
+      font-size: size(10px);
+      left: size(8px);
+      line-height: size(12px);
+      padding: size(3px) size(6px);
+      top: size(8px);
+    }
+  }
+
+  &__name {
+    color: $white-70;
+    font-size: size(20px);
+    font-weight: 400;
+    line-height: size(25px);
+    margin: 0;
+    text-align: center;
+
+    @include mobile-tablet {
+      font-size: size(14px);
+      line-height: size(17px);
+    }
+  }
+
+  &__name:has(+ .card-product__prices) {
+    font-size: size(16px);
+    line-height: size(20px);
+    margin: 0 0 size(6px) 0;
+    text-align: left;
+
+    @include mobile-tablet {
+      font-size: size(12px);
+      line-height: size(15px);
+    }
+  }
+
+  &__prices {
+    align-items: center;
+    display: flex;
+    gap: size(30px);
+
+    @include mobile-tablet {
+      gap: size(16px);
+    }
+  }
+
+  &__price {
+    color: $color-default-white;
+    font-size: size(16px);
+    font-weight: 500;
+    line-height: size(20px);
+
+    @include mobile-tablet {
+      font-size: size(12px);
+      line-height: size(15px);
+    }
+  }
+
+  &__price:has(+ .card-product__old-price) {
+    color: $color-barley-corn;
+
+    @include mobile-tablet {
+      font-size: size(12px);
+      line-height: size(15px);
+    }
+  }
+
+  &__old-price {
+    color: $white-70;
+    font-size: size(14px);
+    line-height: size(18px);
+
+    @include mobile-tablet {
+      font-size: size(10px);
+      line-height: size(13px);
+    }
+
+    span {
+      margin: 0 0 0 size(6px);
+      position: relative;
+
+      @include mobile-tablet {
+        margin: 0 0 0 size(4px);
+      }
+
+      &::before {
+        background-color: $white-70;
+        content: "";
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-9deg);
+        width: 100%;
+      }
+    }
+  }
+
+  &__shadow-link {
+    &::before {
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

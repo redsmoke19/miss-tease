@@ -1,0 +1,13 @@
+mixin main-collection(data)
+  section.main-collection
+    .container
+      h2.main-collection__title Коллекции
+      .main-collection__swiper.swiper(data-main-collection-slider="parent")
+        button.main-collection__button.main-collection__button--prev(type="button", data-main-collection-slider="prev")
+          +icon("icon-slider-arrow", 24, 24)
+        button.main-collection__button.main-collection__button--next(type="button", data-main-collection-slider="next")
+          +icon("icon-slider-arrow", 24, 24)
+        ul.main-collection__list.swiper-wrapper
+          for item in data
+            li.main-collection__item.swiper-slide
+              +card-product(item)

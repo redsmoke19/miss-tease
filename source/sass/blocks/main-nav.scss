@@ -10,12 +10,34 @@
     width: 100%;
     z-index: 100;
     display: flex;
+    visibility: hidden;
+    transition: opacity $trans-600 0.3s, visibility $trans-600 0.3s;
+
+    &::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      transition: opacity $trans-default 0.2s;
+    }
 
     &.is-active {
       pointer-events: all;
+      visibility: visible;
+      transition: visibility $trans-600;
+
+      &::before {
+        opacity: 1;
+        transition: opacity $trans-default;
+      }
 
       .main-nav__wrapper {
-        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: transform $trans-modal 0.1s;
       }
     }
   }
@@ -23,8 +45,11 @@
   &__wrapper {
     @include mobile-tablet {
       background-color: $color-black;
-      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
       width: size(280px);
+      position: relative;
+      z-index: 10;
+      transition: transform $trans-modal;
     }
   }
 
@@ -39,6 +64,16 @@
 
     @include mobile-tablet {
       flex-direction: column;
+      padding: size(20px);
+      align-items: stretch;
+      gap: 0;
+      border-bottom: 1px solid $white-10;
+    }
+  }
+
+  &__item {
+    @include mobile-tablet {
+      display: flex;
     }
   }
 
@@ -52,6 +87,30 @@
     padding: size(13px) 0;
     text-transform: uppercase;
     transition: color $trans-default;
+
+    @include desktop {
+      &-arrow {
+        display: none;
+      }
+    }
+
+    @include mobile-tablet {
+      font-size: size(12px);
+      line-height: size(12px);
+      padding: size(15px) 0;
+      width: 100%;
+      position: relative;
+
+      &-arrow {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        height: size(12px);
+        width: size(12px);
+      }
+    }
 
     @include hover-focus {
       color: $color-default-white;

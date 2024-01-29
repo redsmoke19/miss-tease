@@ -9,9 +9,15 @@ block variables
   - const footerMods = ""
   - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
+block data
+  //- Тут берем переменную mainCollection
+  include ../components/data/main-collection
+
 block main
   main
     +hero-slider()
+    +main-collection(mainCollection)
+    +main-categories()
 
 block modals
   +modal("modal--cart")(data-modal="cart")

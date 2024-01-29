@@ -1,0 +1,36 @@
+mixin main-categories()
+  section.main-categories
+    .container
+      h2.visually-hidden Категории товаров
+      .main-categories__wrapper
+        ul.main-categories__list
+          li.main-categories__item
+            .main-categories__card
+              .main-categories__img
+                +img("content", "categories-1", "jpg", "613", "800", "Изображение категории")
+              h2.main-categories__title Бюстгальтеры
+              a.main-categories__link.link-bordered(href="#") Смотреть все
+          li.main-categories__item.main-categories__item--span-2
+            .main-categories__card
+              .main-categories__img
+                +img("content", "categories-2", "jpg", "613", "800", "Изображение категории")
+              h2.main-categories__title Трусики
+              a.main-categories__link.link-bordered(href="#") Смотреть все
+          li.main-categories__item
+            .main-categories__card
+              .main-categories__img
+                +img("content", "categories-3", "jpg", "613", "800", "Изображение категории")
+              h2.main-categories__title Аксессуары
+              a.main-categories__link.link-bordered(href="#") Смотреть все
+          li.main-categories__item.main-categories__item--span-2
+            .main-categories__card
+              .main-categories__img
+                +img("content", "categories-4", "jpg", "613", "800", "Изображение категории")
+              h2.main-categories__title Эксклюзивное белье
+              a.main-categories__link.link-bordered(href="#") Смотреть все
+          li.main-categories__item.main-categories__item--span-2
+            .main-categories__card
+              .main-categories__img
+                +img("content", "categories-5", "jpg", "613", "800", "Изображение категории")
+              h2.main-categories__title Базовое белье
+              a.main-categories__link.link-bordered(href="#") Смотреть все

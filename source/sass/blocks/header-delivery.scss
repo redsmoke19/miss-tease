@@ -1,21 +1,39 @@
 .header-delivery {
   &__link {
-    display: flex;
     align-items: center;
-    font-size: size(14px);
-    line-height: size(17px);
     color: rgba($color-default-white, 0.7);
     cursor: pointer;
+    display: flex;
+    font-size: size(14px);
+    line-height: size(17px);
     transition: color $trans-default;
 
-    svg {
+    @include mobile-tablet {
+      padding: size(6px) 0;
+    }
+
+    &-globus {
       height: size(18px);
-      width: size(18px);
       margin: 0 size(10px) 0 0;
       opacity: 0.7;
-      transition: opacity $trans-default;
-      transform: translateZ(0);
       pointer-events: none;
+      transform: translateZ(0);
+      transition: opacity $trans-default;
+      width: size(18px);
+    }
+
+    &-arrow {
+      @include desktop {
+        display: none;
+      }
+
+      @include mobile-tablet {
+        height: size(12px);
+        margin: 0 0 0 size(6px);
+        transform: translateZ(0);
+        transition: transform $trans-default;
+        width: size(12px);
+      }
     }
 
     span {

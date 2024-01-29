@@ -1,0 +1,30 @@
+mixin card-product(data)
+  -
+    const img = data.img || ""
+    const width = data.width || "430"
+    const height = data.height || "644"
+    const img2 = data.img2 || ""
+    const video = data.video || ""
+    const name = data.name || ""
+    const price = data.price || ""
+    const oldPrice = data.oldPrice || ""
+    const sale = data.sale || ""
+
+  .card-product(data-card-product)
+    .card-product__inner
+      if (video)
+        video(muted, loop, playsinline).card-product__video
+          source(src=`video/${video}.mp4`)
+      if (img2)
+        +img("card-product", img2, "jpg", width, height, "Фотография товара").card-product__second-img
+      +img("card-product", img, "jpg", width, height, "Фотография товара").card-product__main-img
+      if(sale)
+        span.card-product__sale!=`-${sale}%`
+    .card-product__bottom
+      h2.card-product__name!=name
+      if(price)
+        .card-product__prices
+          span.card-product__price!=`от ${price} ₽`
+          if(oldPrice)
+            span.card-product__old-price от <span>#{oldPrice} ₽</span>
+    a.card-product__shadow-link(href="#", aria-label="Перейти к товару")

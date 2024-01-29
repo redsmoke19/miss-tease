@@ -2,8 +2,9 @@ mixin header-delivery()
 
   .header-delivery
     a.header-delivery__link
-      +icon("icon-globus", "18", "18")
+      +icon("icon-globus", "18", "18").header-delivery__link-globus
       span Россия ₽
+      +icon("icon-arrow-down", "12", "12").header-delivery__link-arrow
     .header-delivery__inner
       p.header-delivery__text Мы осуществляем доставку по всему миру
       ul.header-delivery__list
