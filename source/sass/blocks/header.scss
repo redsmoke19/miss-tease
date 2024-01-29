@@ -11,6 +11,15 @@
     padding: size(14px) 0;
   }
 
+  //&__wrapper {
+  //  padding: size(26px) size(40px) size(8px);
+  //  background-color: $color-black;
+  //
+  //  @include mobile-tablet {
+  //    padding: size(14px) size(10px);
+  //  }
+  //}
+
   &__top {
     align-items: center;
     display: grid;
@@ -64,6 +73,7 @@
     @include mobile-tablet {
       font-size: size(10px);
       line-height: size(13px);
+      padding: 0 size(6px) 0 0;
     }
 
     svg {

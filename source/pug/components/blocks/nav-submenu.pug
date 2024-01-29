@@ -1,0 +1,26 @@
+mixin nav-submenu()
+  .nav-submenu
+    .nav-submenu__wrapper
+      .nav-submenu__inner
+        ul.nav-submenu__list
+          li.nav-submenu__item
+            a.nav-submenu__link(href="#") Смотреть все
+          li.nav-submenu__item
+            a.nav-submenu__link(href="#") Комплекты
+          li.nav-submenu__item
+            a.nav-submenu__link(href="#") Бюстгальтеры
+          li.nav-submenu__item
+            a.nav-submenu__link(href="#") Трусики
+          li.nav-submenu__item
+            a.nav-submenu__link(href="#") Топы
+        ul.nav-submenu__images-list
+          li.nav-submenu__images-item
+            a.nav-submenu__images-link(href="#")
+              .nav-submenu__images-wrap
+                +img("content", "submenu-1", "jpg", "251", "340", "Изображение товара")
+              span.nav-submenu__images-text Новинки
+          li.nav-submenu__images-item
+            a.nav-submenu__images-link(href="#")
+              .nav-submenu__images-wrap
+                +img("content", "submenu-2", "jpg", "251", "340", "Изображение товара")
+              span.nav-submenu__images-text Sale
