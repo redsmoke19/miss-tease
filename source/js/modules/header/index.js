@@ -1,6 +1,7 @@
 import {resizeObserver} from '../../utils/observers.js';
 import {PageMenu} from './PageMenu.js';
 import {setHeaderHeight} from './set-header-height.js';
+import {initSubmenu} from './init-submenu.js';
 
 const initPageMenu = () => {
   const pageMenu = new PageMenu();
@@ -15,4 +16,5 @@ const initHeaderHeight = () => {
 export default {
   initPageMenu,
   initHeaderHeight,
+  initSubmenu,
 };

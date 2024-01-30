@@ -1,6 +1,6 @@
 mixin nav-submenu()
-  .nav-submenu
-    .nav-submenu__wrapper
+  .nav-submenu(data-sub-menu="parent")
+    .nav-submenu__wrapper(data-sub-menu="wrapper")
       .nav-submenu__inner
         ul.nav-submenu__list
           li.nav-submenu__item
