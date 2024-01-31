@@ -41,6 +41,7 @@
 
     @include desktop {
       display: flex;
+      overflow: hidden;
       width: calc(100% - #{size(540px)});
       height: size(1027px);
       gap: size(13px);

@@ -30,9 +30,10 @@
 
   &__thumb {
     width: size(116px);
-    height: size(174px);
+    height: size(186px);
     cursor: pointer;
     transition: opacity $trans-default;
+    padding: size(6px) 0;
     opacity: 0.6;
 
     &.swiper-slide-thumb-active {
@@ -40,10 +41,22 @@
     }
   }
 
+  &__thumb-wrapper {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   &__thumbs {
     @include desktop {
       flex-shrink: 0;
-      height: 100%;
+      height: calc(100% + #{size(12px)});
+      margin-top: size(-6px);
     }
 
     @include mobile-tablet {
