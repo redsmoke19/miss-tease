@@ -29,8 +29,8 @@ mixin header(headerMods, currentUrl)
     ]
 
   header.header(class=headerMods, data-header, data-scroll-lock-fill-gap)
-    .container
-      .header__wrapper
+    .header__wrapper
+      .container
         .header__top
           button.header__sandwich.sandwich(type="button" aria-label="Переключатель отображения меню" aria-pressed="false", data-sandwich)
             span.sandwich__menu
@@ -50,7 +50,9 @@ mixin header(headerMods, currentUrl)
                   if(activeState)
                     a.main-nav__link.is-active(href=link.href)= link.text
                   else
-                    a.main-nav__link(href=link.href, data-sub-menu=link.subMenu ? "" : null)= link.text
+                    a.main-nav__link(href=link.href, data-sub-menu=link.subMenu ? "link" : null)= link.text
                       if(link.icon)
                         +icon(link.icon, "12", "12").main-nav__link-arrow
+          .main-nav__submenu
+            +nav-submenu()
 

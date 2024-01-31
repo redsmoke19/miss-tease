@@ -37,6 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     headerInit.initPageMenu();
     headerInit.initHeaderHeight();
+    headerInit.initSubmenu();
     cardProduct.getPlayVideo();
     initAccordions();
     initTabs();
