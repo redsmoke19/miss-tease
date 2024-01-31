@@ -2,6 +2,10 @@
   padding: size(40px) size(50px);
   background-color: $color-nero;
 
+  @include mobile {
+    padding: size(24px) size(20px);
+  }
+
   &__title {
     font-family: $ff-cormorant;
     font-size: size(50px);
@@ -10,12 +14,22 @@
     margin-top: 0;
     margin-bottom: size(42px);
     color: $color-default-white;
+
+    @include mobile {
+      font-size: size(32px);
+      margin-bottom: size(32px);
+    }
   }
 
   &__nav {
     display: flex;
     margin-bottom: size(45px);
     column-gap: size(60px);
+
+    @include mobile {
+      margin-bottom: size(31px);
+      column-gap: size(40px);
+    }
   }
 
   &__nav-item {
@@ -30,6 +44,12 @@
     border-bottom-style: solid;
     outline: none;
     background: none;
+
+    @include mobile {
+      font-size: size(13px);
+      width: min-content;
+      text-align: left;
+    }
 
     @include hover-focus {
       color: $color-barley-corn;
@@ -50,7 +70,11 @@
     transition: height $trans-default;
 
     &:not(:last-child) {
-      margin-bottom: size(40px);
+      margin-bottom: size(26px);
+
+      @include mobile {
+        margin-bottom: size(32px);
+      }
     }
   }
 
@@ -60,7 +84,50 @@
 
   &__table {
     &:not(:last-child) {
-      margin-bottom: size(64px);
+      margin-bottom: size(51px);
+
+      @include mobile {
+        margin-bottom: size(41px);
+      }
+    }
+
+    &--bras {
+      table {
+        min-width: size(455px);
+      }
+
+      td,
+      th {
+        width: calc(100% / 7);
+      }
+    }
+
+    &--belts {
+      table {
+        min-width: size(326px);
+      }
+
+      td,
+      th {
+        @include tablet-desktop {
+          width: calc(100% / 7);
+        }
+
+        @include mobile {
+          width: calc(100% / 5);
+        }
+      }
+    }
+
+    &--international {
+      table {
+        min-width: size(357px);
+      }
+
+      td,
+      th {
+        width: calc(100% / 4);
+      }
     }
   }
 
@@ -69,6 +136,10 @@
     font-weight: 300;
     line-height: 140%;
     color: $white-56;
+
+    @include mobile {
+      font-size: size(13px);
+    }
 
     &:last-child {
       margin-bottom: 0;
