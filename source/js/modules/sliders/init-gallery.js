@@ -3,7 +3,6 @@ import {modals} from '../modals/init-modals.js';
 
 const thumbsSliderSettings = {
   direction: 'vertical',
-  spaceBetween: 12,
   slidesPerView: 'auto',
   freeMode: true,
   watchSlidesProgress: true,
