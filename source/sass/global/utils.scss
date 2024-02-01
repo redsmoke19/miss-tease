@@ -14,7 +14,18 @@
 
   main {
     flex-grow: 1;
-    padding: var(--header-height) 0 0 0;
+
+    @include tablet-desktop {
+      padding: size(140px) 0 0 0;
+      /* stylelint-disable-next-line */
+      padding: var(--header-height) 0 0 0;
+    }
+
+    @include mobile {
+      padding: size(56px) 0 0 0;
+      /* stylelint-disable-next-line */
+      padding: var(--header-height) 0 0 0;
+    }
   }
 }
 

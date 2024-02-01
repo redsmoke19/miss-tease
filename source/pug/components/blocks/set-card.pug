@@ -1,6 +1,6 @@
 mixin set-card()
   .set-card
     .set-card__container.container
-      +gallery-slider().set-card__content
+      +gallery-slider().set-card__content(data-sticky-block, data-top="20")
       .set-card__aside
         +contents()
