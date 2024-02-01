@@ -1,10 +1,13 @@
 .table {
   &__title {
-    font-size: size(26px);
     font-weight: 300;
     margin-top: 0;
-    margin-bottom: size(24px);
     color: $white-70;
+
+    @include tablet-desktop {
+      font-size: size(26px);
+      margin-bottom: size(24px);
+    }
 
     @include mobile {
       font-size: size(20px);
