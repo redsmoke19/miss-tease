@@ -11,17 +11,15 @@ const ease = 'sine.out';
 const mm = gsap.matchMedia();
 
 const toggleStickyBlocksClass = (blocks, value, height) => {
-  mm.add(mediaQuery, () => {
-    gsap.to(blocks, {
-      top(idx, target) {
-        const fontSize = getHtmlFontSize();
-        const scalePercent = fontSize / defaultFontSize;
-        const top = Number(target.dataset.top);
-        return value ? height + (top * scalePercent) : top * scalePercent;
-      },
-      duration,
-      ease,
-    });
+  gsap.to(blocks, {
+    top(idx, target) {
+      const fontSize = getHtmlFontSize();
+      const scalePercent = fontSize / defaultFontSize;
+      const top = Number(target.dataset.top);
+      return value ? height + (top * scalePercent) : top * scalePercent;
+    },
+    duration,
+    ease,
   });
 };
 
