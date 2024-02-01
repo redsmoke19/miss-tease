@@ -17,7 +17,7 @@ mixin product-card()
               if i === 7
                 video(muted, loop, playsinline, poster=`img/set-card/photo-${i}.jpg`)
                   source(src="video/collection-1.mp4")
-      .product-card__aside
+      .product-card__aside(data-sticky-block, data-top="20")
         .contents.product-card__contents
           h2.contents__title.contents__title--sm Бюстгальтер Gigi
           p.contents__price 4 900 ₽

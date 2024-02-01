@@ -12,6 +12,7 @@ import {initTabs} from './modules/tabs/init-tabs.js';
 import {initSelects} from './modules/select/init-selects.js';
 import initSliders from './modules/sliders/index.js';
 import {initCartButtons} from './modules/init-cart-buttons.js';
+import {initHeaderSticky} from './modules/header/init-header-sticky.js';
 
 // ---------------------------------
 
@@ -38,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     headerInit.initPageMenu();
     headerInit.initHeaderHeight();
-    headerInit.initSubmenu();
+    // headerInit.initSubmenu();
     cardProduct.getPlayVideo();
     initAccordions();
     initTabs();
@@ -46,6 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initCustomInputs();
     initSliders();
     initCartButtons();
+    initHeaderSticky();
   });
 });
 
