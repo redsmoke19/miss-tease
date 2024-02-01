@@ -38,7 +38,7 @@ mixin header(headerMods, currentUrl)
             +header-delivery()
           a.header__logo(href="index.html", aria-label="Переход на главную")
             +img("content", "header-logo", "png", "190", "50", "Логотип компании")
-          button.header__basket(data-open-modal="cart")
+          a.header__basket(href="cart.html", data-cart-button)
             +icon("icon-basket", "24", "24")
             span.header__basket-count 6
         nav.main-nav(data-nav="menu")

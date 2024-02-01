@@ -11,6 +11,7 @@ import {initDynamicAdaptive} from './modules/init-dynamic-adaptive.js';
 import {initTabs} from './modules/tabs/init-tabs.js';
 import {initSelects} from './modules/select/init-selects.js';
 import initSliders from './modules/sliders/index.js';
+import {initCartButtons} from './modules/init-cart-buttons.js';
 
 // ---------------------------------
 
@@ -44,6 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initCounters();
     initCustomInputs();
     initSliders();
+    initCartButtons();
   });
 });
 
