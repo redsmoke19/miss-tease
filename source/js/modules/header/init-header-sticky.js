@@ -33,7 +33,8 @@ const initHeaderSticky = () => {
     return;
   }
 
-  const stickyBlocks = document.querySelectorAll('[data-sticky-block]');
+  const stickyBlocks = [];
+  // const stickyBlocks = document.querySelectorAll('[data-sticky-block]');
   let direction = 0;
 
   toggleStickyBlocksClass(stickyBlocks, true, header.offsetHeight);

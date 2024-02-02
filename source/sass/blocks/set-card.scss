@@ -35,7 +35,7 @@
   &__content {
     @include tablet-desktop {
       position: sticky;
-      top: size(20px);
+      top: calc(var(--header-height) + size(20px));
       flex-shrink: 0;
     }
 
