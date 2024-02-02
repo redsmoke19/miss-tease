@@ -1,7 +1,7 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Главная" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
@@ -15,6 +15,7 @@ block data
 
 block main
   main
+    h1.visually-hidden Главная страница
     +hero-slider()
     +main-collection(mainCollection)
     +main-categories()

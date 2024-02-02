@@ -9,8 +9,12 @@ const mediaQuery = '(min-width:768px)';
 const duration = 0.3;
 const ease = 'sine.out';
 const mm = gsap.matchMedia();
+let currentDirection = 0;
 
-const toggleStickyBlocksClass = (blocks, value, height) => {
+const toggleStickyBlocksClass = (blocks = [], value, height) => {
+  if (!blocks.length) {
+    return;
+  }
   gsap.to(blocks, {
     top(idx, target) {
       const fontSize = getHtmlFontSize();
@@ -23,6 +27,26 @@ const toggleStickyBlocksClass = (blocks, value, height) => {
   });
 };
 
+const showHeader = (header, blocks, direction) => {
+  setTimeout(() => {
+    if (currentDirection !== direction) {
+      return;
+    }
+    toggleStickyBlocksClass(blocks, true, header.offsetHeight);
+    gsap.to(header, {yPercent: 0, duration, ease});
+  }, 300);
+};
+
+const hideHeader = (header, blocks, direction) => {
+  setTimeout(() => {
+    if (currentDirection !== direction) {
+      return;
+    }
+    toggleStickyBlocksClass(blocks, false, header.offsetHeight);
+    gsap.to(header, {yPercent: -100, duration, ease});
+  }, 300);
+};
+
 const initHeaderSticky = () => {
   const header = document.querySelector('[data-header]');
 
@@ -30,8 +54,8 @@ const initHeaderSticky = () => {
     return;
   }
 
-  const stickyBlocks = document.querySelectorAll('[data-sticky-block]');
-  let direction = 0;
+  const stickyBlocks = [];
+  // const stickyBlocks = document.querySelectorAll('[data-sticky-block]');
 
   toggleStickyBlocksClass(stickyBlocks, true, header.offsetHeight);
   mm.add(mediaQuery, () => {
@@ -39,19 +63,17 @@ const initHeaderSticky = () => {
       start: 'top top-=' + header.offsetHeight,
       onUpdate(self) {
         if (self.direction === -1) {
-          if (direction === -1) {
+          if (currentDirection === -1) {
             return;
           }
-          toggleStickyBlocksClass(stickyBlocks, true, header.offsetHeight);
-          gsap.to(header, {yPercent: 0, duration, ease});
+          showHeader(header, stickyBlocks, self.direction);
         } else {
-          if (direction === 1) {
+          if (currentDirection === 1) {
             return;
           }
-          toggleStickyBlocksClass(stickyBlocks, false, header.offsetHeight);
-          gsap.to(header, {yPercent: -100, duration, ease});
+          hideHeader(header, stickyBlocks, self.direction);
         }
-        direction = self.direction;
+        currentDirection = self.direction;
       },
     });
   });
