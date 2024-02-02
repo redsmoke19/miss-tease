@@ -1,8 +1,8 @@
 mixin hero-slider()
   section.hero-slider.swiper(data-hero-slider="parent")
-    button.hero-slider__button.hero-slider__button--prev(type="button", data-hero-slider="prev")
+    button.hero-slider__button.hero-slider__button--prev(type="button", data-hero-slider="prev", aria-label="Назад")
       +icon("icon-slider-arrow", 40, 40)
-    button.hero-slider__button.hero-slider__button--next(type="button", data-hero-slider="next")
+    button.hero-slider__button.hero-slider__button--next(type="button", data-hero-slider="next", aria-label="Вперед")
       +icon("icon-slider-arrow", 40, 40)
     .hero-slider__pagination.swiper-pagination(data-hero-slider="pagination")
     .hero-slider__wrapper.swiper-wrapper

@@ -1,0 +1,16 @@
+include ../../data/sizes
+
+mixin sizes(settings = {})
+  - const {mod} = settings
+  .sizes(data-tabs="parent", class=mod && `sizes--${mod}`)
+    h2.sizes__title Размерный гид
+    .sizes__nav(data-tabs="controls")
+      button.sizes__nav-item(type="button", data-tabs="control") Таблица размеров
+      button.sizes__nav-item(type="button", data-tabs="control") Международный конвертер&nbsp;размеров
+    .sizes__tabs(data-tabs="content")
+      .sizes__tab(data-tabs="element")
+        +table(brasSizes).sizes__table.sizes__table--bras
+        +table(beltsSizes).sizes__table.sizes__table--belts
+      .sizes__tab(data-tabs="element")
+        +table(brasInternationalSizes).sizes__table.sizes__table--international
+    p.sizes__prompt С полным руководством Вы можете ознакомиться на странице <a href="#">таблица&nbsp;размеров</a>

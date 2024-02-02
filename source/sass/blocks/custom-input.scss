@@ -101,10 +101,22 @@
   }
 
   .input-message {
-    font-size: size(12px);
     font-weight: 300;
+    position: absolute;
+    left: 0;
+    width: 100%;
     transition: opacity $trans-default;
     color: $color-sunset-orange;
+
+    @include tablet-desktop {
+      font-size: size(12px);
+      top: 100%;
+    }
+
+    @include mobile {
+      font-size: size(10px);
+      top: calc(100% - #{size(2px)});
+    }
 
     &.is-invalid {
       color: $color-sunset-orange;

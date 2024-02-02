@@ -11,6 +11,7 @@ block variables
 
 block main
   main
+    h1.visually-hidden Карточка комплекта
     +back-link("Назад к коллекциям")
     +set-card()
 
@@ -20,4 +21,4 @@ block modals
   +modal("modal--gallery")(data-modal="gallery")
     +modal-gallery()
   +modal("modal--sizes")(data-modal="sizes")
-    +modal-sizes()
+    +sizes({mod: 'modal'})

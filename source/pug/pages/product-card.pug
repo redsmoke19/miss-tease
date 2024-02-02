@@ -1,7 +1,7 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "Карточка комплекта"
+  - const title = "Карточка товара"
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
@@ -11,6 +11,7 @@ block variables
 
 block main
   main
+    h1.visually-hidden Карточка товара
     +back-link("Назад к бюстгальтерам")
     +product-card()
 
@@ -20,4 +21,4 @@ block modals
   +modal("modal--gallery")(data-modal="gallery")
     +modal-gallery()
   +modal("modal--sizes")(data-modal="sizes")
-    +modal-sizes()
+    +sizes({mod: 'modal'})

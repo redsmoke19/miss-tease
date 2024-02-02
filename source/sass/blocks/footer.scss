@@ -29,9 +29,9 @@
     }
 
     @include mobile {
-      width: size(23px);
-      height: size(23px);
-      margin-right: size(10px);
+      width: size(22px);
+      height: size(22px);
+      margin-right: size(14px);
     }
 
     svg {
@@ -324,8 +324,8 @@
 
   &__social {
     @include mobile {
-      padding-top: size(10px);
-      padding-bottom: size(16px);
+      padding-top: size(14px);
+      padding-bottom: size(18px);
     }
   }
 }
