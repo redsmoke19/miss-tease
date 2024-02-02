@@ -10,7 +10,10 @@ const duration = 0.3;
 const ease = 'sine.out';
 const mm = gsap.matchMedia();
 
-const toggleStickyBlocksClass = (blocks, value, height) => {
+const toggleStickyBlocksClass = (blocks = [], value, height) => {
+  if (!blocks.length) {
+    return;
+  }
   gsap.to(blocks, {
     top(idx, target) {
       const fontSize = getHtmlFontSize();
@@ -30,7 +33,8 @@ const initHeaderSticky = () => {
     return;
   }
 
-  const stickyBlocks = document.querySelectorAll('[data-sticky-block]');
+  const stickyBlocks = [];
+  // const stickyBlocks = document.querySelectorAll('[data-sticky-block]');
   let direction = 0;
 
   toggleStickyBlocksClass(stickyBlocks, true, header.offsetHeight);
