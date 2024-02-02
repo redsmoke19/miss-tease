@@ -4,6 +4,7 @@ export const setHeaderHeight = () => {
     return;
   }
 
-  const headerRect = header.getBoundingClientRect();
-  document.documentElement.style.setProperty('--header-height', headerRect.height + 'px');
+  const main = document.querySelector('.wrapper main');
+  document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+  main.style.paddingTop = 'var(--header-height)';
 };
