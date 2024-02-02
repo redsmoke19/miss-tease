@@ -16,15 +16,11 @@
     flex-grow: 1;
 
     @include tablet-desktop {
-      padding: size(140px) 0 0 0;
-      /* stylelint-disable-next-line */
-      padding: var(--header-height) 0 0 0;
+      padding-top: size(140px);
     }
 
     @include mobile {
-      padding: size(56px) 0 0 0;
-      /* stylelint-disable-next-line */
-      padding: var(--header-height) 0 0 0;
+      padding-top: size(56px);
     }
   }
 }
