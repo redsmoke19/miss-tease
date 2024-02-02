@@ -36,7 +36,7 @@ const initHeaderSticky = () => {
   toggleStickyBlocksClass(stickyBlocks, true, header.offsetHeight);
   mm.add(mediaQuery, () => {
     ScrollTrigger.create({
-      start: 'top top-=' + header.offsetHeight * 2,
+      start: 'top top-=' + header.offsetHeight,
       onUpdate(self) {
         if (self.direction === -1) {
           if (direction === -1) {
