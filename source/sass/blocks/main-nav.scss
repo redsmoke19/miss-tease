@@ -43,6 +43,10 @@
   }
 
   &__wrapper {
+    display: flex;
+    gap: size(44px);
+    justify-content: center;
+
     @include mobile-tablet {
       background-color: $color-black;
       transform: translate3d(-100%, 0, 0);
@@ -50,6 +54,7 @@
       position: relative;
       z-index: 10;
       transition: transform $trans-modal;
+      display: block;
     }
   }
 
@@ -74,6 +79,14 @@
   &__item {
     @include mobile-tablet {
       display: flex;
+    }
+
+    &--last {
+      @include mobile-tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
     }
   }
 
@@ -107,8 +120,27 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%) rotate(-90deg);
+        transition: transform $trans-default;
         height: size(12px);
         width: size(12px);
+      }
+    }
+
+    &[data-sub-menu] {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        z-index: 10;
+
+        @include mobile-tablet {
+          display: none;
+        }
       }
     }
 
@@ -119,5 +151,25 @@
 
   &__toggle {
     display: none;
+  }
+
+  &__block {
+    @include mobile-tablet {
+      width: 100%;
+
+      &.is-active {
+        .main-nav__link-arrow {
+          transform: translateY(-50%) rotate(0deg);
+        }
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include mobile-tablet {
+        display: block;
+      }
+    }
   }
 }

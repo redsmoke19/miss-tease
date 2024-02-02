@@ -17,11 +17,14 @@ const getOpenMenu = () => {
 
 const getCloseMenu = () => {
   subMenu.classList.remove('is-active');
-  scrollLock.enablePageScroll();
+};
+
+const mouseInHandler = () => {
+  getOpenMenu();
+  subMenuWrapper.addEventListener('mouseout', mouseOutHandler);
 };
 
 const mouseOutHandler = (evt) => {
-  console.log(evt.relatedTarget);
   if (evt.relatedTarget.closest('[data-sub-menu="wrapper"]')) {
     return;
   }
@@ -30,17 +33,28 @@ const mouseOutHandler = (evt) => {
   subMenuWrapper.removeEventListener('mouseout', mouseOutHandler);
   setTimeout(() => {
     delay = null;
-  }, 2000);
+  }, 1000);
+
+  setTimeout(() => {
+    scrollLock.enablePageScroll();
+  }, 600);
+};
+
+const breakpointChecker = () => {
+  if (breakpoint.matches) {
+    delay = null;
+    subMenu.classList.remove('is-active');
+    scrollLock.enablePageScroll();
+    subMenuWrapper.removeEventListener('mouseout', mouseOutHandler);
+    subMenuLink.removeEventListener('mouseover', mouseInHandler);
+  } else {
+    subMenuLink.addEventListener('mouseover', mouseInHandler);
+  }
 };
 
 const initSubmenu = () => {
-  subMenuLink.addEventListener('mouseover', () => {
-    if (breakpoint.matches) {
-      return;
-    }
-    getOpenMenu();
-    subMenuWrapper.addEventListener('mouseout', mouseOutHandler);
-  });
+  breakpoint.addEventListener('change', breakpointChecker);
+  breakpointChecker();
 };
 
 export {initSubmenu};
