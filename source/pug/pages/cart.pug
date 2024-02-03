@@ -7,13 +7,16 @@ block variables
   - const headerMods = ""
   - const hasFooter = true
   - const footerMods = ""
-  - const currentUrl = "set-card.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const currentUrl = "cart.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block data
+  include ../data/cart-items
 
 block main
   main
     h1.visually-hidden Корзина
-    include ../components/blocks/cart
+    +cart({items: cartItems})
 
 block modals
-  +modal("modal--cart")(data-modal="cart")
-    +modal-cart()
+  +modal-message({status: 'success', text: "Промокод успешно применен", icon: "icon-done"})(data-modal="success")
+  +modal-message({status: 'error', text: "Промокод не действителен", icon: "icon-error"})(data-modal="error")

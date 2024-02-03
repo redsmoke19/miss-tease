@@ -1,67 +1,4 @@
--
-  const setItems = [
-    {
-      name: 'Стикини',
-      price: '1 500 ₽',
-      size: false,
-      img: 'cart-img-1'
-    },
-    {
-      name: 'Гартеры Burlesque',
-      price: '3 300 ₽',
-      size: false,
-      img: 'cart-img-3'
-    },
-    {
-      name: 'Пояс Burlesque',
-      price: '3 800 ₽',
-      size: true,
-      img: 'cart-img-2'
-    },
-    {
-      name: 'Трусики Burlesque',
-      price: '4 300 ₽',
-      size: true,
-      img: 'cart-img-5'
-    },
-    {
-      name: 'Бюстгальтер Burlesque',
-      price: '4 300 ₽',
-      size: true,
-      img: 'cart-img-4'
-    },
-  ]
-
-  const lookItems = [
-    {
-      name: 'Кожаная маска',
-      price: '1 300 ₽',
-      img: 'cart-img-6'
-    },
-    {
-      name: 'Золотые наручники',
-      price: '2 100 ₽',
-      img: 'cart-img-7'
-    },
-    {
-      name: 'Кошачья кнутка',
-      price: '1 800 ₽',
-      img: 'cart-img-8'
-    },
-  ]
-
-  const selectList = [
-    {text: '70B', value: '70B'},
-    {text: '70C', value: '70C'},
-    {text: '70D', value: '70D'},
-    {text: '75B', value: '75B'},
-    {text: '75C', value: '75C'},
-    {text: '75D', value: '75D'},
-    {text: '80B', value: '80B'},
-    {text: '80C', value: '80C'},
-    {text: '80D', value: '80D'},
-    {text: '75A', value: '75A'},
-  ]
+include ../../data/set-card-data
 
 mixin contents()
   .contents.set-card__contents
@@ -84,7 +21,13 @@ mixin contents()
                   placeholder: "Выбрать размер",
                   optionsList: selectList
                 }).contents-card__select(data-select, data-name="size")
-              +btn({text: "Добавить в&nbsp;корзину", stroke: true, size: "small"}).contents-card__button
+              .contents-card__footer(data-cart-button="parent")
+                button.cart-button-stroke.contents-card__button(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+                  span.cart-button-stroke__icon
+                    +icon("icon-check", 20, 20)
+                  span.cart-button-stroke__text(data-default-text="Добавить в корзину", data-added-text="В корзине")
+                button.contents-card__delete(type="button", aria-label="Удалить", data-cart-button="remove")
+                  +icon("icon-trash", 20, 20)
       a.contents__link(href="#", data-open-modal="sizes")
         +icon("icon-size", 20, 20)
         span.link Размерный гид
@@ -100,7 +43,13 @@ mixin contents()
               .contents-card__header
                 a.contents-card__name.link(href="#")!= name
                 span.contents-card__price!= price
-              +btn({text: "Добавить в&nbsp;корзину", stroke: true, size: "small"}).contents-card__button
+              .contents-card__footer(data-cart-button="parent")
+                button.cart-button-stroke.contents-card__button(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+                  span.cart-button-stroke__icon
+                    +icon("icon-check", 20, 20)
+                  span.cart-button-stroke__text(data-default-text="Добавить в корзину", data-added-text="В корзине")
+                button.contents-card__delete(type="button", aria-label="Удалить", data-cart-button="remove")
+                  +icon("icon-trash", 20, 20)
     .contents__footer.contents-footer
       p.contents-footer__total
         span Итого

@@ -41,7 +41,11 @@ mixin product-card()
           .contents__footer.contents-footer
             .contents-footer__actions
               +counter()
-              +btn({size: "big-icon", text: "В корзину", icon: "icon-cart"}).contents-footer__cart-button
+              button.cart-button.contents-footer__cart-button(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+                span.cart-button__icon
+                  +icon("icon-cart", 20, 20)
+                  +icon("icon-check", 20, 20)
+                span.cart-button__text(data-default-text="В корзину", data-added-text="В корзине")
             .contents-footer__description(data-accordion="parent")
               +accordion({text: "Описание", mod: "uppercase"}).contents-footer__accordion
                 .info

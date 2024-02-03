@@ -18,6 +18,9 @@
 
   &:not(.modal--cart) {
     transition: opacity $trans-modal, transform $trans-modal, visibility $trans-modal;
+  }
+
+  &:not(.modal--cart):not(.modal--no-scale) {
     transform: scale(1.2);
   }
 

@@ -1,0 +1,41 @@
+.message {
+  font-weight: 300;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  background-color: $color-nero;
+  gap: 20px;
+
+  @include tablet-desktop {
+    font-size: 22px;
+    padding: 30px;
+  }
+
+  @include mobile {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  svg {
+    flex-shrink: 0;
+
+    @include tablet-desktop {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include mobile {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &:not(.message--success) {
+    color: $white-56;
+  }
+
+  &--success {
+    color: $color-barley-corn;
+  }
+}
