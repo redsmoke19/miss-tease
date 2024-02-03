@@ -6,25 +6,27 @@ mixin header-delivery()
       span Россия ₽
       +icon("icon-arrow-down", "12", "12").header-delivery__link-arrow
     .header-delivery__inner
-      p.header-delivery__text Мы осуществляем доставку по всему миру
+      button.header-delivery__close(type="button", aria-label="Закрыть меню")
+        +icon("icon-close", 15, 15)
+      p.header-delivery__text Мы осуществляем доставку по&nbsp;всему миру
       ul.header-delivery__list
         li.header-delivery__item
-          a.header-delivery__country
+          a.header-delivery__country.is-active(href="#")
             +img("content", "flag-ru", "png", "26", "26", "Изображение флага")
             span.header-delivery__name Россия
             span.header-delivery__value ₽  РУБ
         li.header-delivery__item
-          a.header-delivery__country
+          a.header-delivery__country(href="#")
             +img("content", "flag-kz", "png", "26", "26", "Изображение флага")
             span.header-delivery__name Казахстан
             span.header-delivery__value ₸  ТНГ
         li.header-delivery__item
-          a.header-delivery__country
+          a.header-delivery__country(href="#")
             +img("content", "flag-eu", "png", "26", "26", "Изображение флага")
             span.header-delivery__name Евросоюз
             span.header-delivery__value €  EUR
         li.header-delivery__item
-          a.header-delivery__country
+          a.header-delivery__country(href="#")
             +img("content", "flag-all", "png", "26", "26", "Изображение флага")
             span.header-delivery__name Другие страны
             span.header-delivery__value $  USD

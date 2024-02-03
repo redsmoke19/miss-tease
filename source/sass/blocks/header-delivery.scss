@@ -1,4 +1,7 @@
 .header-delivery {
+  position: relative;
+  z-index: 1;
+
   &__link {
     align-items: center;
     color: rgba($color-default-white, 0.7);
@@ -6,6 +9,7 @@
     display: flex;
     font-size: size(14px);
     line-height: size(17px);
+    padding: size(6px) 0;
     transition: color $trans-default;
 
     @include mobile-tablet {
@@ -50,6 +54,89 @@
   }
 
   &__inner {
-    display: none;
+    background-color: #141414;
+    left: size(-20px);
+    padding: size(30px);
+    position: absolute;
+    top: calc(100% + #{size(14px)});
+    width: size(360px);
+  }
+
+  &__close {
+    background-color: $color-transparent;
+    padding: 0;
+    border: none;
+    height: size(18px);
+    width: size(18px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    color: $white-30;
+    top: size(12px);
+    right: size(12px);
+    position: absolute;
+    cursor: pointer;
+
+    @include hover-focus {
+      color: $color-default-white;
+    }
+
+    svg {
+      height: size(15px);
+      width: size(15px);
+      transition: color $trans-default;
+    }
+  }
+
+  &__text {
+    color: $white-56;
+    font-size: size(18px);
+    font-weight: 300;
+    line-height: size(23px);
+    margin: 0 0 size(20px) 0;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__country {
+    align-items: center;
+    color: $white-40;
+    display: flex;
+    padding: size(8px) size(10px) size(8px) 0;
+
+    &.is-active {
+      color: $color-barley-corn;
+    }
+
+    img {
+      height: size(26px);
+      width: size(26px);
+    }
+
+    @include hover-focus {
+      color: $color-barley-corn;
+    }
+  }
+
+  &__name {
+    font-size: size(14px);
+    font-weight: 400;
+    line-height: size(18px);
+    margin: 0 size(10px) 0 size(12px);
+    transition: color $trans-default;
+  }
+
+  &__value {
+    font-size: size(14px);
+    letter-spacing: 0.06em;
+    line-height: size(14px);
+    margin: 0 0 0 auto;
+    text-transform: uppercase;
+    transition: color $trans-default;
   }
 }
