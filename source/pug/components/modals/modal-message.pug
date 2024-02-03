@@ -1,0 +1,11 @@
+mixin modal-message(settings = {})
+  - const {status='success', text, icon='icon-done'} = settings
+  .modal.modal--preload.modal--no-scale&attributes(attributes)
+    .modal__wrapper
+      .modal__overlay(data-close-modal)
+      .modal__content
+        .message(class=`message--${status}`)
+          +icon(icon, 40, 40)
+          span!= text
+
+
