@@ -21,7 +21,13 @@ mixin contents()
                   placeholder: "Выбрать размер",
                   optionsList: selectList
                 }).contents-card__select(data-select, data-name="size")
-              +btn({text: "Добавить в&nbsp;корзину", stroke: true, size: "small"}).contents-card__button
+              .contents-card__footer(data-cart-button="parent")
+                button.cart-button-stroke.contents-card__button(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+                  span.cart-button-stroke__icon
+                    +icon("icon-check", 20, 20)
+                  span.cart-button-stroke__text(data-default-text="Добавить в корзину", data-added-text="В корзине")
+                button.contents-card__delete(type="button", aria-label="Удалить", data-cart-button="remove")
+                  +icon("icon-trash", 20, 20)
       a.contents__link(href="#", data-open-modal="sizes")
         +icon("icon-size", 20, 20)
         span.link Размерный гид
@@ -37,7 +43,13 @@ mixin contents()
               .contents-card__header
                 a.contents-card__name.link(href="#")!= name
                 span.contents-card__price!= price
-              +btn({text: "Добавить в&nbsp;корзину", stroke: true, size: "small"}).contents-card__button
+              .contents-card__footer(data-cart-button="parent")
+                button.cart-button-stroke.contents-card__button(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+                  span.cart-button-stroke__icon
+                    +icon("icon-check", 20, 20)
+                  span.cart-button-stroke__text(data-default-text="Добавить в корзину", data-added-text="В корзине")
+                button.contents-card__delete(type="button", aria-label="Удалить", data-cart-button="remove")
+                  +icon("icon-trash", 20, 20)
     .contents__footer.contents-footer
       p.contents-footer__total
         span Итого

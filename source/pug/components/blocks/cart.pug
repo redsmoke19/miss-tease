@@ -49,7 +49,7 @@ mixin cart(props = {})
               p.cart-aside__total-text
                 span Итого
                 span 16 000 ₽
-              +btn({text: "Оформить заказ", size: "big"}).cart-aside__button
+              +btn({text: "Оформить заказ", size: "big", href: "#"}).cart-aside__button
             +accordion({text: "Промокоды и сертификаты", icon: "icon-sale"}).cart-aside__accordion
               .promo-code(data-form-validate, data-callback="base")
                 form.promo-code__form(action="#", novalidate)
