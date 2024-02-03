@@ -5,8 +5,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: size(32px);
-    height: size(40px);
     padding: 0;
     cursor: pointer;
     transition: color $trans-default;
@@ -14,6 +12,16 @@
     border: none;
     outline: none;
     background: none;
+
+    @include tablet-desktop {
+      width: size(32px);
+      height: size(40px);
+    }
+
+    @include mobile {
+      width: size(30px);
+      height: size(38px);
+    }
 
     &:disabled {
       pointer-events: none;
@@ -25,22 +33,37 @@
     }
 
     svg {
-      width: size(12px);
-      height: size(12px);
+      @include tablet-desktop {
+        width: size(12px);
+        height: size(12px);
+      }
+
+      @include mobile {
+        width: size(10px);
+        height: size(10px);
+      }
     }
   }
 
   &__num {
-    font-size: size(14px);
     line-height: normal;
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-width: size(46px);
     flex-grow: 1;
+    justify-content: center;
     padding: size(10px);
     user-select: none;
     text-align: center;
     color: rgba($color-default-white, 70%);
+
+    @include tablet-desktop {
+      font-size: size(14px);
+      min-width: size(46px);
+    }
+
+    @include mobile {
+      font-size: size(13px);
+      min-width: size(41px);
+    }
   }
 }

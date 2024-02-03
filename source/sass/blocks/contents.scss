@@ -341,6 +341,14 @@
       flex-grow: 1;
     }
   }
+
+  &__accordion {
+    border-top: size(1px) solid rgba($color-default-white, 10%);
+
+    &:last-child {
+      border-bottom: size(1px) solid rgba($color-default-white, 10%);
+    }
+  }
 }
 
 .contents-sizes {
