@@ -1,8 +1,13 @@
-mixin accordion(text)
+mixin accordion(settings = {})
+  - const {text, icon, mod} = settings
   .accordion(data-accordion="element")&attributes(attributes)
     button.accordion__button(type="button", data-accordion="button")
+      if icon
+        span.accordion__button-icon
+          +icon(icon, 28, 28)
       span!= text
-      +icon("icon-plus", 12, 12)
+      span.accordion__button-arrow
+        +icon("icon-plus", 12, 12)
     .accordion__content(data-accordion="content")
       if block
         block

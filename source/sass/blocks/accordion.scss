@@ -1,15 +1,44 @@
 .accordion {
   display: flex;
   flex-direction: column;
-  border-top: size(1px) solid rgba($color-default-white, 10%);
-
-  &:last-child {
-    border-bottom: size(1px) solid rgba($color-default-white, 10%);
-  }
 
   &.is-active {
-    .accordion__button svg {
+    .accordion__button-arrow {
       transform: rotate(45deg);
+    }
+  }
+
+  &:not(.accordion--uppercase) {
+    .accordion__button {
+      color: $white-70;
+
+      @include desktop {
+        font-size: size(18px);
+        padding: size(24px) 0;
+      }
+
+      @include mobile-tablet {
+        font-size: size(14px);
+        padding: size(19px) 0;
+      }
+    }
+  }
+
+  &--uppercase {
+    .accordion__button {
+      letter-spacing: size(1.2px);
+      text-transform: uppercase;
+      color: $color-default-white;
+
+      @include desktop {
+        font-size: size(15px);
+        padding: size(22px) 0;
+      }
+
+      @include mobile-tablet {
+        font-size: size(13px);
+        padding: size(17px) 0;
+      }
     }
   }
 
@@ -17,39 +46,60 @@
     font-weight: 300;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     cursor: pointer;
-    letter-spacing: size(1.2px);
-    text-transform: uppercase;
-    color: $color-default-white;
     border: none;
     outline: none;
     background: none;
-    column-gap: size(20px);
 
-    @include tablet-desktop {
-      font-size: size(15px);
-      padding: size(22px) 0;
+    @include desktop {
+      column-gap: size(10px);
     }
 
-    @include mobile {
-      font-size: size(13px);
-      padding: size(17px) 0;
+    @include mobile-tablet {
+      column-gap: size(8px);
+    }
+  }
+
+  &__button-icon {
+    display: flex;
+    flex-shrink: 0;
+    color: $color-barley-corn;
+
+    @include desktop {
+      width: size(28px);
+      height: size(28px);
+    }
+
+    @include mobile-tablet {
+      width: size(20px);
+      height: size(20px);
     }
 
     svg {
-      transition: transform $trans-default;
-      color: rgba($color-default-white, 56%);
+      width: 100%;
+      height: 100%;
+    }
+  }
 
-      @include tablet-desktop {
-        width: size(15px);
-        height: size(15px);
-      }
+  &__button-arrow {
+    display: flex;
+    margin-left: auto;
+    transition: transform $trans-default;
+    color: rgba($color-default-white, 56%);
 
-      @include mobile {
-        width: size(12px);
-        height: size(12px);
-      }
+    @include desktop {
+      width: size(15px);
+      height: size(15px);
+    }
+
+    @include mobile-tablet {
+      width: size(12px);
+      height: size(12px);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
     }
   }
 }

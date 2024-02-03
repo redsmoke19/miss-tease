@@ -1,0 +1,100 @@
+-
+  const cartItems = [
+    {
+      name: 'Гартеры Burlesque',
+      price: '3 300 ₽ за шт.',
+      totalPrice: '3 300 ₽',
+      size: '',
+      img: 'cart-img-3',
+      quantity: 1
+    },
+    {
+      name: 'Пояс Burlesque',
+      price: '3 800 ₽ за шт.',
+      totalPrice: '3 800 ₽',
+      size: 'М',
+      img: 'cart-img-2',
+      quantity: 1
+    },
+    {
+      name: 'Бюстгальтер Burlesque',
+      price: '4 300 ₽ за шт.',
+      totalPrice: '4 300 ₽',
+      size: '70C',
+      img: 'cart-img-4',
+      quantity: 1
+    },
+    {
+      name: 'Трусики Burlesque',
+      price: '1 840 ₽ за шт.',
+      totalPrice: '3 680 ₽',
+      oldPrice: '2 300 ₽',
+      discount: '-20%',
+      size: 'M',
+      img: 'cart-img-5',
+      quantity: 2
+    },
+  ]
+
+section.cart
+  .cart__container.container
+    h2.cart__title Корзина
+    .cart__wrapper
+      .cart__content
+        .cart__actions
+          button.cart__button.link(type="button")
+            +icon("icon-trash", 20, 20)
+            span Удалить все
+        ul.cart__list
+          each item in cartItems
+            - const {name, price, size, img, totalPrice, oldPrice, discount, quantity} = item
+            li.cart__item.cart-item
+              button.cart-item__delete(type="button", aria-label="Удалить")
+                +icon("icon-close", 18, 18)
+              a.cart-item__img(href="#")
+                +img("cart", img, "jpg", 192, 284, name)
+              .cart-item__content
+                .cart-item__header
+                  a.cart-item__name.link(href="#")!= name
+                  if size
+                    p.cart-item__size
+                      | Размер:&nbsp;
+                      span!= size
+                .cart-item__aside
+                  .cart-item__counter
+                    +counter(quantity)
+                  span.cart-item__total-price
+                    if discount
+                      span.cart-item__total-price-text.cart-item__total-price-text--discount!= discount
+                    span.cart-item__total-price-text!= totalPrice
+                p.cart-item__price
+                  if oldPrice
+                    span.cart-item__price-text.cart-item__price-text--old!= oldPrice
+                  span.cart-item__price-text!= price
+      .cart__aside.cart-aside(data-accordion="parent")
+        .cart-aside__wrapper
+          h3.cart-aside__title Ваша корзина
+          ul.cart-aside__list
+            li.cart-aside__item
+              span.cart-aside__item-key 5 товаров на сумму
+              span.cart-aside__item-value 16 000 ₽
+            li.cart-aside__item
+              span.cart-aside__item-key Скидка
+              span.cart-aside__item-value 920 ₽
+          .cart-aside__total
+            p.cart-aside__total-text
+              span Итого
+              span 16 000 ₽
+            +btn({text: "Оформить заказ", size: "big"}).cart-aside__button
+          +accordion({text: "Промокоды и сертификаты", icon: "icon-sale"}).cart-aside__accordion
+            .promo-code(data-form-validate, data-callback="base")
+              form.promo-code__form(action="#", novalidate)
+                label.promo-code__input(data-validate-type="email", data-required, data-message-base="Поле обязательно к заполнению")
+                  input(type="text", id="promo-code", name="promo-code", placeholder="Промокод или сертификат")
+                +btn({text: "Применить", type: "submit", stroke: true, size: "medium"}).promo-code__apply
+              .promo-code__footer
+                p.promo-code__prompt
+                  +icon("icon-check", 16, 16)
+                  span Промокод <b>HEART30</b> применен
+                button.promo-code__cancel(type="button") Отменить
+        p.cart-aside__prompt Способы оплаты и выбор доставки можно выбрать при оформлении заказа

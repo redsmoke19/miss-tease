@@ -1,5 +1,5 @@
 -
-  const cartItems = [
+  const modalCartItems = [
     {
       name: 'Стикини',
       size: '',
@@ -38,7 +38,7 @@ mixin modal-cart()
       h2.modal-cart__title Корзина
       .modal-cart__scroll-wrapper
         ul.modal-cart__list
-          each item in cartItems
+          each item in modalCartItems
             - const {name, size, price, img} = item
             li.modal-cart__item
               .modal-cart-item

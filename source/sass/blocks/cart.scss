@@ -1,0 +1,682 @@
+.cart {
+  @include tablet-desktop {
+    padding-top: size(50px);
+    padding-bottom: size(60px);
+  }
+
+  @include mobile {
+    padding-top: size(20px);
+    padding-bottom: size(30px);
+  }
+
+  &__container {
+    position: relative;
+    max-width: size(1566px);
+  }
+
+  &__title {
+    font-family: $ff-cormorant;
+    font-weight: 400;
+    line-height: 100%;
+    margin-top: 0;
+    color: $color-default-white;
+
+    @include tablet-desktop {
+      font-size: size(62px);
+      margin-bottom: size(30px);
+    }
+
+    @include mobile {
+      font-size: size(36px);
+      margin-bottom: size(24px);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include tablet-desktop {
+      align-items: flex-start;
+    }
+
+    @include desktop {
+      gap: size(98px);
+    }
+
+    @include tablet {
+      gap: size(40px);
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: size(30px);
+    }
+  }
+
+  &__content {
+    @include desktop {
+      width: calc(100% - #{size(528px)});
+    }
+
+    @include tablet {
+      width: calc(100% - #{size(340px)});
+    }
+  }
+
+  &__actions {
+    display: flex;
+
+    @include tablet-desktop {
+      justify-content: flex-end;
+      margin-bottom: size(10px);
+      padding-bottom: size(12px);
+      border-bottom: size(2px) solid $white-10;
+      gap: size(10px);
+    }
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+    color: $white-56;
+    border: none;
+    outline: none;
+    background: none;
+
+    @include tablet-desktop {
+      font-size: size(14px);
+    }
+
+    @include mobile {
+      font-size: size(12px);
+      position: absolute;
+      top: size(14px);
+      right: size(11px);
+    }
+
+    svg {
+      flex-shrink: 0;
+
+      @include tablet-desktop {
+        width: size(20px);
+        height: size(20px);
+        margin-right: size(10px);
+      }
+
+      @include mobile {
+        width: size(16px);
+        height: size(16px);
+        margin-right: size(8px);
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding-top: size(20px);
+    padding-bottom: size(19px);
+    border-bottom: size(1px) solid $white-4;
+  }
+}
+
+.cart-item {
+  position: relative;
+  display: flex;
+
+  @include desktop {
+    padding-right: size(62px);
+  }
+
+  &__delete {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: color $trans-default;
+    color: rgba($color-default-white, 30%);
+    border: none;
+    background: $color-transparent;
+
+    @include tablet-desktop {
+      top: size(29px);
+      width: size(22px);
+      height: size(22px);
+    }
+
+    @include mobile {
+      top: size(20px);
+      width: size(18px);
+      height: size(18px);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+
+    @include tablet-desktop {
+      width: size(96px);
+      height: size(142px);
+      margin-right: size(30px);
+    }
+
+    @include mobile {
+      width: size(74px);
+      height: size(112px);
+      margin-right: size(16px);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 1;
+    flex-wrap: wrap;
+
+    @include tablet-desktop {
+      justify-content: space-between;
+      padding-bottom: size(10px);
+      gap: size(10px);
+    }
+
+    @include mobile {
+      align-content: flex-start;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      width: 50%;
+      padding-top: size(10px);
+    }
+
+    @include mobile-tablet {
+      width: 100%;
+      padding-right: size(25px);
+    }
+  }
+
+  &__name {
+    line-height: normal;
+    color: $white-70;
+
+    @include tablet-desktop {
+      font-size: size(16px);
+      margin-bottom: size(10px);
+    }
+
+    @include mobile {
+      font-size: size(13px);
+    }
+
+    &:last-child {
+      @include mobile {
+        margin-bottom: size(11px);
+      }
+    }
+
+    &:not(:last-child) {
+      @include mobile {
+        margin-bottom: size(11px);
+      }
+    }
+  }
+
+  &__size {
+    font-weight: 300;
+    line-height: normal;
+    margin-top: 0;
+    color: $white-40;
+
+    @include tablet-desktop {
+      font-size: size(13px);
+      margin-bottom: size(10px);
+    }
+
+    @include mobile {
+      font-size: size(11px);
+      margin-bottom: size(6px);
+    }
+
+    span {
+      color: $color-default-white;
+    }
+  }
+
+  &__aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tablet-desktop {
+      flex-grow: 1;
+      width: 50%;
+      max-width: size(320px);
+      gap: size(40px);
+    }
+
+    @include mobile {
+      order: 1;
+      width: 100%;
+    }
+  }
+
+  &__counter {
+    .counter__num {
+      @include desktop {
+        min-width: size(56px);
+      }
+    }
+  }
+
+  &__total-price {
+    display: inline-flex;
+    flex-grow: 1;
+    text-align: right;
+
+    @include tablet-desktop {
+      align-items: center;
+      justify-content: center;
+      gap: size(14px);
+    }
+
+    @include mobile {
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: size(10px);
+    }
+  }
+
+  &__total-price-text {
+    color: $white-70;
+
+    @include tablet-desktop {
+      font-size: size(16px);
+    }
+
+    @include mobile {
+      font-size: size(13px);
+    }
+
+    &--discount {
+      color: $color-barley-corn;
+
+      @include tablet-desktop {
+        font-size: size(14px);
+        order: 1;
+      }
+
+      @include mobile {
+        font-size: size(12px);
+      }
+
+      + .cart-item__total-price-text {
+        color: $color-barley-corn;
+      }
+    }
+  }
+
+  &__price {
+    font-size: size(14px);
+    line-height: normal;
+    display: inline-flex;
+    width: 100%;
+    margin-top: 0;
+    color: $white-70;
+
+    @include tablet-desktop {
+      align-items: flex-start;
+      align-self: flex-end;
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+
+    @include mobile {
+      font-size: size(11px);
+      align-items: baseline;
+      margin-bottom: size(12px);
+      gap: size(14px);
+    }
+  }
+
+  &__price-text {
+    &--old {
+      position: relative;
+
+      @include mobile {
+        font-size: size(10px);
+        order: 1;
+      }
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: size(1px);
+        content: "";
+        transform: translate(-50%, -50%) rotate(-9deg);
+        background-color: $white-70;
+      }
+
+      + .cart-item__price-text {
+        color: $color-barley-corn;
+      }
+    }
+  }
+}
+
+.cart-aside {
+  display: flex;
+  flex-direction: column;
+  gap: size(20px);
+
+  @include desktop {
+    width: size(430px);
+  }
+
+  @include tablet {
+    width: size(300px);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-nero;
+
+    @include desktop {
+      padding: size(33px) size(30px) size(13px);
+      gap: size(30px);
+    }
+
+    @include mobile-tablet {
+      padding: size(24px) size(20px) size(15px);
+      gap: size(24px);
+    }
+  }
+
+  &__title {
+    font-weight: 300;
+    margin: 0;
+    color: $white-70;
+
+    @include desktop {
+      font-size: size(22px);
+    }
+
+    @include mobile-tablet {
+      font-size: size(18px);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    border-bottom: size(1px) solid $white-4;
+
+    @include desktop {
+      padding: size(8px) 0 size(26px);
+      gap: size(10px);
+    }
+
+    @include mobile-tablet {
+      padding: size(5px) 0 size(18px);
+      gap: size(5px);
+    }
+  }
+
+  &__item {
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    color: $white-70;
+    gap: size(10px);
+
+    @include desktop {
+      font-size: size(14px);
+    }
+
+    @include mobile-tablet {
+      font-size: size(12px);
+    }
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      padding: size(3px) 0 0;
+    }
+
+    @include mobile-tablet {
+      padding: 0 0 size(5px);
+    }
+  }
+
+  &__total-text {
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    color: $color-barley-corn;
+
+    @include desktop {
+      font-size: size(22px);
+      margin-bottom: size(41px);
+    }
+
+    @include mobile-tablet {
+      font-size: size(18px);
+      margin-bottom: size(30px);
+    }
+  }
+
+  &__accordion {
+    border-top: size(1px) solid $white-4;
+  }
+
+  &__prompt {
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+    color: $white-30;
+
+    @include desktop {
+      font-size: size(13px);
+      padding: 0 size(30px);
+    }
+
+    @include mobile-tablet {
+      font-size: size(12px);
+      padding: 0 size(20px);
+    }
+  }
+}
+
+.promo-code {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    padding-bottom: size(12px);
+    gap: size(9px);
+  }
+
+  @include mobile-tablet {
+    padding: size(1px) 0 size(8px);
+    gap: size(7px);
+  }
+
+  &__form {
+    display: flex;
+  }
+
+  &__input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    input {
+      font-family: $ff-geologica;
+      font-weight: 400;
+      overflow: hidden;
+      flex-grow: 1;
+      width: 100%;
+      padding: size(11px);
+      transition: border-color $trans-default;
+      text-overflow: ellipsis;
+      color: $color-default-white;
+      border: size(1px) solid $white-10;
+      border-right: none;
+      outline: none;
+      background-color: $color-transparent;
+
+      @include desktop {
+        font-size: size(14px);
+      }
+
+      @include mobile-tablet {
+        font-size: size(12px);
+      }
+
+      &::placeholder {
+        color: $white-40;
+      }
+    }
+
+    &.is-invalid {
+      input {
+        border-color: $color-sunset-orange;
+
+        @include hover-focus {
+          border-color: $color-sunset-orange;
+        }
+      }
+    }
+
+
+    .input-message {
+      font-weight: 300;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      transition: opacity $trans-default;
+      color: $color-sunset-orange;
+
+      @include tablet-desktop {
+        font-size: size(12px);
+        top: calc(100% - #{size(4px)});
+      }
+
+      @include mobile {
+        font-size: size(10px);
+        top: calc(100% - #{size(4px)});
+      }
+
+      &.is-invalid {
+        color: $color-sunset-orange;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: size(10px);
+  }
+
+  &__prompt {
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: $white-56;
+
+    @include desktop {
+      font-size: size(13px);
+    }
+
+    @include mobile-tablet {
+      font-size: size(11px);
+    }
+
+    b {
+      font-weight: 300;
+      color: $color-default-white;
+    }
+
+    svg {
+      flex-shrink: 0;
+      width: size(14px);
+      height: size(14px);
+
+      @include desktop {
+        margin-right: size(10px);
+      }
+
+      @include mobile-tablet {
+        margin-right: size(4px);
+      }
+    }
+  }
+
+  &__cancel {
+    font-weight: 300;
+    line-height: normal;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity $trans-default;
+    color: $color-barley-corn;
+    border: none;
+    outline: none;
+    background: none;
+
+    @include desktop {
+      font-size: size(13px);
+    }
+
+    @include mobile-tablet {
+      font-size: size(11px);
+    }
+
+    @include hover-focus {
+      opacity: 0.6;
+    }
+  }
+}
