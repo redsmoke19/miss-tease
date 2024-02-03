@@ -82,7 +82,7 @@
   border: size(1px) solid rgba($color-default-white, 30%);
   background-color: $color-transparent;
 
-  &:not(.btn-stroke--small) {
+  &:not(.btn-stroke--small):not(.btn-stroke--medium) {
     font-size: size(14px);
     font-weight: 400;
     padding: size(15px) size(39px);
@@ -102,6 +102,21 @@
       font-size: size(13px);
       min-height: size(38px);
       padding: size(10px) size(24px);
+    }
+  }
+
+  &--medium {
+    font-weight: 500;
+
+    @include tablet-desktop {
+      font-size: size(14px);
+      padding: size(15px) size(20px);
+    }
+
+    @include mobile {
+      font-size: size(12px);
+      min-height: size(39px);
+      padding: size(10px) size(14px);
     }
   }
 

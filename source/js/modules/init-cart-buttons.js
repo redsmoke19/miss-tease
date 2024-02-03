@@ -2,7 +2,7 @@ import {modals} from './modals/init-modals.js';
 
 const breakpoint = window.matchMedia('(max-width:767px)');
 
-const cartButtonClickHandler = (e) => {
+const modalCartButtonClickHandler = (e) => {
   if (breakpoint.matches) {
     return;
   }
@@ -10,16 +10,42 @@ const cartButtonClickHandler = (e) => {
   modals.open('cart');
 };
 
-const initCartButtons = () => {
-  const cartButtons = document.querySelectorAll('[data-cart-button]');
+const cartAddButtonClickHandler = (e) => {
+  e.preventDefault();
+  const {target} = e;
+  const parent = target.closest('[data-cart-button="parent"]') || target;
+  parent.classList.add('is-added');
+};
 
-  if (!cartButtons.length) {
-    return;
+const cartRemoveButtonClickHandler = (e) => {
+  e.preventDefault();
+  const {target} = e;
+  const parent = target.closest('[data-cart-button="parent"]') || target;
+  parent.classList.remove('is-added');
+};
+
+const initCartButtons = () => {
+  const modalCartButtons = document.querySelectorAll('[data-cart-button="modal"]');
+  const cartAddButtons = document.querySelectorAll('[data-cart-button="add"]');
+  const cartRemoveButtons = document.querySelectorAll('[data-cart-button="remove"]');
+
+  if (modalCartButtons.length) {
+    modalCartButtons.forEach((button) => {
+      button.addEventListener('click', modalCartButtonClickHandler);
+    });
   }
 
-  cartButtons.forEach((button) => {
-    button.addEventListener('click', cartButtonClickHandler);
-  });
+  if (cartAddButtons.length) {
+    cartAddButtons.forEach((button) => {
+      button.addEventListener('click', cartAddButtonClickHandler);
+    });
+  }
+
+  if (cartRemoveButtons.length) {
+    cartRemoveButtons.forEach((button) => {
+      button.addEventListener('click', cartRemoveButtonClickHandler);
+    });
+  }
 };
 
 export {initCartButtons};

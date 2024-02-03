@@ -41,14 +41,18 @@ mixin product-card()
           .contents__footer.contents-footer
             .contents-footer__actions
               +counter()
-              +btn({size: "big-icon", text: "В корзину", icon: "icon-cart"}).contents-footer__cart-button
+              button.cart-button.contents-footer__cart-button(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+                span.cart-button__icon
+                  +icon("icon-cart", 20, 20)
+                  +icon("icon-check", 20, 20)
+                span.cart-button__text(data-default-text="В корзину", data-added-text="В корзине")
             .contents-footer__description(data-accordion="parent")
-              +accordion("Описание").contents-footer__accordion
+              +accordion({text: "Описание", mod: "uppercase"}).contents-footer__accordion
                 .info
                   p Коллекция Burlesque&nbsp;&mdash; воплощение безупречности и&nbsp;сексуальности. Бюстгальтер Burlesque выполнен из&nbsp;прозрачного тюля в&nbsp;сочетании шёлком. Мягкие чашечки с&nbsp;поддержкой на&nbsp;косточках продолжены бретелями, которые образуют плавный вырез. На&nbsp;спину переходят тройные резиночки, регулируемые металлической фурнитурой. Накладки на&nbsp;грудь продаются отдельно. Сочетайте трусиками и&nbsp;поясом Burlesque, а&nbsp;также дополнительными аксессуарами для создания рокового образа.
                   h3 Состав и&nbsp;уход:
                   p Сетка: полиэстер 100%. Атласный шелк: 92% полиэстер, 8%&nbsp;эластан. Бельевой поролон: 90% полиэстер, 10% хлопок. Рекомендована ручная стирка.
-              +accordion("Доставка и оплата").contents-footer__accordion
+              +accordion({text: "Доставка и оплата", mod: "uppercase"}).contents-footer__accordion
                 .info
                   h3 Доставка
                   p Доставка заказов осуществляется транспортной компанией СДЭК.
@@ -59,7 +63,7 @@ mixin product-card()
                     li При получении
                     li Банковской картой на&nbsp;сайте
                   a(href="#") Подробнее об&nbsp;оплате
-              +accordion("Возврат").contents-footer__accordion
+              +accordion({text: "Возврат", mod: "uppercase"}).contents-footer__accordion
                 .info
                   p MissTease предлагает 10-ти дневную политику возврата и&nbsp;обмена. Мы&nbsp;с&nbsp;радостью поможем Вам с&nbsp;осуществлением возврата или обмена товаров MissTease, если они будут соответствовать нашим требованиям:
                   ul
