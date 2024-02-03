@@ -1,7 +1,7 @@
 mixin nav-submenu()
   .nav-submenu(data-sub-menu="parent")
     .nav-submenu__wrapper(data-sub-menu="wrapper")
-      .nav-submenu__inner
+      .nav-submenu__inner(data-da=".main-nav__block-inner, 1023, last")
         ul.nav-submenu__list
           li.nav-submenu__item
             a.nav-submenu__link(href="#") Смотреть все
@@ -16,11 +16,13 @@ mixin nav-submenu()
         ul.nav-submenu__images-list
           li.nav-submenu__images-item
             a.nav-submenu__images-link(href="#")
-              .nav-submenu__images-wrap
-                +img("content", "submenu-1", "jpg", "251", "340", "Изображение товара")
+              .nav-submenu__images-inner
+                .nav-submenu__images-wrap
+                  +img("content", "submenu-1", "jpg", "251", "340", "Изображение товара")
               span.nav-submenu__images-text Новинки
           li.nav-submenu__images-item
             a.nav-submenu__images-link(href="#")
-              .nav-submenu__images-wrap
-                +img("content", "submenu-2", "jpg", "251", "340", "Изображение товара")
+              .nav-submenu__images-inner
+                .nav-submenu__images-wrap
+                  +img("content", "submenu-2", "jpg", "251", "340", "Изображение товара")
               span.nav-submenu__images-text Sale

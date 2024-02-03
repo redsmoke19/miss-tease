@@ -20,11 +20,6 @@ mixin header(headerMods, currentUrl)
       {
         href: "#",
         text: "Пояса для чулок"
-      },
-      {
-        text: "Базовое белье",
-        subMenu: true,
-        icon: "icon-arrow-down"
       }
     ]
 
@@ -44,15 +39,38 @@ mixin header(headerMods, currentUrl)
         nav.main-nav(data-nav="menu")
           .main-nav__wrapper(data-nav="wrapper")
             ul.main-nav__list
-              each link in headerLinks
-                - const activeState = currentUrl === link.href
-                li.main-nav__item
-                  if(activeState)
-                    a.main-nav__link.is-active(href=link.href)= link.text
-                  else
-                    a.main-nav__link(href=link.href, data-sub-menu=link.subMenu ? "link" : null)= link.text
-                      if(link.icon)
-                        +icon(link.icon, "12", "12").main-nav__link-arrow
+              li.main-nav__item
+                a.main-nav__link(href="#") Коллекции
+              li.main-nav__item
+                a.main-nav__link(href="#") Бюстгальтеры
+              li.main-nav__item
+                a.main-nav__link(href="#") Трусики
+              li.main-nav__item
+                a.main-nav__link(href="#") Аксессуары
+              li.main-nav__item
+                a.main-nav__link(href="#") Пояса для чулок
+              li.main-nav__item.main-nav__item--last(data-accordion="parent", data-destroy="(max-width: 767px)")
+                .main-nav__block(data-accordion="element")
+                  span.main-nav__link(data-sub-menu="link", data-accordion="button") Базовое белье
+                    +icon("icon-arrow-down", "12", "12").main-nav__link-arrow
+                  .main-nav__block-inner(data-accordion="content")
+                .main-nav__block.main-nav__block--mobile(data-accordion="element")
+                  span.main-nav__link(data-accordion="button") Покупателю
+                    +icon("icon-arrow-down", "12", "12").main-nav__link-arrow
+                  .main-nav__block-inner(data-accordion="content")
+                    ul.nav-submenu__list
+                      li.nav-submenu__item
+                        a.nav-submenu__link(href="#") Компания
+                      li.nav-submenu__item
+                        a.nav-submenu__link(href="#") Контакты
+                      li.nav-submenu__item
+                        a.nav-submenu__link(href="#") Доставка
+                      li.nav-submenu__item
+                        a.nav-submenu__link(href="#") Оплата
+                      li.nav-submenu__item
+                        a.nav-submenu__link(href="#") Размерный гид
+                      li.nav-submenu__item
+                        a.nav-submenu__link(href="#") Возврат
           .main-nav__submenu
-            //+nav-submenu()
+    +nav-submenu()
 
