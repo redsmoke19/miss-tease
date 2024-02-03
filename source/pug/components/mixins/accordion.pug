@@ -1,5 +1,5 @@
-mixin accordion(settings = {})
-  - const {text, icon, mod} = settings
+mixin accordion(props = {})
+  - const {text, icon, mod} = props
   .accordion(data-accordion="element")&attributes(attributes)
     button.accordion__button(type="button", data-accordion="button")
       if icon

@@ -12,6 +12,7 @@ block variables
 block data
   //- Тут берем переменную mainCollection
   include ../components/data/main-collection
+  include ../data/modal-cart-items
 
 block main
   main
@@ -22,4 +23,4 @@ block main
 
 block modals
   +modal("modal--cart")(data-modal="cart")
-    +modal-cart()
+    +modal-cart({items: modalCartItems})

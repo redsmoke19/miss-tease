@@ -1,5 +1,5 @@
-mixin table(data = {})
-  - const {head, body, title} = data
+mixin table(props = {})
+  - const {head, body, title} = props
   .table&attributes(attributes)
     if title
       h3.table__title !{title}
