@@ -2,9 +2,9 @@
   @include mobile-tablet {
     bottom: 0;
     left: 0;
-    min-height: 100vh;
+    height: 100vh;
     /* stylelint-disable-next-line */
-    min-height: calc((100 * var(--vh, 1vh)) - var(--header-height, 1vh));
+    height: calc((100 * var(--vh, 1vh)) - var(--header-height, 1vh));
     pointer-events: none;
     position: fixed;
     width: 100%;
@@ -55,6 +55,7 @@
       z-index: 10;
       transition: transform $trans-modal;
       display: block;
+      overflow-y: scroll;
     }
   }
 
