@@ -5,6 +5,7 @@ const subMenu = document.querySelector('[data-sub-menu="parent"]');
 const subMenuLink = document.querySelector('[data-sub-menu="link"]');
 const subMenuWrapper = document.querySelector('[data-sub-menu="wrapper"]');
 let delay = null;
+let isHovered = false;
 
 const getOpenMenu = () => {
   if (subMenu.classList.contains('is-active') || delay) {
@@ -19,9 +20,22 @@ const getCloseMenu = () => {
   subMenu.classList.remove('is-active');
 };
 
+const mouseLeaveHandler = () => {
+  isHovered = false;
+};
+
+const mouseEnterHandler = () => {
+  isHovered = true;
+  subMenuLink.addEventListener('mouseleave', mouseLeaveHandler, {once: true});
+};
+
 const mouseInHandler = () => {
-  getOpenMenu();
-  subMenuWrapper.addEventListener('mouseout', mouseOutHandler);
+  setTimeout(() => {
+    if (isHovered) {
+      getOpenMenu();
+      subMenuWrapper.addEventListener('mouseout', mouseOutHandler);
+    }
+  }, 300);
 };
 
 const mouseOutHandler = (evt) => {
@@ -47,12 +61,17 @@ const breakpointChecker = () => {
     scrollLock.enablePageScroll();
     subMenuWrapper.removeEventListener('mouseout', mouseOutHandler);
     subMenuLink.removeEventListener('mouseover', mouseInHandler);
+    subMenuLink.removeEventListener('mouseenter', mouseEnterHandler);
   } else {
     subMenuLink.addEventListener('mouseover', mouseInHandler);
+    subMenuLink.addEventListener('mouseenter', mouseEnterHandler);
   }
 };
 
 const initSubmenu = () => {
+  if (!subMenu) {
+    return;
+  }
   breakpoint.addEventListener('change', breakpointChecker);
   breakpointChecker();
 };

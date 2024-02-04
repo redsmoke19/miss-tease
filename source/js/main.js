@@ -3,7 +3,6 @@ import {initModals} from './modules/modals/init-modals';
 import headerInit from './modules/header/index.js';
 import cardProduct from './modules/card-product/init-product-card.js';
 import {Form} from './modules/form-validate/form';
-import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initAccordions} from './modules/accordions/init-accordion.js';
 import {initCounters} from './modules/init-counters.js';
 import {initCustomInputs} from './modules/init-custom-inputs.js';
@@ -31,8 +30,6 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initModals();
     initDynamicAdaptive();
-    uploadFile();
-    uploadImageDrop();
     initSelects();
     const form = new Form();
     window.form = form;
