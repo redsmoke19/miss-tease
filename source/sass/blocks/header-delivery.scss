@@ -61,6 +61,13 @@
     top: calc(100% + #{size(14px)});
     width: size(360px);
     opacity: 0;
+    pointer-events: none;
+    transition: opacity $trans-600;
+
+    &.is-active {
+      pointer-events: all;
+      opacity: 1;
+    }
 
     @include mobile-tablet {
       position: fixed;

@@ -37,6 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
     headerInit.initPageMenu();
     headerInit.initHeaderHeight();
     headerInit.initSubmenu();
+    headerInit.initPrice();
     cardProduct.getPlayVideo();
     initAccordions();
     initTabs();

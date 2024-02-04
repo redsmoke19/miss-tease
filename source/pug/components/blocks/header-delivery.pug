@@ -1,12 +1,12 @@
 mixin header-delivery()
 
   .header-delivery
-    a.header-delivery__link
+    a.header-delivery__link(data-header-price="link")
       +icon("icon-globus", "18", "18").header-delivery__link-globus
       span Россия ₽
       +icon("icon-arrow-down", "12", "12").header-delivery__link-arrow
-    .header-delivery__inner
-      button.header-delivery__close(type="button", aria-label="Закрыть меню")
+    .header-delivery__inner(data-header-price="content")
+      button.header-delivery__close(type="button", aria-label="Закрыть меню", data-header-price="close")
         +icon("icon-close", 15, 15)
       p.header-delivery__text Мы осуществляем доставку по&nbsp;всему миру
       ul.header-delivery__list
