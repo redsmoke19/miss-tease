@@ -72,7 +72,7 @@
 }
 
 .uikit__component::before {
-  background-color: #2c39f2;
+  background-color: #b88f64;
   content: "";
   height: calc(100% - 40px);
   left: 0;
@@ -94,7 +94,7 @@
 }
 
 .uikit__sections {
-  background-color: #2c39f2;
+  background-color: #b88f64;
   border-radius: 0 0 10px 10px;
   color: #fff;
   counter-reset: sections;

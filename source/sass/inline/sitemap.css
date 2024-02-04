@@ -1,11 +1,11 @@
 .sitemap {
-  color: #212121;
+  color: #141414;
   padding-bottom: 50px;
   padding-top: 50px;
 }
 
 .sitemap h1 {
-  color: #2c39f2;
+  color: #b88f64;
   font-size: 22px;
   line-height: 30px;
 }
@@ -79,7 +79,7 @@
 }
 
 .sitemap a::before {
-  background-color: #2c39f2;
+  background-color: #b88f64;
   bottom: 0;
   content: "";
   height: 2px;
@@ -120,7 +120,7 @@
 }
 
 .sitemap label::after {
-  border: 1px solid #2c39f2;
+  border: 1px solid #b88f64;
   border-left: none;
   border-top: none;
   content: "";

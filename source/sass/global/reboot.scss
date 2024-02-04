@@ -42,8 +42,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: $color-black;
-  scrollbar-width: thin;
-  scrollbar-color: $color-peru $color-black;
 
   &::-webkit-scrollbar {
     @include tablet-desktop {
@@ -56,7 +54,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $color-peru;
+    background: $color-barley-corn;
 
     @include tablet-desktop {
       border-radius: 40px;
@@ -69,7 +67,7 @@ body {
 }
 
 a {
-  color: $color-default-black;
+  color: $color-default-white;
   text-decoration: none;
 }
 

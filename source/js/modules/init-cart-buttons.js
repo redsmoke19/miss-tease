@@ -13,8 +13,11 @@ const modalCartButtonClickHandler = (e) => {
 const cartAddButtonClickHandler = (e) => {
   e.preventDefault();
   const {target} = e;
-  const parent = target.closest('[data-cart-button="parent"]') || target;
-  parent.classList.add('is-added');
+  const parent = target.closest('[data-cart-button="parent"]');
+  target.classList.add('is-added');
+  if (parent) {
+    parent.classList.add('is-added');
+  }
 };
 
 const cartRemoveButtonClickHandler = (e) => {

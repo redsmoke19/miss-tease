@@ -266,30 +266,10 @@
     flex-direction: column;
     justify-content: center;
 
-    .cart-button-stroke__icon {
-      display: none;
-    }
-
     &.is-added {
-      .cart-button-stroke {
-        color: $color-barley-corn;
-        border-color: $color-barley-corn;
-        pointer-events: none;
-      }
-
-      .cart-button-stroke__text {
-        &::after {
-          content: attr(data-added-text);
-        }
-      }
-
-      .cart-button-stroke__icon {
-        display: block;
-      }
-
       .contents-card__delete {
-        opacity: 1;
         visibility: visible;
+        opacity: 1;
       }
     }
   }
