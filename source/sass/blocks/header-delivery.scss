@@ -60,6 +60,17 @@
     position: absolute;
     top: calc(100% + #{size(14px)});
     width: size(360px);
+    opacity: 0;
+
+    @include mobile-tablet {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: unset;
+      border-radius: size(16px) size(16px) 0 0;
+      width: 100vw;
+    }
   }
 
   &__close {

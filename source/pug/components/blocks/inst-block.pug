@@ -1,0 +1,52 @@
+mixin inst-block()
+
+  section.inst-block
+    .container
+      .inst-block__wrapper
+        h2.inst-block__title Мы в Instagram
+        .inst-block__account
+          span.inst-block__name @misstease_lingerie
+          span.inst-block__description 2 215 #[span публикаций]
+          span.inst-block__description 206 #[span тыс. подписчиков]
+        .inst-block__swiper.swiper(data-inst-block-slider="parent")
+          ul.inst-block__list.swiper-wrapper
+            li.inst-block__item.swiper-slide
+              .inst-block__photo
+                +img("content", "inst-card-1", "jpg", "360", "360", "Фото модели")
+                +icon("icon-inst", "28", "28")
+                a.inst-block__shadow-link(href="#", aria-label="Ссылка на фотографию")
+            li.inst-block__item.swiper-slide
+              .inst-block__photo
+                +img("content", "inst-card-2", "jpg", "360", "360", "Фото модели")
+                +icon("icon-inst", "28", "28")
+                a.inst-block__shadow-link(href="#", aria-label="Ссылка на фотографию")
+            li.inst-block__item.swiper-slide
+              .inst-block__photo
+                +img("content", "inst-card-3", "jpg", "360", "360", "Фото модели")
+                +icon("icon-inst", "28", "28")
+                a.inst-block__shadow-link(href="#", aria-label="Ссылка на фотографию")
+            li.inst-block__item.swiper-slide
+              .inst-block__photo
+                +img("content", "inst-card-4", "jpg", "360", "360", "Фото модели")
+                +icon("icon-inst", "28", "28")
+                a.inst-block__shadow-link(href="#", aria-label="Ссылка на фотографию")
+            li.inst-block__item.swiper-slide
+              .inst-block__photo
+                +img("content", "inst-card-5", "jpg", "360", "360", "Фото модели")
+                +icon("icon-inst", "28", "28")
+                a.inst-block__shadow-link(href="#", aria-label="Ссылка на фотографию")
+            li.inst-block__item.swiper-slide
+              .inst-block__photo
+                +img("content", "inst-card-2", "jpg", "360", "360", "Фото модели")
+                +icon("icon-inst", "28", "28")
+                a.inst-block__shadow-link(href="#", aria-label="Ссылка на фотографию")
+            li.inst-block__item.swiper-slide
+              .inst-block__photo
+                +img("content", "inst-card-3", "jpg", "360", "360", "Фото модели")
+                +icon("icon-inst", "28", "28")
+                a.inst-block__shadow-link(href="#", aria-label="Ссылка на фотографию")
+            li.inst-block__item.swiper-slide
+              .inst-block__photo
+                +img("content", "inst-card-4", "jpg", "360", "360", "Фото модели")
+                +icon("icon-inst", "28", "28")
+                a.inst-block__shadow-link(href="#", aria-label="Ссылка на фотографию")
