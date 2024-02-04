@@ -6,6 +6,7 @@ export class PageMenu {
     this._breakpoint = window.matchMedia('(max-width:1023px)');
     this._sandwich = document.querySelector('[data-sandwich]');
     this._navMenu = document.querySelector('[data-nav="menu"]');
+    this._navWrapper = document.querySelector('[data-nav="wrapper"]');
     this._unlock = true;
     this._onSandwichToggler = this._onSandwichToggler.bind(this);
     this._onDocumentClick = this._onDocumentClick.bind(this);
@@ -48,7 +49,7 @@ export class PageMenu {
     document.addEventListener('click', this._onDocumentClick);
     if (this._breakpoint.matches) {
       this._unlock = false;
-      scrollLock.disablePageScroll();
+      scrollLock.disablePageScroll(this._navWrapper);
     }
   }
 
@@ -57,7 +58,7 @@ export class PageMenu {
     this._sandwich.ariaPressed = 'false';
     this._navMenu.classList.remove('is-active');
     if (!this._unlock) {
-      scrollLock.enablePageScroll();
+      scrollLock.enablePageScroll(this._navWrapper);
       this._unlock = true;
     }
     document.removeEventListener('click', this._onDocumentClick);
