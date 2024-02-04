@@ -1,5 +1,8 @@
 extends ../components/base/layout
 
+block data
+  include ../data/modal-cart-items
+
 block variables
   - const title = "UI-kit"
 
@@ -20,6 +23,8 @@ block main
             li
               a(href="#modals") Модальные окна
             li
+              a(href="#links") Ссылки
+            li
               a(href="#buttons") Кнопки
             li
               a(href="#forms") Элементы форм
@@ -27,7 +32,7 @@ block main
       //----------------------------------------------
       .container
         a.uikit__header-link(href="sitemap.html")
-          img(src="https://via.placeholder.com/300x150", width="300", alt="Логотип проекта")
+          img(src="img/content/header-logo.png", width="300", alt="Логотип проекта")
         h1.uikit__h1 Компоненты, используемые на проекте
 
         section.uikit__section
@@ -44,44 +49,143 @@ block main
         section.uikit__section(id="modals")
           h2.uikit__h2 Модальные окна
           .uikit__component
-            p.uikit__text.uikit__text--class .modal \ .modal--feedback
-            +btn({text: "modal-feedback"})(data-open-modal="feedback")
+            p.uikit__text.uikit__text--class .modal \ .message
+            +btn({text: "Корзина"})(data-open-modal="cart")
             pre
               |
               code(class="language-pug").
-                +btn({text: "modal-feedback"})(data-open-modal="feedback")
+                +btn({text: "Корзина"})(data-open-modal="cart")
           .uikit__component
-            p.uikit__text.uikit__text--class .modal \ .modal--success
-            +btn({text: "modal-success"})(data-open-modal="success")
+            p.uikit__text.uikit__text--class .modal \ .message
+            +btn({text: "Галерея"})(data-open-modal="gallery")
             pre
               |
               code(class="language-pug").
-                +btn({text: "modal-success"})(data-open-modal="success")
+                +btn({text: "Галерея"})(data-open-modal="gallery")
+          .uikit__component
+            p.uikit__text.uikit__text--class .modal \ .message
+            +btn({text: "Размерный гид"})(data-open-modal="sizes")
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "Размерный гид"})(data-open-modal="sizes")
+          .uikit__component
+            p.uikit__text.uikit__text--class .modal \ .message
+            +btn({text: "Промокод успешно применен"})(data-open-modal="success")
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "Промокод успешно применен"})(data-open-modal="success")
+          .uikit__component
+            p.uikit__text.uikit__text--class .modal \ .message
+            +btn({text: "Промокод не действителен"})(data-open-modal="error")
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "Промокод не действителен"})(data-open-modal="error")
+
+        //- Ссылки
+        section.uikit__section(id="links")
+          h2.uikit__h2 Ссылки
+          .uikit__component
+            p.uikit__text.uikit__text--class .link
+            a.link(href="#") Подписаться
+            pre
+              |
+              code(class="language-pug").
+                a.link(href="#") Подписаться
+          .uikit__component
+            p.uikit__text.uikit__text--class .link-bordered
+            a.link-bordered(href="#") Купить сейчас
+            pre
+              |
+              code(class="language-pug").
+                a.link-bordered(href="#") Купить сейчас
+          .uikit__component
+            p.uikit__text.uikit__text--class .link-back
+            a.link-back(href="#")
+              +icon("icon-arrow-back", 28, 28)
+              span Назад к коллекциям
+            pre
+              |
+              code(class="language-pug").
+                a.link-back(href="#")
+                  +icon("icon-arrow-back", 28, 28)
+                  span Назад к коллекциям
 
         //- Кнопки
         section.uikit__section(id="buttons")
           h2.uikit__h2 Кнопки
           .uikit__component
-            p.uikit__text.uikit__text--class .btn \ default \ button
-            +btn({text: "Кнопка"})
+            p.uikit__text.uikit__text--class .btn \ default
+            +btn({text: "Оформить заказ"})
             pre
               |
               code(class="language-pug").
-                +btn({text: "Текст", href: "#"})
+                +btn({text: "Оформить заказ"})
           .uikit__component
-            p.uikit__text.uikit__text--class .btn \ .btn--red \ link
-            +btn({text: "Текст", href: "#", isExternal: true}).btn--red(aria-label="Просто ссылка")
+            p.uikit__text.uikit__text--class .btn \ big
+            +btn({text: "Оформить заказ", size: "big"})
             pre
               |
               code(class="language-pug").
-                +btn({text: "Текст", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red
+                +btn({text: "Оформить заказ", size: "big"})
+          .uikit__component
+            p.uikit__text.uikit__text--class .btn \ small
+            +btn({text: "Оформить заказ", size: "small"})
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "Оформить заказ", size: "small"})
           .uikit__component
             p.uikit__text.uikit__text--class .btn \ disabled \ button
             +btn({text: "Текст"})(disabled)
             pre
               |
               code(class="language-pug").
+                +btn({text: "Оформить заказ"})(disabled)
+          .uikit__component
+            p.uikit__text.uikit__text--class .cart-button
+            button.cart-button(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+              span.cart-button__icon
+                +icon("icon-cart", 20, 20)
+                +icon("icon-check", 20, 20)
+              span.cart-button__text(data-default-text="В корзину", data-added-text="В корзине")
+            pre
+              |
+              code(class="language-pug").
+                button.cart-button(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+                  span.cart-button__icon
+                    +icon("icon-cart", 20, 20)
+                    +icon("icon-check", 20, 20)
+                  span.cart-button__text(data-default-text="В корзину", data-added-text="В корзине")
+          .uikit__component
+            p.uikit__text.uikit__text--class .btn-stroke
+            +btn({text: "Применить", stroke: true, size: "medium"})
+            pre
+              |
+              code(class="language-pug").
                 +btn({text: "Текст"})(disabled)
+          .uikit__component
+            p.uikit__text.uikit__text--class .btn \ disabled \ button
+            +btn({text: "Применить", stroke: true, size: "small"})
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "Текст"})(disabled)
+          .uikit__component
+            p.uikit__text.uikit__text--class .cart-button-stroke
+            button.cart-button-stroke(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+              span.cart-button-stroke__icon
+                +icon("icon-check", 20, 20)
+              span.cart-button-stroke__text(data-default-text="Добавить в корзину", data-added-text="В корзине")
+            pre
+              |
+              code(class="language-pug").
+                button.cart-button-stroke(type="button", aria-label="Добавить в корзину", data-cart-button="add")
+                  span.cart-button-stroke__icon
+                    +icon("icon-check", 20, 20)
+                  span.cart-button-stroke__text(data-default-text="Добавить в корзину", data-added-text="В корзине")
 
         //- Элементы форм
         section.uikit__section(id="forms")
@@ -130,35 +234,24 @@ block main
                   inputName: "user-mail",
                 })
           .uikit__component
-            p.uikit__text.uikit__text--class +custom-textarea \ default
-            +custom-textarea({
-              inputLabel: "Расскажите о себе",
-              inputName: "user-info"
-            })
+            p.uikit__text.uikit__text--class +custom-radio
+            +custom-radio({
+              name: "size",
+              type: "radio",
+              label: "70B",
+              value: "70B",
+              checked: false
+            }).custom-toggle--radio
             pre
               |
               code(class="language-pug").
-                +custom-textarea({
-                  inputLabel: "Расскажите о себе",
-                  inputName: "user-info"
-                })
-          .uikit__component
-            p.uikit__text.uikit__text--class +custom-toggle \ default
-            +custom-toggle({
-              inputLabel: "Чекбокс",
-              inputName: "user-agreement",
-              inputValue: "user-agreement-1",
-              inputChecked: false
-            }).custom-toggle--checkbox
-            pre
-              |
-              code(class="language-pug").
-                +custom-toggle({
-                  inputLabel: "Чекбокс",
-                  inputName: "user-agreement",
-                  inputValue: "user-agreement-1",
-                  inputChecked: false
-                }).custom-toggle--checkbox
+                +custom-radio({
+                  name: "size",
+                  type: "radio",
+                  label: "70B",
+                  value: "70B",
+                  checked: false
+                }).custom-toggle--radio
 
 
           .uikit__component
@@ -205,7 +298,11 @@ block main
     include ../../js/inline/ui-kit.js
 
 block modals
-  +modal("modal--feedback")(data-modal="feedback")
-    +modal-feedback()
-  +modal("modal--success modal--no-scale modal--fit-content")(data-modal="success")
-    +modal-success()
+  +modal("modal--cart")(data-modal="cart")
+    +modal-cart({items: modalCartItems})
+  +modal("modal--gallery")(data-modal="gallery")
+    +modal-gallery()
+  +modal("modal--sizes")(data-modal="sizes")
+    +sizes({mod: 'modal'})
+  +modal-message({status: 'success', text: "Промокод успешно применен", icon: "icon-done"})(data-modal="success")
+  +modal-message({status: 'error', text: "Промокод не действителен", icon: "icon-error"})(data-modal="error")

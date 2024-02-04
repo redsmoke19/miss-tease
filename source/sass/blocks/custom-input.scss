@@ -48,6 +48,7 @@
   }
 
   &__label {
+    pointer-events: none;
     font-size: size(16px);
     font-weight: 300;
     position: absolute;

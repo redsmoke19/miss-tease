@@ -14,7 +14,9 @@
 
   main {
     flex-grow: 1;
+  }
 
+  header + main {
     @include tablet-desktop {
       padding-top: size(140px);
     }
