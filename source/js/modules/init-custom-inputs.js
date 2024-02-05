@@ -22,7 +22,7 @@ const initCustomInputs = () => {
   }
 
   elements.forEach((element) => {
-    const input = element.querySelector('input');
+    const input = element.querySelector('input') || element.querySelector('textarea');
     element.classList.toggle('is-active', !!input.value.length);
     input.addEventListener('focus', inputFocusHandler);
     input.addEventListener('blur', inputBlurHandler);
