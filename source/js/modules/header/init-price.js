@@ -1,7 +1,7 @@
 const priceLink = document.querySelector('[data-header-price="link"]');
 const priceContent = document.querySelector('[data-header-price="content"]');
-const priceClose = document.querySelector('[data-header-price="close"]');
-const body = document.body;
+// const priceClose = document.querySelector('[data-header-price="close"]');
+// const body = document.body;
 
 const initPrice = () => {
   if (!priceLink) {

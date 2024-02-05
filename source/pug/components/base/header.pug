@@ -27,13 +27,13 @@ mixin header(headerMods, currentUrl)
     .header__wrapper
       .container
         .header__top
-          button.header__sandwich.sandwich(type="button" aria-label="Переключатель отображения меню" aria-pressed="false", data-sandwich)
+          button.header__sandwich.sandwich(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-sandwich)
             span.sandwich__menu
           .header__delivery(data-da=".main-nav__wrapper, 1023, last")
             +header-delivery()
           a.header__logo(href="index.html", aria-label="Переход на главную")
             +img("content", "header-logo", "png", "190", "50", "Логотип компании")
-          #{currentUrl === "cart.html" ? "span" : "a"}.header__basket(href=currentUrl !== "cart.html" && "cart.html", data-cart-button=currentUrl !== "cart.html" && "modal")
+          #{currentUrl === "cart.html" ? "span" : "a"}.header__basket(href=currentUrl !== "cart.html" && "cart.html", data-cart-button=(currentUrl !== "cart.html" && !currentUrl.startsWith("order")) && "modal")
             +icon("icon-basket", "24", "24")
             span.header__basket-count 6
         nav.main-nav(data-nav="menu")
@@ -73,4 +73,3 @@ mixin header(headerMods, currentUrl)
                         a.nav-submenu__link(href="#") Возврат
           .main-nav__submenu
     +nav-submenu()
-

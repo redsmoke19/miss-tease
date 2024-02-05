@@ -483,6 +483,7 @@
 
   .input-message {
     font-weight: 300;
+    line-height: normal;
     position: absolute;
     left: 0;
     width: 100%;
@@ -491,12 +492,12 @@
 
     @include tablet-desktop {
       font-size: size(12px);
-      top: 100%;
+      top: calc(100% + #{size(3px)});
     }
 
     @include mobile {
-      font-size: size(10px);
-      top: calc(100% - #{size(2px)});
+      font-size: size(11px);
+      top: calc(100% + #{size(4px)});
     }
 
     &.is-invalid {

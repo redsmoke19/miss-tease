@@ -104,10 +104,15 @@
     flex-grow: 1;
     justify-content: flex-end;
     max-width: size(1566px);
-    padding-bottom: size(160px);
 
-    @include mobile {
-      padding: 0 size(20px) size(76px);
+    &.container {
+      @include tablet-desktop {
+        padding-bottom: size(160px);
+      }
+
+      @include mobile {
+        padding: 0 size(20px) size(76px);
+      }
     }
   }
 

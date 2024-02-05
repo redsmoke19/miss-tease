@@ -13,6 +13,7 @@ import initSliders from './modules/sliders/index.js';
 import {initCartButtons} from './modules/init-cart-buttons.js';
 import {initHeaderSticky} from './modules/header/init-header-sticky.js';
 import {initDeliveryForm} from './modules/init-delivery-form.js';
+import {initAutoResizeTextarea} from './modules/auto-resize-textarea.js';
 
 // ---------------------------------
 
@@ -48,6 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initCartButtons();
     initHeaderSticky();
     initDeliveryForm();
+    initAutoResizeTextarea();
   });
 });
 

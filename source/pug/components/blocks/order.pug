@@ -2,7 +2,7 @@ include ../../data/order-cart-items
 
 mixin order(props = {})
   - const {step = 1} = props
-  .order
+  .order(data-form-validate, data-callback="base")
     .order__container.container
       h2.order__title Оформление заказа
       .order__wrapper
@@ -13,7 +13,8 @@ mixin order(props = {})
               text: step > 1 ? "" : "Пожалуйста, укажите свои контактные данные и убедитесь, что правильно выбран населённый пункт",
               isFilled: step > 1,
               isActive: step === 1,
-              hasFooter: step === 1
+              hasFooter: step === 1,
+              editUrl: "order-information.html"
             }).order__block
               +information-form({isFilled: step > 1})
             +order-block({
@@ -23,7 +24,8 @@ mixin order(props = {})
               isActive: step === 2,
               hasFooter: step === 2,
               mod: step === 2 ? "delivery" : "",
-              aside: step === 2
+              aside: step === 2,
+              editUrl: "order-delivery.html"
             }).order__block(data-tabs=step === 2 && "parent", data-delivery-form=step === 2 && "parent")
               +delivery-checks({isFilled: step > 2})
 
@@ -35,7 +37,7 @@ mixin order(props = {})
         .order__aside.cart-aside(data-accordion="parent")
           .cart-aside__wrapper
             h3.cart-aside__title Корзина
-            a.cart-aside__edit.edit-button
+            a.cart-aside__edit.edit-button(href="cart.html")
               +icon("icon-edit", 18, 18)
               span Изменить
             .cart-aside__products.cart-accordion(data-accordion="element")&attributes(attributes)
@@ -64,4 +66,4 @@ mixin order(props = {})
               p.cart-aside__total-text
                 span Итого
                 span 16 240 ₽
-              +btn({text: "Оформить заказ", size: "big", href: "#"}).cart-aside__button(disabled)
+              +btn({text: "Оформить заказ", size: "big"}).cart-aside__button(disabled = step < 3)

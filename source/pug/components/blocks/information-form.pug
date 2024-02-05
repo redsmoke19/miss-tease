@@ -21,7 +21,7 @@ mixin information-form(props = {})
             inputType: "text",
             inputLabel: "Индекс",
             inputName: "index"
-          }).information-form__input.information-form__input--index(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
+          }).information-form__input.information-form__input--index(data-validate-type="matrix", data-matrix="______", data-matrix-limitation="digit", data-required, data-message-base="Поле обязательно к заполнению")
         .information-form__wrapper
           +custom-input({
             inputType: "text",

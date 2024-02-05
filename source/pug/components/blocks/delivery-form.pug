@@ -12,15 +12,14 @@ mixin delivery-form()
           inputType: "text",
           inputLabel: "Дом/корпус*",
           inputName: "house"
-        }).delivery-form__input.delivery-form__input--short(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
+        }).delivery-form__input.delivery-form__input--short(data-validate-type="text", data-limitation="digit", data-required, data-message-base="Поле обязательно к заполнению")
         +custom-input({
           inputType: "text",
           inputLabel: "Квартира/офис*",
           inputName: "apartment"
-        }).delivery-form__input.delivery-form__input--short(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
+        }).delivery-form__input.delivery-form__input--short(data-validate-type="text", data-limitation="digit", data-required, data-message-base="Поле обязательно к заполнению")
       .delivery-form__wrapper
-        +custom-input({
-          inputType: "text",
+        +custom-textarea({
           inputLabel: "Комментарий к заказу",
           inputName: "comment"
-        }).delivery-form__input(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
+        }).delivery-form__input.auto-resize-textarea

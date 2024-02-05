@@ -653,6 +653,7 @@
     .input-message {
       font-weight: 300;
       position: absolute;
+      line-height: normal;
       left: 0;
       width: 100%;
       transition: opacity $trans-default;
@@ -660,12 +661,12 @@
 
       @include tablet-desktop {
         font-size: size(12px);
-        top: calc(100% - #{size(4px)});
+        top: 100%;
       }
 
       @include mobile {
         font-size: size(10px);
-        top: calc(100% - #{size(4px)});
+        top: calc(100% + #{size(1px)});
       }
 
       &.is-invalid {

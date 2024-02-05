@@ -13,21 +13,22 @@
     input,
     textarea {
       font-family: $ff-geologica;
-      font-size: size(16px);
       font-weight: 300;
       overflow: hidden;
       width: 100%;
-      height: size(56px);
-      padding: size(26px) 0 size(11px);
       text-overflow: ellipsis;
       color: $color-default-white;
       border: none;
       outline: none;
       background-color: $color-transparent;
 
+      @include tablet-desktop {
+        font-size: size(16px);
+        padding: size(26px) 0 size(11px);
+      }
+
       @include mobile {
         font-size: size(14px);
-        height: size(46px);
         padding: size(24px) 0 size(5px);
       }
 
@@ -40,6 +41,20 @@
       &::placeholder {
         color: $white-70;
       }
+    }
+
+    input {
+      @include tablet-desktop {
+        height: size(56px);
+      }
+
+      @include mobile {
+        height: size(46px);
+      }
+    }
+
+    textarea {
+      min-height: (79px);
     }
   }
 
@@ -119,6 +134,18 @@
     }
   }
 
+  &--textarea {
+    .custom-input__label {
+      @include tablet-desktop {
+        top: (16px);
+      }
+
+      @include mobile {
+        top: (12px);
+      }
+    }
+  }
+
   &.has-placeholder,
   &.is-active {
     .custom-input__label {
@@ -158,6 +185,7 @@
 
   .input-message {
     font-weight: 300;
+    line-height: normal;
     position: absolute;
     left: 0;
     width: 100%;
@@ -166,12 +194,12 @@
 
     @include tablet-desktop {
       font-size: size(12px);
-      top: 100%;
+      top: calc(100% + #{size(3px)});
     }
 
     @include mobile {
-      font-size: size(10px);
-      top: calc(100% - #{size(2px)});
+      font-size: size(11px);
+      top: calc(100% + #{size(4px)});
     }
 
     &.is-invalid {
