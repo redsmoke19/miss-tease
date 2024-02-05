@@ -1,0 +1,67 @@
+include ../../data/order-cart-items
+
+mixin order(props = {})
+  - const {step = 1} = props
+  .order
+    .order__container.container
+      h2.order__title Оформление заказа
+      .order__wrapper
+        .order__content
+          .order__blocks
+            +order-block({
+              title: "Контактная информация",
+              text: step > 1 ? "" : "Пожалуйста, укажите свои контактные данные и убедитесь, что правильно выбран населённый пункт",
+              isFilled: step > 1,
+              isActive: step === 1,
+              hasFooter: step === 1
+            }).order__block
+              +information-form({isFilled: step > 1})
+            +order-block({
+              title: "Способ доставки",
+              text: step > 2 ? "" : "Выберите удобный способ доставки",
+              isFilled: step > 2,
+              isActive: step === 2,
+              hasFooter: step === 2,
+              mod: step === 2 ? "delivery" : "",
+              aside: step === 2
+            }).order__block(data-tabs=step === 2 && "parent", data-delivery-form=step === 2 && "parent")
+              +delivery-checks({isFilled: step > 2})
+
+            +order-block({
+              title: "Способ оплаты",
+              isActive: step === 3,
+            }).order__block
+              +payment-form()
+        .order__aside.cart-aside(data-accordion="parent")
+          .cart-aside__wrapper
+            h3.cart-aside__title Корзина
+            a.cart-aside__edit.edit-button
+              +icon("icon-edit", 18, 18)
+              span Изменить
+            .cart-aside__products.cart-accordion(data-accordion="element")&attributes(attributes)
+              button.cart-accordion__button(type="button", data-accordion="button")
+                span Товары в заказе
+                span.cart-accordion__button-arrow
+                  +icon("icon-arrow-down", 12, 12)
+              .cart-accordion__content(data-accordion="content")
+                .cart-accordion__wrapper
+                  .cart-accordion__scroll-wrapper
+                    ul.cart-accordion__list
+                      each item in orderCartItems
+                        li.cart-accordion__item
+                          +modal-cart-item(item)
+            ul.cart-aside__list
+              li.cart-aside__item
+                span.cart-aside__item-key 5 товаров на сумму
+                span.cart-aside__item-value 16 000 ₽
+              li.cart-aside__item
+                span.cart-aside__item-key Скидка
+                span.cart-aside__item-value 920 ₽
+              li.cart-aside__item
+                span.cart-aside__item-key Доставка
+                span.cart-aside__item-value 240 ₽
+            .cart-aside__total
+              p.cart-aside__total-text
+                span Итого
+                span 16 240 ₽
+              +btn({text: "Оформить заказ", size: "big", href: "#"}).cart-aside__button(disabled)

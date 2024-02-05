@@ -1,0 +1,75 @@
+.information-form {
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      padding-top: size(50px);
+      gap: size(40px);
+    }
+
+    @include mobile-tablet {
+      padding-top: size(29px);
+      gap: size(20px);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    @include desktop {
+      padding: size(23px) 0 0;
+      gap: size(10px);
+    }
+
+    @include mobile-tablet {
+      padding: size(19px) 0 0;
+      gap: size(9px);
+    }
+  }
+}
+
+.information-form__wrapper {
+  display: flex;
+  gap: size(20px);
+
+  @include mobile-tablet {
+    flex-direction: column;
+  }
+}
+
+.information-form__input {
+  @include desktop {
+    flex: 0 1 calc(50% - #{size(10px)});
+  }
+
+  &--address {
+    @include desktop {
+      flex: 0 1 calc(100% - #{size(196px)});
+    }
+  }
+
+  &--index {
+    @include desktop {
+      flex: 0 1 size(176px);
+    }
+  }
+}
+
+.information-form__item {
+  font-weight: 300;
+  line-height: 140%;
+  color: $white-70;
+
+  @include desktop {
+    font-size: size(16px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(13px);
+  }
+}

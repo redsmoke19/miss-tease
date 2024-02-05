@@ -12,6 +12,7 @@ import {initSelects} from './modules/select/init-selects.js';
 import initSliders from './modules/sliders/index.js';
 import {initCartButtons} from './modules/init-cart-buttons.js';
 import {initHeaderSticky} from './modules/header/init-header-sticky.js';
+import {initDeliveryForm} from './modules/init-delivery-form.js';
 
 // ---------------------------------
 
@@ -46,6 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initSliders();
     initCartButtons();
     initHeaderSticky();
+    initDeliveryForm();
   });
 });
 

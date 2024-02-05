@@ -23,8 +23,14 @@
     gap: size(10px);
   }
 
-  &:not(.btn--big):not(.btn--big-icon) {
-    padding: size(15px) size(40px);
+  &:not(.btn--big):not(.btn--small) {
+    @include tablet-desktop {
+      padding: size(15px) size(30px);
+    }
+
+    @include mobile {
+      padding: size(12px) size(30px);
+    }
   }
 
   &--big {
@@ -37,13 +43,17 @@
     }
   }
 
-  &--big-icon {
+  &--small {
+    text-transform: none;
+
     @include tablet-desktop {
-      padding: size(16px) size(40px);
+      padding: 12px 41px;
+      letter-spacing: normal;
     }
 
     @include mobile {
-      padding: size(12px) size(29px);
+      padding: 12px 32px;
+      letter-spacing: 0.06em;
     }
   }
 

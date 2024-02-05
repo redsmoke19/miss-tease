@@ -1,0 +1,23 @@
+mixin modal-cart-item(props = {})
+  - const {name, size, price, img, quantity = 1, counter = true, mod, deleteBtn = true} = props
+  .modal-cart-item(class=mod && `modal-cart-item--${mod}`)
+    if deleteBtn
+      button.modal-cart-item__delete(type="button", aria-label="Удалить")
+        +icon("icon-close", 18, 18)
+    .modal-cart-item__img
+      +img("cart", img, "jpg", 192, 284, name)
+    .modal-cart-item__content
+      h3.modal-cart-item__name!= name
+      if size
+        p.modal-cart-item__size
+          | Размер:&nbsp;
+          span!= size
+      .modal-cart-item__footer
+        if counter
+          .modal-cart-item__counter
+            +counter(quantity)
+        else
+          p.modal-cart-item__quantity
+            | Кол-во:&nbsp;
+            span !{`${quantity} шт`}
+        p.modal-cart-item__price!= price

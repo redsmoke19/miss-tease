@@ -6,23 +6,8 @@ mixin modal-cart(props = {})
       .modal-cart__scroll-wrapper
         ul.modal-cart__list
           each item in items
-            - const {name, size, price, img} = item
             li.modal-cart__item
-              .modal-cart-item
-                button.modal-cart-item__delete(type="button", aria-label="Удалить")
-                  +icon("icon-close", 18, 18)
-                .modal-cart-item__img
-                  +img("cart", img, "jpg", 192, 284, name)
-                .modal-cart-item__content
-                  h3.modal-cart-item__name!= name
-                  if size
-                    p.modal-cart-item__size
-                      | Размер:&nbsp;
-                      span!= size
-                  .modal-cart-item__footer
-                    .modal-cart-item__counter
-                      +counter()
-                    p.modal-cart-item__price!= price
+              +modal-cart-item(item)
     .modal-cart__footer
       p.modal-cart__total
         span Итого

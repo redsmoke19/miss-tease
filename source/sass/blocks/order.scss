@@ -1,0 +1,238 @@
+.order {
+  @include tablet-desktop {
+    padding-top: size(50px);
+    padding-bottom: size(60px);
+  }
+
+  @include mobile {
+    padding-top: size(20px);
+    padding-bottom: size(30px);
+  }
+
+  &__container {
+    position: relative;
+    max-width: size(1566px);
+  }
+
+  &__title {
+    font-family: $ff-cormorant;
+    font-weight: 400;
+    line-height: 100%;
+    margin-top: 0;
+    color: $color-default-white;
+
+    @include tablet-desktop {
+      font-size: size(62px);
+      margin-bottom: size(30px);
+    }
+
+    @include mobile {
+      font-size: size(36px);
+      margin-bottom: size(24px);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include tablet-desktop {
+      align-items: flex-start;
+    }
+
+    @include desktop {
+      gap: size(98px);
+    }
+
+    @include tablet {
+      gap: size(40px);
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: size(30px);
+    }
+  }
+
+  &__content {
+    @include desktop {
+      width: calc(100% - #{size(528px)});
+    }
+
+    @include tablet {
+      width: calc(100% - #{size(340px)});
+    }
+  }
+
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: blocks;
+
+    @include tablet-desktop {
+      gap: size(30px);
+    }
+
+    @include mobile {
+      gap: size(20px);
+    }
+  }
+}
+
+.order-block {
+  position: relative;
+  counter-increment: blocks;
+  background-color: $color-nero;
+
+  @include desktop {
+    padding: size(40px) size(40px) size(50px);
+  }
+
+  @include mobile-tablet {
+    padding: size(25px) size(20px) size(30px);
+  }
+
+  &--delivery {
+    @include desktop {
+      display: grid;
+      grid-column-gap: size(20px);
+      grid-template-columns: 1fr size(372px);
+    }
+  }
+
+  &[data-current-tab="1"] {
+    .order-block__aside {
+      @include desktop {
+        grid-row: 1/3;
+        grid-column: 2/3;
+      }
+    }
+  }
+
+  &__edit {
+    position: absolute;
+
+    @include desktop {
+      top: size(54px);
+      right: size(41px);
+    }
+
+    @include mobile-tablet {
+      top: size(24px);
+      right: size(20px);
+    }
+  }
+}
+
+.order-block__title {
+  font-weight: 300;
+  margin-top: 0;
+  color: $color-default-white;
+
+  @include desktop {
+    font-size: size(34px);
+    line-height: size(43px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(22px);
+    line-height: size(28px);
+  }
+
+  &--filled {
+    display: flex;
+    align-items: center;
+
+    @include desktop {
+      padding-right: size(80px);
+    }
+
+    @include mobile-tablet {
+      padding-right: size(40px);
+    }
+  }
+
+  &:not(.order-block__title--filled) {
+    &::before {
+      content: counters(blocks, "") ". ";
+    }
+  }
+
+  svg {
+    flex-shrink: 0;
+    color: $color-barley-corn;
+
+    @include desktop {
+      width: size(34px);
+      height: size(34px);
+      margin-right: size(20px);
+    }
+
+    @include mobile-tablet {
+      align-self: flex-start;
+      width: size(26px);
+      height: size(26px);
+      margin-right: size(16px);
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:not(:last-child) {
+    @include desktop {
+      margin-bottom: size(16px);
+    }
+
+    @include mobile-tablet {
+      margin-bottom: size(11px);
+    }
+  }
+}
+
+.order-block__description {
+  margin: 0;
+  color: $white-56;
+
+  @include desktop {
+    font-size: size(14px);
+    line-height: size(18px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(12px);
+    line-height: size(15px);
+  }
+}
+
+.order-block__content {
+  flex-grow: 1;
+}
+
+.order-block__footer {
+  display: flex;
+  align-items: flex-end;
+
+  @include desktop {
+    padding-top: size(40px);
+  }
+
+  @include mobile-tablet {
+    padding-top: size(31px);
+  }
+}
+
+.order-block__submit {
+  @include tablet-desktop {
+    min-width: size(187px);
+    min-height: size(48px);
+  }
+
+  @include mobile {
+    min-width: size(160px);
+  }
+}

@@ -1,0 +1,26 @@
+mixin order-block(props = {})
+  - const {isFilled = false, isActive = false, hasFooter = false, title = "", text = "", aside = false, mod} = props
+  #{filled ? "div" : "form"}.order-block(action=filled && "#", novalidate=filled && "", class=mod && `order-block--${mod}`)&attributes(attributes)
+    .order-block__content
+      .order-block__header
+        h3.order-block__title(class=isFilled && "order-block__title--filled")
+          if isFilled
+            +icon("icon-done", 34, 34)
+          span!= title
+        if isFilled
+          a.order-block__edit.edit-button.edit-button--short
+            +icon("icon-edit", 18, 18)
+            span Изменить
+        if text
+          p.order-block__description!= text
+      if block && (isActive || isFilled)
+        .order-block__block
+          block
+    if isActive
+      if mod === "delivery"
+        .order-block__aside
+          +delivery-tabs()
+        +delivery-form()
+      if hasFooter
+        .order-block__footer
+          +btn({text: "Подтвердить", type: "submit", stroke: true, size: "small"}).order-block__submit

@@ -4,14 +4,22 @@ mixin custom-input(options = {})
   - const inputType = options.inputType ? options.inputType : "text"
   - const inputId = options.inputId ? options.inputId : false
   - const inputName = options.inputName ? options.inputName : false
+  - const inputLink = options.inputLink ? options.inputLink : false
   - const inputValue = options.inputValue ? options.inputValue : false
   - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
   - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
   - const inputAccept = options.inputAccept ? options.inputAccept : false
 
-  .custom-input&attributes(attributes)
+  .custom-input(class=inputPlaceholder && "has-placeholder")&attributes(attributes)
     label
-      +icon('icon-check', 16, 16)
+      +icon('icon-check', 16, 16).custom-input__icon
       if inputLabel
         span.custom-input__label!= inputLabel
+      if inputLink
+        - const {text, href, icon} = inputLink
+        a.custom-input__link(href=href)
+          if icon
+            +icon(icon, 20, 20)
+          span!= text
       input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept)
+      span.custom-input__line

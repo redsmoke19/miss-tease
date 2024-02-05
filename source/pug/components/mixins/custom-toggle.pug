@@ -1,0 +1,10 @@
+mixin custom-toggle(props = {})
+  - const {inputType = "checkbox", inputId = false, inputChecked = false, inputName = false, inputValue = false} = props
+  .custom-toggle&attributes(attributes)
+    input.visually-hidden(type=inputType, value=inputValue, id=inputId, name=inputName, checked=inputChecked)
+    label.custom-toggle__label(for=inputId)
+      span.custom-toggle__icon
+        +icon("icon-check", 12, 12)
+    if block
+      .custom-toggle__content
+        block

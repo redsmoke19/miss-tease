@@ -1,0 +1,26 @@
+mixin payment-form()
+  .payment-form
+    +custom-toggle({
+      inputName: "payment-method",
+      inputValue: "offline",
+      inputId: "offline",
+      inputType: "radio",
+      inputChecked: true
+    }).payment-form__item
+      .payment-method
+        span.payment-method__name Оплата банковской картой
+    +custom-toggle({
+      inputName: "payment-method",
+      inputValue: "online",
+      inputId: "online",
+      inputType: "radio"
+    }).payment-form__item
+      .payment-method
+        span.payment-method__name Безопасная оплата картой онлайн
+        ul.payment-method__list
+          li.payment-method__item.payment-method__item--visa
+            img(src="img/svg/visa-logo.svg", width="49", height="16", alt="visa-logo")
+          li.payment-method__item.payment-method__item--mastercard
+            img(src="img/svg/mastercard-logo.svg", width="31", height="20", alt="mastercard-logo")
+          li.payment-method__item.payment-method__item--mir
+            img(src="img/svg/mir-logo.svg", width="51", height="14", alt="mir-logo")
