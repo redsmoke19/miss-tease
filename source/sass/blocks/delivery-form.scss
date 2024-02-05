@@ -1,0 +1,461 @@
+.delivery-checks {
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include desktop {
+      padding-top: size(50px);
+      gap: size(14px);
+    }
+
+    @include mobile-tablet {
+      padding-top: size(30px);
+      padding-bottom: size(10px);
+      gap: size(8px);
+    }
+  }
+}
+
+.delivery-checks__info {
+  display: flex;
+  width: 100%;
+
+  @include desktop {
+    align-items: center;
+    padding-top: size(23px);
+    padding-right: size(40px);
+    gap: size(60px);
+  }
+
+  @include mobile-tablet {
+    flex-direction: column;
+    padding-top: size(20px);
+    gap: size(14px);
+  }
+}
+
+.delivery-checks__info-title {
+  font-weight: 500;
+  flex-grow: 1;
+  margin: 0;
+  color: $white-70;
+
+  @include desktop {
+    font-size: size(16px);
+    line-height: size(20px);
+    max-width: size(130px);
+    padding-right: size(20px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(13px);
+    line-height: size(16px);
+  }
+}
+
+.delivery-checks__info-list {
+  display: flex;
+  flex-grow: 1;
+  max-width: size(660px);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+
+  @include desktop {
+    align-items: center;
+    justify-content: space-between;
+    gap: size(20px);
+  }
+
+  @include mobile-tablet {
+    flex-wrap: wrap;
+    row-gap: size(14px);
+    column-gap: size(11px);
+  }
+}
+
+.delivery-checks__info-item {
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    gap: size(3px);
+  }
+
+  @include mobile-tablet {
+    flex-basis: 38%;
+    gap: size(2px);
+  }
+
+  &:first-child {
+    @include desktop {
+      flex-basis: size(340px);
+    }
+
+    @include mobile-tablet {
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.delivery-checks__info-key {
+  color: $white-40;
+
+  @include desktop {
+    font-size: size(13px);
+    line-height: size(16px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(11px);
+    line-height: size(14px);
+  }
+}
+
+.delivery-checks__info-value {
+  display: inline-flex;
+  flex-direction: column;
+  color: $white-70;
+
+  @include desktop {
+    font-size: size(16px);
+    line-height: size(20px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(12px);
+    line-height: size(15px);
+  }
+}
+
+.delivery-checks__item {
+  @include desktop {
+    flex: 0 1 calc(50% - #{size(7px)});
+  }
+
+  @include mobile-tablet {
+    flex: 0 1 calc(50% - #{size(4px)});
+  }
+
+  input:checked ~ .custom-toggle__content {
+    .delivery-checkbox {
+      color: $white-70;
+    }
+
+    .delivery-checkbox__logo {
+      color: $color-dark-pastel-green;
+    }
+  }
+}
+
+.delivery-form {
+  @include desktop {
+    padding-top: size(61px);
+    grid-column: 1/-1;
+  }
+
+  @include mobile-tablet {
+    padding-top: size(30px);
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.delivery-form__content {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    gap: size(31px);
+  }
+
+  @include mobile-tablet {
+    gap: size(20px);
+  }
+}
+
+.delivery-form__title {
+  font-weight: 300;
+  margin-top: 0;
+  color: $color-default-white;
+
+  @include desktop {
+    font-size: size(22px);
+    line-height: size(28px);
+    margin-bottom: size(18px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(18px);
+    line-height: size(23px);
+    margin-bottom: size(13px);
+  }
+}
+
+.delivery-form__wrapper {
+  display: flex;
+
+  @include desktop {
+    gap: size(20px);
+  }
+
+  @include mobile-tablet {
+    flex-wrap: wrap;
+    column-gap: size(8px);
+    row-gap: size(20px);
+  }
+}
+
+.delivery-form__input {
+  @include desktop {
+    flex: 1;
+  }
+
+  @include mobile-tablet {
+    flex-basis: 100%;
+  }
+
+  &--short {
+    @include desktop {
+      flex: 0 0 size(176px);
+    }
+
+    @include mobile-tablet {
+      flex: 0 0 calc(50% - #{size(4px)});
+    }
+  }
+}
+
+.delivery-tabs {
+  &__item {
+    width: 100%;
+  }
+}
+
+.delivery-item {
+  width: 100%;
+  background: $white-4;
+
+  @include desktop {
+    padding: size(30px);
+  }
+
+  @include mobile-tablet {
+    padding: size(18px);
+  }
+}
+
+.delivery-item__name {
+  font-weight: 300;
+  margin-top: 0;
+  color: $color-default-white;
+
+  @include desktop {
+    font-size: size(20px);
+    line-height: size(25px);
+    margin-bottom: size(18px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(16px);
+    line-height: size(20px);
+    margin-bottom: size(8px);
+  }
+}
+
+.delivery-item__logo {
+  color: $color-dark-pastel-green;
+
+  @include desktop {
+    margin-bottom: size(24px);
+  }
+
+  @include mobile-tablet {
+    margin-bottom: size(15px);
+  }
+
+  svg {
+    @include desktop {
+      width: size(91px);
+      height: size(26px);
+    }
+
+    @include mobile-tablet {
+      width: size(56px);
+      height: size(16px);
+    }
+  }
+}
+
+.delivery-item__text {
+  font-weight: 500;
+  margin-top: 0;
+  color: $white-70;
+
+  @include desktop {
+    font-size: size(16px);
+    line-height: size(20px);
+    margin-bottom: size(21px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(13px);
+    line-height: size(16px);
+    margin-bottom: size(12px);
+  }
+}
+
+.delivery-item__list {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  gap: size(40px);
+
+  &:not(:last-child) {
+    @include desktop {
+      margin-bottom: size(21px);
+    }
+
+    @include mobile-tablet {
+      margin-bottom: size(14px);
+    }
+  }
+}
+
+.delivery-item__button {
+  @include desktop {
+    margin-bottom: size(22px);
+  }
+
+  @include mobile-tablet {
+    margin-bottom: size(14px);
+  }
+}
+
+.delivery-item__item {
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    gap: size(3px);
+  }
+
+  @include mobile-tablet {
+    gap: size(2px);
+  }
+
+  &:nth-child(odd) {
+    flex: 1 0 calc(40% - #{size(20px)});
+  }
+
+  &:nth-child(even) {
+    flex: 1 0 calc(60% - #{size(20px)});
+  }
+}
+
+.delivery-item__item-key {
+  color: $white-40;
+
+  @include desktop {
+    font-size: size(13px);
+    line-height: size(16px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(11px);
+    line-height: size(14px);
+  }
+}
+
+.delivery-item__item-value {
+  display: inline-flex;
+  flex-direction: column;
+  color: $white-70;
+
+  @include desktop {
+    font-size: size(16px);
+    line-height: size(20px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(12px);
+    line-height: size(15px);
+  }
+}
+
+.delivery-checkbox {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  transition: color $trans-default;
+  color: $white-40;
+
+  @include desktop {
+    padding: size(16px) size(26px) size(20px);
+  }
+
+  @include mobile-tablet {
+    padding: size(6px) size(18px) size(14px);
+  }
+}
+
+.delivery-checkbox__logo {
+  transition: color $trans-default;
+
+  @include desktop {
+    margin-bottom: size(8px);
+  }
+
+  @include mobile-tablet {
+    margin-bottom: size(4px);
+  }
+
+  svg {
+    @include desktop {
+      width: size(50px);
+      height: size(14px);
+    }
+
+    @include mobile-tablet {
+      width: size(37px);
+      height: size(10px);
+    }
+  }
+}
+
+.delivery-checkbox__name {
+  font-weight: 500;
+  margin-bottom: size(6px);
+
+  @include desktop {
+    font-size: size(16px);
+    line-height: size(20px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(12px);
+    line-height: size(15px);
+  }
+}
+
+.delivery-checkbox__price {
+  font-weight: 400;
+
+  @include desktop {
+    font-size: size(14px);
+    line-height: size(18px);
+  }
+
+  @include mobile-tablet {
+    font-size: size(11px);
+    line-height: size(14px);
+  }
+}

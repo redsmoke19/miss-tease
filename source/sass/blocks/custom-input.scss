@@ -4,16 +4,6 @@
   display: flex;
   flex-direction: column;
 
-  svg {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    visibility: hidden;
-    transition: opacity $trans-default, visibility $trans-default;
-    opacity: 0;
-    color: $color-barley-corn;
-  }
-
   label {
     position: relative;
     display: flex;
@@ -25,39 +15,95 @@
       font-family: $ff-geologica;
       font-size: size(16px);
       font-weight: 300;
+      overflow: hidden;
       width: 100%;
       height: size(56px);
-      padding: size(26px) 0 size(10px);
-      transition: border-color $trans-default;
-      color: rgba($color-default-white, 70%);
+      padding: size(26px) 0 size(11px);
+      text-overflow: ellipsis;
+      color: $color-default-white;
       border: none;
-      border-bottom: size(1px) solid rgba($color-default-white, 10%);
       outline: none;
       background-color: $color-transparent;
 
-      @include vp-767 {
+      @include mobile {
         font-size: size(14px);
-        min-height: size(46px);
-        padding: size(14px) 0;
+        height: size(46px);
+        padding: size(24px) 0 size(5px);
       }
 
       @include hover-focus {
-        border-color: $color-default-white;
+        + .custom-input__line {
+          border-color: $color-default-white;
+        }
+      }
+
+      &::placeholder {
+        color: $white-70;
       }
     }
   }
 
+  &__link {
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    min-height: size(56px);
+    padding: size(26px) 0 size(11px);
+    gap: size(10px);
+
+    @include mobile {
+      font-size: size(14px);
+      min-height: size(46px);
+      padding: size(24px) 0 size(5px);
+      gap: size(8px);
+    }
+
+    svg {
+      flex-shrink: 0;
+      width: size(20px);
+      height: size(20px);
+
+      @include mobile {
+        width: size(16px);
+        height: size(16px);
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    visibility: hidden;
+    align-self: center;
+    transition: opacity $trans-default, visibility $trans-default;
+    opacity: 0;
+    color: $color-barley-corn;
+  }
+
   &__label {
-    pointer-events: none;
     font-size: size(16px);
     font-weight: 300;
     position: absolute;
     left: 0;
     transition: transform $trans-default;
+    transform-origin: left center;
+    pointer-events: none;
 
-    @include vp-767 {
+    @include mobile {
       font-size: size(14px);
     }
+  }
+
+  &__line {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: block;
+    width: 100%;
+    transition: border-color $trans-default;
+    border-bottom: size(1px) solid rgba($color-default-white, 10%);
   }
 
   &__error {
@@ -68,24 +114,33 @@
     opacity: 0;
     color: #ff1553;
 
-    @media screen and (max-width: size(767px)) {
+    @include mobile {
       bottom: size(20px);
     }
   }
 
+  &.has-placeholder,
   &.is-active {
     .custom-input__label {
-      transform: scale(0.75) translate(size(-14px), size(-19px));
+      transform: scale(0.75) translate(0, size(-19px));
+
+      @include mobile {
+        transform: scale(0.75) translate(0, size(-14px));
+      }
     }
   }
 
   &.is-invalid {
     input,
     textarea {
-      border-color: $color-sunset-orange;
+      + .custom-input__line {
+        border-color: $color-sunset-orange;
+      }
 
       @include hover-focus {
-        border-color: $color-sunset-orange;
+        + .custom-input__line {
+          border-color: $color-sunset-orange;
+        }
       }
     }
 
@@ -95,7 +150,7 @@
   }
 
   &.is-valid {
-    svg {
+    .custom-input__icon {
       visibility: visible;
       opacity: 1;
     }

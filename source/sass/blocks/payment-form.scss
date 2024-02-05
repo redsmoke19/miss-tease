@@ -1,0 +1,121 @@
+.payment-form {
+  display: flex;
+
+  @include desktop {
+    flex-wrap: wrap;
+    padding-top: size(50px);
+    gap: size(34px);
+  }
+
+  @include mobile-tablet {
+    flex-direction: column;
+    padding-top: size(29px);
+    gap: size(8px);
+  }
+}
+
+.payment-form__item {
+  @include desktop {
+    flex: 0 0 size(335px);
+  }
+}
+
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+
+  @include desktop {
+    padding: size(12px) size(26px);
+  }
+
+  @include mobile-tablet {
+    min-height: size(55px);
+    padding: size(12px) size(17px);
+  }
+}
+
+.payment-method__name {
+  color: $white-70;
+
+  @include mobile-tablet {
+    font-size: size(12px);
+    line-height: size(15px);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: size(9px);
+
+    @include desktop {
+      font-size: size(14px);
+      font-weight: 400;
+      line-height: size(18px);
+      margin-bottom: size(10px);
+    }
+  }
+
+  &:last-child {
+    @include desktop {
+      font-size: size(16px);
+      font-weight: 500;
+      line-height: size(20px);
+    }
+  }
+}
+
+.payment-method__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+
+  @include desktop {
+    gap: size(21px);
+  }
+
+  @include mobile-tablet {
+    gap: size(16px);
+  }
+}
+
+.payment-method__item {
+  &--mastercard {
+    @include desktop {
+      width: size(31px);
+      height: size(20px);
+    }
+
+    @include mobile-tablet {
+      width: size(25px);
+      height: size(16px);
+    }
+  }
+
+  &--mir {
+    @include desktop {
+      width: size(51px);
+      height: size(14px);
+    }
+
+    @include mobile-tablet {
+      width: size(42px);
+      height: size(12px);
+    }
+  }
+
+  &--visa {
+    @include desktop {
+      width: size(49px);
+      height: size(16px);
+    }
+
+    @include mobile-tablet {
+      width: size(41px);
+      height: size(12px);
+    }
+  }
+}

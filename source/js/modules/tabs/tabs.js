@@ -24,7 +24,6 @@ export class Tabs {
     if (!target.closest('[data-tabs="control"]')) {
       return;
     }
-    evt.preventDefault();
     evt.stopPropagation();
     const control = target.closest('[data-tabs="control"]');
     this.openTab(control);
@@ -328,6 +327,8 @@ export class Tabs {
     if (activeElement) {
       activeElement.classList.remove('is-active');
     }
+
+    control.dispatchEvent(new CustomEvent('tabOpen', {detail: {currentIndex}, bubbles: true}));
 
     if (currentHeight > newHeight) {
       setTimeout(() => {

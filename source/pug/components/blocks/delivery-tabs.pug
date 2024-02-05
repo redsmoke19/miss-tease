@@ -1,0 +1,39 @@
+mixin delivery-tabs()
+  .delivery-tabs(data-tabs="content")
+    .delivery-tabs__item(data-tabs="element")
+      .delivery-item
+        p.delivery-item__name Курьером СДЭК
+        .delivery-item__logo
+          +icon("icon-cdek", 91, 26)
+        p.delivery-item__text Доставка до двери
+        ul.delivery-item__list
+          li.delivery-item__item
+            span.delivery-item__item-key Стоимость:
+            span.delivery-item__item-value 270 ₽
+          li.delivery-item__item
+            span.delivery-item__item-key Срок доставки:
+            span.delivery-item__item-value 2-3 рабочих дня
+    .delivery-tabs__item(data-tabs="element")
+      .delivery-item
+        p.delivery-item__name Пункт выдачи СДЭК
+        .delivery-item__logo
+          +icon("icon-cdek", 91, 26)
+        p.delivery-item__text Доставка до пункта выдачи
+        +btn({text: "Изменить пункт выдачи", size: "small"}).delivery-item__button
+        ul.delivery-item__list
+          li.delivery-item__item
+            span.delivery-item__item-key Адрес:
+            span.delivery-item__item-value г. Чебоксары, ул. Гражданская, 105
+        ul.delivery-item__list
+          li.delivery-item__item
+            span.delivery-item__item-key Время работы:
+            span.delivery-item__item-value
+              span Пн-Пт: 09:00 - 20:00
+              span Сб-Вс: 09:00 - 18:00
+        ul.delivery-item__list
+          li.delivery-item__item
+            span.delivery-item__item-key Стоимость:
+            span.delivery-item__item-value 130 ₽
+          li.delivery-item__item
+            span.delivery-item__item-key Срок доставки:
+            span.delivery-item__item-value 2-3 рабочих дня
