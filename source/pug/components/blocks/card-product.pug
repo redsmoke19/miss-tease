@@ -13,18 +13,18 @@ mixin card-product(data)
   .card-product(data-card-product)
     .card-product__inner
       if (video)
-        video(muted, loop, playsinline).card-product__video
+        video.card-product__video(muted, loop, playsinline)
           source(src=`video/${video}.mp4`)
       if (img2)
         +img("card-product", img2, "jpg", width, height, "Фотография товара").card-product__second-img
       +img("card-product", img, "jpg", width, height, "Фотография товара").card-product__main-img
       if(sale)
-        span.card-product__sale!=`-${sale}%`
+        span.card-product__sale !{`-${sale}%`}
     .card-product__bottom
-      h2.card-product__name!=name
+      h2.card-product__name!= name
       if(price)
         .card-product__prices
-          span.card-product__price!=`от ${price} ₽`
+          span.card-product__price !{`от ${price} ₽`}
           if(oldPrice)
             span.card-product__old-price от <span>#{oldPrice} ₽</span>
     a.card-product__shadow-link(href="#", aria-label="Перейти к товару")
