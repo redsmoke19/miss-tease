@@ -1,0 +1,14 @@
+mixin order-success()
+  section.order-success
+    .order-success__container.container
+      .order-success__wrapper
+        .order-success__icon
+          +icon("icon-done", 60, 60)
+        h2.order-success__title Оплата прошла успешно!
+        p.order-success__subtitle Номер вашего заказа : <span>А285</span>
+        p.order-success__text-block
+          span.order-success__text Ваш заказ сейчас обрабатывается, подтверждение отправки придет
+          span.order-success__text Вам на электронную почту, как только Ваш заказ будет отправлен.
+        p.order-success__text-block
+          span.order-success__text С уважением,
+          span.order-success__text Обслуживание клиентов "MissTease"
