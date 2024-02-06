@@ -3,6 +3,18 @@
   flex-direction: column;
   height: 100%;
 
+  &__empty {
+    @include tablet-desktop {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+      width: size(451px);
+      padding-right: size(21px);
+    }
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -59,8 +71,11 @@
   }
 
   &__item {
-    width: size(420px);
     padding-bottom: size(19px);
+
+    @include tablet-desktop {
+      width: size(420px);
+    }
 
     &:not(:last-child) {
       border-bottom: size(1px) solid rgba($color-default-white, 4%);
