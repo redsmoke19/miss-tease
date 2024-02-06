@@ -1,6 +1,6 @@
 mixin order-block(props = {})
   - const { isFilled = false, isActive = false, hasFooter = false, title = "", text = "", aside = false, editUrl = "#", mod, pickPointSelected = false} = props
-  #{isFilled ? "div" : "form"}.order-block(action=isFilled && "#", novalidate=isFilled && "", class=mod && `order-block--${mod}`)&attributes(
+  #{isActive ? "form" : "div"}.order-block(action=isActive && "#", novalidate=isActive && "", class=mod && `order-block--${mod}`)&attributes(
     attributes)
     .order-block__content
       .order-block__header

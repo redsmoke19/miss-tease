@@ -8,17 +8,17 @@ mixin delivery-form(props = {})
           inputType: "text",
           inputLabel: "Улица*",
           inputName: "street"
-        }).delivery-form__input(data-validate-type="text", data-required=pickPointSelected && "", data-message-base="Поле обязательно к заполнению")
+        }).delivery-form__input(data-validate-type="text", data-required=!pickPointSelected && "", data-message-base="Поле обязательно к заполнению")
         +custom-input({
           inputType: "text",
           inputLabel: "Дом/корпус*",
           inputName: "house"
-        }).delivery-form__input.delivery-form__input--short(data-validate-type="text", data-limitation="digit", data-required=pickPointSelected && "", data-message-base="Поле обязательно к заполнению")
+        }).delivery-form__input.delivery-form__input--short(data-validate-type="text", data-limitation="digit", data-required=!pickPointSelected && "", data-message-base="Поле обязательно к заполнению")
         +custom-input({
           inputType: "text",
           inputLabel: "Квартира/офис*",
           inputName: "apartment"
-        }).delivery-form__input.delivery-form__input--short(data-validate-type="text", data-limitation="digit", data-required=pickPointSelected && "", data-message-base="Поле обязательно к заполнению")
+        }).delivery-form__input.delivery-form__input--short(data-validate-type="text", data-limitation="digit", data-required=!pickPointSelected && "", data-message-base="Поле обязательно к заполнению")
       .delivery-form__wrapper
         +custom-textarea({
           inputLabel: "Комментарий к заказу",

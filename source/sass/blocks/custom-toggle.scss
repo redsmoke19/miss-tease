@@ -15,73 +15,73 @@
       }
     }
   }
-}
 
-.custom-toggle__label {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  cursor: pointer;
-  transition: border-color $trans-default;
-  border: size(1px) solid $white-10;
-
-  @include desktop {
-    padding: size(11px);
-  }
-
-  @include mobile-tablet {
-    padding: size(9px);
-  }
-
-  @include hover-focus {
-    border-color: $color-default-white;
-  }
-}
-
-.custom-toggle__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color $trans-default, border-color $trans-default;
-  color: $color-default-white;
-  border: size(1px) solid $white-30;
-  border-radius: 50%;
-  background-color: $color-transparent;
-
-  @include desktop {
-    width: size(20px);
-    height: size(20px);
-  }
-
-  @include mobile-tablet {
-    width: size(18px);
-    height: size(18px);
-  }
-
-  svg {
-    transition: opacity $trans-default;
-    opacity: 0;
+  &__label {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: border-color $trans-default;
+    border: size(1px) solid $white-10;
 
     @include desktop {
-      width: size(12px);
-      height: size(12px);
+      padding: size(11px);
     }
 
     @include mobile-tablet {
-      width: size(11px);
-      height: size(11px);
+      padding: size(9px);
+    }
+
+    @include hover-focus {
+      border-color: $color-default-white;
     }
   }
-}
 
-.custom-toggle__content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color $trans-default, border-color $trans-default;
+    color: $color-default-white;
+    border: size(1px) solid $white-30;
+    border-radius: 50%;
+    background-color: $color-transparent;
+
+    @include desktop {
+      width: size(20px);
+      height: size(20px);
+    }
+
+    @include mobile-tablet {
+      width: size(18px);
+      height: size(18px);
+    }
+
+    svg {
+      transition: opacity $trans-default;
+      opacity: 0;
+
+      @include desktop {
+        width: size(12px);
+        height: size(12px);
+      }
+
+      @include mobile-tablet {
+        width: size(11px);
+        height: size(11px);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
 }
