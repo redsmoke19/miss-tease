@@ -120,6 +120,15 @@
   }
 }
 
+.link-back-container {
+  &.container {
+    @include tablet-desktop {
+      margin-top: size(20px);
+      padding: 0 size(40px);
+    }
+  }
+}
+
 .link-back {
   font-weight: 400;
   line-height: 100%;

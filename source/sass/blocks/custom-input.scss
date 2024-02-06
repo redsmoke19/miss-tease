@@ -46,10 +46,12 @@
     input {
       @include tablet-desktop {
         height: size(56px);
+        padding-right: size(30px);
       }
 
       @include mobile {
         height: size(46px);
+        padding-right: size(25px);
       }
     }
 
@@ -92,9 +94,19 @@
     right: 0;
     visibility: hidden;
     align-self: center;
+    width: size(16px);
+    height: size(16px);
     transition: opacity $trans-default, visibility $trans-default;
     opacity: 0;
     color: $color-barley-corn;
+
+    @include tablet-desktop {
+      bottom: size(9px);
+    }
+
+    @include mobile {
+      bottom: size(7px);
+    }
   }
 
   &__label {

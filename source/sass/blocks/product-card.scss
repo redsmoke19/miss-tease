@@ -117,10 +117,11 @@
 
     img {
       z-index: 1;
+      transition: opacity $trans-default;
     }
 
-    &.play video {
-      z-index: 2;
+    &.play img {
+      opacity: 0;
     }
   }
 }

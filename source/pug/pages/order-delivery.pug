@@ -11,9 +11,5 @@ block variables
 
 block main
   main
-    h1.visually-hidden Корзина
+    h1.visually-hidden Оформление заказа
     +order({step: 2})
-
-block modals
-  +modal-message({status: 'success', text: "Промокод успешно применен", icon: "icon-done"})(data-modal="success")
-  +modal-message({status: 'error', text: "Промокод не действителен", icon: "icon-error"})(data-modal="error")

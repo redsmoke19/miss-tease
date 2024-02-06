@@ -1,17 +1,23 @@
 mixin modal-cart(props = {})
-  - const {items = []} = props
+  - const {items = [], empty = false} = props
   .modal-cart
     .modal-cart__content
       h2.modal-cart__title Корзина
-      .modal-cart__scroll-wrapper
-        ul.modal-cart__list
-          each item in items
-            li.modal-cart__item
-              +modal-cart-item(item)
-    .modal-cart__footer
-      p.modal-cart__total
-        span Итого
-        span 17 500 ₽
-      .modal-cart__buttons
-        +btn({text: "Оформить заказ", href: "#"}).modal-cart__button
-        +btn({text: "В корзину", stroke: true}).modal-cart__button
+      if empty
+        .modal-cart__empty.cart-empty
+          .cart-empty__img
+          p.cart-empty__text В корзине пока нет товаров
+      else
+        .modal-cart__scroll-wrapper
+          ul.modal-cart__list
+            each item in items
+              li.modal-cart__item
+                +modal-cart-item(item)
+    if !empty
+      .modal-cart__footer
+        p.modal-cart__total
+          span Итого
+          span 17 500 ₽
+        .modal-cart__buttons
+          +btn({text: "Оформить заказ", href: "order-information.html"}).modal-cart__button
+          +btn({text: "В корзину", stroke: true, href: "cart.html"}).modal-cart__button

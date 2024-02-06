@@ -1,6 +1,6 @@
 mixin order-block(props = {})
-  - const { isFilled = false, isActive = false, hasFooter = false, title = "", text = "", aside = false, editUrl = "#", mod} = props
-  #{isFilled ? "div" : "form"}.order-block(action=isFilled && "#", novalidate=isFilled && "", class=mod && `order-block--${mod}`)&attributes(
+  - const { isFilled = false, isActive = false, hasFooter = false, title = "", text = "", aside = false, editUrl = "#", mod, pickPointSelected = false} = props
+  #{isActive ? "form" : "div"}.order-block(action=isActive && "#", novalidate=isActive && "", class=mod && `order-block--${mod}`)&attributes(
     attributes)
     .order-block__content
       .order-block__header
@@ -20,8 +20,8 @@ mixin order-block(props = {})
     if isActive
       if mod === "delivery"
         .order-block__aside
-          +delivery-tabs()
-        +delivery-form()
+          +delivery-tabs({pickPointSelected})
+        +delivery-form({pickPointSelected})
       if hasFooter
         .order-block__footer
           +btn({text: "Подтвердить", type: "submit", stroke: true, size: "small"}).order-block__submit
