@@ -102,10 +102,6 @@ textarea {
   &::placeholder {
     opacity: 1;
   }
-
-  &:invalid {
-    box-shadow: none;
-  }
 }
 
 select {

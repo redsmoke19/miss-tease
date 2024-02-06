@@ -163,6 +163,7 @@
       align-items: center;
       margin-bottom: 0;
       padding: size(11px) size(32px) size(11px) 0;
+      letter-spacing: 0.02em;
     }
 
     svg {
@@ -347,6 +348,16 @@
   &__input {
     flex-grow: 1;
 
+    &.custom-input label input {
+      @include tablet-desktop {
+        padding-right: size(145px);
+      }
+
+      @include mobile {
+        padding-right: size(140px);
+      }
+    }
+
     &.custom-input svg {
       right: size(115px);
     }
@@ -379,7 +390,7 @@
     @include mobile {
       font-size: size(14px);
       min-height: size(46px);
-      padding: size(14px) 0;
+      padding: size(10px) 0 size(18px);
     }
 
     @include hover-focus {
