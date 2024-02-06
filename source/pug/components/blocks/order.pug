@@ -1,7 +1,7 @@
 include ../../data/order-cart-items
 
 mixin order(props = {})
-  - const {step = 1} = props
+  - const {step = 1, pickPointSelected = false} = props
   .order(data-form-validate, data-callback="base")
     .order__container.container
       h2.order__title Оформление заказа
@@ -25,9 +25,10 @@ mixin order(props = {})
               hasFooter: step === 2,
               mod: step === 2 ? "delivery" : "",
               aside: step === 2,
-              editUrl: "order-delivery.html"
-            }).order__block(data-tabs=step === 2 && "parent", data-delivery-form=step === 2 && "parent")
-              +delivery-checks({isFilled: step > 2})
+              editUrl: "order-delivery.html",
+              pickPointSelected
+            }).order__block(data-tabs=step === 2 && "parent", data-delivery-form=step === 2 && "parent", data-current-tab=Number(pickPointSelected))
+              +delivery-checks({isFilled: step > 2, pickPointSelected})
 
             +order-block({
               title: "Способ оплаты",

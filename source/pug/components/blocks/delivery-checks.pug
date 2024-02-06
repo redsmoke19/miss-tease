@@ -1,5 +1,5 @@
 mixin delivery-checks(props = {})
-  - const {isFilled = false} = props
+  - const {isFilled = false, pickPointSelected = false} = props
   .delivery-checks
     if isFilled
       .delivery-checks__info
@@ -21,7 +21,7 @@ mixin delivery-checks(props = {})
           inputValue: "courier",
           inputId: "courier",
           inputType: "radio",
-          inputChecked: true
+          inputChecked: !pickPointSelected
         }).delivery-checks__item(data-tabs="control")
           .delivery-checkbox
             .delivery-checkbox__logo
@@ -33,8 +33,8 @@ mixin delivery-checks(props = {})
           inputValue: "pick-point",
           inputId: "pick-point",
           inputType: "radio",
-          inputChecked: false
-        }).delivery-checks__item(data-tabs="control")
+          inputChecked: pickPointSelected
+        }).delivery-checks__item(data-tabs="control", class=pickPointSelected && "is-active")
           .delivery-checkbox
             .delivery-checkbox__logo
               +icon("icon-cdek", 50, 14)
