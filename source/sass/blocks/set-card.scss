@@ -1,12 +1,12 @@
 .set-card {
   @include tablet-desktop {
     padding-top: size(24px);
-    padding-bottom: size(50px);
+    padding-bottom: size(100px);
   }
 
   @include mobile {
     padding-top: size(13px);
-    padding-bottom: size(30px);
+    padding-bottom: size(60px);
   }
 
   &__container {

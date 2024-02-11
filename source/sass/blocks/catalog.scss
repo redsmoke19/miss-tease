@@ -1,0 +1,84 @@
+.catalog {
+  margin: 0 0 size(120px) 0;
+
+  @include mobile-tablet {
+    margin: 0 0 size(60px);
+  }
+
+  .container {
+    padding: 0 size(40px);
+
+    @include mobile-tablet {
+      padding: 0 size(10px);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: size(60px) size(40px);
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include mobile-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: size(40px) size(10px);
+    }
+  }
+
+  &__description {
+    margin: size(120px) 0 0 0;
+    max-width: size(900px);
+
+    @include mobile-tablet {
+      margin: size(60px) 0 0 0;
+      max-width: unset;
+    }
+  }
+
+  &__heading {
+    font-size: size(38px);
+    line-height: size(48px);
+    color: $white-70;
+    margin: 0 0 size(20px) 0;
+    font-weight: 300;
+
+    @include mobile-tablet {
+      font-size: size(24px);
+      line-height: size(30px);
+      margin: 0 0 size(20px) 0;
+    }
+  }
+
+  &__text {
+    font-size: size(18px);
+    line-height: size(27px);
+    font-weight: 300;
+    margin: 0 0 size(40px) 0;
+    color: $white-56;
+
+    @include mobile-tablet {
+      font-size: size(14px);
+      line-height: size(21px);
+      margin: 0 0 size(30px) 0;
+    }
+  }
+
+  &__link {
+    font-size: size(16px);
+    line-height: size(20px);
+    color: $white-40;
+    transition: color $trans-default;
+    font-weight: 300;
+
+    @include mobile-tablet {
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+    }
+  }
+}
