@@ -1,0 +1,13 @@
+mixin show-more(title, data)
+  section.show-more
+    .container
+      h2.show-more__title!=title
+      .show-more__swiper.swiper(data-show-more-slider="parent")
+        button.show-more__button.show-more__button--prev(type="button", data-show-more-slider="prev", aria-label="Назад")
+          +icon("icon-slider-arrow", 24, 24)
+        button.show-more__button.show-more__button--next(type="button", data-show-more-slider="next", aria-label="Вперед")
+          +icon("icon-slider-arrow", 24, 24)
+        ul.show-more__list.swiper-wrapper
+          for item in data
+            li.show-more__item.swiper-slide
+              +card-product(item)

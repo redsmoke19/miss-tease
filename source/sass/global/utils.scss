@@ -167,6 +167,22 @@
   }
 }
 
+.page-title {
+  margin: size(50px) 0 size(40px) 0;
+  font-family: $ff-cormorant;
+  text-align: center;
+  color: $color-default-white;
+  font-size: size(62px);
+  line-height: size(62px);
+  font-weight: 400;
+
+  @include mobile-tablet {
+    font-size: size(36px);
+    line-height: size(36px);
+    margin: size(20px) 0 size(24px);
+  }
+}
+
 .edit-button {
   font-weight: 300;
   display: inline-flex;

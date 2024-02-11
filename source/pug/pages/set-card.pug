@@ -9,11 +9,17 @@ block variables
   - const footerMods = ""
   - const currentUrl = "set-card.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
+block data
+  //- Тут берем переменную showMore
+  include ../components/data/show-more
+
 block main
   main
     h1.visually-hidden Карточка комплекта
     +back-link("Назад к коллекциям")
     +set-card()
+    +show-more("Комплекты в других цветах", showMore)
+    +show-more("Вам может понравится", showMore)
 
 block modals
   +modal("modal--cart")(data-modal="cart")

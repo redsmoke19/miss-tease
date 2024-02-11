@@ -9,8 +9,9 @@ mixin card-product(data)
     const price = data.price || ""
     const oldPrice = data.oldPrice || ""
     const sale = data.sale || ""
+    const sizeSmall = data.sizeSmall || ""
 
-  .card-product(data-card-product)
+  .card-product(data-card-product, class=sizeSmall ? "card-product--small" : null)
     .card-product__inner
       if (video)
         video.card-product__video(muted, loop, playsinline)

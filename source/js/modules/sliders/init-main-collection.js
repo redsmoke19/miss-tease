@@ -21,7 +21,7 @@ const initMainCollectionSlider = () => {
     },
     breakpoints: {
       1023: {
-        allowTouchMove: false,
+        // allowTouchMove: false,
       },
     },
     modules: [Navigation],

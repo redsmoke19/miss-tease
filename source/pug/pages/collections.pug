@@ -1,0 +1,28 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Коллекции"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "collections.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block data
+  //- Тут берем переменную mainCollection
+  include ../components/data/collections
+
+block main
+  main
+    section.catalog
+      .container
+        h1.page-title Коллекции
+        ul.catalog__list
+          for item in collections
+            li.catalog__item
+              +card-product(item)
+
+block modals
+  +modal("modal--cart")(data-modal="cart")
+    +modal-cart({items: modalCartItems})

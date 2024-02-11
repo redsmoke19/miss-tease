@@ -36,7 +36,7 @@ export class PageMenu {
 
   _onDocumentClick(evt) {
     const target = evt.target;
-    if (target.closest('[data-nav="wrapper"]') || target.closest('[data-sandwich]')) {
+    if (target.closest('[data-nav="wrapper"]') || target.closest('[data-sandwich]') || target.closest('.header-delivery-inner')) {
       return;
     }
     this.closeMenu();
