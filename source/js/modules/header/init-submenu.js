@@ -2,22 +2,45 @@ import scrollLock from '../../vendor/scroll-lock.min.js';
 
 const breakpoint = window.matchMedia('(max-width:1023px)');
 const subMenu = document.querySelector('[data-sub-menu="parent"]');
+const navLinks = document.querySelectorAll('[data-nav-link]');
 const subMenuLink = document.querySelector('[data-sub-menu="link"]');
 const subMenuWrapper = document.querySelector('[data-sub-menu="wrapper"]');
 let delay = null;
 let isHovered = false;
 
-const getOpenMenu = () => {
+const setNavLinkMouseEnterListeners = () => {
+  navLinks.forEach((link) => {
+    link.addEventListener('mouseenter', closeMenu);
+  });
+};
+
+const removeNavLinkMouseEnterListeners = () => {
+  navLinks.forEach((link) => {
+    link.removeEventListener('mouseenter', closeMenu);
+  });
+};
+
+const openMenu = () => {
   if (subMenu.classList.contains('is-active') || delay) {
     return;
   }
   delay = 2;
   subMenu.classList.add('is-active');
+  setNavLinkMouseEnterListeners();
   scrollLock.disablePageScroll();
 };
 
-const getCloseMenu = () => {
+const closeMenu = () => {
   subMenu.classList.remove('is-active');
+  subMenuWrapper.removeEventListener('mouseout', mouseOutHandler);
+  removeNavLinkMouseEnterListeners();
+  setTimeout(() => {
+    delay = null;
+  }, 1000);
+
+  setTimeout(() => {
+    scrollLock.enablePageScroll();
+  }, 600);
 };
 
 const mouseLeaveHandler = () => {
@@ -32,7 +55,7 @@ const mouseEnterHandler = () => {
 const mouseInHandler = () => {
   setTimeout(() => {
     if (isHovered) {
-      getOpenMenu();
+      openMenu();
       subMenuWrapper.addEventListener('mouseout', mouseOutHandler);
     }
   }, 300);
@@ -43,15 +66,7 @@ const mouseOutHandler = (evt) => {
     return;
   }
 
-  getCloseMenu();
-  subMenuWrapper.removeEventListener('mouseout', mouseOutHandler);
-  setTimeout(() => {
-    delay = null;
-  }, 1000);
-
-  setTimeout(() => {
-    scrollLock.enablePageScroll();
-  }, 600);
+  closeMenu();
 };
 
 const breakpointChecker = () => {
