@@ -7,7 +7,7 @@ const subMenuWrapper = document.querySelector('[data-sub-menu="wrapper"]');
 let delay = null;
 let isHovered = false;
 
-const getOpenMenu = () => {
+const openMenu = () => {
   if (subMenu.classList.contains('is-active') || delay) {
     return;
   }
@@ -16,7 +16,7 @@ const getOpenMenu = () => {
   scrollLock.disablePageScroll();
 };
 
-const getCloseMenu = () => {
+const closeMenu = () => {
   subMenu.classList.remove('is-active');
 };
 
@@ -32,19 +32,19 @@ const mouseEnterHandler = () => {
 const mouseInHandler = () => {
   setTimeout(() => {
     if (isHovered) {
-      getOpenMenu();
-      subMenuWrapper.addEventListener('mouseout', mouseOutHandler);
+      openMenu();
+      document.addEventListener('mousemove', mouseMoveHandler);
     }
   }, 300);
 };
 
-const mouseOutHandler = (evt) => {
-  if (evt.relatedTarget.closest('[data-sub-menu="wrapper"]')) {
+const mouseMoveHandler = (evt) => {
+  if (evt.target.closest('[data-sub-menu="wrapper"]') || evt.target.closest('[data-sub-menu="link"]')) {
     return;
   }
 
-  getCloseMenu();
-  subMenuWrapper.removeEventListener('mouseout', mouseOutHandler);
+  closeMenu();
+  document.removeEventListener('mousemove', mouseMoveHandler);
   setTimeout(() => {
     delay = null;
   }, 1000);
@@ -59,7 +59,7 @@ const breakpointChecker = () => {
     delay = null;
     subMenu.classList.remove('is-active');
     scrollLock.enablePageScroll();
-    subMenuWrapper.removeEventListener('mouseout', mouseOutHandler);
+    subMenuWrapper.removeEventListener('mousemove', mouseMoveHandler);
     subMenuLink.removeEventListener('mouseover', mouseInHandler);
     subMenuLink.removeEventListener('mouseenter', mouseEnterHandler);
   } else {
