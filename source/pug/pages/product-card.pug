@@ -11,12 +11,19 @@ block variables
 
 block data
   include ../data/modal-cart-items
+  //- Тут берем переменную showMore
+  include ../components/data/show-more
+  //- Тут берем переменную showMoreLow
+  include ../components/data/show-more-low
+
 
 block main
   main
     h1.visually-hidden Карточка товара
     +back-link("Назад к бюстгальтерам")
     +product-card()
+    +show-more("Комплекты в других цветах", showMoreLow)
+    +show-more("Вам может понравится", showMore)
 
 block modals
   +modal("modal--cart")(data-modal="cart")

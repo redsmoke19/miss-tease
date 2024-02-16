@@ -12,13 +12,15 @@ block variables
 block data
   //- Тут берем переменную showMore
   include ../components/data/show-more
+  //- Тут берем переменную showMoreLow
+  include ../components/data/show-more-low
 
 block main
   main
     h1.visually-hidden Карточка комплекта
     +back-link("Назад к коллекциям")
     +set-card()
-    +show-more("Комплекты в других цветах", showMore)
+    +show-more("Комплекты в других цветах", showMoreLow)
     +show-more("Вам может понравится", showMore)
 
 block modals
