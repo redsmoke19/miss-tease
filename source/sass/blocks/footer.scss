@@ -335,6 +335,7 @@
   &__wrapper {
     position: relative;
     display: flex;
+    transition: padding-bottom $trans-default;
 
     @include tablet-desktop {
       margin-bottom: size(23px);
@@ -342,6 +343,16 @@
 
     @include mobile {
       margin-bottom: size(15px);
+    }
+
+    &:has(.is-invalid) {
+      @include tablet-desktop {
+        padding-bottom: size(3px);
+      }
+
+      @include mobile {
+        padding-bottom: size(7px);
+      }
     }
   }
 

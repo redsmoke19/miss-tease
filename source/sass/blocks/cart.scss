@@ -630,6 +630,17 @@
 
   &__form {
     display: flex;
+    transition: padding-bottom $trans-default;
+
+    &:has(.is-invalid) {
+      @include tablet-desktop {
+        padding-bottom: size(5px);
+      }
+
+      @include mobile {
+        padding-bottom: size(10px);
+      }
+    }
   }
 
   &__input {
@@ -676,7 +687,6 @@
       }
     }
 
-
     .input-message {
       font-weight: 300;
       line-height: normal;
@@ -688,12 +698,13 @@
 
       @include tablet-desktop {
         font-size: size(12px);
-        top: 100%;
+        top: calc(100% + #{size(3px)});
       }
 
       @include mobile {
-        font-size: size(10px);
-        top: calc(100% + #{size(1px)});
+        font-size: size(11px);
+        width: calc(100% + #{size(56px)});
+        top: calc(100% + #{size(4px)});
       }
 
       &.is-invalid {
