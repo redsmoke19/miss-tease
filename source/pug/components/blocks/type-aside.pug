@@ -1,0 +1,31 @@
+mixin typeAside()
+  -
+    const asideLinks = [
+      {
+        href: "#",
+        text: "Доставка"
+      },
+      {
+        href: "#",
+        text: "Оплата"
+      },
+      {
+        href: "#",
+        text: "Возврат"
+      },
+      {
+        href: "table-size.html",
+        text: "Размерный гид"
+      },
+      {
+        href: "#",
+        text: "Контакты"
+      }
+    ]
+
+  aside.type-aside
+    nav.type-aside__nav
+      ul.type-aside__list
+        for item in asideLinks
+          li.type-aside__list
+            a.type-aside__link(class=currentUrl === item.href ? "is-active" : null, href=item.href)!=item.text

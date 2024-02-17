@@ -1,0 +1,70 @@
+.text-block {
+  padding: size(50px) size(330px) 0 size(180px);
+
+  @include mobile-tablet {
+    padding: size(20px) 0 0;
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: size(40px);
+    grid-template-columns: size(273px) 1fr;
+
+    @include mobile-tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__inner {
+    padding: 0 0 size(120px);
+
+    @include mobile-tablet {
+      padding: 0 0 size(60px) 0;
+    }
+  }
+
+  &__title {
+    color: $color-default-white;
+    font-family: $ff-cormorant;
+    font-size: size(62px);
+    font-weight: 400;
+    line-height: size(62px);
+    margin: 0 0 size(60px) 0;
+
+    @include mobile-tablet {
+      font-size: size(36px);
+      line-height: size(36px);
+      margin: 0 0 size(24px) 0;
+    }
+  }
+
+  &__subtitle {
+    color: $white-70;
+    font-family: $ff-cormorant;
+    font-size: size(50px);
+    font-weight: 300;
+    line-height: size(50px);
+    margin: 0 0 size(40px) 0;
+
+    @include mobile-tablet {
+      font-size: size(32px);
+      line-height: size(32px);
+      margin: 0 0 size(30px) 0;
+    }
+  }
+
+  &__text {
+    color: $white-56;
+    font-size: size(18px);
+    font-weight: 300;
+    line-height: size(27px);
+    margin: 0 0 size(60px) 0;
+    max-width: size(735px);
+
+    @include mobile-tablet {
+      font-size: size(14px);
+      line-height: size(20px);
+      margin: 0 0 size(30px) 0;
+    }
+  }
+}

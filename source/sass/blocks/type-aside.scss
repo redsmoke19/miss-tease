@@ -1,0 +1,51 @@
+.type-aside {
+  padding: size(35px) 0 0;
+
+  @include mobile-tablet {
+    display: none;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: size(24px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 0 0 size(5px);
+    font-size: size(16px);
+    line-height: size(20px);
+    color: $white-40;
+    font-weight: 300;
+    transition: color $trans-default;
+
+    &.is-active {
+      color: $color-default-white;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        background-color: $color-default-white;
+      }
+    }
+
+    &:not(.is-active):hover {
+      color: $color-default-white;
+    }
+  }
+}

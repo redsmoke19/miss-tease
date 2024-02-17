@@ -1,0 +1,103 @@
+.measurements {
+  &__accordion {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    &.is-active {
+      .measurements__button {
+        color: $color-barley-corn;
+
+        svg {
+          transform: translateY(-50%) rotate(45deg);
+        }
+      }
+    }
+  }
+
+  &__button {
+    align-items: center;
+    background-color: $color-transparent;
+    border: none;
+    color: $white-70;
+    cursor: pointer;
+    display: flex;
+    font-size: size(26px);
+    font-weight: 300;
+    line-height: size(33px);
+    padding: size(24px) 0;
+    position: relative;
+    transition: color $trans-default, opacity $trans-default;
+    width: 100%;
+
+    @include hover-focus {
+      opacity: 0.85;
+    }
+
+    svg {
+      height: size(18px);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform $trans-default;
+      width: size(18px);
+    }
+
+    @include mobile-tablet {
+      padding: size(18px) 0;
+      font-size: size(18px);
+      line-height: size(23px);
+
+      svg {
+        height: size(15px);
+        width: size(15px);
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    gap: size(20px);
+    justify-content: space-between;
+    padding: 0 size(45px) size(30px) size(30px);
+
+    @include mobile-tablet {
+      padding: size(10px) size(20px) size(20px);
+      flex-wrap: wrap;
+    }
+  }
+
+  &__text {
+    color: $white-56;
+    font-size: size(18px);
+    font-weight: 300;
+    line-height: size(27px);
+    max-width: size(437px);
+    padding: size(20px) 0 0;
+
+    @include mobile-tablet {
+      width: 100%;
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+
+    p:not(:last-child) {
+      margin: 0 0 size(20px) 0;
+    }
+  }
+
+  &__img {
+    img {
+      height: size(305px);
+      width: size(305px);
+
+      @include mobile-tablet {
+        width: size(205px);
+        height: size(174px);
+      }
+    }
+  }
+}

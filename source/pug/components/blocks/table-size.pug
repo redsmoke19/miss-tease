@@ -1,0 +1,20 @@
+mixin table-size()
+  section.text-block
+    .container
+      .text-block__wrapper
+        +typeAside()
+        .text-block__inner
+          h1.text-block__title Таблица размеров
+          p.text-block__text Таблица размеров для помощи в выборе подходящего размера нижнего белья! Правильный размер - это удобство в носке!
+          .sizes.sizes--page(data-tabs="parent")
+            .sizes__nav(data-tabs="controls")
+              button.sizes__nav-item(type="button", data-tabs="control") Таблица размеров
+              button.sizes__nav-item(type="button", data-tabs="control") Международный конвертер&nbsp;размеров
+            .sizes__tabs(data-tabs="content")
+              .sizes__tab(data-tabs="element")
+                +table(brasSizes).sizes__table.sizes__table--bras
+                +table(beltsSizes).sizes__table.sizes__table--belts
+              .sizes__tab(data-tabs="element")
+                +table(brasInternationalSizes).sizes__table.sizes__table--international
+          h2.text-block__subtitle Как снять мерки
+          +measurements()
