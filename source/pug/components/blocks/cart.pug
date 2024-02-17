@@ -60,7 +60,7 @@ mixin cart(props = {})
               +accordion({text: "Промокоды и сертификаты", icon: "icon-sale"}).cart-aside__accordion
                 .promo-code(data-form-validate, data-callback="base")
                   form.promo-code__form(action="#", novalidate)
-                    label.promo-code__input(data-validate-type="email", data-required, data-message-base="Поле обязательно к заполнению")
+                    label.promo-code__input(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
                       input(type="text", id="promo-code", name="promo-code", placeholder="Промокод или сертификат")
                     +btn({text: "Применить", type: "submit", stroke: true, size: "medium"}).promo-code__apply
                   .promo-code__footer
