@@ -61,10 +61,168 @@
     margin: 0 0 size(60px) 0;
     max-width: size(735px);
 
+    &:last-child {
+      margin: 0;
+    }
+
     @include mobile-tablet {
       font-size: size(14px);
       line-height: size(20px);
       margin: 0 0 size(30px) 0;
+    }
+  }
+
+  :where(h2) {
+    font-size: size(34px);
+    line-height: size(43px);
+    color: $white-70;
+    margin: 0 0 size(30px) 0;
+    font-weight: 300;
+
+    @include mobile-tablet {
+      font-size: size(22px);
+      line-height: size(28px);
+      font-weight: 200;
+      margin: 0 0 size(20px) 0;
+      color: $color-default-white;
+    }
+  }
+
+  &__gray-box {
+    padding: size(40px) size(40px) size(50px);
+    background-color: $color-nero;
+    max-width: size(832px);
+
+    @include mobile-tablet {
+      padding: size(24px) size(20px) size(30px);
+      max-width: unset;
+    }
+
+    :where(p) {
+      font-size: size(18px);
+      line-height: size(27px);
+      color: $white-56;
+      max-width: size(710px);
+      margin: 0;
+
+      @include mobile-tablet {
+        font-size: size(14px);
+        line-height: size(20px);
+        color: $white-70;
+      }
+
+      &:not(:last-of-type) {
+        margin: 0 0 size(20px) 0;
+      }
+    }
+  }
+
+  &__gray-box:not(:last-child) {
+    margin: 0 0 size(30px) 0;
+  }
+
+  &__bank-cards {
+    list-style: none;
+    margin: size(20px) 0 size(60px);
+    padding: 0;
+    display: flex;
+    gap: size(10px);
+    flex-wrap: wrap;
+
+    @include mobile-tablet {
+      margin: size(10px) 0 size(20px);
+    }
+
+    svg {
+      height: size(47px);
+      width: size(70px);
+
+      @include mobile-tablet {
+        height: size(36px);
+        width: size(54px);
+      }
+    }
+  }
+
+  &__note {
+    font-size: size(14px);
+    line-height: size(20px);
+    color: $white-40;
+    font-weight: 250;
+
+    @include mobile-tablet {
+      font-size: size(10px);
+      line-height: size(14px);
+    }
+
+    &--icon {
+      display: flex;
+      gap: size(10px);
+
+      svg {
+        flex-shrink: 0;
+        height: size(16px);
+        width: size(16px);
+
+        @include mobile-tablet {
+          height: size(12px);
+          width: size(12px);
+        }
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin: 0 0 size(30px) 0;
+
+      @include mobile-tablet {
+        margin: 0 0 size(10px) 0;
+      }
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0 0 size(40px);
+    list-style: none;
+
+    @include mobile-tablet {
+      margin: 0 0 size(20px) 0;
+    }
+
+    li {
+      position: relative;
+      padding: 0 0 0 size(32px);
+      font-size: size(18px);
+      line-height: size(26px);
+      color: $white-56;
+
+      @include mobile-tablet {
+        font-size: size(14px);
+        line-height: size(20px);
+        padding: 0 0 0 size(18px);
+      }
+
+      &:not(:last-child) {
+        margin: 0 0 size(10px) 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: size(8px);
+        top: size(9px);
+        height: size(6px);
+        width: size(6px);
+        background-color: $color-accent-main;
+        border-radius: 50%;
+
+        @include mobile-tablet {
+          left: 0;
+          top: size(8px);
+          height: size(5px);
+          width: size(5px);
+        }
+      }
     }
   }
 }
