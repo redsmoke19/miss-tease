@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Карточка товара</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ProjectName — описание">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header" data-header data-scroll-lock-fill-gap>
+        <div class="header__wrapper">
+          <div class="container">
+            <div class="header__top">
+              <button class="header__sandwich sandwich" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-sandwich><span class="sandwich__menu"></span></button>
+              <div class="header__delivery" data-da=".main-nav__wrapper, 1023, last">
+                <div class="header-delivery"><a class="header-delivery__link" data-header-price="link">
+                    <svg class="header-delivery__link-globus" width="18" height="18" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-globus"></use>
+                    </svg><span>Россия ₽</span>
+                    <svg class="header-delivery__link-arrow" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                    </svg></a>
+                  <div class="header-delivery-inner" data-header-price="content" data-da=".header__wrapper, 1023, last">
+                    <button class="header-delivery-inner__close" type="button" aria-label="Закрыть меню" data-header-price="close">
+                      <svg width="15" height="15" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg>
+                    </button>
+                    <p class="header-delivery-inner__text">Мы осуществляем доставку по&nbsp;всему миру</p>
+                    <ul class="header-delivery-inner__list">
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country is-active" href="#"><img src="img/content/flag-ru.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Россия</span><span class="header-delivery-inner__value">₽  РУБ</span></a></li>
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country" href="#"><img src="img/content/flag-kz.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Казахстан</span><span class="header-delivery-inner__value">₸  ТНГ</span></a></li>
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country" href="#"><img src="img/content/flag-eu.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Евросоюз</span><span class="header-delivery-inner__value">€  EUR</span></a></li>
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country" href="#"><img src="img/content/flag-all.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Другие страны</span><span class="header-delivery-inner__value">$  USD</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div><a class="header__logo" href="index.html" aria-label="Переход на главную"><img src="img/content/header-logo.png" width="190" height="50" alt="Логотип компании"></a>
+              <a class="header__basket" href="cart.html" data-cart-button="modal">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-basket"></use>
+                </svg><span class="header__basket-count">6</span>
+              </a>
+            </div>
+            <nav class="main-nav" data-nav="menu">
+              <div class="main-nav__wrapper" data-nav="wrapper">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Коллекции</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Бюстгальтеры</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Трусики</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Аксессуары</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Пояса для чулок</a></li>
+                  <li class="main-nav__item main-nav__item--last" data-accordion="parent" data-destroy="(max-width: 767px)">
+                    <div class="main-nav__block" data-accordion="element"><span class="main-nav__link" data-sub-menu="link" data-accordion="button">Базовое белье
+                        <svg class="main-nav__link-arrow" width="12" height="12" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                        </svg></span>
+                      <div class="main-nav__block-inner" data-accordion="content"></div>
+                    </div>
+                    <div class="main-nav__block main-nav__block--mobile" data-accordion="element"><span class="main-nav__link" data-accordion="button">Покупателю
+                        <svg class="main-nav__link-arrow" width="12" height="12" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                        </svg></span>
+                      <div class="main-nav__block-inner" data-accordion="content">
+                        <ul class="nav-submenu__list">
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Компания</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Контакты</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Доставка</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Оплата</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Размерный гид</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Возврат</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="main-nav__submenu"></div>
+            </nav>
+          </div>
+        </div>
+        <div class="nav-submenu" data-sub-menu="parent">
+          <div class="nav-submenu__wrapper" data-sub-menu="wrapper">
+            <div class="nav-submenu__inner" data-da=".main-nav__block-inner, 1023, last">
+              <ul class="nav-submenu__list">
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Смотреть все</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Комплекты</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Бюстгальтеры</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Трусики</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Топы</a></li>
+              </ul>
+              <ul class="nav-submenu__images-list">
+                <li class="nav-submenu__images-item"><a class="nav-submenu__images-link" href="#">
+                    <div class="nav-submenu__images-inner">
+                      <div class="nav-submenu__images-wrap"><img src="img/content/submenu-1.jpg" width="251" height="340" alt="Изображение товара">
+                      </div>
+                    </div><span class="nav-submenu__images-text">Новинки</span></a></li>
+                <li class="nav-submenu__images-item"><a class="nav-submenu__images-link" href="#">
+                    <div class="nav-submenu__images-inner">
+                      <div class="nav-submenu__images-wrap"><img src="img/content/submenu-2.jpg" width="251" height="340" alt="Изображение товара">
+                      </div>
+                    </div><span class="nav-submenu__images-text">Sale</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <h1 class="visually-hidden">Карточка товара</h1>
+        <div class="link-back-container container"><a class="link-back" href="#">
+            <svg width="28" height="28" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#icon-arrow-back"></use>
+            </svg><span>Назад к бюстгальтерам</span></a></div>
+        <div class="product-card">
+          <div class="product-card__container container">
+            <div class="product-card__content swiper" data-product-slider="parent">
+              <div class="product-card__pagination swiper-pagination" data-product-slider="pagination">
+                <button class="gallery-slider__button gallery-slider__button--prev" type="button" data-product-slider="prev">
+                  <svg width="40" height="40" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-slider-arrow"></use>
+                  </svg>
+                </button>
+                <button class="gallery-slider__button gallery-slider__button--next" type="button" data-product-slider="next">
+                  <svg width="40" height="40" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-slider-arrow"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="product-card__gallery-list swiper-wrapper">
+                <div class="product-card__gallery-item swiper-slide"><img src="img/product-card/photo-1.jpg" width="1240" height="1864" alt="photo-1">
+                </div>
+                <div class="product-card__gallery-item swiper-slide"><img src="img/product-card/photo-2.jpg" width="1240" height="1864" alt="photo-2">
+                </div>
+                <div class="product-card__gallery-item swiper-slide"><img src="img/product-card/photo-3.jpg" width="1240" height="1864" alt="photo-3">
+                </div>
+                <div class="product-card__gallery-item swiper-slide"><img src="img/product-card/photo-4.jpg" width="1240" height="1864" alt="photo-4">
+                </div>
+                <div class="product-card__gallery-item swiper-slide"><img src="img/product-card/photo-5.jpg" width="1240" height="1864" alt="photo-5">
+                </div>
+                <div class="product-card__gallery-item swiper-slide"><img src="img/product-card/photo-6.jpg" width="1240" height="1864" alt="photo-6">
+                </div>
+                <div class="product-card__gallery-item swiper-slide"><img src="img/product-card/photo-7.jpg" width="1240" height="1864" alt="photo-7">
+                  <video muted loop playsinline poster="img/set-card/photo-7.jpg">
+                    <source src="video/collection-1.mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="product-card__aside" data-sticky-block data-top="20">
+              <div class="contents product-card__contents">
+                <h2 class="contents__title contents__title--sm">Бюстгальтер Gigi</h2>
+                <p class="contents__price">4 900 ₽</p>
+                <div class="contents__sizes contents-sizes">
+                  <p class="contents-sizes__label">Выберите размер:</p>
+                  <div class="contents-sizes__list">
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="70B" name="size"><span class="custom-radio__label">70B</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="70C" name="size"><span class="custom-radio__label">70C</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="70D" name="size"><span class="custom-radio__label">70D</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="75A" name="size" disabled><span class="custom-radio__label">75A</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="75B" name="size"><span class="custom-radio__label">75B</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="75C" name="size"><span class="custom-radio__label">75C</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="75D" name="size"><span class="custom-radio__label">75D</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="80A" name="size"><span class="custom-radio__label">80A</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="80B" name="size"><span class="custom-radio__label">80B</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="80C" name="size"><span class="custom-radio__label">80C</span>
+                      </label>
+                    </div>
+                    <div class="custom-radio custom-toggle--radio">
+                      <label>
+                        <input class="visually-hidden" type="radio" value="80D" name="size"><span class="custom-radio__label">80D</span>
+                      </label>
+                    </div>
+                  </div><a class="contents__link" href="#" data-open-modal="sizes">
+                    <svg width="20" height="20" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-size"></use>
+                    </svg><span class="link">Размерный гид</span></a>
+                </div>
+                <div class="contents__footer contents-footer">
+                  <div class="contents-footer__actions">
+                    <div class="counter" data-counter="element">
+                      <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                        <svg width="12" height="12" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-minus"></use>
+                        </svg>
+                      </button><span class="counter__num" data-counter="value">1</span>
+                      <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                        <svg width="12" height="12" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-plus"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <button class="cart-button contents-footer__cart-button" type="button" aria-label="Добавить в корзину" data-cart-button="add"><span class="cart-button__icon">
+                        <svg width="20" height="20" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-cart"></use>
+                        </svg>
+                        <svg width="20" height="20" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-check"></use>
+                        </svg></span><span class="cart-button__text" data-default-text="В корзину" data-added-text="В корзине"></span></button>
+                  </div>
+                  <div class="contents-footer__description" data-accordion="parent">
+                    <div class="accordion contents-footer__accordion" data-accordion="element">
+                      <button class="accordion__button" type="button" data-accordion="button"><span>Описание</span><span class="accordion__button-arrow">
+                          <svg width="12" height="12" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-plus"></use>
+                          </svg></span>
+                      </button>
+                      <div class="accordion__content" data-accordion="content">
+                        <div class="info">
+                          <p>Коллекция Burlesque&nbsp;&mdash; воплощение безупречности и&nbsp;сексуальности. Бюстгальтер Burlesque выполнен из&nbsp;прозрачного тюля в&nbsp;сочетании шёлком. Мягкие чашечки с&nbsp;поддержкой на&nbsp;косточках продолжены бретелями, которые образуют плавный вырез. На&nbsp;спину переходят тройные резиночки, регулируемые металлической фурнитурой. Накладки на&nbsp;грудь продаются отдельно. Сочетайте трусиками и&nbsp;поясом Burlesque, а&nbsp;также дополнительными аксессуарами для создания рокового образа.</p>
+                          <h3>Состав и&nbsp;уход:</h3>
+                          <p>Сетка: полиэстер 100%. Атласный шелк: 92% полиэстер, 8%&nbsp;эластан. Бельевой поролон: 90% полиэстер, 10% хлопок. Рекомендована ручная стирка.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion contents-footer__accordion" data-accordion="element">
+                      <button class="accordion__button" type="button" data-accordion="button"><span>Доставка и оплата</span><span class="accordion__button-arrow">
+                          <svg width="12" height="12" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-plus"></use>
+                          </svg></span>
+                      </button>
+                      <div class="accordion__content" data-accordion="content">
+                        <div class="info">
+                          <h3>Доставка</h3>
+                          <p>Доставка заказов осуществляется транспортной компанией СДЭК.</p>
+                          <p>Сроки доставки зависят от&nbsp;города и&nbsp;способа доставки и&nbsp;составляют в&nbsp;среднем 3-6 рабочих дней.</p><a href="#">Подробнее о доставке</a>
+                          <h3>Варианты оплаты:</h3>
+                          <ul>
+                            <li>При получении</li>
+                            <li>Банковской картой на&nbsp;сайте</li>
+                          </ul><a href="#">Подробнее об&nbsp;оплате</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion contents-footer__accordion" data-accordion="element">
+                      <button class="accordion__button" type="button" data-accordion="button"><span>Возврат</span><span class="accordion__button-arrow">
+                          <svg width="12" height="12" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-plus"></use>
+                          </svg></span>
+                      </button>
+                      <div class="accordion__content" data-accordion="content">
+                        <div class="info">
+                          <p>MissTease предлагает 10-ти дневную политику возврата и&nbsp;обмена. Мы&nbsp;с&nbsp;радостью поможем Вам с&nbsp;осуществлением возврата или обмена товаров MissTease, если они будут соответствовать нашим требованиям:</p>
+                          <ul>
+                            <li>Мы&nbsp;принимаем неношеные и&nbsp;нестираные товары в&nbsp;оригинальной упаковке с&nbsp;сохранением оригинальных бирок.</li>
+                            <li>Если вы&nbsp;возвращаете товар, к&nbsp;которому прилагался бесплатный подарок, его также необходимо вернуть.</li>
+                          </ul>
+                          <p>Возврат товара осуществляется за&nbsp;счет покупателя.</p><a href="#">Подробнее о&nbsp;возврате</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="show-more">
+          <div class="container">
+            <h2 class="show-more__title">Комплекты в других цветах</h2>
+            <div class="show-more__swiper swiper" data-show-more-slider="parent">
+              <button class="show-more__button show-more__button--prev" type="button" data-show-more-slider="prev" aria-label="Назад">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-slider-arrow"></use>
+                </svg>
+              </button>
+              <button class="show-more__button show-more__button--next" type="button" data-show-more-slider="next" aria-label="Вперед">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-slider-arrow"></use>
+                </svg>
+              </button>
+              <ul class="show-more__list swiper-wrapper">
+                <li class="show-more__item swiper-slide">
+                  <div class="card-product" data-card-product>
+                    <div class="card-product__inner"><img class="card-product__second-img" src="img/card-product/card-2.jpg" width="430" height="644" alt="Фотография товара"><img class="card-product__main-img" src="img/card-product/card-1.jpg" width="430" height="644" alt="Фотография товара">
+                    </div>
+                    <div class="card-product__bottom">
+                      <h2 class="card-product__name">Basic голубой</h2>
+                    </div><a class="card-product__shadow-link" href="#" aria-label="Перейти к товару"></a>
+                  </div>
+                </li>
+                <li class="show-more__item swiper-slide">
+                  <div class="card-product" data-card-product>
+                    <div class="card-product__inner"><img class="card-product__second-img" src="img/card-product/card-1.jpg" width="430" height="644" alt="Фотография товара"><img class="card-product__main-img" src="img/card-product/card-2.jpg" width="430" height="644" alt="Фотография товара">
+                    </div>
+                    <div class="card-product__bottom">
+                      <h2 class="card-product__name">Basic белый</h2>
+                    </div><a class="card-product__shadow-link" href="#" aria-label="Перейти к товару"></a>
+                  </div>
+                </li>
+                <li class="show-more__item swiper-slide">
+                  <div class="card-product" data-card-product>
+                    <div class="card-product__inner"><img class="card-product__second-img" src="img/card-product/card-2.jpg" width="430" height="644" alt="Фотография товара"><img class="card-product__main-img" src="img/card-product/card-3.jpg" width="430" height="644" alt="Фотография товара">
+                    </div>
+                    <div class="card-product__bottom">
+                      <h2 class="card-product__name">Basic красный</h2>
+                    </div><a class="card-product__shadow-link" href="#" aria-label="Перейти к товару"></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="show-more">
+          <div class="container">
+            <h2 class="show-more__title">Вам может понравится</h2>
+            <div class="show-more__swiper swiper" data-show-more-slider="parent">
+              <button class="show-more__button show-more__button--prev" type="button" data-show-more-slider="prev" aria-label="Назад">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-slider-arrow"></use>
+                </svg>
+              </button>
+              <button class="show-more__button show-more__button--next" type="button" data-show-more-slider="next" aria-label="Вперед">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-slider-arrow"></use>
+                </svg>
+              </button>
+              <ul class="show-more__list swiper-wrapper">
+                <li class="show-more__item swiper-slide">
+                  <div class="card-product" data-card-product>
+                    <div class="card-product__inner"><img class="card-product__second-img" src="img/card-product/card-5.jpg" width="430" height="644" alt="Фотография товара"><img class="card-product__main-img" src="img/card-product/card-4.jpg" width="430" height="644" alt="Фотография товара">
+                    </div>
+                    <div class="card-product__bottom">
+                      <h2 class="card-product__name">Basic голубой</h2>
+                    </div><a class="card-product__shadow-link" href="#" aria-label="Перейти к товару"></a>
+                  </div>
+                </li>
+                <li class="show-more__item swiper-slide">
+                  <div class="card-product" data-card-product>
+                    <div class="card-product__inner"><img class="card-product__second-img" src="img/card-product/card-4.jpg" width="430" height="644" alt="Фотография товара"><img class="card-product__main-img" src="img/card-product/card-5.jpg" width="430" height="644" alt="Фотография товара">
+                    </div>
+                    <div class="card-product__bottom">
+                      <h2 class="card-product__name">Basic белый</h2>
+                    </div><a class="card-product__shadow-link" href="#" aria-label="Перейти к товару"></a>
+                  </div>
+                </li>
+                <li class="show-more__item swiper-slide">
+                  <div class="card-product" data-card-product>
+                    <div class="card-product__inner"><img class="card-product__second-img" src="img/card-product/card-7.jpg" width="430" height="644" alt="Фотография товара"><img class="card-product__main-img" src="img/card-product/card-6.jpg" width="430" height="644" alt="Фотография товара">
+                    </div>
+                    <div class="card-product__bottom">
+                      <h2 class="card-product__name">Basic красный</h2>
+                    </div><a class="card-product__shadow-link" href="#" aria-label="Перейти к товару"></a>
+                  </div>
+                </li>
+                <li class="show-more__item swiper-slide">
+                  <div class="card-product" data-card-product>
+                    <div class="card-product__inner"><img class="card-product__second-img" src="img/card-product/card-6.jpg" width="430" height="644" alt="Фотография товара"><img class="card-product__main-img" src="img/card-product/card-7.jpg" width="430" height="644" alt="Фотография товара">
+                    </div>
+                    <div class="card-product__bottom">
+                      <h2 class="card-product__name">Basic красный</h2>
+                    </div><a class="card-product__shadow-link" href="#" aria-label="Перейти к товару"></a>
+                  </div>
+                </li>
+                <li class="show-more__item swiper-slide">
+                  <div class="card-product" data-card-product>
+                    <div class="card-product__inner"><img class="card-product__second-img" src="img/card-product/card-2.jpg" width="430" height="644" alt="Фотография товара"><img class="card-product__main-img" src="img/card-product/card-6.jpg" width="430" height="644" alt="Фотография товара">
+                    </div>
+                    <div class="card-product__bottom">
+                      <h2 class="card-product__name">Basic красный</h2>
+                    </div><a class="card-product__shadow-link" href="#" aria-label="Перейти к товару"></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container footer__container">
+          <div class="footer__content" data-accordion="parent" data-destroy="(max-width: 767px)">
+            <div class="footer__block" data-accordion="element">
+              <h2 class="footer__title" data-accordion="button">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>Каталог
+              </h2>
+              <div class="footer__block-wrapper" data-accordion="content">
+                <ul class="footer__list">
+                  <li class="footer__item"><a class="footer__link link" href="#">Коллекции</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Бюстгальтеры</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Трусики</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Аксессуары</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Пояса для чулок</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Базовое белье</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block" data-accordion="element">
+              <h2 class="footer__title" data-accordion="button">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>Покупателю
+              </h2>
+              <div class="footer__block-wrapper" data-accordion="content">
+                <ul class="footer__list">
+                  <li class="footer__item"><a class="footer__link link" href="#">Компания</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Контакты</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Доставка</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Оплата</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Размерный гид</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Возврат</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block" data-accordion="element">
+              <h2 class="footer__title" data-accordion="button">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>Свяжитесь с нами
+              </h2>
+              <div class="footer__block-wrapper" data-accordion="content">
+                <ul class="footer__social social-list">
+                  <li class="social-list__item"><a class="social-list__link" href="#">
+                      <div class="social-list__icon">
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-telegram"></use>
+                        </svg>
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-telegram-filled"></use>
+                        </svg>
+                      </div>Telegram</a></li>
+                  <li class="social-list__item"><a class="social-list__link" href="#">
+                      <div class="social-list__icon">
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-whats-app"></use>
+                        </svg>
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-whats-app-filled"></use>
+                        </svg>
+                      </div>WhatsApp</a></li>
+                  <li class="social-list__item"><a class="social-list__link" href="mailto:miss@misstease.ru">
+                      <div class="social-list__icon">
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-mail"></use>
+                        </svg>
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-mail-filled"></use>
+                        </svg>
+                      </div>miss@misstease.ru</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block footer__block--form" data-form-validate data-callback="base">
+              <h2 class="footer__title">Будь в курсе всех событий</h2>
+              <form class="footer__subscribe subscribe-form" action="#" novalidate>
+                <div class="subscribe-form__wrapper">
+                  <div class="custom-input subscribe-form__input" data-validate-type="email" data-required data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля">
+                    <label>
+                      <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                      </svg><span class="custom-input__label">Ваш e-mail</span>
+                      <input type="email" name="user-mail"><span class="custom-input__line"></span>
+                    </label>
+                  </div>
+                  <button class="subscribe-form__button" type="submit">Подписаться</button>
+                </div>
+                <p class="subscribe-form__prompt">Нажимая кнопку "Подписаться", вы соглашаетесь с&nbsp;<a href="#">Политикой обработки персональных данных</a></p>
+              </form>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copyright">© 2023. MissTease</p>
+            <ul class="footer__bottom-list">
+              <li class="footer__bottom-item"><a class="footer__bottom-link link" href="#">Юридическая информация</a></li>
+              <li class="footer__bottom-item"><a class="footer__bottom-link link" href="#">Политика конфиденциальности</a></li>
+              <li class="footer__bottom-item"><a class="footer__bottom-link link" href="#">Договор оферты</a></li>
+            </ul>
+            <p class="footer__prompt"><span>Дизайн</span><a class="link" href="#">Indigo Amigo</a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="modal modal--preload modal--message modal--cart" data-modal="cart">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="modal-cart">
+            <div class="modal-cart__content">
+              <h2 class="modal-cart__title">Корзина</h2>
+              <div class="modal-cart__scroll-wrapper">
+                <ul class="modal-cart__list">
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-1.jpg" width="192" height="284" alt="Стикини">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Стикини</h3>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">1 500 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-2.jpg" width="192" height="284" alt="Пояс Burlesque">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Пояс Burlesque</h3>
+                        <p class="modal-cart-item__size">Размер:&nbsp;<span>М</span></p>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">3 800 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-3.jpg" width="192" height="284" alt="Гартеры Burlesque">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Гартеры Burlesque</h3>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">3 300 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-4.jpg" width="192" height="284" alt="Бюстгальтер Burlesque">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Бюстгальтер Burlesque</h3>
+                        <p class="modal-cart-item__size">Размер:&nbsp;<span>70C</span></p>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">4 300 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-5.jpg" width="192" height="284" alt="Трусики Burlesque">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Трусики Burlesque</h3>
+                        <p class="modal-cart-item__size">Размер:&nbsp;<span>М</span></p>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">4 300 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-cart__footer">
+              <p class="modal-cart__total"><span>Итого</span><span>17 500 ₽</span></p>
+              <div class="modal-cart__buttons">
+                <a class="btn modal-cart__button" href="order-information.html"><span>Оформить заказ</span>
+                </a>
+                <a class="btn-stroke modal-cart__button" href="cart.html"><span>В корзину</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--preload modal--message modal--gallery" data-modal="gallery">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="gallery-slider" data-gallery-slider="modal">
+            <div class="gallery-slider__thumbs swiper gallery-slider__thumbs--modal" data-gallery-slider="thumbs">
+              <div class="gallery-slider__thumbs-wrapper swiper-wrapper">
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-1.jpg" width="1370" height="2054" alt="photo-1">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-2.jpg" width="1370" height="2054" alt="photo-2">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-3.jpg" width="1370" height="2054" alt="photo-3">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-4.jpg" width="1370" height="2054" alt="photo-4">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-5.jpg" width="1370" height="2054" alt="photo-5">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-6.jpg" width="1370" height="2054" alt="photo-6">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-7.jpg" width="1370" height="2054" alt="photo-7">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-8.jpg" width="1370" height="2054" alt="photo-8">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-9.jpg" width="1370" height="2054" alt="photo-9">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-10.jpg" width="1370" height="2054" alt="photo-10">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-11.jpg" width="1370" height="2054" alt="photo-11">
+                  </div>
+                </div>
+                <div class="gallery-slider__thumb swiper-slide">
+                  <div class="gallery-slider__thumb-wrapper"><img src="img/set-card/photo-12.jpg" width="1370" height="2054" alt="photo-12">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-slider__slider swiper" data-gallery-slider="slider">
+              <div class="gallery-slider__pagination swiper-pagination" data-gallery-slider="pagination"></div>
+              <button class="gallery-slider__button gallery-slider__button--prev" type="button" data-gallery-slider="prev">
+                <svg width="40" height="40" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-slider-arrow"></use>
+                </svg>
+              </button>
+              <button class="gallery-slider__button gallery-slider__button--next" type="button" data-gallery-slider="next">
+                <svg width="40" height="40" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-slider-arrow"></use>
+                </svg>
+              </button>
+              <div class="swiper-wrapper">
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-1.jpg" width="1370" height="2054" alt="photo-1">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-2.jpg" width="1370" height="2054" alt="photo-2">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-3.jpg" width="1370" height="2054" alt="photo-3">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-4.jpg" width="1370" height="2054" alt="photo-4">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-5.jpg" width="1370" height="2054" alt="photo-5">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-6.jpg" width="1370" height="2054" alt="photo-6">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-7.jpg" width="1370" height="2054" alt="photo-7">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-8.jpg" width="1370" height="2054" alt="photo-8">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-9.jpg" width="1370" height="2054" alt="photo-9">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-10.jpg" width="1370" height="2054" alt="photo-10">
+                </div>
+                <div class="gallery-slider__slide swiper-slide"><img src="img/set-card/photo-11.jpg" width="1370" height="2054" alt="photo-11">
+                </div>
+                <div class="gallery-slider__slide swiper-slide">
+                  <video muted loop playsinline poster="img/set-card/photo-12.jpg">
+                    <source src="video/collection-1.mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--preload modal--message modal--sizes" data-modal="sizes">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="sizes sizes--modal" data-tabs="parent">
+            <h2 class="sizes__title">Размерный гид</h2>
+            <div class="sizes__nav" data-tabs="controls">
+              <button class="sizes__nav-item" type="button" data-tabs="control">Таблица размеров</button>
+              <button class="sizes__nav-item" type="button" data-tabs="control">Международный конвертер&nbsp;размеров</button>
+            </div>
+            <div class="sizes__tabs" data-tabs="content">
+              <div class="sizes__tab" data-tabs="element">
+                <div class="table sizes__table sizes__table--bras">
+                  <h3 class="table__title">Бюстгальтеры</h3>
+                  <div class="table__scroll-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th rowspan="2">Обхват под грудью, см</th>
+                          <th rowspan="2">Размер под грудью</th>
+                          <th colspan="5">Обхват груди, см</th>
+                        </tr>
+                        <tr>
+                          <th>A</th>
+                          <th>B</th>
+                          <th>C</th>
+                          <th>D</th>
+                          <th>E</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>68-73</td>
+                          <td>70</td>
+                          <td>73-77</td>
+                          <td>78-83</td>
+                          <td>84-88</td>
+                          <td>89-93</td>
+                          <td>94-98</td>
+                        </tr>
+                        <tr>
+                          <td>74-78</td>
+                          <td>75</td>
+                          <td>78-83</td>
+                          <td>84-88</td>
+                          <td>89-93</td>
+                          <td>94-98</td>
+                          <td>99-103</td>
+                        </tr>
+                        <tr>
+                          <td>79-83</td>
+                          <td>80</td>
+                          <td>84-88</td>
+                          <td>89-93</td>
+                          <td>94-98</td>
+                          <td>99-103</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>84-88</td>
+                          <td>85</td>
+                          <td>89-93</td>
+                          <td>94-98</td>
+                          <td>99-103</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="table sizes__table sizes__table--belts">
+                  <h3 class="table__title">Трусики и пояса</h3>
+                  <div class="table__scroll-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Размер</th>
+                          <th>XS</th>
+                          <th>S</th>
+                          <th>M</th>
+                          <th>L</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="bold">Обхват бедер</td>
+                          <td>83-88</td>
+                          <td>89-95</td>
+                          <td>96-101</td>
+                          <td>102-107</td>
+                        </tr>
+                        <tr>
+                          <td class="bold">Обхват талии</td>
+                          <td>54-59</td>
+                          <td>60-67</td>
+                          <td>68-74</td>
+                          <td>75-81</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="sizes__tab" data-tabs="element">
+                <div class="table sizes__table sizes__table--international">
+                  <h3 class="table__title">Бюстгальтеры</h3>
+                  <div class="table__scroll-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Европа, Россия</th>
+                          <th>Англия</th>
+                          <th>США</th>
+                          <th>Австралия</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>70A</td>
+                          <td>32A</td>
+                          <td>32A</td>
+                          <td>10A</td>
+                        </tr>
+                        <tr>
+                          <td>70B</td>
+                          <td>32B</td>
+                          <td>32B</td>
+                          <td>10B</td>
+                        </tr>
+                        <tr>
+                          <td>70C</td>
+                          <td>32C</td>
+                          <td>32C</td>
+                          <td>10C</td>
+                        </tr>
+                        <tr>
+                          <td>70D</td>
+                          <td>32D</td>
+                          <td>32D</td>
+                          <td>10D</td>
+                        </tr>
+                        <tr>
+                          <td>70E</td>
+                          <td>32DD</td>
+                          <td>32DD/E</td>
+                          <td>10E</td>
+                        </tr>
+                        <tr>
+                          <td>75A</td>
+                          <td>34A</td>
+                          <td>34A</td>
+                          <td>12A</td>
+                        </tr>
+                        <tr>
+                          <td>75B</td>
+                          <td>34B</td>
+                          <td>34B</td>
+                          <td>12B</td>
+                        </tr>
+                        <tr>
+                          <td>75C</td>
+                          <td>34C</td>
+                          <td>34C</td>
+                          <td>12C</td>
+                        </tr>
+                        <tr>
+                          <td>75D</td>
+                          <td>34D</td>
+                          <td>34D</td>
+                          <td>12D</td>
+                        </tr>
+                        <tr>
+                          <td>75E</td>
+                          <td>34DD</td>
+                          <td>34DD/E</td>
+                          <td>12E</td>
+                        </tr>
+                        <tr>
+                          <td>80A</td>
+                          <td>36A</td>
+                          <td>36A</td>
+                          <td>14A</td>
+                        </tr>
+                        <tr>
+                          <td>80B</td>
+                          <td>36B</td>
+                          <td>36B</td>
+                          <td>14B</td>
+                        </tr>
+                        <tr>
+                          <td>80C</td>
+                          <td>36C</td>
+                          <td>36C</td>
+                          <td>14C</td>
+                        </tr>
+                        <tr>
+                          <td>80D</td>
+                          <td>36D</td>
+                          <td>36D</td>
+                          <td>14D</td>
+                        </tr>
+                        <tr>
+                          <td>85A</td>
+                          <td>38A</td>
+                          <td>38A</td>
+                          <td>16A</td>
+                        </tr>
+                        <tr>
+                          <td>85B</td>
+                          <td>38B</td>
+                          <td>38B</td>
+                          <td>16B</td>
+                        </tr>
+                        <tr>
+                          <td>85C</td>
+                          <td>38C</td>
+                          <td>38C</td>
+                          <td>16C</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="sizes__prompt">С полным руководством Вы можете ознакомиться на странице <a href="#">таблица&nbsp;размеров</a></p>
+          </div>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

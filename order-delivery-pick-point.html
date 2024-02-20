@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Оформление заказа</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ProjectName — описание">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header" data-header data-scroll-lock-fill-gap>
+        <div class="header__wrapper">
+          <div class="container">
+            <div class="header__top">
+              <button class="header__sandwich sandwich" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-sandwich><span class="sandwich__menu"></span></button>
+              <div class="header__delivery" data-da=".main-nav__wrapper, 1023, last">
+                <div class="header-delivery"><a class="header-delivery__link" data-header-price="link">
+                    <svg class="header-delivery__link-globus" width="18" height="18" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-globus"></use>
+                    </svg><span>Россия ₽</span>
+                    <svg class="header-delivery__link-arrow" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                    </svg></a>
+                  <div class="header-delivery-inner" data-header-price="content" data-da=".header__wrapper, 1023, last">
+                    <button class="header-delivery-inner__close" type="button" aria-label="Закрыть меню" data-header-price="close">
+                      <svg width="15" height="15" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg>
+                    </button>
+                    <p class="header-delivery-inner__text">Мы осуществляем доставку по&nbsp;всему миру</p>
+                    <ul class="header-delivery-inner__list">
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country is-active" href="#"><img src="img/content/flag-ru.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Россия</span><span class="header-delivery-inner__value">₽  РУБ</span></a></li>
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country" href="#"><img src="img/content/flag-kz.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Казахстан</span><span class="header-delivery-inner__value">₸  ТНГ</span></a></li>
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country" href="#"><img src="img/content/flag-eu.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Евросоюз</span><span class="header-delivery-inner__value">€  EUR</span></a></li>
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country" href="#"><img src="img/content/flag-all.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Другие страны</span><span class="header-delivery-inner__value">$  USD</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div><a class="header__logo" href="index.html" aria-label="Переход на главную"><img src="img/content/header-logo.png" width="190" height="50" alt="Логотип компании"></a>
+              <a class="header__basket" href="cart.html">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-basket"></use>
+                </svg><span class="header__basket-count">6</span>
+              </a>
+            </div>
+            <nav class="main-nav" data-nav="menu">
+              <div class="main-nav__wrapper" data-nav="wrapper">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Коллекции</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Бюстгальтеры</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Трусики</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Аксессуары</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Пояса для чулок</a></li>
+                  <li class="main-nav__item main-nav__item--last" data-accordion="parent" data-destroy="(max-width: 767px)">
+                    <div class="main-nav__block" data-accordion="element"><span class="main-nav__link" data-sub-menu="link" data-accordion="button">Базовое белье
+                        <svg class="main-nav__link-arrow" width="12" height="12" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                        </svg></span>
+                      <div class="main-nav__block-inner" data-accordion="content"></div>
+                    </div>
+                    <div class="main-nav__block main-nav__block--mobile" data-accordion="element"><span class="main-nav__link" data-accordion="button">Покупателю
+                        <svg class="main-nav__link-arrow" width="12" height="12" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                        </svg></span>
+                      <div class="main-nav__block-inner" data-accordion="content">
+                        <ul class="nav-submenu__list">
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Компания</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Контакты</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Доставка</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Оплата</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Размерный гид</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Возврат</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="main-nav__submenu"></div>
+            </nav>
+          </div>
+        </div>
+        <div class="nav-submenu" data-sub-menu="parent">
+          <div class="nav-submenu__wrapper" data-sub-menu="wrapper">
+            <div class="nav-submenu__inner" data-da=".main-nav__block-inner, 1023, last">
+              <ul class="nav-submenu__list">
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Смотреть все</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Комплекты</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Бюстгальтеры</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Трусики</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Топы</a></li>
+              </ul>
+              <ul class="nav-submenu__images-list">
+                <li class="nav-submenu__images-item"><a class="nav-submenu__images-link" href="#">
+                    <div class="nav-submenu__images-inner">
+                      <div class="nav-submenu__images-wrap"><img src="img/content/submenu-1.jpg" width="251" height="340" alt="Изображение товара">
+                      </div>
+                    </div><span class="nav-submenu__images-text">Новинки</span></a></li>
+                <li class="nav-submenu__images-item"><a class="nav-submenu__images-link" href="#">
+                    <div class="nav-submenu__images-inner">
+                      <div class="nav-submenu__images-wrap"><img src="img/content/submenu-2.jpg" width="251" height="340" alt="Изображение товара">
+                      </div>
+                    </div><span class="nav-submenu__images-text">Sale</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <h1 class="visually-hidden">Оформление заказа</h1>
+        <div class="order" data-form-validate data-callback="base">
+          <div class="order__container container">
+            <h2 class="order__title">Оформление заказа</h2>
+            <div class="order__wrapper">
+              <div class="order__content">
+                <div class="order__blocks">
+                  <div class="order-block order__block">
+                    <div class="order-block__content">
+                      <div class="order-block__header">
+                        <h3 class="order-block__title order-block__title--filled">
+                          <svg width="34" height="34" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-done"></use>
+                          </svg><span>Контактная информация</span>
+                        </h3><a class="order-block__edit edit-button edit-button--short" href="order-information.html">
+                          <svg width="18" height="18" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-edit"></use>
+                          </svg><span>Изменить</span></a>
+                      </div>
+                      <div class="order-block__block">
+                        <div class="information-form">
+                          <ul class="information-form__list">
+                            <li class="information-form__item">Анастасия Прокофьева</li>
+                            <li class="information-form__item">+7 (908) 508-58-58</li>
+                            <li class="information-form__item">nastyapro@yandex.ru</li>
+                            <li class="information-form__item">Чебоксары, Чувашская Республика, Россия</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <form class="order-block order-block--delivery order__block" action="#" novalidate="" data-tabs="parent" data-delivery-form="parent" data-current-tab="1">
+                    <div class="order-block__content">
+                      <div class="order-block__header">
+                        <h3 class="order-block__title"><span>Способ доставки</span>
+                        </h3>
+                        <p class="order-block__description">Выберите удобный способ доставки</p>
+                      </div>
+                      <div class="order-block__block">
+                        <div class="delivery-checks">
+                          <div class="delivery-checks__form" data-tabs="controls">
+                            <div class="custom-toggle delivery-checks__item" data-tabs="control">
+                              <input class="visually-hidden" type="radio" value="courier" id="courier" name="delivery-type">
+                              <label class="custom-toggle__label" for="courier"><span class="custom-toggle__icon">
+                                  <svg width="12" height="12" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg></span></label>
+                              <div class="custom-toggle__content">
+                                <div class="delivery-checkbox">
+                                  <div class="delivery-checkbox__logo">
+                                    <svg width="50" height="14" aria-hidden="true">
+                                      <use xlink:href="img/sprite.svg#icon-cdek"></use>
+                                    </svg>
+                                  </div><span class="delivery-checkbox__name">Курьером СДЭК</span><span class="delivery-checkbox__price">270 ₽</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="custom-toggle delivery-checks__item is-active" data-tabs="control">
+                              <input class="visually-hidden" type="radio" value="pick-point" id="pick-point" name="delivery-type" checked>
+                              <label class="custom-toggle__label" for="pick-point"><span class="custom-toggle__icon">
+                                  <svg width="12" height="12" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg></span></label>
+                              <div class="custom-toggle__content">
+                                <div class="delivery-checkbox">
+                                  <div class="delivery-checkbox__logo">
+                                    <svg width="50" height="14" aria-hidden="true">
+                                      <use xlink:href="img/sprite.svg#icon-cdek"></use>
+                                    </svg>
+                                  </div><span class="delivery-checkbox__name">Пункт выдачи СДЭК</span><span class="delivery-checkbox__price">130 ₽</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="order-block__aside">
+                      <div class="delivery-tabs" data-tabs="content">
+                        <div class="delivery-tabs__item" data-tabs="element">
+                          <div class="delivery-item">
+                            <p class="delivery-item__name">Курьером СДЭК</p>
+                            <div class="delivery-item__logo">
+                              <svg width="91" height="26" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-cdek"></use>
+                              </svg>
+                            </div>
+                            <p class="delivery-item__text">Доставка до двери</p>
+                            <ul class="delivery-item__list">
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Стоимость:</span><span class="delivery-item__item-value">270 ₽</span></li>
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Срок доставки:</span><span class="delivery-item__item-value">2-3 рабочих дня</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="delivery-tabs__item" data-tabs="element">
+                          <div class="delivery-item">
+                            <p class="delivery-item__name">Пункт выдачи СДЭК</p>
+                            <div class="delivery-item__logo">
+                              <svg width="91" height="26" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-cdek"></use>
+                              </svg>
+                            </div>
+                            <p class="delivery-item__text">Доставка до пункта выдачи</p>
+                            <button class="btn btn--small delivery-item__button" type="button"><span>Изменить пункт выдачи</span>
+                            </button>
+                            <ul class="delivery-item__list">
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Адрес:</span><span class="delivery-item__item-value">г. Чебоксары, ул. Гражданская, 105</span></li>
+                            </ul>
+                            <ul class="delivery-item__list">
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Время работы:</span><span class="delivery-item__item-value"><span>Пн-Пт: 09:00 - 20:00</span><span>Сб-Вс: 09:00 - 18:00</span></span></li>
+                            </ul>
+                            <ul class="delivery-item__list">
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Стоимость:</span><span class="delivery-item__item-value">130 ₽</span></li>
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Срок доставки:</span><span class="delivery-item__item-value">2-3 рабочих дня</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="delivery-form is-hidden" data-delivery-form="form">
+                      <p class="delivery-form__title">Укажите адрес доставки</p>
+                      <div class="delivery-form__content">
+                        <div class="delivery-form__wrapper">
+                          <div class="custom-input delivery-form__input" data-validate-type="text" data-message-base="Поле обязательно к заполнению">
+                            <label>
+                              <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg><span class="custom-input__label">Улица*</span>
+                              <input type="text" name="street"><span class="custom-input__line"></span>
+                            </label>
+                          </div>
+                          <div class="custom-input delivery-form__input delivery-form__input--short" data-validate-type="text" data-limitation="digit" data-message-base="Поле обязательно к заполнению">
+                            <label>
+                              <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg><span class="custom-input__label">Дом/корпус*</span>
+                              <input type="text" name="house"><span class="custom-input__line"></span>
+                            </label>
+                          </div>
+                          <div class="custom-input delivery-form__input delivery-form__input--short" data-validate-type="text" data-limitation="digit" data-message-base="Поле обязательно к заполнению">
+                            <label>
+                              <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg><span class="custom-input__label">Квартира/офис*</span>
+                              <input type="text" name="apartment"><span class="custom-input__line"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="delivery-form__wrapper">
+                          <div class="custom-input custom-input--textarea delivery-form__input auto-resize-textarea">
+                            <label><span class="custom-input__label">Комментарий к заказу</span>
+                              <textarea name="comment"></textarea><span class="custom-input__line"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="order-block__footer">
+                      <button class="btn-stroke btn-stroke--small order-block__submit" type="submit"><span>Подтвердить</span>
+                      </button>
+                    </div>
+                  </form>
+                  <div class="order-block order__block">
+                    <div class="order-block__content">
+                      <div class="order-block__header">
+                        <h3 class="order-block__title"><span>Способ оплаты</span>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="order__aside cart-aside" data-accordion="parent">
+                <div class="cart-aside__wrapper">
+                  <h3 class="cart-aside__title">Корзина</h3><a class="cart-aside__edit edit-button" href="cart.html">
+                    <svg width="18" height="18" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-edit"></use>
+                    </svg><span>Изменить</span></a>
+                  <div class="cart-aside__products cart-accordion" data-accordion="element">
+                    <button class="cart-accordion__button" type="button" data-accordion="button"><span>Товары в заказе</span><span class="cart-accordion__button-arrow">
+                        <svg width="12" height="12" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                        </svg></span></button>
+                    <div class="cart-accordion__content" data-accordion="content">
+                      <div class="cart-accordion__wrapper">
+                        <div class="cart-accordion__scroll-wrapper">
+                          <ul class="cart-accordion__list">
+                            <li class="cart-accordion__item">
+                              <div class="modal-cart-item modal-cart-item--small">
+                                <div class="modal-cart-item__img"><img src="img/cart/cart-img-3.jpg" width="192" height="284" alt="Гартеры Burlesque">
+                                </div>
+                                <div class="modal-cart-item__content">
+                                  <h3 class="modal-cart-item__name">Гартеры Burlesque</h3>
+                                  <div class="modal-cart-item__footer">
+                                    <p class="modal-cart-item__quantity">Кол-во:&nbsp;<span>1 шт</span></p>
+                                    <p class="modal-cart-item__price">3 300 ₽</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="cart-accordion__item">
+                              <div class="modal-cart-item modal-cart-item--small">
+                                <div class="modal-cart-item__img"><img src="img/cart/cart-img-2.jpg" width="192" height="284" alt="Пояс Burlesque">
+                                </div>
+                                <div class="modal-cart-item__content">
+                                  <h3 class="modal-cart-item__name">Пояс Burlesque</h3>
+                                  <p class="modal-cart-item__size">Размер:&nbsp;<span>М</span></p>
+                                  <div class="modal-cart-item__footer">
+                                    <p class="modal-cart-item__quantity">Кол-во:&nbsp;<span>1 шт</span></p>
+                                    <p class="modal-cart-item__price">3 800 ₽</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="cart-accordion__item">
+                              <div class="modal-cart-item modal-cart-item--small">
+                                <div class="modal-cart-item__img"><img src="img/cart/cart-img-4.jpg" width="192" height="284" alt="Бюстгальтер Burlesque">
+                                </div>
+                                <div class="modal-cart-item__content">
+                                  <h3 class="modal-cart-item__name">Бюстгальтер Burlesque</h3>
+                                  <p class="modal-cart-item__size">Размер:&nbsp;<span>M</span></p>
+                                  <div class="modal-cart-item__footer">
+                                    <p class="modal-cart-item__quantity">Кол-во:&nbsp;<span>1 шт</span></p>
+                                    <p class="modal-cart-item__price">4 300 ₽</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="cart-accordion__item">
+                              <div class="modal-cart-item modal-cart-item--small">
+                                <div class="modal-cart-item__img"><img src="img/cart/cart-img-5.jpg" width="192" height="284" alt="Трусики Burlesque">
+                                </div>
+                                <div class="modal-cart-item__content">
+                                  <h3 class="modal-cart-item__name">Трусики Burlesque</h3>
+                                  <p class="modal-cart-item__size">Размер:&nbsp;<span>М</span></p>
+                                  <div class="modal-cart-item__footer">
+                                    <p class="modal-cart-item__quantity">Кол-во:&nbsp;<span>1 шт</span></p>
+                                    <p class="modal-cart-item__price">4 300 ₽</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="cart-accordion__item">
+                              <div class="modal-cart-item modal-cart-item--small">
+                                <div class="modal-cart-item__img"><img src="img/cart/cart-img-1.jpg" width="192" height="284" alt="Стикини">
+                                </div>
+                                <div class="modal-cart-item__content">
+                                  <h3 class="modal-cart-item__name">Стикини</h3>
+                                  <div class="modal-cart-item__footer">
+                                    <p class="modal-cart-item__quantity">Кол-во:&nbsp;<span>1 шт</span></p>
+                                    <p class="modal-cart-item__price">1 500 ₽</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="cart-aside__list">
+                    <li class="cart-aside__item"><span class="cart-aside__item-key">5 товаров на сумму</span><span class="cart-aside__item-value">16 000 ₽</span></li>
+                    <li class="cart-aside__item"><span class="cart-aside__item-key">Скидка</span><span class="cart-aside__item-value">920 ₽</span></li>
+                    <li class="cart-aside__item"><span class="cart-aside__item-key">Доставка</span><span class="cart-aside__item-value">240 ₽</span></li>
+                  </ul>
+                  <div class="cart-aside__total">
+                    <p class="cart-aside__total-text"><span>Итого</span><span>16 240 ₽</span></p>
+                    <button class="btn btn--big cart-aside__button" type="button" disabled><span>Оформить заказ</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container footer__container">
+          <div class="footer__content" data-accordion="parent" data-destroy="(max-width: 767px)">
+            <div class="footer__block" data-accordion="element">
+              <h2 class="footer__title" data-accordion="button">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>Каталог
+              </h2>
+              <div class="footer__block-wrapper" data-accordion="content">
+                <ul class="footer__list">
+                  <li class="footer__item"><a class="footer__link link" href="#">Коллекции</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Бюстгальтеры</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Трусики</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Аксессуары</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Пояса для чулок</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Базовое белье</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block" data-accordion="element">
+              <h2 class="footer__title" data-accordion="button">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>Покупателю
+              </h2>
+              <div class="footer__block-wrapper" data-accordion="content">
+                <ul class="footer__list">
+                  <li class="footer__item"><a class="footer__link link" href="#">Компания</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Контакты</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Доставка</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Оплата</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Размерный гид</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Возврат</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block" data-accordion="element">
+              <h2 class="footer__title" data-accordion="button">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>Свяжитесь с нами
+              </h2>
+              <div class="footer__block-wrapper" data-accordion="content">
+                <ul class="footer__social social-list">
+                  <li class="social-list__item"><a class="social-list__link" href="#">
+                      <div class="social-list__icon">
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-telegram"></use>
+                        </svg>
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-telegram-filled"></use>
+                        </svg>
+                      </div>Telegram</a></li>
+                  <li class="social-list__item"><a class="social-list__link" href="#">
+                      <div class="social-list__icon">
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-whats-app"></use>
+                        </svg>
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-whats-app-filled"></use>
+                        </svg>
+                      </div>WhatsApp</a></li>
+                  <li class="social-list__item"><a class="social-list__link" href="mailto:miss@misstease.ru">
+                      <div class="social-list__icon">
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-mail"></use>
+                        </svg>
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-mail-filled"></use>
+                        </svg>
+                      </div>miss@misstease.ru</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block footer__block--form" data-form-validate data-callback="base">
+              <h2 class="footer__title">Будь в курсе всех событий</h2>
+              <form class="footer__subscribe subscribe-form" action="#" novalidate>
+                <div class="subscribe-form__wrapper">
+                  <div class="custom-input subscribe-form__input" data-validate-type="email" data-required data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля">
+                    <label>
+                      <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                      </svg><span class="custom-input__label">Ваш e-mail</span>
+                      <input type="email" name="user-mail"><span class="custom-input__line"></span>
+                    </label>
+                  </div>
+                  <button class="subscribe-form__button" type="submit">Подписаться</button>
+                </div>
+                <p class="subscribe-form__prompt">Нажимая кнопку "Подписаться", вы соглашаетесь с&nbsp;<a href="#">Политикой обработки персональных данных</a></p>
+              </form>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copyright">© 2023. MissTease</p>
+            <ul class="footer__bottom-list">
+              <li class="footer__bottom-item"><a class="footer__bottom-link link" href="#">Юридическая информация</a></li>
+              <li class="footer__bottom-item"><a class="footer__bottom-link link" href="#">Политика конфиденциальности</a></li>
+              <li class="footer__bottom-item"><a class="footer__bottom-link link" href="#">Договор оферты</a></li>
+            </ul>
+            <p class="footer__prompt"><span>Дизайн</span><a class="link" href="#">Indigo Amigo</a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Оплата</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ProjectName — описание">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header" data-header data-scroll-lock-fill-gap>
+        <div class="header__wrapper">
+          <div class="container">
+            <div class="header__top">
+              <button class="header__sandwich sandwich" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-sandwich><span class="sandwich__menu"></span></button>
+              <div class="header__delivery" data-da=".main-nav__wrapper, 1023, last">
+                <div class="header-delivery"><a class="header-delivery__link" data-header-price="link">
+                    <svg class="header-delivery__link-globus" width="18" height="18" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-globus"></use>
+                    </svg><span>Россия ₽</span>
+                    <svg class="header-delivery__link-arrow" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                    </svg></a>
+                  <div class="header-delivery-inner" data-header-price="content" data-da=".header__wrapper, 1023, last">
+                    <button class="header-delivery-inner__close" type="button" aria-label="Закрыть меню" data-header-price="close">
+                      <svg width="15" height="15" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg>
+                    </button>
+                    <p class="header-delivery-inner__text">Мы осуществляем доставку по&nbsp;всему миру</p>
+                    <ul class="header-delivery-inner__list">
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country is-active" href="#"><img src="img/content/flag-ru.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Россия</span><span class="header-delivery-inner__value">₽  РУБ</span></a></li>
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country" href="#"><img src="img/content/flag-kz.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Казахстан</span><span class="header-delivery-inner__value">₸  ТНГ</span></a></li>
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country" href="#"><img src="img/content/flag-eu.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Евросоюз</span><span class="header-delivery-inner__value">€  EUR</span></a></li>
+                      <li class="header-delivery-inner__item"><a class="header-delivery-inner__country" href="#"><img src="img/content/flag-all.png" width="26" height="26" alt="Изображение флага"><span class="header-delivery-inner__name">Другие страны</span><span class="header-delivery-inner__value">$  USD</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div><a class="header__logo" href="index.html" aria-label="Переход на главную"><img src="img/content/header-logo.png" width="190" height="50" alt="Логотип компании"></a>
+              <a class="header__basket" href="cart.html" data-cart-button="modal">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-basket"></use>
+                </svg><span class="header__basket-count">6</span>
+              </a>
+            </div>
+            <nav class="main-nav" data-nav="menu">
+              <div class="main-nav__wrapper" data-nav="wrapper">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Коллекции</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Бюстгальтеры</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Трусики</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Аксессуары</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="#">Пояса для чулок</a></li>
+                  <li class="main-nav__item main-nav__item--last" data-accordion="parent" data-destroy="(max-width: 767px)">
+                    <div class="main-nav__block" data-accordion="element"><span class="main-nav__link" data-sub-menu="link" data-accordion="button">Базовое белье
+                        <svg class="main-nav__link-arrow" width="12" height="12" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                        </svg></span>
+                      <div class="main-nav__block-inner" data-accordion="content"></div>
+                    </div>
+                    <div class="main-nav__block main-nav__block--mobile" data-accordion="element"><span class="main-nav__link" data-accordion="button">Покупателю
+                        <svg class="main-nav__link-arrow" width="12" height="12" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                        </svg></span>
+                      <div class="main-nav__block-inner" data-accordion="content">
+                        <ul class="nav-submenu__list">
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Компания</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Контакты</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Доставка</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Оплата</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Размерный гид</a></li>
+                          <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Возврат</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="main-nav__submenu"></div>
+            </nav>
+          </div>
+        </div>
+        <div class="nav-submenu" data-sub-menu="parent">
+          <div class="nav-submenu__wrapper" data-sub-menu="wrapper">
+            <div class="nav-submenu__inner" data-da=".main-nav__block-inner, 1023, last">
+              <ul class="nav-submenu__list">
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Смотреть все</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Комплекты</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Бюстгальтеры</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Трусики</a></li>
+                <li class="nav-submenu__item"><a class="nav-submenu__link" href="#">Топы</a></li>
+              </ul>
+              <ul class="nav-submenu__images-list">
+                <li class="nav-submenu__images-item"><a class="nav-submenu__images-link" href="#">
+                    <div class="nav-submenu__images-inner">
+                      <div class="nav-submenu__images-wrap"><img src="img/content/submenu-1.jpg" width="251" height="340" alt="Изображение товара">
+                      </div>
+                    </div><span class="nav-submenu__images-text">Новинки</span></a></li>
+                <li class="nav-submenu__images-item"><a class="nav-submenu__images-link" href="#">
+                    <div class="nav-submenu__images-inner">
+                      <div class="nav-submenu__images-wrap"><img src="img/content/submenu-2.jpg" width="251" height="340" alt="Изображение товара">
+                      </div>
+                    </div><span class="nav-submenu__images-text">Sale</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="text-block">
+          <div class="container">
+            <div class="text-block__wrapper">
+              <aside class="type-aside">
+                <nav class="type-aside__nav">
+                  <ul class="type-aside__list">
+                    <li class="type-aside__list"><a class="type-aside__link" href="delivery.html">Доставка</a></li>
+                    <li class="type-aside__list"><a class="type-aside__link is-active" href="pay.html">Оплата</a></li>
+                    <li class="type-aside__list"><a class="type-aside__link" href="refund.html">Возврат</a></li>
+                    <li class="type-aside__list"><a class="type-aside__link" href="table-size.html">Размерный гид</a></li>
+                    <li class="type-aside__list"><a class="type-aside__link" href="contacts.html">Контакты</a></li>
+                  </ul>
+                </nav>
+              </aside>
+              <div class="text-block__inner">
+                <h1 class="text-block__title">Оплата</h1>
+                <div class="text-block__gray-box">
+                  <h2>При получении</h2>
+                  <p>Вы можете оплатить заказ наличными или банковской картой курьеру при получении или в пункте самовывоза после примерки. Данный вариант оплаты доступен только для заказов, доставляемых по России транспортной компанией СДЭК.</p>
+                </div>
+                <div class="text-block__gray-box">
+                  <h2>Банковской картой онлайн</h2>
+                  <p>Для выбора оплаты товара с помощью банковской карты  соответствующей странице необходимо нажать кнопку Оплата заказа банковской картой. Оплата происходит через ЮКасса с использованием банковских карт следующих платёжных систем:</p>
+                  <ul class="text-block__bank-cards">
+                    <li><svg width="70" height="47" viewBox="0 0 70 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="70" height="46.6667" rx="8.55556" fill="#0D0D0D"/>
+<g clip-path="url(#clip0_1063_9204)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M23.7429 16V16.0061C23.7366 16.0061 21.7508 16 21.2213 17.8402C20.7358 19.5275 19.3679 24.186 19.33 24.3144H18.9518C18.9518 24.3144 17.5523 19.552 17.0606 17.8341C16.531 15.9939 14.5389 16 14.5389 16H10V30H14.5389V21.6856H14.7281H14.9172L17.5649 30H20.7169L23.3646 21.6917H23.7429V30H28.2818V16H23.7429Z" fill="#4DB45E"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M40.3229 16C40.3229 16 38.9927 16.1162 38.3686 17.4672L35.1535 24.3144H34.7753V16H30.2363V30H34.5231C34.5231 30 35.9163 29.8777 36.5404 28.5328L39.6924 21.6856H40.0707V30H44.6096V16H40.3229Z" fill="#4DB45E"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M46.627 22.3584V30.0003H51.1659V25.5374H56.0831C58.2265 25.5374 60.042 24.2108 60.7166 22.3584H46.627Z" fill="#4DB45E"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M56.0831 16H45.9902C46.4946 18.6655 48.556 20.8052 51.2226 21.5022C51.8278 21.6611 52.4645 21.7467 53.1201 21.7467H60.8994C60.9687 21.4288 61.0002 21.1048 61.0002 20.7686C61.0002 18.1336 58.8001 16 56.0831 16Z" fill="url(#paint0_linear_1063_9204)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1063_9204" x1="45.9915" y1="18.8734" x2="61.0002" y2="18.8734" gradientUnits="userSpaceOnUse">
+<stop offset="0.3" stop-color="#00B4E6"/>
+<stop offset="1" stop-color="#088CCB"/>
+</linearGradient>
+<clipPath id="clip0_1063_9204">
+<rect width="51" height="14" fill="white" transform="translate(10 16)"/>
+</clipPath>
+</defs>
+</svg>
+                    </li>
+                    <li>
+                      <svg width="70" height="47" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-visa"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg width="70" height="47" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-master"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg width="70" height="47" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-jcb"></use>
+                      </svg>
+                    </li>
+                  </ul>
+                  <p class="text-block__note">Для оплаты (ввода реквизитов Вашей карты) Вы будете перенаправлены на платёжный шлюз ПАО СБЕРБАНК. Соединение с платёжным шлюзом и передача информации осуществляется в защищённом режиме с использованием протокола шифрования SSL. В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa, MasterCard SecureCode, MIR Accept, J-Secure, для проведения платежа также может потребоваться ввод специального пароля.</p>
+                  <p class="text-block__note text-block__note--icon">
+                    <svg width="16" height="16" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-info"></use>
+                    </svg><span>Настоящий сайт поддерживает 256-битное шифрование. Конфиденциальность сообщаемой персональной информации обеспечивается ПАО СБЕРБАНК. Введённая информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ. Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платёжных систем МИР, Visa Int., MasterCard Europe Sprl, JCB.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container footer__container">
+          <div class="footer__content" data-accordion="parent" data-destroy="(max-width: 767px)">
+            <div class="footer__block" data-accordion="element">
+              <h2 class="footer__title" data-accordion="button">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>Каталог
+              </h2>
+              <div class="footer__block-wrapper" data-accordion="content">
+                <ul class="footer__list">
+                  <li class="footer__item"><a class="footer__link link" href="#">Коллекции</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Бюстгальтеры</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Трусики</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Аксессуары</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Пояса для чулок</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Базовое белье</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block" data-accordion="element">
+              <h2 class="footer__title" data-accordion="button">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>Покупателю
+              </h2>
+              <div class="footer__block-wrapper" data-accordion="content">
+                <ul class="footer__list">
+                  <li class="footer__item"><a class="footer__link link" href="#">Компания</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Контакты</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Доставка</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Оплата</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Размерный гид</a></li>
+                  <li class="footer__item"><a class="footer__link link" href="#">Возврат</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block" data-accordion="element">
+              <h2 class="footer__title" data-accordion="button">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>Свяжитесь с нами
+              </h2>
+              <div class="footer__block-wrapper" data-accordion="content">
+                <ul class="footer__social social-list">
+                  <li class="social-list__item"><a class="social-list__link" href="#">
+                      <div class="social-list__icon">
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-telegram"></use>
+                        </svg>
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-telegram-filled"></use>
+                        </svg>
+                      </div>Telegram</a></li>
+                  <li class="social-list__item"><a class="social-list__link" href="#">
+                      <div class="social-list__icon">
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-whats-app"></use>
+                        </svg>
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-whats-app-filled"></use>
+                        </svg>
+                      </div>WhatsApp</a></li>
+                  <li class="social-list__item"><a class="social-list__link" href="mailto:miss@misstease.ru">
+                      <div class="social-list__icon">
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-mail"></use>
+                        </svg>
+                        <svg width="26" height="26" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-mail-filled"></use>
+                        </svg>
+                      </div>miss@misstease.ru</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block footer__block--form" data-form-validate data-callback="base">
+              <h2 class="footer__title">Будь в курсе всех событий</h2>
+              <form class="footer__subscribe subscribe-form" action="#" novalidate>
+                <div class="subscribe-form__wrapper">
+                  <div class="custom-input subscribe-form__input" data-validate-type="email" data-required data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля">
+                    <label>
+                      <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                      </svg><span class="custom-input__label">Ваш e-mail</span>
+                      <input type="email" name="user-mail"><span class="custom-input__line"></span>
+                    </label>
+                  </div>
+                  <button class="subscribe-form__button" type="submit">Подписаться</button>
+                </div>
+                <p class="subscribe-form__prompt">Нажимая кнопку "Подписаться", вы соглашаетесь с&nbsp;<a href="#">Политикой обработки персональных данных</a></p>
+              </form>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copyright">© 2023. MissTease</p>
+            <ul class="footer__bottom-list">
+              <li class="footer__bottom-item"><a class="footer__bottom-link link" href="#">Юридическая информация</a></li>
+              <li class="footer__bottom-item"><a class="footer__bottom-link link" href="#">Политика конфиденциальности</a></li>
+              <li class="footer__bottom-item"><a class="footer__bottom-link link" href="#">Договор оферты</a></li>
+            </ul>
+            <p class="footer__prompt"><span>Дизайн</span><a class="link" href="#">Indigo Amigo</a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="modal modal--preload modal--message modal--cart" data-modal="cart">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="modal-cart">
+            <div class="modal-cart__content">
+              <h2 class="modal-cart__title">Корзина</h2>
+              <div class="modal-cart__scroll-wrapper">
+                <ul class="modal-cart__list">
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-1.jpg" width="192" height="284" alt="Стикини">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Стикини</h3>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">1 500 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-2.jpg" width="192" height="284" alt="Пояс Burlesque">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Пояс Burlesque</h3>
+                        <p class="modal-cart-item__size">Размер:&nbsp;<span>М</span></p>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">3 800 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-3.jpg" width="192" height="284" alt="Гартеры Burlesque">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Гартеры Burlesque</h3>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">3 300 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-4.jpg" width="192" height="284" alt="Бюстгальтер Burlesque">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Бюстгальтер Burlesque</h3>
+                        <p class="modal-cart-item__size">Размер:&nbsp;<span>70C</span></p>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">4 300 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="modal-cart__item">
+                    <div class="modal-cart-item">
+                      <button class="modal-cart-item__delete" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                      <div class="modal-cart-item__img"><img src="img/cart/cart-img-5.jpg" width="192" height="284" alt="Трусики Burlesque">
+                      </div>
+                      <div class="modal-cart-item__content">
+                        <h3 class="modal-cart-item__name">Трусики Burlesque</h3>
+                        <p class="modal-cart-item__size">Размер:&nbsp;<span>М</span></p>
+                        <div class="modal-cart-item__footer">
+                          <div class="modal-cart-item__counter">
+                            <div class="counter" data-counter="element">
+                              <button class="counter__button" type="button" aria-label="Уменьшить" disabled data-counter="decrease">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                                </svg>
+                              </button><span class="counter__num" data-counter="value">1</span>
+                              <button class="counter__button" type="button" aria-label="Увеличить" data-counter="increase">
+                                <svg width="12" height="12" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <p class="modal-cart-item__price">4 300 ₽</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-cart__footer">
+              <p class="modal-cart__total"><span>Итого</span><span>17 500 ₽</span></p>
+              <div class="modal-cart__buttons">
+                <a class="btn modal-cart__button" href="order-information.html"><span>Оформить заказ</span>
+                </a>
+                <a class="btn-stroke modal-cart__button" href="cart.html"><span>В корзину</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
