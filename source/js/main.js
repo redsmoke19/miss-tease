@@ -1,57 +1,57 @@
-import {mobileVhFix} from './utils/mobile-vh-fix.js';
-import {initModals} from './modules/modals/init-modals';
-// import headerInit from './modules/header/index.js';
-import cardProduct from './modules/card-product/init-product-card.js';
-import {Form} from './modules/form-validate/form';
-import {initAccordions} from './modules/accordions/init-accordion.js';
-import {initCounters} from './modules/init-counters.js';
-import {initCustomInputs} from './modules/init-custom-inputs.js';
-import {initDynamicAdaptive} from './modules/init-dynamic-adaptive.js';
-import {initTabs} from './modules/tabs/init-tabs.js';
-import {initSelects} from './modules/select/init-selects.js';
-import initSliders from './modules/sliders/index.js';
-import {initCartButtons} from './modules/init-cart-buttons.js';
-import {initHeaderSticky} from './modules/header/init-header-sticky.js';
-import {initDeliveryForm} from './modules/init-delivery-form.js';
-import {initAutoResizeTextarea} from './modules/auto-resize-textarea.js';
-
-// ---------------------------------
-
-window.addEventListener('DOMContentLoaded', () => {
-
-  // Utils
-  // ---------------------------------
-
-  mobileVhFix();
-
-  // Modules
-  // ---------------------------------
-
-  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
-  // в load следует добавить скрипты, не участвующие в работе первого экрана
-  window.addEventListener('load', () => {
-    initModals();
-    initDynamicAdaptive();
-    initSelects();
-    const form = new Form();
-    window.form = form;
-    form.init();
-    // headerInit.initPageMenu();
-    // headerInit.initHeaderHeight();
-    // headerInit.initSubmenu();
-    // headerInit.initPrice();
-    cardProduct.getPlayVideo();
-    initAccordions();
-    initTabs();
-    initCounters();
-    initCustomInputs();
-    initSliders();
-    initCartButtons();
-    initHeaderSticky();
-    initDeliveryForm();
-    initAutoResizeTextarea();
-  });
-});
+// import {mobileVhFix} from './utils/mobile-vh-fix.js';
+// import {initModals} from './modules/modals/init-modals';
+// // import headerInit from './modules/header/index.js';
+// import cardProduct from './modules/card-product/init-product-card.js';
+// import {Form} from './modules/form-validate/form';
+// import {initAccordions} from './modules/accordions/init-accordion.js';
+// import {initCounters} from './modules/init-counters.js';
+// import {initCustomInputs} from './modules/init-custom-inputs.js';
+// import {initDynamicAdaptive} from './modules/init-dynamic-adaptive.js';
+// import {initTabs} from './modules/tabs/init-tabs.js';
+// import {initSelects} from './modules/select/init-selects.js';
+// import initSliders from './modules/sliders/index.js';
+// import {initCartButtons} from './modules/init-cart-buttons.js';
+// import {initHeaderSticky} from './modules/header/init-header-sticky.js';
+// import {initDeliveryForm} from './modules/init-delivery-form.js';
+// import {initAutoResizeTextarea} from './modules/auto-resize-textarea.js';
+//
+// // ---------------------------------
+//
+// window.addEventListener('DOMContentLoaded', () => {
+//
+//   // Utils
+//   // ---------------------------------
+//
+//   mobileVhFix();
+//
+//   // Modules
+//   // ---------------------------------
+//
+//   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
+//   // в load следует добавить скрипты, не участвующие в работе первого экрана
+//   window.addEventListener('load', () => {
+//     initModals();
+//     initDynamicAdaptive();
+//     initSelects();
+//     const form = new Form();
+//     window.form = form;
+//     form.init();
+//     // headerInit.initPageMenu();
+//     // headerInit.initHeaderHeight();
+//     // headerInit.initSubmenu();
+//     // headerInit.initPrice();
+//     cardProduct.getPlayVideo();
+//     initAccordions();
+//     initTabs();
+//     initCounters();
+//     initCustomInputs();
+//     initSliders();
+//     initCartButtons();
+//     initHeaderSticky();
+//     initDeliveryForm();
+//     initAutoResizeTextarea();
+//   });
+// });
 
 // ---------------------------------
 
