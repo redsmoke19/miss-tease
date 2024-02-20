@@ -1,6 +1,6 @@
 import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {initModals} from './modules/modals/init-modals';
-import headerInit from './modules/header/index.js';
+// import headerInit from './modules/header/index.js';
 import cardProduct from './modules/card-product/init-product-card.js';
 import {Form} from './modules/form-validate/form';
 import {initAccordions} from './modules/accordions/init-accordion.js';
@@ -36,10 +36,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
-    headerInit.initPageMenu();
-    headerInit.initHeaderHeight();
-    headerInit.initSubmenu();
-    headerInit.initPrice();
+    // headerInit.initPageMenu();
+    // headerInit.initHeaderHeight();
+    // headerInit.initSubmenu();
+    // headerInit.initPrice();
     cardProduct.getPlayVideo();
     initAccordions();
     initTabs();
