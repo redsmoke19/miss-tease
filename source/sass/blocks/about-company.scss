@@ -1,0 +1,255 @@
+.about-company {
+  @include desktop {
+    padding-top: size(160px);
+    padding-bottom: size(140px);
+  }
+
+  @include tablet {
+    padding-top: size(100px);
+    padding-bottom: size(100px);
+  }
+
+  @include mobile {
+    padding-top: size(60px);
+    padding-bottom: size(60px);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include desktop {
+      padding-right: size(40px);
+      padding-left: size(40px);
+    }
+  }
+
+  &__quote {
+    width: 100%;
+
+    @include desktop {
+      margin-bottom: size(152px);
+    }
+
+    @include tablet {
+      margin-bottom: size(100px);
+    }
+
+    @include mobile {
+      margin-bottom: size(85px);
+    }
+  }
+
+  &__block {
+    width: 100%;
+
+    @include desktop {
+      margin-bottom: size(140px);
+    }
+
+    @include tablet {
+      margin-bottom: size(100px);
+    }
+
+    @include mobile {
+      margin-bottom: size(60px);
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    color: $white-56;
+
+    @include tablet-desktop {
+      font-size: size(20px);
+      line-height: 150%;
+      max-width: size(705px);
+    }
+
+    @include mobile {
+      font-size: size(15px);
+      line-height: size(21px);
+    }
+
+    &:not(:last-child) {
+      @include desktop {
+        margin-bottom: size(140px);
+      }
+
+      @include tablet {
+        margin-bottom: size(100px);
+      }
+
+      @include mobile {
+        margin-bottom: size(60px);
+      }
+    }
+
+    p {
+      margin-top: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        @include tablet-desktop {
+          margin-bottom: size(30px);
+        }
+
+        @include mobile {
+          margin-bottom: size(21px);
+        }
+      }
+    }
+  }
+
+  &__gallery {
+    width: 100%;
+
+    @include desktop {
+      margin-bottom: size(108px);
+    }
+
+    @include tablet {
+      margin-bottom: size(88px);
+    }
+
+    @include mobile {
+      margin-bottom: size(60px);
+    }
+  }
+}
+
+.about-quote {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include desktop {
+    row-gap: size(73px);
+  }
+
+  @include tablet {
+    row-gap: size(50px);
+  }
+
+  @include mobile {
+    row-gap: size(37px);
+  }
+
+  svg {
+    @include tablet-desktop {
+      width: size(59px);
+      height: size(75px);
+    }
+
+    @include mobile {
+      width: size(30px);
+      height: size(38px);
+    }
+  }
+
+  &__text {
+    font-family: $ff-cormorant;
+    font-style: italic;
+    max-width: size(940px);
+    margin: 0;
+    text-align: center;
+    color: $color-default-white;
+
+    @include tablet-desktop {
+      font-size: size(36px);
+      line-height: size(44px);
+    }
+
+    @include mobile {
+      font-size: size(22px);
+      line-height: size(27px);
+    }
+  }
+}
+
+.about-block {
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: size(40px);
+  }
+
+  @include mobile-tablet {
+    display: flex;
+    flex-direction: column;
+    gap: size(30px);
+  }
+
+  &__img {
+    aspect-ratio: 900/1006;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    @include desktop {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px size(158px);
+    }
+  }
+
+  &__text {
+    font-family: $ff-cormorant;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    margin: 0;
+    color: $color-default-white;
+
+    @include desktop {
+      max-width: size(530px);
+    }
+
+    @include tablet-desktop {
+      font-size: size(50px);
+      }
+
+    @include mobile {
+      font-size: size(32px);
+    }
+  }
+}
+
+.about-gallery {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+
+  @include tablet-desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: size(20px);
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: size(10px);
+  }
+
+  &__item {
+    aspect-ratio: 30/38;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
