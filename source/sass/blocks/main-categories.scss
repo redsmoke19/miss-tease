@@ -25,6 +25,18 @@
       grid-template-rows: min-content;
       gap: size(10px);
     }
+
+    &--short {
+      @include desktop {
+        grid-template-rows: size(1080px);
+      }
+
+      .main-categories__item--span-2-tb {
+        @include tablet {
+          grid-column: auto;
+        }
+      }
+    }
   }
 
   &__item {
