@@ -61,6 +61,15 @@
     margin: 0 0 size(60px) 0;
     max-width: size(735px);
 
+    &--indent-xs {
+      margin: 0 0 size(20px) 0;
+    }
+
+    &--bold {
+      font-size: size(20px);
+      line-height: size(25px);
+    }
+
     &:last-child {
       margin: 0;
     }

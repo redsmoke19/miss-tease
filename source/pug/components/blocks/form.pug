@@ -1,0 +1,49 @@
+mixin form()
+  section.form(data-form-validate, data-callback="base")
+    .form__wrapper
+      .form__left
+        span.form__heading Связаться с нами
+        h2.form__title По вопросам возврата:
+        a.form__tel(href="tel:+79022876689") +7 (902) 287-66-89
+        ul.form__social.social-list
+          li.social-list__item
+            a.social-list__link(href="#")
+              .social-list__icon
+                +icon("icon-telegram", 26, 26)
+                +icon("icon-telegram-filled", 26, 26)
+              | Telegram
+          li.social-list__item
+            a.social-list__link(href="#")
+              .social-list__icon
+                +icon("icon-whats-app", 26, 26)
+                +icon("icon-whats-app-filled", 26, 26)
+              | WhatsApp
+          li.social-list__item
+            a.social-list__link(href="mailto:miss@misstease.ru")
+              .social-list__icon
+                +icon("icon-mail", 26, 26)
+                +icon("icon-mail-filled", 26, 26)
+              | miss@misstease.ru
+      form.form__form(action="#", method="POST", novalidate)
+        span.form__heading Напишите нам
+        +custom-input({
+          inputType: "text",
+          inputLabel: "Ваше имя*",
+          inputName: "form-user-name"
+        }).form__input(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля")
+        +custom-input({
+          inputType: "tel",
+          inputLabel: "Телефон*",
+          inputName: "form-user-phone"
+        }).form__input(data-validate-type="phone", data-required, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля")
+        +custom-input({
+          inputType: "email",
+          inputLabel: "E-mail*",
+          inputName: "form-user-email"
+        }).form__input(data-validate-type="email", data-required, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля")
+        +custom-textarea({
+          inputLabel: "Сообщение",
+          inputName: "form-user-text",
+        }).form__textarea
+        button.btn.btn--big.form__button(type="submit") Отправить
+        p.form__note Нажимая кнопку «Отправить», вы соглашаетесь с #[a(href="#") Политикой обработки персональных данных]

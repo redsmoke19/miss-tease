@@ -1,0 +1,93 @@
+.form {
+  padding: size(40px) size(50px) size(50px) size(40px);
+  background-color: $color-accent-second;
+
+  @include mobile-tablet {
+    padding: size(24px) size(20px) size(30px);
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: size(150px);
+    grid-template-columns: size(275px) 1fr;
+
+    @include mobile-tablet {
+      grid-template-columns: 1fr;
+      gap: size(30px);
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 0 size(45px);
+
+    @include mobile-tablet {
+      padding: 0;
+    }
+  }
+
+  &__heading {
+    font-size: size(18px);
+    line-height: size(23px);
+    margin: 0 0 size(20px) 0;
+    color: $white-70;
+    display: inline-block;
+
+    @include mobile-tablet {
+      font-size: size(12px);
+      line-height: size(15px);
+      color: $white-56;
+      margin: 0 0 size(4px) 0;
+    }
+  }
+
+  &__title {
+    font-size: size(34px);
+    line-height: size(43px);
+    margin: 0 0 size(20px) 0;
+    color: $color-default-white;
+
+    @include mobile-tablet {
+      font-size: size(20px);
+      line-height: size(25px);
+      margin: 0 0 size(16px) 0;
+    }
+  }
+
+  &__tel {
+    margin: auto 0 size(30px) 0;
+    font-size: size(26px);
+    line-height: size(33px);
+    color: $white-70;
+    transition: color $trans-default;
+
+    @include mobile-tablet {
+      font-size: size(20px);
+      line-height: size(25px);
+      margin: 0 0 size(16px) 0;
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+    }
+  }
+
+  &__input {
+    margin: 0 0 size(20px) 0;
+  }
+
+  &__textarea {
+    margin: 0 0 size(30px) 0;
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  &__note {
+    font-size: size(13px);
+    line-height: size(17px);
+  }
+}
