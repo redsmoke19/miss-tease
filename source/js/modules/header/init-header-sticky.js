@@ -54,8 +54,8 @@ const initHeaderSticky = () => {
     return;
   }
 
-  const stickyBlocks = [];
-  // const stickyBlocks = document.querySelectorAll('[data-sticky-block]');
+  // const stickyBlocks = [];
+  const stickyBlocks = document.querySelectorAll('[data-sticky-block]');
 
   toggleStickyBlocksClass(stickyBlocks, true, header.offsetHeight);
   mm.add(mediaQuery, () => {

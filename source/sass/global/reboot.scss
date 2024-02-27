@@ -25,7 +25,11 @@ html {
   // если по прежнему есть проблемы с выравниванием
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
 
-  @include desktop {
+  @media screen and (min-width: $vp-1920) {
+    font-size: $fz-default;
+  }
+
+  @media screen and (min-width: $vp-1024) and (max-width: ($vp-1920 - 1px)) {
     font-size: size-desktop($fz-default);
   }
 

@@ -13,18 +13,19 @@ const modalCartButtonClickHandler = (e) => {
 const cartAddButtonClickHandler = (e) => {
   e.preventDefault();
   const {target} = e;
+  const button = target.closest('[data-cart-button="add"]');
   const parent = target.closest('[data-cart-button="parent"]');
-  target.classList.add('is-added');
-  if (parent) {
-    parent.classList.add('is-added');
-  }
+  button?.classList.add('is-added');
+  parent?.classList.add('is-added');
 };
 
 const cartRemoveButtonClickHandler = (e) => {
   e.preventDefault();
   const {target} = e;
   const parent = target.closest('[data-cart-button="parent"]') || target;
-  parent.classList.remove('is-added');
+  const button = parent?.querySelector('[data-cart-button="add"]');
+  parent.classList?.remove('is-added');
+  button.classList?.remove('is-added');
 };
 
 const initCartButtons = () => {
