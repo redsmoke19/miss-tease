@@ -4945,7 +4945,7 @@ button,
   width: 6.875rem;
   height: 6.875rem;
   opacity: 0.56;
-  background-image: url("../../img/svg/cart.svg"), url("../../img/content/header-logo.png");
+  background-image: url("../img/svg/cart.svg"), url("../img/content/header-logo.png");
   background-repeat: no-repeat, no-repeat;
   background-position: center, center 67%;
   background-size: 5.5625rem 5.4375rem, 3.875rem 1rem;
@@ -5331,6 +5331,7 @@ button,
 .show-more__title {
   font-family: "Cormorant", serif;
   font-size: 3.125rem;
+  font-weight: 400;
   line-height: 3.125rem;
   margin: 0 0 2.875rem 0;
   color: #ffffff;
@@ -7253,10 +7254,6 @@ button,
 }
 
 @media screen and (min-width: 1024px) {
-  html {
-    font-size: 0.8333333333vw;
-  }
-
   .accordion:not(.accordion--uppercase) .accordion__button {
     font-size: 1.125rem;
     padding: 1.5rem 0;
@@ -7865,6 +7862,12 @@ button,
 
   .about-block__text {
     max-width: 33.125rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 16px;
   }
 }
 
@@ -10213,6 +10216,12 @@ button,
 
   .modal--fit-content .modal__content {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1919px) {
+  html {
+    font-size: 0.8333333333vw;
   }
 }
 
