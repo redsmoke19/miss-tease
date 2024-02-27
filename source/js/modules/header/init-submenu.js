@@ -35,7 +35,7 @@ const mouseInHandler = () => {
       openMenu();
       document.addEventListener('mousemove', mouseMoveHandler);
     }
-  }, 300);
+  }, 100);
 };
 
 const mouseMoveHandler = (evt) => {
