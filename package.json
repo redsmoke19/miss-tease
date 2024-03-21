@@ -55,7 +55,6 @@
     "gulp-svgmin": "4.1.0",
     "gulp-svgstore": "9.0.0",
     "gulp-webp": "4.0.1",
-    "imagemin-mozjpeg": "10.0.0",
     "imagemin-pngquant": "9.0.2",
     "imagemin-svgo": "10.0.1",
     "postcss-scss": "4.0.6",
