@@ -3,7 +3,6 @@ import imagemin from 'gulp-imagemin';
 import webp from 'gulp-webp';
 import avif from 'gulp-avif';
 import pngQuant from 'imagemin-pngquant';
-import mozJpeg from 'imagemin-mozjpeg';
 import svgo from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
 import rename from 'gulp-rename';
@@ -19,12 +18,6 @@ const optimizeSvg = () =>
   gulp
       .src(['build/img/**/*.svg', '!build/img/sprite.svg'])
       .pipe(svgo())
-      .pipe(gulp.dest('build/img'));
-
-const optimizeJpg = () =>
-  gulp
-      .src('build/img/**/*.{jpg,jpeg}')
-      .pipe(imagemin([mozJpeg({quality: 90, progressive: true})]))
       .pipe(gulp.dest('build/img'));
 
 const optimizePng = () =>
@@ -67,4 +60,4 @@ const createAvif = () => {
       .pipe(gulp.dest(`source/img/${root}`));
 };
 
-export {sprite, createWebp, createAvif, optimizeSvg, optimizePng, optimizeJpg};
+export {sprite, createWebp, createAvif, optimizeSvg, optimizePng};
