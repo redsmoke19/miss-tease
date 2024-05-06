@@ -5149,25 +5149,14 @@ button,
 
 .order-block__edit {
   position: absolute;
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .order-block__title {
   font-weight: 300;
   margin-top: 0;
   color: #ffffff;
-}
-
-.order-block__title--filled {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.order-block__title:not(.order-block__title--filled)::before {
-  content: counters(blocks, "") ". ";
 }
 
 .order-block__title svg {
@@ -5198,6 +5187,51 @@ button,
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
+}
+
+.order-block:not(.is-filled) .order-block__title::before {
+  content: counters(blocks, "") ". ";
+}
+
+.order-block:not(.is-filled) .order-block__edit {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.order-block:not(.is-filled) .order-block__title svg,
+.order-block:not(.is-filled) .delivery-checks__info,
+.order-block:not(.is-filled) .information-form__list {
+  display: none;
+}
+
+.order-block:not(.is-active) .order-block__aside,
+.order-block:not(.is-active) .delivery-checks,
+.order-block:not(.is-active) .delivery-form,
+.order-block:not(.is-active) .order-block__footer,
+.order-block:not(.is-active) .payment-form {
+  display: none;
+}
+
+.order-block.is-filled {
+  display: block;
+}
+
+.order-block.is-filled .order-block__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.order-block.is-filled .delivery-form,
+.order-block.is-filled .order-block__aside,
+.order-block.is-filled .delivery-checks__form,
+.order-block.is-filled .order-block__footer,
+.order-block.is-filled .information-form__form {
+  display: none;
 }
 
 .order-success__container {
@@ -7544,10 +7578,6 @@ button,
     line-height: 2.6875rem;
   }
 
-  .order-block__title--filled {
-    padding-right: 5rem;
-  }
-
   .order-block__title svg {
     width: 2.125rem;
     height: 2.125rem;
@@ -7565,6 +7595,10 @@ button,
 
   .order-block__footer {
     padding-top: 2.5rem;
+  }
+
+  .order-block.is-filled .order-block__title {
+    padding-right: 5rem;
   }
 
   .information-form__form {
@@ -8546,10 +8580,6 @@ button,
     line-height: 1.75rem;
   }
 
-  .order-block__title--filled {
-    padding-right: 2.5rem;
-  }
-
   .order-block__title svg {
     -ms-flex-item-align: start;
     align-self: flex-start;
@@ -8569,6 +8599,10 @@ button,
 
   .order-block__footer {
     padding-top: 1.9375rem;
+  }
+
+  .order-block.is-filled .order-block__title {
+    padding-right: 2.5rem;
   }
 
   .catalog {

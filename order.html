@@ -113,21 +113,22 @@
         <div class="order" data-form-validate data-callback="base">
           <div class="order__container container">
             <h2 class="order__title">Оформление заказа</h2>
-            <div class="order__wrapper">
+            <form class="order__wrapper" action="#" novalidate data-order="form">
               <div class="order__content">
                 <div class="order__blocks">
-                  <div class="order-block order__block">
+                  <div class="order-block order__block is-active" data-order="block" data-step="1" data-form-block>
                     <div class="order-block__content">
                       <div class="order-block__header">
-                        <h3 class="order-block__title order-block__title--filled">
+                        <h3 class="order-block__title">
                           <svg width="34" height="34" aria-hidden="true">
                             <use xlink:href="img/sprite.svg#icon-done"></use>
                           </svg><span>Контактная информация</span>
-                        </h3><a class="order-block__edit edit-button edit-button--short" href="order-information.html">
+                        </h3><a class="order-block__edit edit-button edit-button--short" href="#" data-order="edit">
                           <svg width="18" height="18" aria-hidden="true">
                             <use xlink:href="img/sprite.svg#icon-edit"></use>
                           </svg><span>Изменить</span></a>
                       </div>
+                      <p class="order-block__description">Пожалуйста, укажите свои контактные данные и убедитесь, что правильно выбран населённый пункт</p>
                       <div class="order-block__block">
                         <div class="information-form">
                           <ul class="information-form__list">
@@ -136,22 +137,86 @@
                             <li class="information-form__item">nastyapro@yandex.ru</li>
                             <li class="information-form__item">Чебоксары, Чувашская Республика, Россия</li>
                           </ul>
+                          <div class="information-form__form">
+                            <div class="information-form__wrapper">
+                              <div class="custom-input has-placeholder information-form__input information-form__input--address" data-validate-type="text" data-required data-message-base="Поле обязательно к заполнению">
+                                <label>
+                                  <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg><span class="custom-input__label">Местоположение*</span><a class="custom-input__link" href="#">
+                                    <svg width="20" height="20" aria-hidden="true">
+                                      <use xlink:href="img/sprite.svg#icon-location"></use>
+                                    </svg><span>Чебоксары,&nbsp;</span></a>
+                                  <input type="text" name="location" placeholder="Чувашская республика, Россия"><span class="custom-input__line"></span>
+                                </label>
+                              </div>
+                              <div class="custom-input information-form__input information-form__input--index" data-validate-type="matrix" data-matrix="______" data-matrix-limitation="digit" data-required data-message-base="Поле обязательно к заполнению">
+                                <label>
+                                  <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg><span class="custom-input__label">Индекс</span>
+                                  <input type="text" name="index"><span class="custom-input__line"></span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="information-form__wrapper">
+                              <div class="custom-input information-form__input" data-validate-type="text" data-required data-message-base="Поле обязательно к заполнению">
+                                <label>
+                                  <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg><span class="custom-input__label">Имя*</span>
+                                  <input type="text" name="name"><span class="custom-input__line"></span>
+                                </label>
+                              </div>
+                              <div class="custom-input information-form__input" data-validate-type="text" data-required data-message-base="Поле обязательно к заполнению">
+                                <label>
+                                  <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg><span class="custom-input__label">Фамилия*</span>
+                                  <input type="text" name="surname"><span class="custom-input__line"></span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="information-form__wrapper">
+                              <div class="custom-input information-form__input" data-validate-type="phone" data-required data-message-base="Поле обязательно к заполнению">
+                                <label>
+                                  <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg><span class="custom-input__label">Телефон*</span>
+                                  <input type="tel" name="phone"><span class="custom-input__line"></span>
+                                </label>
+                              </div>
+                              <div class="custom-input information-form__input" data-validate-type="email" data-required data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля">
+                                <label>
+                                  <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg><span class="custom-input__label">E-mail*</span>
+                                  <input type="email" name="email"><span class="custom-input__line"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <div class="order-block__footer">
+                      <button class="btn-stroke btn-stroke--small order-block__submit" type="button" data-order="next"><span>Подтвердить</span>
+                      </button>
+                    </div>
                   </div>
-                  <div class="order-block order__block" data-current-tab="0">
+                  <div class="order-block order-block--delivery order__block" data-tabs="parent" data-delivery-form="parent" data-current-tab="0" data-order="block" data-step="2">
                     <div class="order-block__content">
                       <div class="order-block__header">
-                        <h3 class="order-block__title order-block__title--filled">
+                        <h3 class="order-block__title">
                           <svg width="34" height="34" aria-hidden="true">
                             <use xlink:href="img/sprite.svg#icon-done"></use>
                           </svg><span>Способ доставки</span>
-                        </h3><a class="order-block__edit edit-button edit-button--short" href="order-delivery.html">
+                        </h3><a class="order-block__edit edit-button edit-button--short" href="#" data-order="edit">
                           <svg width="18" height="18" aria-hidden="true">
                             <use xlink:href="img/sprite.svg#icon-edit"></use>
                           </svg><span>Изменить</span></a>
                       </div>
+                      <p class="order-block__description">Выберите удобный способ доставки</p>
                       <div class="order-block__block">
                         <div class="delivery-checks">
                           <div class="delivery-checks__info">
@@ -162,15 +227,133 @@
                               <li class="delivery-checks__info-item"><span class="delivery-checks__info-key">Срок доставки:</span><span class="delivery-checks__info-value">2-3 рабочих дня</span></li>
                             </ul>
                           </div>
+                          <div class="delivery-checks__form" data-tabs="controls">
+                            <div class="custom-toggle delivery-checks__item" data-tabs="control">
+                              <input class="visually-hidden" type="radio" value="courier" id="courier" name="delivery-type" checked>
+                              <label class="custom-toggle__label" for="courier"><span class="custom-toggle__icon">
+                                  <svg width="12" height="12" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg></span></label>
+                              <div class="custom-toggle__content">
+                                <div class="delivery-checkbox">
+                                  <div class="delivery-checkbox__logo">
+                                    <svg width="50" height="14" aria-hidden="true">
+                                      <use xlink:href="img/sprite.svg#icon-cdek"></use>
+                                    </svg>
+                                  </div><span class="delivery-checkbox__name">Курьером СДЭК</span><span class="delivery-checkbox__price">270 ₽</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="custom-toggle delivery-checks__item" data-tabs="control">
+                              <input class="visually-hidden" type="radio" value="pick-point" id="pick-point" name="delivery-type">
+                              <label class="custom-toggle__label" for="pick-point"><span class="custom-toggle__icon">
+                                  <svg width="12" height="12" aria-hidden="true">
+                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                  </svg></span></label>
+                              <div class="custom-toggle__content">
+                                <div class="delivery-checkbox">
+                                  <div class="delivery-checkbox__logo">
+                                    <svg width="50" height="14" aria-hidden="true">
+                                      <use xlink:href="img/sprite.svg#icon-cdek"></use>
+                                    </svg>
+                                  </div><span class="delivery-checkbox__name">Пункт выдачи СДЭК</span><span class="delivery-checkbox__price">130 ₽</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <div class="order-block__aside">
+                      <div class="delivery-tabs" data-tabs="content">
+                        <div class="delivery-tabs__item" data-tabs="element">
+                          <div class="delivery-item">
+                            <p class="delivery-item__name">Курьером СДЭК</p>
+                            <div class="delivery-item__logo">
+                              <svg width="91" height="26" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-cdek"></use>
+                              </svg>
+                            </div>
+                            <p class="delivery-item__text">Доставка до двери</p>
+                            <ul class="delivery-item__list">
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Стоимость:</span><span class="delivery-item__item-value">270 ₽</span></li>
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Срок доставки:</span><span class="delivery-item__item-value">2-3 рабочих дня</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="delivery-tabs__item" data-tabs="element">
+                          <div class="delivery-item">
+                            <p class="delivery-item__name">Пункт выдачи СДЭК</p>
+                            <div class="delivery-item__logo">
+                              <svg width="91" height="26" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-cdek"></use>
+                              </svg>
+                            </div>
+                            <p class="delivery-item__text">Доставка до пункта выдачи</p>
+                            <button class="btn btn--small delivery-item__button" type="button"><span>Выбрать пункт выдачи</span>
+                            </button>
+                            <ul class="delivery-item__list">
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Стоимость:</span><span class="delivery-item__item-value">130 ₽</span></li>
+                              <li class="delivery-item__item"><span class="delivery-item__item-key">Срок доставки:</span><span class="delivery-item__item-value">2-3 рабочих дня</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="delivery-form" data-delivery-form="form">
+                      <p class="delivery-form__title">Укажите адрес доставки</p>
+                      <div class="delivery-form__content">
+                        <div class="delivery-form__wrapper">
+                          <div class="custom-input delivery-form__input" data-validate-type="text" data-required="" data-message-base="Поле обязательно к заполнению">
+                            <label>
+                              <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg><span class="custom-input__label">Улица*</span>
+                              <input type="text" name="street"><span class="custom-input__line"></span>
+                            </label>
+                          </div>
+                          <div class="custom-input delivery-form__input delivery-form__input--short" data-validate-type="text" data-limitation="digit" data-required="" data-message-base="Поле обязательно к заполнению">
+                            <label>
+                              <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg><span class="custom-input__label">Дом/корпус*</span>
+                              <input type="text" name="house"><span class="custom-input__line"></span>
+                            </label>
+                          </div>
+                          <div class="custom-input delivery-form__input delivery-form__input--short" data-validate-type="text" data-limitation="digit" data-required="" data-message-base="Поле обязательно к заполнению">
+                            <label>
+                              <svg class="custom-input__icon" width="16" height="16" aria-hidden="true">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg><span class="custom-input__label">Квартира/офис*</span>
+                              <input type="text" name="apartment"><span class="custom-input__line"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="delivery-form__wrapper">
+                          <div class="custom-input custom-input--textarea delivery-form__input auto-resize-textarea">
+                            <label><span class="custom-input__label">Комментарий к заказу</span>
+                              <textarea name="comment"></textarea><span class="custom-input__line"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="order-block__footer">
+                      <button class="btn-stroke btn-stroke--small order-block__submit" type="button" data-order="next"><span>Подтвердить</span>
+                      </button>
+                    </div>
                   </div>
-                  <form class="order-block order__block" action="#" novalidate="">
+                  <div class="order-block order__block" data-order="block" data-step="3">
                     <div class="order-block__content">
                       <div class="order-block__header">
-                        <h3 class="order-block__title"><span>Способ оплаты</span>
-                        </h3>
+                        <h3 class="order-block__title">
+                          <svg width="34" height="34" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-done"></use>
+                          </svg><span>Способ оплаты</span>
+                        </h3><a class="order-block__edit edit-button edit-button--short" href="#" data-order="edit">
+                          <svg width="18" height="18" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-edit"></use>
+                          </svg><span>Изменить</span></a>
                       </div>
                       <div class="order-block__block">
                         <div class="payment-form">
@@ -195,7 +378,7 @@
                                 <ul class="payment-method__list">
                                   <li class="payment-method__item payment-method__item--visa"><img src="img/svg/visa-logo.svg" width="49" height="16" alt="visa-logo"></li>
                                   <li class="payment-method__item payment-method__item--mastercard"><img src="img/svg/mastercard-logo.svg" width="31" height="20" alt="mastercard-logo"></li>
-                                  <li class="payment-method__item payment-method__item--mir"><img src="img/svg/icon-mir.svg" width="51" height="14" alt="mir-logo"></li>
+                                  <li class="payment-method__item payment-method__item--mir"><img src="img/svg/mir-logo.svg" width="51" height="14" alt="mir-logo"></li>
                                 </ul>
                               </div>
                             </div>
@@ -203,7 +386,7 @@
                         </div>
                       </div>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
               <div class="order__aside cart-aside" data-accordion="parent">
@@ -301,12 +484,12 @@
                   </ul>
                   <div class="cart-aside__total">
                     <p class="cart-aside__total-text"><span>Итого</span><span>16 240 ₽</span></p>
-                    <button class="btn btn--big cart-aside__button" type="button"><span>Оформить заказ</span>
+                    <button class="btn btn--big cart-aside__button" type="submit" data-order="submit" disabled><span>Оформить заказ</span>
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </main>
