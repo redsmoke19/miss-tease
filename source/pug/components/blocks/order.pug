@@ -5,35 +5,32 @@ mixin order(props = {})
   .order(data-form-validate, data-callback="base")
     .order__container.container
       h2.order__title Оформление заказа
-      .order__wrapper
+      form.order__wrapper(action="#", novalidate, data-order="form")
         .order__content
           .order__blocks
             +order-block({
               title: "Контактная информация",
-              text: step > 1 ? "" : "Пожалуйста, укажите свои контактные данные и убедитесь, что правильно выбран населённый пункт",
-              isFilled: step > 1,
-              isActive: step === 1,
-              hasFooter: step === 1,
-              editUrl: "order-information.html"
-            }).order__block
+              text: "Пожалуйста, укажите свои контактные данные и убедитесь, что правильно выбран населённый пункт",
+              hasFooter: true
+            }).order__block.is-active(data-order="block", data-step="1", data-form-block)
               +information-form({isFilled: step > 1})
             +order-block({
               title: "Способ доставки",
-              text: step > 2 ? "" : "Выберите удобный способ доставки",
+              text: "Выберите удобный способ доставки",
               isFilled: step > 2,
-              isActive: step === 2,
-              hasFooter: step === 2,
-              mod: step === 2 ? "delivery" : "",
-              aside: step === 2,
+              isActive: true,
+              hasFooter: true,
+              mod: "delivery",
+              aside: true,
               editUrl: "order-delivery.html",
               pickPointSelected
-            }).order__block(data-tabs=step === 2 && "parent", data-delivery-form=step === 2 && "parent", data-current-tab=Number(pickPointSelected))
+            }).order__block(data-tabs="parent", data-delivery-form="parent", data-current-tab=Number(pickPointSelected), data-order="block", data-step="2")
               +delivery-checks({isFilled: step > 2, pickPointSelected})
 
             +order-block({
               title: "Способ оплаты",
               isActive: step === 3,
-            }).order__block
+            }).order__block(data-order="block", data-step="3")
               +payment-form()
         .order__aside.cart-aside(data-accordion="parent")
           .cart-aside__wrapper
@@ -67,4 +64,4 @@ mixin order(props = {})
               p.cart-aside__total-text
                 span Итого
                 span 16 240 ₽
-              +btn({text: "Оформить заказ", size: "big"}).cart-aside__button(disabled = step < 3)
+              +btn({text: "Оформить заказ", size: "big", type: "submit"}).cart-aside__button(data-order="submit", disabled)
