@@ -114,6 +114,7 @@
 
   &__edit {
     position: absolute;
+    transition: opacity $trans-default, visibility $trans-default;
 
     @include desktop {
       top: size(54px);
@@ -139,25 +140,6 @@
     @include mobile-tablet {
       font-size: size(22px);
       line-height: size(28px);
-    }
-
-    &--filled {
-      display: flex;
-      align-items: center;
-
-      @include desktop {
-        padding-right: size(80px);
-      }
-
-      @include mobile-tablet {
-        padding-right: size(40px);
-      }
-    }
-
-    &:not(.order-block__title--filled) {
-      &::before {
-        content: counters(blocks, "") ". ";
-      }
     }
 
     svg {
@@ -233,6 +215,61 @@
 
     @include mobile {
       min-width: size(160px);
+    }
+  }
+
+  &:not(.is-filled) {
+    .order-block__title {
+      &::before {
+        content: counters(blocks, "") ". ";
+      }
+    }
+
+    .order-block__edit {
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .order-block__title svg,
+    .delivery-checks__info,
+    .information-form__list {
+      display: none;
+    }
+  }
+
+  &:not(.is-active) {
+    .order-block__aside,
+    .delivery-checks,
+    .delivery-form,
+    .order-block__footer,
+    .payment-form {
+      display: none;
+    }
+  }
+
+  &.is-filled {
+    display: block;
+
+    .order-block__title {
+      display: flex;
+      align-items: center;
+
+      @include desktop {
+        padding-right: size(80px);
+      }
+
+      @include mobile-tablet {
+        padding-right: size(40px);
+      }
+    }
+
+    .delivery-form,
+    .order-block__aside,
+    .delivery-checks__form,
+    .order-block__footer,
+    .information-form__form {
+      display: none;
     }
   }
 }

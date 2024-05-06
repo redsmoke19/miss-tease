@@ -1,46 +1,44 @@
 mixin information-form(props = {})
   - const {isFilled = false} = props
   .information-form
-    if isFilled
-      ul.information-form__list
-        li.information-form__item Анастасия Прокофьева
-        li.information-form__item +7 (908) 508-58-58
-        li.information-form__item nastyapro@yandex.ru
-        li.information-form__item Чебоксары, Чувашская Республика, Россия
-    else
-      .information-form__form
-        .information-form__wrapper
-          +custom-input({
-            inputType: "text",
-            inputLabel: "Местоположение*",
-            inputPlaceholder: "Чувашская республика, Россия",
-            inputLink: {text: "Чебоксары,&nbsp;", href: "#", icon: "icon-location"},
-            inputName: "location"
-          }).information-form__input.information-form__input--address(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
-          +custom-input({
-            inputType: "text",
-            inputLabel: "Индекс",
-            inputName: "index"
-          }).information-form__input.information-form__input--index(data-validate-type="matrix", data-matrix="______", data-matrix-limitation="digit", data-required, data-message-base="Поле обязательно к заполнению")
-        .information-form__wrapper
-          +custom-input({
-            inputType: "text",
-            inputLabel: "Имя*",
-            inputName: "name"
-          }).information-form__input(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
-          +custom-input({
-            inputType: "text",
-            inputLabel: "Фамилия*",
-            inputName: "surname"
-          }).information-form__input(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
-        .information-form__wrapper
-          +custom-input({
-            inputType: "tel",
-            inputLabel: "Телефон*",
-            inputName: "phone"
-          }).information-form__input(data-validate-type="phone", data-required, data-message-base="Поле обязательно к заполнению")
-          +custom-input({
-            inputType: "email",
-            inputLabel: "E-mail*",
-            inputName: "email"
-          }).information-form__input(data-validate-type="email", data-required, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля")
+    ul.information-form__list
+      li.information-form__item Анастасия Прокофьева
+      li.information-form__item +7 (908) 508-58-58
+      li.information-form__item nastyapro@yandex.ru
+      li.information-form__item Чебоксары, Чувашская Республика, Россия
+    .information-form__form
+      .information-form__wrapper
+        +custom-input({
+          inputType: "text",
+          inputLabel: "Местоположение*",
+          inputPlaceholder: "Чувашская республика, Россия",
+          inputLink: {text: "Чебоксары,&nbsp;", href: "#", icon: "icon-location"},
+          inputName: "location"
+        }).information-form__input.information-form__input--address(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
+        +custom-input({
+          inputType: "text",
+          inputLabel: "Индекс",
+          inputName: "index"
+        }).information-form__input.information-form__input--index(data-validate-type="matrix", data-matrix="______", data-matrix-limitation="digit", data-required, data-message-base="Поле обязательно к заполнению")
+      .information-form__wrapper
+        +custom-input({
+          inputType: "text",
+          inputLabel: "Имя*",
+          inputName: "name"
+        }).information-form__input(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
+        +custom-input({
+          inputType: "text",
+          inputLabel: "Фамилия*",
+          inputName: "surname"
+        }).information-form__input(data-validate-type="text", data-required, data-message-base="Поле обязательно к заполнению")
+      .information-form__wrapper
+        +custom-input({
+          inputType: "tel",
+          inputLabel: "Телефон*",
+          inputName: "phone"
+        }).information-form__input(data-validate-type="phone", data-required, data-message-base="Поле обязательно к заполнению")
+        +custom-input({
+          inputType: "email",
+          inputLabel: "E-mail*",
+          inputName: "email"
+        }).information-form__input(data-validate-type="email", data-required, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля")

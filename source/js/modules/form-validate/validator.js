@@ -17,7 +17,7 @@ export class Validator {
   _createStates(item) {
     this._validState = true;
     this._invalidNotEmpty = false;
-    const parent = item.closest('[data-form-validate]');
+    const parent = item.closest('[data-form-validate]') || item.closest('[data-form-block]');
     const formElements = parent.querySelectorAll('input', 'select', 'textarea');
     formElements.forEach((element) => {
       if (element.getAttribute('aria-invalid') === 'true') {
@@ -364,7 +364,7 @@ export class Validator {
   }
 
   _validateFormParent(element) {
-    const formParent = element.closest('[data-form-validate]');
+    const formParent = element.closest('[data-form-validate]') || element.closest('[data-form-block]');
     if (formParent.dataset.parentValidate) {
       this._validateParent(formParent, formParent.dataset.parentValidate);
     }

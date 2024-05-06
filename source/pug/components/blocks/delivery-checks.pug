@@ -1,42 +1,40 @@
 mixin delivery-checks(props = {})
   - const {isFilled = false, pickPointSelected = false} = props
   .delivery-checks
-    if isFilled
-      .delivery-checks__info
-        p.delivery-checks__info-title Курьером СДЭК
-        ul.delivery-checks__info-list
-          li.delivery-checks__info-item
-            span.delivery-checks__info-key Адрес:
-            span.delivery-checks__info-value г. Чебоксары, ул. Гражданская, 105
-          li.delivery-checks__info-item
-            span.delivery-checks__info-key Стоимость:
-            span.delivery-checks__info-value 130₽
-          li.delivery-checks__info-item
-            span.delivery-checks__info-key Срок доставки:
-            span.delivery-checks__info-value 2-3 рабочих дня
-    else
-      .delivery-checks__form(data-tabs="controls")
-        +custom-toggle({
-          inputName: "delivery-type",
-          inputValue: "courier",
-          inputId: "courier",
-          inputType: "radio",
-          inputChecked: !pickPointSelected
-        }).delivery-checks__item(data-tabs="control")
-          .delivery-checkbox
-            .delivery-checkbox__logo
-              +icon("icon-cdek", 50, 14)
-            span.delivery-checkbox__name Курьером СДЭК
-            span.delivery-checkbox__price 270 ₽
-        +custom-toggle({
-          inputName: "delivery-type",
-          inputValue: "pick-point",
-          inputId: "pick-point",
-          inputType: "radio",
-          inputChecked: pickPointSelected
-        }).delivery-checks__item(data-tabs="control", class=pickPointSelected && "is-active")
-          .delivery-checkbox
-            .delivery-checkbox__logo
-              +icon("icon-cdek", 50, 14)
-            span.delivery-checkbox__name Пункт выдачи СДЭК
-            span.delivery-checkbox__price 130 ₽
+    .delivery-checks__info
+      p.delivery-checks__info-title Курьером СДЭК
+      ul.delivery-checks__info-list
+        li.delivery-checks__info-item
+          span.delivery-checks__info-key Адрес:
+          span.delivery-checks__info-value г. Чебоксары, ул. Гражданская, 105
+        li.delivery-checks__info-item
+          span.delivery-checks__info-key Стоимость:
+          span.delivery-checks__info-value 130₽
+        li.delivery-checks__info-item
+          span.delivery-checks__info-key Срок доставки:
+          span.delivery-checks__info-value 2-3 рабочих дня
+    .delivery-checks__form(data-tabs="controls")
+      +custom-toggle({
+        inputName: "delivery-type",
+        inputValue: "courier",
+        inputId: "courier",
+        inputType: "radio",
+        inputChecked: !pickPointSelected
+      }).delivery-checks__item(data-tabs="control")
+        .delivery-checkbox
+          .delivery-checkbox__logo
+            +icon("icon-cdek", 50, 14)
+          span.delivery-checkbox__name Курьером СДЭК
+          span.delivery-checkbox__price 270 ₽
+      +custom-toggle({
+        inputName: "delivery-type",
+        inputValue: "pick-point",
+        inputId: "pick-point",
+        inputType: "radio",
+        inputChecked: pickPointSelected
+      }).delivery-checks__item(data-tabs="control", class=pickPointSelected && "is-active")
+        .delivery-checkbox
+          .delivery-checkbox__logo
+            +icon("icon-cdek", 50, 14)
+          span.delivery-checkbox__name Пункт выдачи СДЭК
+          span.delivery-checkbox__price 130 ₽

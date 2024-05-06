@@ -14,6 +14,7 @@ import {initCartButtons} from './modules/init-cart-buttons.js';
 import {initHeaderSticky} from './modules/header/init-header-sticky.js';
 import {initDeliveryForm} from './modules/init-delivery-form.js';
 import {initAutoResizeTextarea} from './modules/auto-resize-textarea.js';
+import initPlacingOrder from './modules/init-placing-order.js';
 
 // ---------------------------------
 
@@ -50,6 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initHeaderSticky();
     initDeliveryForm();
     initAutoResizeTextarea();
+    initPlacingOrder();
   });
 });
 
