@@ -9,6 +9,12 @@
     width: calc(100% - #{size(425px)});
   }
 
+  &__slider {
+    @include mobile {
+      height: 100%;
+    }
+  }
+
   &__pagination {
     @include desktop {
       display: none;
