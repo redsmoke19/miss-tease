@@ -9650,6 +9650,10 @@ button,
     min-width: 2.5625rem;
   }
 
+  .gallery-slider__slider {
+    height: 100%;
+  }
+
   .gallery-slider__pagination {
     bottom: 0.625rem;
   }
